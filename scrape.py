@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
 """
-arXiv researcher scraper for RL, post-training, world models, and environment simulation.
+arXiv + OpenAlex researcher scraper for RL, post-training, world models,
+and environment simulation.
 
-Fetches papers from arXiv, enriches author profiles via Semantic Scholar,
-and outputs a CSV spreadsheet of researchers.
+Two-phase approach:
+1. arXiv API — discover papers by keyword + category, get all authors
+2. OpenAlex API — search same keywords with country filter to get structured
+   institution/country data for US-based (and other) researchers
+
+Outputs both a full CSV and a US-only filtered CSV for hiring pipelines.
 """
 
 import argparse
 import csv
 import logging
-import os
+import re
 import time
+import urllib.parse
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -21,7 +27,8 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 log = logging.getLogger(__name__)
 
 DATA_DIR = Path(__file__).parent / "data"
-CSV_PATH = DATA_DIR / "researchers.csv"
+CSV_ALL = DATA_DIR / "researchers.csv"
+CSV_US = DATA_DIR / "researchers_us.csv"
 
 SEARCH_QUERIES = [
     "reinforcement learning",
@@ -40,19 +47,56 @@ SEARCH_QUERIES = [
     "model-based reinforcement learning",
 ]
 
+# OpenAlex search queries (broader phrasing works better for their search)
+OPENALEX_QUERIES = [
+    "reinforcement learning RLHF language model",
+    "reinforcement learning human feedback LLM",
+    "GRPO group relative policy optimization",
+    "reward model language model alignment",
+    "post-training alignment large language model",
+    "world model deep reinforcement learning",
+    "sim-to-real transfer robot reinforcement learning",
+    "model-based reinforcement learning deep learning",
+    "DPO direct preference optimization language model",
+    "policy optimization reinforcement learning neural network",
+]
+
 ARXIV_CATEGORIES = ["cs.LG", "cs.AI", "cs.CL", "cs.RO", "stat.ML"]
 
-SEMANTIC_SCHOLAR_API = "https://api.semanticscholar.org/graph/v1"
-S2_RATE_LIMIT_DELAY = 1.0  # seconds between S2 calls (free tier)
+OPENALEX_API = "https://api.openalex.org"
+OPENALEX_EMAIL = "scraper@fleet.ai"
 
+FIELDNAMES = [
+    "name",
+    "paper_link",
+    "paper_title",
+    "arxiv_category",
+    "published_date",
+    "institution",
+    "institution_type",
+    "country",
+    "city",
+    "linkedin_search_url",
+    "google_scholar_url",
+    "personal_website",
+]
+
+
+# ---------------------------------------------------------------------------
+# arXiv
+# ---------------------------------------------------------------------------
 
 def build_arxiv_query(query: str, categories: list[str]) -> str:
     cat_filter = " OR ".join(f"cat:{c}" for c in categories)
     return f'all:"{query}" AND ({cat_filter})'
 
 
+def extract_arxiv_id(entry_id: str) -> str:
+    m = re.search(r"(\d{4}\.\d{4,5})", entry_id)
+    return m.group(1) if m else ""
+
+
 def fetch_papers(query: str, start_date: datetime, end_date: datetime, max_results: int = 500) -> list[arxiv.Result]:
-    """Fetch arXiv papers matching query within date range."""
     full_query = build_arxiv_query(query, ARXIV_CATEGORIES)
     client = arxiv.Client(page_size=100, delay_seconds=3.0, num_retries=3)
     search = arxiv.Search(
@@ -61,7 +105,6 @@ def fetch_papers(query: str, start_date: datetime, end_date: datetime, max_resul
         sort_by=arxiv.SortCriterion.SubmittedDate,
         sort_order=arxiv.SortOrder.Descending,
     )
-
     results = []
     for paper in client.results(search):
         pub_date = paper.published.replace(tzinfo=None)
@@ -69,85 +112,134 @@ def fetch_papers(query: str, start_date: datetime, end_date: datetime, max_resul
             break
         if pub_date <= end_date:
             results.append(paper)
-
     return results
 
 
-def search_semantic_scholar_author(name: str, paper_title: str) -> dict | None:
-    """Look up an author on Semantic Scholar by searching for their paper."""
-    try:
-        resp = requests.get(
-            f"{SEMANTIC_SCHOLAR_API}/paper/search",
-            params={"query": paper_title, "limit": 1, "fields": "authors"},
-            timeout=10,
-        )
-        if resp.status_code == 429:
-            log.warning("S2 rate limited, sleeping 30s")
-            time.sleep(30)
-            return None
-        if resp.status_code != 200:
-            return None
+# ---------------------------------------------------------------------------
+# OpenAlex enrichment (direct keyword search with institution data)
+# ---------------------------------------------------------------------------
 
-        data = resp.json()
-        if not data.get("data"):
-            return None
+def openalex_search(query: str, start_date: str, end_date: str, country_code: str | None = None, per_page: int = 200) -> list[dict]:
+    """Search OpenAlex for works matching query with optional country filter. Paginates through all results."""
+    all_results = []
+    cursor = "*"
+    filters = [f"from_publication_date:{start_date}", f"to_publication_date:{end_date}"]
+    if country_code:
+        filters.append(f"institutions.country_code:{country_code}")
 
-        authors = data["data"][0].get("authors", [])
-        # Find the matching author
-        name_lower = name.lower()
-        for author in authors:
-            if name_lower in author.get("name", "").lower() or author.get("name", "").lower() in name_lower:
-                return get_author_details(author["authorId"])
+    while cursor:
+        try:
+            params = {
+                "search": query,
+                "filter": ",".join(filters),
+                "select": "doi,title,authorships,publication_date",
+                "per_page": min(per_page, 200),
+                "cursor": cursor,
+                "mailto": OPENALEX_EMAIL,
+            }
+            resp = requests.get(f"{OPENALEX_API}/works", params=params, timeout=30)
+            if resp.status_code == 429:
+                log.warning("OpenAlex rate limited, sleeping 5s")
+                time.sleep(5)
+                continue
+            if resp.status_code != 200:
+                log.warning(f"OpenAlex returned {resp.status_code}")
+                break
+            data = resp.json()
+            results = data.get("results", [])
+            all_results.extend(results)
+            cursor = data.get("meta", {}).get("next_cursor")
+            if not results:
+                break
+            time.sleep(0.2)
+        except Exception as e:
+            log.warning(f"OpenAlex search failed: {e}")
+            break
 
-    except Exception as e:
-        log.debug(f"S2 search failed for {name}: {e}")
-    return None
-
-
-def get_author_details(author_id: str) -> dict | None:
-    """Get author details from Semantic Scholar."""
-    try:
-        time.sleep(S2_RATE_LIMIT_DELAY)
-        resp = requests.get(
-            f"{SEMANTIC_SCHOLAR_API}/author/{author_id}",
-            params={"fields": "name,url,homepage,externalIds"},
-            timeout=10,
-        )
-        if resp.status_code == 429:
-            log.warning("S2 rate limited on author fetch, sleeping 30s")
-            time.sleep(30)
-            return None
-        if resp.status_code != 200:
-            return None
-        return resp.json()
-    except Exception as e:
-        log.debug(f"S2 author fetch failed for {author_id}: {e}")
-    return None
+    return all_results
 
 
-def extract_linkedin_from_s2(author_data: dict) -> str:
-    """Try to extract LinkedIn URL from Semantic Scholar external IDs."""
-    if not author_data:
-        return ""
-    external_ids = author_data.get("externalIds") or {}
-    # S2 doesn't directly provide LinkedIn, but sometimes has DBLP/ORCID
-    # which can help find profiles. Return empty for now.
-    return ""
-
-
-def extract_homepage_from_s2(author_data: dict) -> str:
-    """Extract homepage URL from Semantic Scholar."""
-    if not author_data:
-        return ""
-    return author_data.get("homepage") or ""
-
-
-def load_existing_data() -> tuple[list[dict], set[str]]:
-    """Load existing CSV data and return rows + set of (name, paper_link) for dedup."""
+def extract_us_authors_from_openalex(works: list[dict]) -> list[dict]:
+    """Extract US-affiliated author rows from OpenAlex works."""
     rows = []
     seen = set()
-    if CSV_PATH.exists():
-        with open(CSV_PATH, newline="", encoding="utf-8") as f:
+    for work in works:
+        title = (work.get("title") or "").replace("\n", " ").strip()
+        doi = work.get("doi") or ""
+        pub_date = work.get("publication_date") or ""
+        paper_link = doi if doi else ""
+
+        for auth in work.get("authorships", []):
+            countries = auth.get("countries", [])
+            if "US" not in countries:
+                continue
+
+            name = auth.get("author", {}).get("display_name") or auth.get("raw_author_name", "")
+            if not name:
+                continue
+
+            key = (name, title)
+            if key in seen:
+                continue
+            seen.add(key)
+
+            # Get US institution info
+            institution = ""
+            institution_type = ""
+            city = ""
+            for inst in auth.get("institutions", []):
+                if inst.get("country_code") == "US":
+                    institution = inst.get("display_name", "")
+                    institution_type = inst.get("type", "")
+                    break
+
+            # City from raw affiliation
+            raw_strings = auth.get("raw_affiliation_strings", [])
+            if raw_strings:
+                parts = [p.strip() for p in raw_strings[0].split(",")]
+                if len(parts) >= 3:
+                    city = parts[-2]
+
+            rows.append({
+                "name": name,
+                "paper_link": paper_link,
+                "paper_title": title,
+                "arxiv_category": "",
+                "published_date": pub_date,
+                "institution": institution,
+                "institution_type": institution_type,
+                "country": "US",
+                "city": city,
+                "linkedin_search_url": build_linkedin_search_url(name),
+                "google_scholar_url": build_google_scholar_url(name),
+                "personal_website": "",
+            })
+    return rows
+
+
+# ---------------------------------------------------------------------------
+# Search URL builders
+# ---------------------------------------------------------------------------
+
+def build_linkedin_search_url(name: str) -> str:
+    q = urllib.parse.quote_plus(f"{name} reinforcement learning OR machine learning")
+    return f"https://www.google.com/search?q=site%3Alinkedin.com%2Fin+{q}"
+
+
+def build_google_scholar_url(name: str) -> str:
+    q = urllib.parse.quote_plus(f'author:"{name}"')
+    return f"https://scholar.google.com/scholar?q={q}"
+
+
+# ---------------------------------------------------------------------------
+# CSV I/O
+# ---------------------------------------------------------------------------
+
+def load_existing_data(csv_path: Path) -> tuple[list[dict], set[str]]:
+    rows = []
+    seen = set()
+    if csv_path.exists():
+        with open(csv_path, newline="", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 rows.append(row)
@@ -155,76 +247,104 @@ def load_existing_data() -> tuple[list[dict], set[str]]:
     return rows, seen
 
 
-def save_data(rows: list[dict]):
-    """Save rows to CSV."""
+def save_data(rows: list[dict], csv_path: Path):
     DATA_DIR.mkdir(exist_ok=True)
-    fieldnames = ["name", "paper_link", "paper_title", "arxiv_category", "published_date", "linkedin", "personal_website"]
-    with open(CSV_PATH, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+    with open(csv_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=FIELDNAMES)
         writer.writeheader()
-        # Sort by published_date descending, then name
         rows.sort(key=lambda r: (r.get("published_date", ""), r.get("name", "")), reverse=True)
         writer.writerows(rows)
 
 
+# ---------------------------------------------------------------------------
+# Main pipeline
+# ---------------------------------------------------------------------------
+
 def scrape(start_date: datetime, end_date: datetime, enrich: bool = True):
-    """Main scrape pipeline."""
-    existing_rows, seen = load_existing_data()
-    new_rows = []
-    author_cache: dict[str, dict | None] = {}  # name -> S2 data
+    existing_all, seen_all = load_existing_data(CSV_ALL)
+    existing_us, seen_us = load_existing_data(CSV_US)
     papers_found = 0
 
+    # ---- Phase 1: arXiv papers (all countries, no institution data) ----
+    all_papers: list[arxiv.Result] = []
+    paper_set: set[str] = set()
+
     for query in SEARCH_QUERIES:
-        log.info(f"Searching arXiv for: {query}")
+        log.info(f"[arXiv] Searching: {query}")
         papers = fetch_papers(query, start_date, end_date, max_results=200)
         log.info(f"  Found {len(papers)} papers")
         papers_found += len(papers)
+        for p in papers:
+            aid = extract_arxiv_id(p.entry_id)
+            if aid and aid not in paper_set:
+                paper_set.add(aid)
+                all_papers.append(p)
 
-        for paper in papers:
-            paper_link = paper.entry_id
-            categories = ",".join(paper.categories[:3])
-            pub_date = paper.published.strftime("%Y-%m-%d")
+    log.info(f"[arXiv] Total unique papers: {len(all_papers)}")
 
-            for author in paper.authors:
-                name = str(author)
-                key = (name, paper_link)
-                if key in seen:
-                    continue
-                seen.add(key)
+    # Build rows from arXiv (no institution data)
+    new_all_rows = []
+    for paper in all_papers:
+        paper_link = paper.entry_id
+        categories = ",".join(paper.categories[:3])
+        pub_date = paper.published.strftime("%Y-%m-%d")
+        for author in paper.authors:
+            name = str(author)
+            key = (name, paper_link)
+            if key in seen_all:
+                continue
+            seen_all.add(key)
+            new_all_rows.append({
+                "name": name,
+                "paper_link": paper_link,
+                "paper_title": paper.title.replace("\n", " ").strip(),
+                "arxiv_category": categories,
+                "published_date": pub_date,
+                "institution": "",
+                "institution_type": "",
+                "country": "",
+                "city": "",
+                "linkedin_search_url": build_linkedin_search_url(name),
+                "google_scholar_url": build_google_scholar_url(name),
+                "personal_website": "",
+            })
 
-                linkedin = ""
-                website = ""
+    # ---- Phase 2: OpenAlex US researchers (rich institution data) ----
+    new_us_rows = []
+    if enrich:
+        start_str = start_date.strftime("%Y-%m-%d")
+        end_str = end_date.strftime("%Y-%m-%d")
+        for query in OPENALEX_QUERIES:
+            log.info(f"[OpenAlex] Searching US: {query}")
+            works = openalex_search(query, start_str, end_str, country_code="US")
+            us_rows = extract_us_authors_from_openalex(works)
+            # Dedup against existing US data
+            for row in us_rows:
+                key = (row["name"], row["paper_title"])
+                if key not in seen_us:
+                    seen_us.add(key)
+                    new_us_rows.append(row)
+            log.info(f"  {len(works)} works -> {len(us_rows)} US author entries (new: {len(new_us_rows)})")
 
-                if enrich and name not in author_cache:
-                    log.debug(f"  Enriching: {name}")
-                    author_cache[name] = search_semantic_scholar_author(name, paper.title)
-                    time.sleep(S2_RATE_LIMIT_DELAY)
+    # Save all data
+    all_rows = existing_all + new_all_rows
+    save_data(all_rows, CSV_ALL)
 
-                if enrich and name in author_cache:
-                    s2_data = author_cache[name]
-                    linkedin = extract_linkedin_from_s2(s2_data)
-                    website = extract_homepage_from_s2(s2_data)
+    us_rows_total = existing_us + new_us_rows
+    save_data(us_rows_total, CSV_US)
 
-                new_rows.append({
-                    "name": name,
-                    "paper_link": paper_link,
-                    "paper_title": paper.title.replace("\n", " ").strip(),
-                    "arxiv_category": categories,
-                    "published_date": pub_date,
-                    "linkedin": linkedin,
-                    "personal_website": website,
-                })
-
-    all_rows = existing_rows + new_rows
-    save_data(all_rows)
-    log.info(f"Done. Papers scanned: {papers_found}. New researcher-paper entries: {len(new_rows)}. Total rows: {len(all_rows)}")
+    log.info(
+        f"Done. arXiv papers: {papers_found} (unique: {len(all_papers)}). "
+        f"New all entries: {len(new_all_rows)}. Total all: {len(all_rows)}. "
+        f"New US entries: {len(new_us_rows)}. Total US: {len(us_rows_total)}"
+    )
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Scrape arXiv for researcher profiles")
+    parser = argparse.ArgumentParser(description="Scrape arXiv + OpenAlex for researcher profiles")
     parser.add_argument("--days", type=int, default=1, help="Number of days to look back (default: 1 for nightly)")
     parser.add_argument("--backfill-months", type=int, default=0, help="Backfill N months of data")
-    parser.add_argument("--no-enrich", action="store_true", help="Skip Semantic Scholar enrichment")
+    parser.add_argument("--no-enrich", action="store_true", help="Skip OpenAlex US enrichment (faster)")
     args = parser.parse_args()
 
     end_date = datetime.now(timezone.utc).replace(tzinfo=None)
