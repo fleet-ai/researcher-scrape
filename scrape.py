@@ -2,11 +2,14 @@
 """
 US industry ML researcher discovery pipeline.
 
-Two strategies, both via OpenAlex:
-1. Conference authors — pull all authors from top ML/RL venues (NeurIPS, ICML, ICLR, etc.)
-2. Lab authors — pull all authors affiliated with known AI research labs
+Three data sources:
+1. Conference websites — scrape NeurIPS/ICML/ICLR accepted paper JSONs directly
+2. OpenAlex conferences — other venues (AAAI, AISTATS, CoRL, RSS, ACL, EMNLP)
+3. OpenAlex lab papers — AI/ML papers from known research labs
 
 Then:
+- Filter to US-based, non-academic researchers
+- Fetch OpenAlex author profiles for h-index and citation metrics
 - Filter to h-index 5-80 (recruitable range: not too junior, not whales)
 - LLM relevance filter via Sonnet: keeps only RL, post-training, world models, env sim researchers
 - Output is researcher-centric (one row per person), ranked by priority score
@@ -35,11 +38,17 @@ CSV_PATH = DATA_DIR / "researchers.csv"
 OPENALEX_API = "https://api.openalex.org"
 OPENALEX_EMAIL = "scraper@fleet.ai"
 
-# --- Top ML/RL conferences (OpenAlex source IDs) ---
-CONFERENCES = {
-    "S4306420609": "NeurIPS",
-    "S4306419644": "ICML",
-    "S4306419637": "ICLR",
+# --- Conference website JSON endpoints (NeurIPS/ICML/ICLR) ---
+# These conferences moved to OpenReview and are no longer indexed by OpenAlex.
+# We scrape accepted paper data directly from the conference virtual site JSONs.
+CONFERENCE_JSONS = {
+    "NeurIPS 2025": "https://neurips.cc/static/virtual/data/neurips-2025-orals-posters.json",
+    "ICML 2025": "https://icml.cc/static/virtual/data/icml-2025-orals-posters.json",
+    "ICLR 2025": "https://iclr.cc/static/virtual/data/iclr-2025-orals-posters.json",
+}
+
+# --- Other conferences via OpenAlex (source IDs) ---
+OPENALEX_CONFERENCES = {
     "S4210191458": "AAAI",
     "S4306419146": "AISTATS",
     "S4306506823": "CoRL",
@@ -51,17 +60,53 @@ CONFERENCES = {
 # --- Known AI research labs in the US (OpenAlex institution IDs) ---
 AI_LABS = {
     "I1291425158": "Google",
-    "I4210114444": "Meta",
     "I4210161460": "OpenAI",
     "I4210127875": "NVIDIA",
     "I4210153776": "Apple",
-    "I1311688040": "Amazon",
     "I4210156221": "Allen AI (AI2)",
     "I4391768151": "Toyota Research Institute",
     "I4210114115": "IBM Research (Watson)",
     "I4210085935": "IBM Research (Almaden)",
     "I4387154989": "Hugging Face",
 }
+
+# US industry institution patterns for conference website filtering.
+# Matched case-insensitively against institution names from conference data.
+US_INDUSTRY_PATTERNS = [
+    "google", "deepmind", "meta ai", "meta fair", "facebook", "openai", "nvidia",
+    "apple", "amazon", "aws ", "microsoft", "allen ai", "ai2 ", "hugging face",
+    "huggingface", "anthropic", "cohere", "databricks", "mosaic", "together ai", "allen institute",
+    "anyscale", "salesforce", "adobe", "intel labs", "intel corporation",
+    "qualcomm", "ibm research", "toyota research", "samsung research",
+    "sony ai", "sonyai", "waymo", "cruise", "aurora innovation", "zoox",
+    "nuro", "argo ai", "scale ai", "character ai", "character.ai",
+    "inflection", "xai", "x.ai", "stability ai", "midjourney", "runway",
+    "palantir", "tesla", "uber", "lyft", "snap inc", "spotify", "netflix",
+    "oracle", "bloomberg", "two sigma", "citadel", "jane street", "de shaw",
+    "renaissance tech", "jump trading", "hudson river",
+    "jpmorgan", "jp morgan", "goldman sachs", "morgan stanley",
+    "boeing", "lockheed", "raytheon", "northrop", "general dynamics",
+    "johns hopkins apl", "jhuapl", "mitre", "lincoln lab", "lincoln laboratory",
+    "sandia", "los alamos", "llnl", "argonne", "oak ridge", "brookhaven",
+    "pacific northwest", "national renewable",
+]
+
+# Patterns that must match as whole words (not substrings)
+_US_INDUSTRY_EXACT = {"meta", "aws", "ai2"}
+_US_INDUSTRY_WORD_RE = re.compile(
+    r"\b(" + "|".join(re.escape(w) for w in _US_INDUSTRY_EXACT) + r")\b", re.IGNORECASE
+)
+
+# Academic institution keywords to exclude (for conference website data)
+ACADEMIC_KEYWORDS = [
+    "university", "université", "universität", "universidad", "universidade",
+    "universita", "college", "school of", "institute of technology",
+    "polytechnic", "école", "eth zurich", "epfl", "kaist", "postech",
+    "tsinghua", "peking", "fudan", "zhejiang", "nanjing", "shanghai jiao",
+    "seoul national", "tokyo", "kyoto", "osaka", "oxford", "cambridge",
+    "imperial college", "ucl", "edinburgh", "inria", "cnrs", "max planck",
+    "chinese academy", "cas ", "academia sinica",
+]
 
 # OpenAlex topic subfields — restrict lab papers to AI/ML/CV
 AI_CV_SUBFIELDS = "subfields/1702|subfields/1707"
@@ -126,18 +171,126 @@ FIELDNAMES = [
 
 
 # ---------------------------------------------------------------------------
+# Conference website scraping (NeurIPS, ICML, ICLR)
+# ---------------------------------------------------------------------------
+
+def _is_us_industry(institution: str) -> bool:
+    """Check if an institution name looks like a US industry/lab (not academic)."""
+    inst_lower = institution.lower().strip()
+    if not inst_lower or inst_lower == "none":
+        return False
+    # Exclude academic institutions
+    if any(kw in inst_lower for kw in ACADEMIC_KEYWORDS):
+        return False
+    # Match known US industry labs (substring patterns)
+    if any(pat in inst_lower for pat in US_INDUSTRY_PATTERNS):
+        return True
+    # Match whole-word patterns (e.g. "Meta" but not "metadata")
+    if _US_INDUSTRY_WORD_RE.search(institution):
+        return True
+    return False
+
+
+def fetch_conference_website_papers(conf_name: str, url: str) -> list[dict]:
+    """Fetch accepted papers from a conference virtual site JSON endpoint."""
+    log.info(f"[Conference Website] Fetching {conf_name} from {url}")
+    try:
+        resp = requests.get(url, timeout=60)
+        resp.raise_for_status()
+        data = resp.json()
+        results = data.get("results", [])
+        log.info(f"  {len(results)} papers fetched")
+        return results
+    except Exception as e:
+        log.warning(f"  Failed to fetch {conf_name}: {e}")
+        return []
+
+
+def collect_authors_from_conference_json(papers: list[dict], authors: dict, venue: str):
+    """Extract US industry authors from conference website JSON into the authors dict.
+
+    These authors don't have OpenAlex IDs yet — we use their name as a temporary key
+    prefixed with 'conf:' to distinguish from OpenAlex-sourced authors.
+    """
+    for paper in papers:
+        title = (paper.get("name") or "").replace("\n", " ").strip()
+        if not title:
+            continue
+
+        for auth in paper.get("authors", []):
+            name = (auth.get("fullname") or "").strip()
+            institution = (auth.get("institution") or "").strip()
+            if not name or _BAD_AUTHOR_RE.search(name):
+                continue
+            if not _is_us_industry(institution):
+                continue
+
+            paper_info = {"title": title, "doi": "", "date": "2025", "venue": venue}
+            # Use name+institution as a composite key for dedup
+            key = f"conf:{name.lower()}:{institution.lower()}"
+
+            if key not in authors:
+                authors[key] = {
+                    "name": name,
+                    "institution": institution,
+                    "institution_type": "company",
+                    "city": "",
+                    "papers": [paper_info],
+                    "_from_conference_site": True,
+                }
+            else:
+                authors[key]["papers"].append(paper_info)
+
+
+def merge_conference_authors_with_openalex(authors: dict) -> dict:
+    """Merge conference website authors with OpenAlex authors where they overlap.
+
+    If an OpenAlex-keyed author has the same name+institution as a conf:-keyed author,
+    merge their papers. Conference-only authors are kept as-is (no OpenAlex resolution
+    needed — acceptance at NeurIPS/ICML/ICLR is a strong quality signal).
+    """
+    conf_authors = {k: v for k, v in authors.items() if k.startswith("conf:")}
+    oa_authors = {k: v for k, v in authors.items() if not k.startswith("conf:")}
+
+    if not conf_authors:
+        return authors
+
+    # Build lookup: lowercase name -> list of OpenAlex author IDs
+    name_to_oa = {}
+    for aid, info in oa_authors.items():
+        key = info["name"].lower()
+        name_to_oa.setdefault(key, []).append(aid)
+
+    merged = 0
+    for conf_key, conf_info in conf_authors.items():
+        name_lower = conf_info["name"].lower()
+        if name_lower in name_to_oa:
+            # Merge papers into existing OpenAlex author
+            target_aid = name_to_oa[name_lower][0]
+            oa_authors[target_aid]["papers"].extend(conf_info["papers"])
+            merged += 1
+        else:
+            # Keep as conference-only author
+            oa_authors[conf_key] = conf_info
+
+    log.info(f"  Merged {merged} conference authors with existing OpenAlex entries; {len(conf_authors) - merged} conference-only")
+    return oa_authors
+
+
+# ---------------------------------------------------------------------------
 # OpenAlex helpers
 # ---------------------------------------------------------------------------
 
 def openalex_get(endpoint: str, params: dict) -> dict | None:
-    """Single OpenAlex API call with retry on rate limit."""
+    """Single OpenAlex API call with exponential backoff on rate limit."""
     params["mailto"] = OPENALEX_EMAIL
-    for _ in range(3):
+    for attempt in range(5):
         try:
             resp = requests.get(f"{OPENALEX_API}/{endpoint}", params=params, timeout=30)
             if resp.status_code == 429:
-                log.warning("Rate limited, sleeping 5s")
-                time.sleep(5)
+                wait = min(5 * (2 ** attempt), 60)
+                log.warning(f"Rate limited, sleeping {wait}s (attempt {attempt+1})")
+                time.sleep(wait)
                 continue
             if resp.status_code != 200:
                 log.warning(f"OpenAlex {resp.status_code}: {resp.text[:200]}")
@@ -396,47 +549,70 @@ def save_data(rows: list[dict]):
 # Main
 # ---------------------------------------------------------------------------
 
-def scrape(start_date: datetime, end_date: datetime, skip_llm: bool = False):
+def scrape(start_date: datetime, end_date: datetime, skip_llm: bool = False, conferences_only: bool = False):
     start_str = start_date.strftime("%Y-%m-%d")
     end_str = end_date.strftime("%Y-%m-%d")
 
-    # {openalex_author_id: {name, institution, ..., papers: [...]}}
+    # {openalex_author_id or conf:key: {name, institution, ..., papers: [...]}}
     authors: dict[str, dict] = {}
 
-    # Phase 1: Conference papers
-    for source_id, conf_name in CONFERENCES.items():
-        log.info(f"[Conference] {conf_name} ({source_id})")
-        works = fetch_conference_papers(source_id, start_str, end_str)
+    # Phase 1: Conference website papers (NeurIPS, ICML, ICLR)
+    for conf_name, json_url in CONFERENCE_JSONS.items():
+        papers = fetch_conference_website_papers(conf_name, json_url)
         before = len(authors)
-        collect_authors_from_works(works, authors, venue=conf_name)
-        log.info(f"  {len(works)} papers -> {len(authors) - before} new researchers")
+        collect_authors_from_conference_json(papers, authors, venue=conf_name)
+        log.info(f"  -> {len(authors) - before} US industry researchers extracted")
 
-    # Phase 2: Known AI lab papers
-    for inst_id, lab_name in AI_LABS.items():
-        log.info(f"[Lab] {lab_name} ({inst_id})")
-        works = fetch_lab_papers(inst_id, start_str, end_str)
-        before = len(authors)
-        collect_authors_from_works(works, authors)
-        log.info(f"  {len(works)} papers -> {len(authors) - before} new researchers")
+    if not conferences_only:
+        # Phase 2: OpenAlex conference papers (AAAI, AISTATS, CoRL, etc.)
+        for source_id, conf_name in OPENALEX_CONFERENCES.items():
+            log.info(f"[OpenAlex Conference] {conf_name} ({source_id})")
+            works = fetch_conference_papers(source_id, start_str, end_str)
+            before = len(authors)
+            collect_authors_from_works(works, authors, venue=conf_name)
+            log.info(f"  {len(works)} papers -> {len(authors) - before} new researchers")
+
+        # Phase 3: Known AI lab papers via OpenAlex
+        for inst_id, lab_name in AI_LABS.items():
+            log.info(f"[Lab] {lab_name} ({inst_id})")
+            works = fetch_lab_papers(inst_id, start_str, end_str)
+            before = len(authors)
+            collect_authors_from_works(works, authors)
+            log.info(f"  {len(works)} papers -> {len(authors) - before} new researchers")
 
     log.info(f"Total unique researchers found: {len(authors)}")
 
-    # Phase 3: Fetch author profiles
-    log.info(f"Fetching author profiles for {len(authors)} researchers...")
-    profiles = fetch_author_profiles(list(authors.keys()))
-    log.info(f"  Got {len(profiles)} profiles")
+    # Phase 4: Merge conference website authors with OpenAlex authors
+    authors = merge_conference_authors_with_openalex(authors)
 
-    # Phase 4: h-index filter (recruitable range)
+    # Phase 5: Fetch author profiles for OpenAlex-keyed authors
+    profiles = {}
+    if not conferences_only:
+        openalex_ids = [k for k in authors if not k.startswith("conf:")]
+        ids_needing_profiles = [k for k in openalex_ids if "_profile" not in authors[k]]
+        log.info(f"Fetching author profiles for {len(ids_needing_profiles)} researchers...")
+        profiles = fetch_author_profiles(ids_needing_profiles)
+        log.info(f"  Got {len(profiles)} profiles")
+
+    # Phase 6: h-index filter for OpenAlex authors; conference-only authors pass through
     filtered_authors = {}
+    conf_only_count = 0
     for author_id, info in authors.items():
-        profile = profiles.get(author_id, {})
+        if author_id.startswith("conf:"):
+            # Conference-only authors: NeurIPS/ICML/ICLR acceptance is a quality signal
+            info["_profile"] = {}
+            info["_h_index"] = 0
+            filtered_authors[author_id] = info
+            conf_only_count += 1
+            continue
+        profile = info.get("_profile") or profiles.get(author_id, {})
         h = (profile.get("summary_stats") or {}).get("h_index") or 0
         if H_INDEX_MIN <= h <= H_INDEX_MAX:
             info["_profile"] = profile
             info["_h_index"] = h
             filtered_authors[author_id] = info
 
-    log.info(f"After h-index filter ({H_INDEX_MIN}-{H_INDEX_MAX}): {len(filtered_authors)} researchers")
+    log.info(f"After h-index filter ({H_INDEX_MIN}-{H_INDEX_MAX}): {len(filtered_authors)} researchers ({conf_only_count} conference-only)")
 
     # Phase 5: LLM relevance filter
     openrouter_key = os.environ.get("OPENROUTER_API_KEY", "")
@@ -504,6 +680,7 @@ def main():
     parser.add_argument("--days", type=int, default=2, help="Days to look back (default: 2)")
     parser.add_argument("--backfill-months", type=int, default=0, help="Backfill N months")
     parser.add_argument("--skip-llm", action="store_true", help="Skip LLM relevance filter")
+    parser.add_argument("--conferences-only", action="store_true", help="Only scrape conference websites (skip OpenAlex)")
     args = parser.parse_args()
 
     end_date = datetime.now(timezone.utc).replace(tzinfo=None)
@@ -515,7 +692,7 @@ def main():
         start_date = end_date - timedelta(days=args.days)
         log.info(f"Scraping last {args.days} day(s): {start_date.date()} to {end_date.date()}")
 
-    scrape(start_date, end_date, skip_llm=args.skip_llm)
+    scrape(start_date, end_date, skip_llm=args.skip_llm, conferences_only=args.conferences_only)
 
 
 if __name__ == "__main__":
