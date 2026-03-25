@@ -6,13 +6,18 @@ Two strategies, both via OpenAlex:
 1. Conference authors — pull all authors from top ML/RL venues (NeurIPS, ICML, ICLR, etc.)
 2. Lab authors — pull all authors affiliated with known AI research labs
 
-Output is researcher-centric (one row per person), ranked by h-index.
+Then:
+- Filter to h-index 5-80 (recruitable range: not too junior, not whales)
+- LLM relevance filter via Sonnet: keeps only RL, post-training, world models, env sim researchers
+- Output is researcher-centric (one row per person), ranked by priority score
 """
 
 import argparse
 import csv
+import json
 import logging
 import math
+import os
 import re
 import time
 import urllib.parse
@@ -74,6 +79,30 @@ EXCLUDED_INSTITUTION_TYPES = {"education", "healthcare"}
 
 # Regex to detect non-human "author" names
 _BAD_AUTHOR_RE = re.compile(r"\(.*\)|^\d|^[A-Z]{2,}\d|GPT|Gemini|Claude|LLaMA|Llama|Mistral|Copilot", re.IGNORECASE)
+
+# h-index range for recruitable researchers
+H_INDEX_MIN = 5
+H_INDEX_MAX = 80
+
+# LLM relevance filter config
+OPENROUTER_API = "https://openrouter.ai/api/v1/chat/completions"
+OPENROUTER_MODEL = "anthropic/claude-sonnet-4.5"
+
+RELEVANCE_PROMPT = """You are filtering researchers for a hiring pipeline. We want people who work on:
+
+1. **Reinforcement Learning** (RL, RLHF, GRPO, DPO, PPO, policy optimization, reward modeling, multi-agent RL, offline RL)
+2. **Post-training** (alignment, preference optimization, instruction tuning, constitutional AI, red-teaming)
+3. **World models** (model-based RL, learned simulators, predictive models of environments)
+4. **Environment simulation** (sim-to-real, robotics environments, physics simulation for RL, procedural generation)
+5. **LLM training & optimization** (pretraining at scale, efficient training, distributed training, training infrastructure)
+6. **Agentic AI** (tool use, code generation agents, autonomous agents, planning, reasoning chains)
+
+We do NOT want: security researchers, hardware/chip designers, quantum computing, HCI/UX, bioinformatics, networking, databases (unless ML-for-DB), pure NLP linguistics, pure computer vision with no RL/agent component.
+
+For each researcher below, respond with ONLY a JSON array of objects with "id" (the researcher number) and "relevant" (true/false). No explanation needed.
+
+Researchers:
+"""
 
 FIELDNAMES = [
     "priority_score",
@@ -162,7 +191,7 @@ def fetch_lab_papers(institution_id: str, start_date: str, end_date: str) -> lis
 def fetch_author_profiles(author_ids: list[str]) -> dict[str, dict]:
     """Batch-fetch author profiles from OpenAlex. Returns {author_id: profile}."""
     profiles = {}
-    batch_size = 50  # OpenAlex pipe filter limit
+    batch_size = 50
     id_list = list(author_ids)
 
     for i in range(0, len(id_list), batch_size):
@@ -185,14 +214,11 @@ def fetch_author_profiles(author_ids: list[str]) -> dict[str, dict]:
 
 
 # ---------------------------------------------------------------------------
-# Author extraction (Phase 1: collect from works)
+# Author extraction
 # ---------------------------------------------------------------------------
 
 def collect_authors_from_works(works: list[dict], authors: dict, venue: str = ""):
-    """Extract US non-academic authors from works into the authors dict.
-
-    authors dict: {openalex_id: {name, institution, institution_type, city, papers: [...]}}
-    """
+    """Extract US non-academic authors from works into the authors dict."""
     for work in works:
         title = (work.get("title") or "").replace("\n", " ").strip()
         if not title:
@@ -219,7 +245,6 @@ def collect_authors_from_works(works: list[dict], authors: dict, venue: str = ""
             if not name or not author_id or _BAD_AUTHOR_RE.search(name):
                 continue
 
-            # Find US institution
             institution = ""
             institution_type = ""
             city = ""
@@ -249,13 +274,96 @@ def collect_authors_from_works(works: list[dict], authors: dict, venue: str = ""
                     "papers": [paper],
                 }
             else:
-                # Update institution to most recent if this paper is newer
                 existing = authors[author_id]
                 existing["papers"].append(paper)
                 if pub_date > (existing["papers"][0].get("date") or ""):
                     existing["institution"] = institution or existing["institution"]
                     existing["institution_type"] = institution_type or existing["institution_type"]
                     existing["city"] = city or existing["city"]
+
+
+# ---------------------------------------------------------------------------
+# LLM relevance filter
+# ---------------------------------------------------------------------------
+
+def filter_relevant_researchers(researchers: list[dict], api_key: str) -> list[dict]:
+    """Use Sonnet via OpenRouter to filter researchers by topic relevance.
+
+    Each researcher dict must have 'name', 'papers' (list of paper dicts with 'title').
+    Returns only researchers deemed relevant.
+    """
+    batch_size = 25
+    relevant_ids = set()
+    total = len(researchers)
+
+    for i in range(0, total, batch_size):
+        batch = researchers[i:i + batch_size]
+
+        # Build the researcher list for the prompt
+        lines = []
+        for j, r in enumerate(batch):
+            titles = [p["title"] for p in r["papers"][:5]]  # Up to 5 paper titles
+            titles_str = " | ".join(titles)
+            lines.append(f"{j+1}. {r['name']} @ {r['institution']} — Papers: {titles_str}")
+
+        prompt = RELEVANCE_PROMPT + "\n".join(lines)
+
+        for attempt in range(3):
+            try:
+                resp = requests.post(
+                    OPENROUTER_API,
+                    headers={
+                        "Authorization": f"Bearer {api_key}",
+                        "Content-Type": "application/json",
+                    },
+                    json={
+                        "model": OPENROUTER_MODEL,
+                        "messages": [{"role": "user", "content": prompt}],
+                        "temperature": 0,
+                        "max_tokens": 2000,
+                    },
+                    timeout=60,
+                )
+                if resp.status_code == 429:
+                    log.warning("OpenRouter rate limited, sleeping 10s")
+                    time.sleep(10)
+                    continue
+                if resp.status_code != 200:
+                    log.warning(f"OpenRouter {resp.status_code}: {resp.text[:200]}")
+                    break
+
+                content = resp.json()["choices"][0]["message"]["content"]
+                # Extract JSON array from response (handle markdown code blocks)
+                content = content.strip()
+                if content.startswith("```"):
+                    content = re.sub(r"^```(?:json)?\s*", "", content)
+                    content = re.sub(r"\s*```$", "", content)
+
+                results = json.loads(content)
+                for item in results:
+                    if item.get("relevant"):
+                        idx = item["id"] - 1  # 1-indexed to 0-indexed
+                        if 0 <= idx < len(batch):
+                            relevant_ids.add(id(batch[idx]))
+                break
+            except (json.JSONDecodeError, KeyError, IndexError) as e:
+                log.warning(f"Failed to parse LLM response (attempt {attempt+1}): {e}")
+                if attempt < 2:
+                    time.sleep(2)
+                    continue
+                # On final failure, include all in batch (fail open)
+                log.warning("  Including entire batch as fallback")
+                for r in batch:
+                    relevant_ids.add(id(r))
+            except Exception as e:
+                log.warning(f"OpenRouter request failed: {e}")
+                break
+
+        kept = sum(1 for r in batch if id(r) in relevant_ids)
+        log.info(f"  LLM filter batch {i//batch_size + 1}/{(total + batch_size - 1)//batch_size}: {kept}/{len(batch)} relevant")
+        time.sleep(0.5)
+
+    return [r for r in researchers if id(r) in relevant_ids]
 
 
 # ---------------------------------------------------------------------------
@@ -288,7 +396,7 @@ def save_data(rows: list[dict]):
 # Main
 # ---------------------------------------------------------------------------
 
-def scrape(start_date: datetime, end_date: datetime):
+def scrape(start_date: datetime, end_date: datetime, skip_llm: bool = False):
     start_str = start_date.strftime("%Y-%m-%d")
     end_str = end_date.strftime("%Y-%m-%d")
 
@@ -313,30 +421,52 @@ def scrape(start_date: datetime, end_date: datetime):
 
     log.info(f"Total unique researchers found: {len(authors)}")
 
-    # Phase 3: Fetch author profiles for h-index, citation count
+    # Phase 3: Fetch author profiles
     log.info(f"Fetching author profiles for {len(authors)} researchers...")
     profiles = fetch_author_profiles(list(authors.keys()))
     log.info(f"  Got {len(profiles)} profiles")
 
-    # Build final rows, sorted by h-index
-    rows = []
+    # Phase 4: h-index filter (recruitable range)
+    filtered_authors = {}
     for author_id, info in authors.items():
         profile = profiles.get(author_id, {})
+        h = (profile.get("summary_stats") or {}).get("h_index") or 0
+        if H_INDEX_MIN <= h <= H_INDEX_MAX:
+            info["_profile"] = profile
+            info["_h_index"] = h
+            filtered_authors[author_id] = info
+
+    log.info(f"After h-index filter ({H_INDEX_MIN}-{H_INDEX_MAX}): {len(filtered_authors)} researchers")
+
+    # Phase 5: LLM relevance filter
+    openrouter_key = os.environ.get("OPENROUTER_API_KEY", "")
+    if not skip_llm and openrouter_key:
+        researcher_list = [
+            {"id": aid, **info}
+            for aid, info in filtered_authors.items()
+        ]
+        log.info(f"Running LLM relevance filter on {len(researcher_list)} researchers...")
+        relevant = filter_relevant_researchers(researcher_list, openrouter_key)
+        relevant_ids = {r["id"] for r in relevant}
+        filtered_authors = {aid: info for aid, info in filtered_authors.items() if aid in relevant_ids}
+        log.info(f"After LLM filter: {len(filtered_authors)} researchers")
+    elif not skip_llm:
+        log.warning("OPENROUTER_API_KEY not set — skipping LLM relevance filter")
+
+    # Build final rows
+    rows = []
+    for author_id, info in filtered_authors.items():
+        profile = info["_profile"]
         stats = profile.get("summary_stats", {})
 
-        # Sort papers by date descending
         papers = sorted(info["papers"], key=lambda p: p.get("date", ""), reverse=True)
         top_paper = papers[0] if papers else {}
         venues = sorted(set(p["venue"] for p in papers if p["venue"]))
 
-        h = stats.get("h_index") or 0
+        h = info["_h_index"]
         citedness_2yr = stats.get("2yr_mean_citedness") or 0
         n_papers = len(papers)
 
-        # Priority score: career impact + recent activity + citation momentum
-        # h-index: career impact (0-200 range)
-        # paper_count * 10: recent productivity bonus
-        # log(1 + 2yr_citedness) * 15: citation momentum (log-scaled to avoid viral papers dominating)
         score = round(h + n_papers * 10 + math.log1p(citedness_2yr) * 15, 1)
 
         rows.append({
@@ -373,6 +503,7 @@ def main():
     parser = argparse.ArgumentParser(description="Discover US-based industry ML researchers, ranked by impact")
     parser.add_argument("--days", type=int, default=2, help="Days to look back (default: 2)")
     parser.add_argument("--backfill-months", type=int, default=0, help="Backfill N months")
+    parser.add_argument("--skip-llm", action="store_true", help="Skip LLM relevance filter")
     args = parser.parse_args()
 
     end_date = datetime.now(timezone.utc).replace(tzinfo=None)
@@ -384,7 +515,7 @@ def main():
         start_date = end_date - timedelta(days=args.days)
         log.info(f"Scraping last {args.days} day(s): {start_date.date()} to {end_date.date()}")
 
-    scrape(start_date, end_date)
+    scrape(start_date, end_date, skip_llm=args.skip_llm)
 
 
 if __name__ == "__main__":
