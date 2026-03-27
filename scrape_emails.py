@@ -51,6 +51,7 @@ EXCLUDED_EMAIL_DOMAINS = {
     "facebook.com", "twitter.com", "linkedin.com", "github.com",
     "jquery.com", "cloudflare.com", "gravatar.com", "wp.com",
     "wordpress.com", "amazonaws.com", "shields.io", "badge.fury.io",
+    "duckduckgo.com", "duck.com",
 }
 
 JUNK_SUFFIXES = (".png", ".jpg", ".jpeg", ".gif", ".svg", ".css", ".js", ".woff", ".ico")
@@ -298,6 +299,35 @@ def lookup_orcid_email(orcid_id: str) -> str:
 
 
 # ---------------------------------------------------------------------------
+# DuckDuckGo web search for verified emails
+# ---------------------------------------------------------------------------
+
+DDG_URL = "https://html.duckduckgo.com/html/"
+
+
+def search_email_ddg(name: str, institution: str) -> str:
+    """Search DuckDuckGo for researcher email. Returns first valid email found."""
+    query = f"{name} {institution} email".strip()
+    try:
+        resp = requests.get(DDG_URL, params={"q": query}, timeout=10, headers={
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+        })
+        if resp.status_code != 200:
+            return ""
+        emails = _extract_emails(resp.text)
+        # Prefer emails that contain part of the researcher's name
+        name_parts = {p.lower() for p in name.split() if len(p) > 2}
+        for email in emails:
+            local = email.split("@")[0].lower()
+            if any(part in local for part in name_parts):
+                return email
+        # Fall back to first non-junk email
+        return emails[0] if emails else ""
+    except Exception:
+        return ""
+
+
+# ---------------------------------------------------------------------------
 # Institution → email domain (ROR API + company fallback)
 # ---------------------------------------------------------------------------
 
@@ -380,7 +410,7 @@ def _ror_lookup(inst_name: str) -> str:
 # Main pipeline
 # ---------------------------------------------------------------------------
 
-def scrape_emails(rows: list[dict], s2_limit: int = 0) -> list[dict]:
+def scrape_emails(rows: list[dict], s2_limit: int = 0, ddg_limit: int = 0) -> list[dict]:
     # Load caches
     cache: dict = {}
     if EMAIL_CACHE_PATH.exists():
@@ -443,7 +473,15 @@ def scrape_emails(rows: list[dict], s2_limit: int = 0) -> list[dict]:
                 if email:
                     source = "orcid"
 
-        # Strategy 3: Institution domain → email pattern
+        # Strategy 3: DuckDuckGo web search for verified email
+        use_ddg = (ddg_limit <= 0 or i < ddg_limit)
+        if not email and use_ddg:
+            email = search_email_ddg(name, institution)
+            if email:
+                source = "web_search"
+            time.sleep(1.5)  # Be polite to DDG
+
+        # Strategy 4: Institution domain → email pattern (fallback)
         if not email:
             inst_domain = lookup_institution_domain(institution, inst_cache)
             if inst_domain:
@@ -470,7 +508,7 @@ def scrape_emails(rows: list[dict], s2_limit: int = 0) -> list[dict]:
             EMAIL_CACHE_PATH.write_text(json.dumps(cache))
             _save_inst_cache(inst_cache)
 
-        if use_s2:
+        if use_s2 and not use_ddg:
             time.sleep(delay)
 
     DATA_DIR.mkdir(exist_ok=True)
@@ -501,12 +539,13 @@ def main():
     parser.add_argument("--top", type=int, default=0, help="Only top N researchers by priority score")
     parser.add_argument("--min-papers", type=int, default=1, help="Minimum paper count to include (default: 1)")
     parser.add_argument("--s2-limit", type=int, default=0, help="Only query Semantic Scholar for top N researchers (0=all)")
+    parser.add_argument("--ddg-limit", type=int, default=0, help="DuckDuckGo search for top N researchers (0=all)")
     args = parser.parse_args()
 
     rows = load_researchers(CSV_PATH, top_n=args.top, min_papers=args.min_papers)
     log.info(f"Loaded {len(rows)} researchers from {CSV_PATH}")
 
-    rows = scrape_emails(rows, s2_limit=args.s2_limit)
+    rows = scrape_emails(rows, s2_limit=args.s2_limit, ddg_limit=args.ddg_limit)
     save_results(rows, OUTPUT_PATH)
 
 
