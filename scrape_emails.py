@@ -305,26 +305,94 @@ def lookup_orcid_email(orcid_id: str) -> str:
 DDG_URL = "https://html.duckduckgo.com/html/"
 
 
-def search_email_ddg(name: str, institution: str) -> str:
-    """Search DuckDuckGo for researcher email. Returns first valid email found."""
-    query = f"{name} {institution} email".strip()
+def _ddg_search(query: str) -> str:
+    """Raw DDG HTML search. Returns response text or empty string."""
     try:
         resp = requests.get(DDG_URL, params={"q": query}, timeout=10, headers={
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15"
         })
-        if resp.status_code != 200:
-            return ""
-        emails = _extract_emails(resp.text)
-        # Prefer emails that contain part of the researcher's name
-        name_parts = {p.lower() for p in name.split() if len(p) > 2}
-        for email in emails:
-            local = email.split("@")[0].lower()
-            if any(part in local for part in name_parts):
-                return email
-        # Fall back to first non-junk email
-        return emails[0] if emails else ""
+        if resp.status_code == 200:
+            return resp.text
     except Exception:
+        pass
+    return ""
+
+
+def find_personal_website(name: str) -> str:
+    """Search DDG for researcher's personal website. Returns URL or empty."""
+    html = _ddg_search(f"{name} personal website OR homepage")
+    if not html:
         return ""
+
+    # Look for github.io pages
+    github_io = re.findall(r'href="(https?://[a-z0-9\-]+\.github\.io/?)"', html)
+    if github_io:
+        return github_io[0]
+
+    # Look for result links that look like personal sites (not social media / big platforms)
+    skip_domains = {"linkedin.com", "twitter.com", "x.com", "facebook.com",
+                    "google.com", "scholar.google.com", "youtube.com", "medium.com",
+                    "arxiv.org", "github.com", "openreview.net", "wikipedia.org",
+                    "semanticscholar.org", "dblp.org", "wix.com", "homepagerealty.com",
+                    "computerhope.com", "besthomepageever.com", "gethomepage.dev",
+                    "pitbullmusic.com", "debitirarmasfotos.com"}
+    result_links = re.findall(r'class="result__a" href="(https?://[^"]+)"', html)
+    name_parts = {p.lower() for p in name.split() if len(p) > 2}
+    for link in result_links:
+        domain = re.sub(r"^www\.", "", (link.split("/")[2] if "/" in link else "").lower())
+        if domain in skip_domains:
+            continue
+        # Prefer URLs containing the researcher's name
+        link_lower = link.lower()
+        if any(part in link_lower for part in name_parts):
+            return link
+
+    return ""
+
+
+def search_email_via_website(name: str) -> tuple[str, str]:
+    """Find personal website via DDG, scrape it for email. Returns (email, homepage_url)."""
+    homepage = find_personal_website(name)
+    if not homepage:
+        return "", ""
+    emails = scrape_page_emails(homepage)
+    # Prefer emails containing part of the name
+    name_parts = {p.lower() for p in name.split() if len(p) > 2}
+    for email in emails:
+        local = email.split("@")[0].lower()
+        if any(part in local for part in name_parts):
+            return email, homepage
+    return (emails[0] if emails else ""), homepage
+
+
+# ---------------------------------------------------------------------------
+# Hunter.io verified email lookup
+# ---------------------------------------------------------------------------
+
+HUNTER_API = "https://api.hunter.io/v2/email-finder"
+
+
+def hunter_find_email(first: str, last: str, domain: str) -> str:
+    """Use Hunter.io to find a verified email. Requires HUNTER_API_KEY env var."""
+    api_key = os.environ.get("HUNTER_API_KEY", "")
+    if not api_key:
+        return ""
+    try:
+        resp = requests.get(HUNTER_API, params={
+            "domain": domain,
+            "first_name": first,
+            "last_name": last,
+            "api_key": api_key,
+        }, timeout=10)
+        if resp.status_code == 200:
+            data = resp.json().get("data", {})
+            email = data.get("email", "")
+            score = data.get("score", 0)
+            if email and score >= 50:
+                return email
+    except Exception:
+        pass
+    return ""
 
 
 # ---------------------------------------------------------------------------
@@ -473,15 +541,27 @@ def scrape_emails(rows: list[dict], s2_limit: int = 0, ddg_limit: int = 0) -> li
                 if email:
                     source = "orcid"
 
-        # Strategy 3: DuckDuckGo web search for verified email
+        # Strategy 3: Find personal website via DDG → scrape for email
         use_ddg = (ddg_limit <= 0 or i < ddg_limit)
         if not email and use_ddg:
-            email = search_email_ddg(name, institution)
-            if email:
-                source = "web_search"
-            time.sleep(1.5)  # Be polite to DDG
+            found_email, found_hp = search_email_via_website(name)
+            if found_email:
+                email = found_email
+                source = "personal_website"
+            if found_hp and not homepage:
+                homepage = found_hp
+            time.sleep(5)  # DDG rate limit
 
-        # Strategy 4: Institution domain → email pattern (fallback)
+        # Strategy 4: Hunter.io verified email
+        if not email and os.environ.get("HUNTER_API_KEY"):
+            inst_domain = lookup_institution_domain(institution, inst_cache)
+            if inst_domain:
+                first, last = _parse_name(name)
+                email = hunter_find_email(first, last, inst_domain)
+                if email:
+                    source = "hunter"
+
+        # Strategy 5: Institution domain → email pattern (fallback)
         if not email:
             inst_domain = lookup_institution_domain(institution, inst_cache)
             if inst_domain:
