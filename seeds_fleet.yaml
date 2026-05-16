@@ -1,0 +1,58 @@
+seeds:
+  papers:
+    # World Models / Visual Environments
+    - "2409.17652"  # FactorSim (NeurIPS 2024)
+    - "2402.15391"  # Genie (ICML 2024)
+    - "2510.16907"  # VAGEN (NeurIPS 2025)
+    - "2509.24527"  # Dreamer v4
+    - "2310.16828"  # TD-MPC2 (ICLR 2024)
+    - "2405.12399"  # DIAMOND (NeurIPS 2024)
+    - "2312.09238"  # V-JEPA
+    - "2501.08325"  # GameGen-X (ICLR 2025)
+    - "2310.08588"  # GenSim (ICLR 2024)
+    - "2410.09024"  # GenSim2 (CoRL 2024)
+
+    # Agentic Benchmarks
+    - "2306.06070"  # WebArena (ICLR 2024)
+    - "2401.13649"  # VisualWebArena (ACL 2024)
+    - "2404.07972"  # OSWorld (NeurIPS 2024)
+    - "2310.03710"  # SWE-bench (ICLR 2024)
+    - "2308.03688"  # AgentBench (ICLR 2024)
+    - "2406.12045"  # tau-bench
+    - "2407.18961"  # AppWorld (ACL 2024)
+    - "2311.05657"  # ToolBench (ICLR 2024)
+    - "2501.04227"  # HAL leaderboard
+
+    # STEM Benchmarks
+    - "2311.16502"  # MMMU (CVPR 2024)
+    - "2312.07536"  # GPQA
+    - "2406.11975"  # OlympiadBench (ACL 2024)
+    - "2403.07974"  # LiveCodeBench (ICLR 2025)
+    - "2409.04259"  # BigCodeBench (ICLR 2025)
+    - "2406.01574"  # EvalPlus / HumanEval+
+    - "2407.01502"  # SciCode (NeurIPS 2024)
+    - "2403.03218"  # WMDP (ICML 2024)
+
+    # Environment Generation
+    - "2012.02096"  # PAIRED (UED)
+    - "2312.01238"  # Infinigen (CVPR 2023)
+    - "2310.09288"  # RoboGen (ICML 2024)
+    - "2309.02427"  # Holodeck (CVPR 2024)
+    - "2404.18246"  # RoboCasa (RSS 2024)
+    - "2406.07237"  # ManiSkill3
+
+  researchers:
+    - name: "Alex Zook"
+      institution: "NVIDIA"
+    - name: "Bertie Vidgen"
+      institution: "Mercor"
+    - name: "Ludovico Mitchener"
+      institution: "Edison Scientific"
+    - name: "Nicklas Hansen"
+      institution: "UC San Diego"
+    - name: "Tianbao Xie"
+      institution: "University of Hong Kong"
+    - name: "David Rein"
+      institution: "METR"
+    - name: "Sam Earle"
+      institution: "New York University"
