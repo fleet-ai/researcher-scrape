@@ -1,0 +1,67 @@
+name: weekly-researcher-discovery
+
+on:
+  schedule:
+    # Mondays 13:00 UTC = 9am ET (EDT). During EST (winter) it fires at 8am ET.
+    - cron: "0 13 * * 1"
+  workflow_dispatch:
+    inputs:
+      max_depth:
+        description: "BFS depth (0=seeds only, 1=one hop, 2=two hops)"
+        default: "2"
+        required: false
+      slack_channel:
+        description: "Slack channel to post to (empty = skip)"
+        default: "hiring"
+        required: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Run pipeline
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          OPENALEX_EMAIL: ${{ secrets.OPENALEX_EMAIL || 'scraper@fleet.ai' }}
+        run: |
+          python expand.py \
+            --seeds seeds_fleet.yaml \
+            --config config_fleet.yaml \
+            --max-depth "${{ github.event.inputs.max_depth || '2' }}" \
+            --output-dir data/expand_output \
+            --slack-channel "${{ github.event.inputs.slack_channel || 'hiring' }}"
+
+      - name: Upload xlsx artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: researchers-${{ github.run_id }}
+          path: data/expand_output/researchers.xlsx
+          retention-days: 90
+
+      - name: Commit updated caches
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/expand_cache.json data/enrich_cache.json data/llm_cache.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No cache changes to commit."
+          else
+            git commit -m "chore(weekly): refresh caches from $(date -u +%Y-%m-%d) run"
+            git push
+          fi

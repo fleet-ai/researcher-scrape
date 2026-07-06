@@ -164,11 +164,13 @@ def enrich_researcher(name: str, institution: str, cache: dict) -> dict:
         return {}
 
     stats = best.get("summary_stats", {})
+    insts = best.get("last_known_institutions") or []
     enriched = {
         "h_index": stats.get("h_index", 0),
         "cited_by_count": stats.get("cited_by_count", 0),
         "works_count": stats.get("works_count", 0),
         "2yr_mean_citedness": stats.get("2yr_mean_citedness", 0),
+        "institution": insts[0].get("display_name", "") if insts else "",
     }
     cache[cache_key] = enriched
     return enriched

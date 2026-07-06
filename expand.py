@@ -26,7 +26,7 @@ from pathlib import Path
 import requests
 import yaml
 
-from s2_client import S2Client
+from oa_client import OAClient
 from scrape import _llm_call, _parse_llm_json, OPENROUTER_API, OPENROUTER_MODEL
 from scrape_emails import scrape_emails as run_email_cascade, _normalize
 from build_outreach_list import enrich_researcher as openalex_enrich
@@ -121,7 +121,7 @@ def _deserialize_researchers(data: list[dict]) -> dict:
     return researchers
 
 
-def resolve_seeds(seeds_cfg: dict, s2: S2Client) -> tuple[deque, dict]:
+def resolve_seeds(seeds_cfg: dict, s2: OAClient) -> tuple[deque, dict]:
     """Resolve seed papers and researchers. Returns (queue, researchers)."""
     queue = deque()  # (paper_id, depth, source_type)
     researchers = {}
@@ -184,7 +184,7 @@ def resolve_seeds(seeds_cfg: dict, s2: S2Client) -> tuple[deque, dict]:
 
 # ── Phase 2: BFS expansion ───────────────────────────────────────────────────
 
-def expand_graph(queue: deque, researchers: dict, s2: S2Client,
+def expand_graph(queue: deque, researchers: dict, s2: OAClient,
                  max_depth: int = 2, max_coauthors: int = 10,
                  max_citations: int = 50, max_references: int = 30,
                  prefer_recent: bool = True) -> set:
@@ -198,10 +198,11 @@ def expand_graph(queue: deque, researchers: dict, s2: S2Client,
         if processed % 50 == 0:
             log.info(f"  Processed {processed} papers, {len(researchers)} researchers, queue={len(queue)}")
 
-        # Get co-authors
-        authors = s2.get_paper_authors(paper_id)
-        paper_info = s2.paper_by_s2_id(paper_id)
-        paper_title = paper_info.get("title", "") if paper_info else ""
+        # Get co-authors + title in a single OpenAlex call (paper_by_s2_id
+        # already embeds authorships via _work_to_paper).
+        paper_info = s2.paper_by_s2_id(paper_id) or {}
+        authors = paper_info.get("authors") or []
+        paper_title = paper_info.get("title", "")
 
         for author in authors[:max_coauthors]:
             name = author.get("name", "")
@@ -249,7 +250,7 @@ def expand_graph(queue: deque, researchers: dict, s2: S2Client,
 
 # ── Phase 2b: Topic search expansion ─────────────────────────────────────────
 
-def expand_via_topics(config: dict, s2: S2Client, researchers: dict, seen_papers: set):
+def expand_via_topics(config: dict, s2: OAClient, researchers: dict, seen_papers: set):
     """Keyword search on S2 to find additional researchers."""
     categories = config.get("categories", [])
     topic_limit = config.get("expansion", {}).get("topic_search_limit", 50)
@@ -470,12 +471,16 @@ def enrich(researchers: dict, skip_emails: bool = False):
     enrich_cache = _load_json(DATA_DIR / "enrich_cache.json")
     enriched = 0
     for key, r in researchers.items():
-        if r.h_index == 0:
+        if r.h_index == 0 or not r.institution or r.paper_count == 0:
             result = openalex_enrich(r.name, r.institution, enrich_cache)
             if result:
                 r.h_index = result.get("h_index", r.h_index)
                 r.cited_by_count = result.get("cited_by_count", r.cited_by_count)
                 r.works_count = result.get("works_count", r.works_count)
+                if not r.paper_count:
+                    r.paper_count = result.get("works_count", 0) or r.paper_count
+                if not r.institution:
+                    r.institution = result.get("institution", "") or r.institution
                 enriched += 1
     _save_json(DATA_DIR / "enrich_cache.json", enrich_cache)
     log.info(f"  OpenAlex enriched {enriched} researchers")
@@ -511,8 +516,10 @@ OUTPUT_FIELDS = [
 ]
 
 
-def write_output(researchers: dict, categories: list, output_dir: Path):
-    """Write per-category CSVs and combined.csv."""
+def write_output(researchers: dict, categories: list, output_dir: Path) -> tuple[Path, dict, list[dict]]:
+    """Write per-category CSVs, combined.csv, and a single xlsx with a tab per
+    position. Returns (xlsx_path, per_cat_rows, all_rows) so callers (Slack
+    post) can reuse the row data without re-building it."""
     output_dir.mkdir(parents=True, exist_ok=True)
 
     all_rows = []
@@ -535,17 +542,24 @@ def write_output(researchers: dict, categories: list, output_dir: Path):
         }
         all_rows.append(row)
 
-    # Combined
+    # CSVs
     _write_csv(output_dir / "combined.csv", all_rows)
     log.info(f"  combined.csv: {len(all_rows)} researchers")
 
-    # Per-category
+    per_cat_rows = {}
     for cat in categories:
         cat_name = cat["name"]
         cat_rows = [r for r in all_rows if cat_name in r["categories"]]
+        per_cat_rows[cat_name] = cat_rows
         safe_name = re.sub(r"[^a-z0-9_]", "_", cat_name.lower())
         _write_csv(output_dir / f"{safe_name}.csv", cat_rows)
         log.info(f"  {safe_name}.csv: {len(cat_rows)} researchers")
+
+    # XLSX with one tab per position + Combined
+    xlsx_path = output_dir / "researchers.xlsx"
+    _write_xlsx(xlsx_path, per_cat_rows, all_rows)
+    log.info(f"  {xlsx_path.name}: {len(per_cat_rows)} position tabs + Combined")
+    return xlsx_path, per_cat_rows, all_rows
 
 
 def _write_csv(path: Path, rows: list[dict]):
@@ -555,6 +569,40 @@ def _write_csv(path: Path, rows: list[dict]):
         writer = csv.DictWriter(f, fieldnames=OUTPUT_FIELDS)
         writer.writeheader()
         writer.writerows(rows)
+
+
+def _write_xlsx(path: Path, per_cat_rows: dict, all_rows: list[dict]):
+    """Write one .xlsx: a Combined tab, then one tab per position (category)."""
+    from openpyxl import Workbook
+    from openpyxl.styles import Font, PatternFill
+
+    wb = Workbook()
+    wb.remove(wb.active)
+
+    header_font = Font(bold=True, color="FFFFFF")
+    header_fill = PatternFill(start_color="1F4E78", end_color="1F4E78", fill_type="solid")
+
+    def _add_sheet(title: str, rows: list[dict]):
+        # Excel sheet-name limit is 31 chars and disallows []:*?/\
+        safe = re.sub(r"[\[\]:*?/\\]", "_", title)[:31] or "Sheet"
+        ws = wb.create_sheet(title=safe)
+        ws.append(OUTPUT_FIELDS)
+        for c in ws[1]:
+            c.font = header_font
+            c.fill = header_fill
+        for r in rows:
+            ws.append([r.get(f, "") for f in OUTPUT_FIELDS])
+        ws.freeze_panes = "A2"
+        # Auto-ish column widths
+        for i, f in enumerate(OUTPUT_FIELDS, start=1):
+            width = max(12, min(60, max((len(str(r.get(f, ""))) for r in rows), default=len(f)) + 2))
+            ws.column_dimensions[ws.cell(row=1, column=i).column_letter].width = width
+
+    _add_sheet("Combined", all_rows)
+    for cat_name, rows in per_cat_rows.items():
+        _add_sheet(cat_name, rows)
+
+    wb.save(path)
 
 
 # ── Dedup helpers ─────────────────────────────────────────────────────────────
@@ -590,6 +638,9 @@ def main():
                         help="Resume from cached state (skip seed resolution + BFS, go straight to classify/filter/enrich)")
     parser.add_argument("--output-dir", default="data/expand_output", help="Output directory")
     parser.add_argument("--dedup-csv", default="", help="CSV to dedup against")
+    parser.add_argument("--slack-channel", default="",
+                        help="Slack channel name or ID (e.g. 'hiring'). If set and "
+                             "SLACK_BOT_TOKEN is in env, uploads the xlsx and posts a summary.")
     args = parser.parse_args()
 
     with open(args.seeds) as f:
@@ -598,7 +649,7 @@ def main():
         config = yaml.safe_load(f)
 
     openrouter_key = os.environ.get("OPENROUTER_API_KEY", "")
-    s2 = S2Client()
+    s2 = OAClient()
     expand_cache = _load_json(EXPAND_CACHE_PATH)
 
     # Depth override
@@ -674,8 +725,25 @@ def main():
 
     # Phase 7: Output
     log.info("=== Phase 7: Output ===")
-    write_output(researchers, config.get("categories", []), Path(args.output_dir))
+    xlsx_path, per_cat_rows, all_rows = write_output(
+        researchers, config.get("categories", []), Path(args.output_dir)
+    )
     _save_json(EXPAND_CACHE_PATH, expand_cache)
+
+    # Phase 8: Slack (optional)
+    slack_token = os.environ.get("SLACK_BOT_TOKEN", "")
+    if args.slack_channel and slack_token:
+        log.info(f"=== Phase 8: Slack post to #{args.slack_channel.lstrip('#')} ===")
+        from slack_post import upload_file, build_summary
+        summary = build_summary(per_cat_rows, all_rows)
+        result = upload_file(str(xlsx_path), args.slack_channel, slack_token,
+                             initial_comment=summary)
+        if result:
+            log.info(f"  Uploaded {xlsx_path.name} to Slack (file id: {result.get('id')})")
+        else:
+            log.warning("  Slack upload failed — see errors above")
+    elif args.slack_channel and not slack_token:
+        log.warning("--slack-channel set but SLACK_BOT_TOKEN missing; skipping")
 
     log.info("Done.")
 
