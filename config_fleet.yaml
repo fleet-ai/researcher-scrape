@@ -1,56 +1,14 @@
 categories:
   - name: "World Models"
-    keywords:
-      - "world model"
-      - "latent dynamics"
-      - "video prediction"
-      - "learned simulator"
-      - "model-based reinforcement learning"
-      - "action-conditioned video"
-      - "self-supervised video"
-      - "joint embedding predictive"
-
+    keywords: []
   - name: "Agentic Benchmarks"
-    keywords:
-      - "agent benchmark"
-      - "agent evaluation"
-      - "web agent"
-      - "GUI agent"
-      - "browser agent"
-      - "desktop agent"
-      - "coding agent benchmark"
-      - "tool-use benchmark"
-      - "function calling benchmark"
-      - "LLM-as-judge"
-      - "agent leaderboard"
-
+    keywords: []
   - name: "STEM Benchmarks"
-    keywords:
-      - "math benchmark"
-      - "science benchmark"
-      - "code benchmark"
-      - "STEM evaluation"
-      - "mathematical reasoning"
-      - "scientific reasoning"
-      - "chemistry benchmark"
-      - "biology benchmark"
-      - "code generation evaluation"
-      - "formal verification benchmark"
-      - "olympiad"
-      - "competition math"
-
+    keywords: []
   - name: "Environment Generation"
-    keywords:
-      - "environment generation"
-      - "procedural generation"
-      - "unsupervised environment design"
-      - "sim-to-real"
-      - "domain randomization"
-      - "procedural content generation"
-      - "3D scene generation"
-      - "robotic simulation generation"
-      - "automatic curriculum"
-      - "task generation for RL"
+    keywords: []
+  - name: "Post-Training"
+    keywords: []
 
 filters:
   max_h_index: 40
@@ -63,12 +21,16 @@ filters:
   exclude_institutions:
     - OpenAI
     - Anthropic
+    - DeepSeek
+    - Moonshot        # Kimi
+    - Alibaba         # Qwen / Tongyi
+    - ByteDance       # Seed / Doubao
   exclude_names: []
 
 expansion:
-  max_depth: 2
+  max_depth: 1
   max_coauthors_per_paper: 10
   max_citations_per_paper: 50
   max_references_per_paper: 30
   prefer_recent: true
-  topic_search_limit: 50
+  topic_search_limit: 0

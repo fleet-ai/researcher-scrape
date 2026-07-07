@@ -1,45 +1,105 @@
 seeds:
   papers:
-    # World Models / Visual Environments
-    - "2409.17652"  # FactorSim (NeurIPS 2024)
-    - "2402.15391"  # Genie (ICML 2024)
-    - "2510.16907"  # VAGEN (NeurIPS 2025)
-    - "2509.24527"  # Dreamer v4
-    - "2310.16828"  # TD-MPC2 (ICLR 2024)
-    - "2405.12399"  # DIAMOND (NeurIPS 2024)
-    - "2312.09238"  # V-JEPA
-    - "2501.08325"  # GameGen-X (ICLR 2025)
-    - "2310.08588"  # GenSim (ICLR 2024)
-    - "2410.09024"  # GenSim2 (CoRL 2024)
+    # ── World Models (18) ──────────────────────────────────────
+    - "2606.16576"  # Can LLM Agents Infer World Models?
+    - "2606.09828"  # Latent Spatial Memory for Video World Models
+    - "2601.20540"  # Advancing Open-source World Models
+    - "2604.22748"  # Agentic World Modeling: Foundations, Capabilities, Laws
+    - "2604.18131"  # Training LLM Agents for Spontaneous Self-Evolution
+    - "2605.27734"  # Learn from your own latents (JEPA sample efficiency)
+    - "2602.02603"  # EchoJEPA
+    - "2601.05230"  # Learning Latent Action World Models In The Wild
+    - "2402.15391"  # Genie: Generative Interactive Environments
+    - "2405.12399"  # DIAMOND: Diffusion for World Modeling
+    - "2411.14499"  # Understanding World or Predicting Future? (survey)
+    - "2510.16907"  # VAGEN: World Model Reasoning for VLM Agents
+    - "2509.24527"  # Training Agents Inside of Scalable World Models (DreamerV4)
+    - "2603.14482"  # V-JEPA 2.1
+    - "2605.28816"  # Gamma-World: Multi-Agent World Modeling
+    - "2606.24597"  # Qwen-AgentWorld
+    - "2603.22212"  # Omni-WorldBench
+    - "2602.14721"  # WebWorld: Web Agent Training
 
-    # Agentic Benchmarks
-    - "2306.06070"  # WebArena (ICLR 2024)
-    - "2401.13649"  # VisualWebArena (ACL 2024)
-    - "2404.07972"  # OSWorld (NeurIPS 2024)
-    - "2310.03710"  # SWE-bench (ICLR 2024)
-    - "2308.03688"  # AgentBench (ICLR 2024)
-    - "2406.12045"  # tau-bench
-    - "2407.18961"  # AppWorld (ACL 2024)
-    - "2311.05657"  # ToolBench (ICLR 2024)
-    - "2501.04227"  # HAL leaderboard
+    # ── Agentic Benchmarks (20) ────────────────────────────────
+    - "2606.05405"  # Agents' Last Exam
+    - "2604.12162"  # AlphaEval
+    - "2604.08567"  # Multi-User LLM Agents (Muses-Bench)
+    - "2604.06240"  # The Art of Building Verifiers for CUAs
+    - "2601.11868"  # Terminal-Bench
+    - "2512.18470"  # SWE-EVO
+    - "2602.11964"  # Gaia2
+    - "2602.12670"  # SkillsBench
+    - "2602.14337"  # LongCLI-Bench
+    - "2602.16313"  # MemoryArena
+    - "2605.26302"  # Agent Lifespan Engineering (AgingBench)
+    - "2605.22681"  # Forecasting Scientific Progress (CUSP)
+    - "2606.05080"  # AutoLab
+    - "2606.19544"  # Reliability without Validity (LLM-judge audit)
+    - "2603.24621"  # ARC-AGI-3
+    - "2602.11988"  # Evaluating AGENTS.md
+    - "2606.28277"  # Automating Scientific Review (Google Paper Assistant)
+    - "2508.20453"  # MCP-Bench
+    - "2510.25726"  # Tool Decathlon
+    - "2412.14161"  # TheAgentCompany
 
-    # STEM Benchmarks
-    - "2311.16502"  # MMMU (CVPR 2024)
-    - "2312.07536"  # GPQA
-    - "2406.11975"  # OlympiadBench (ACL 2024)
-    - "2403.07974"  # LiveCodeBench (ICLR 2025)
-    - "2409.04259"  # BigCodeBench (ICLR 2025)
-    - "2406.01574"  # EvalPlus / HumanEval+
-    - "2407.01502"  # SciCode (NeurIPS 2024)
-    - "2403.03218"  # WMDP (ICML 2024)
+    # ── STEM Benchmarks (11) ───────────────────────────────────
+    - "2606.24530"  # NatureBench
+    - "2601.14027"  # Numina-Lean-Agent
+    - "2606.03303"  # LEAP: Formal Mathematics with Agentic
+    - "2605.06651"  # AI Co-Mathematician (FrontierMath Tier 4)
+    - "2311.16502"  # MMMU
+    - "2311.12022"  # GPQA
+    - "2402.14008"  # OlympiadBench
+    - "2403.07974"  # LiveCodeBench
+    - "2406.15877"  # BigCodeBench
+    - "2407.13168"  # SciCode
+    - "2407.10362"  # LAB-Bench (biology)
 
-    # Environment Generation
-    - "2012.02096"  # PAIRED (UED)
-    - "2312.01238"  # Infinigen (CVPR 2023)
-    - "2310.09288"  # RoboGen (ICML 2024)
-    - "2309.02427"  # Holodeck (CVPR 2024)
-    - "2404.18246"  # RoboCasa (RSS 2024)
-    - "2406.07237"  # ManiSkill3
+    # ── Environment Generation (20) ────────────────────────────
+    - "2604.28181"  # Synthetic Computers at Scale
+    - "2606.25996"  # Autodata: agentic data scientist
+    - "2606.17682"  # From Trainee to Trainer
+    - "2604.13018"  # Autonomous Long-Horizon Engineering for ML Research (AiScientist)
+    - "2606.07513"  # Agentopia
+    - "2604.15034"  # Autogenesis: Self-Evolving Agent Protocol
+    - "2601.03335"  # Digital Red Queen: Adversarial Program Evolution
+    - "2606.16774"  # OpenClaw-Skill
+    - "2603.04448"  # SkillNet
+    - "2604.20987"  # Co-Evolving LLM Decision and Skill Banks
+    - "2602.16928"  # Discovering Multi-Agent Learning Algorithms with LLMs
+    - "2606.19370"  # Human-like autonomy from self-play + human demos
+    - "2012.02096"  # PAIRED (UED anchor)
+    - "2502.14499"  # MLGym
+    - "2506.10055"  # TaskCraft
+    - "2508.05004"  # R-Zero: Self-Evolving Reasoning from Zero Data
+    - "2511.03773"  # Scaling Agent Learning via Experience Synthesis
+    - "2512.22857"  # AutoForge
+    - "2511.19304"  # AutoEnv
+    - "2604.06126"  # Gym-Anything
+
+    # ── Post-Training (22) ─────────────────────────────────────
+    - "2512.04388"  # Conductor: LLM orchestrator via RL
+    - "2512.13607"  # Nemotron-Cascade
+    - "2601.05242"  # GDPO
+    - "2512.23707"  # Training AI Co-Scientists Using Rubric Rewards
+    - "2601.20802"  # RL via Self-Distillation (SDPO)
+    - "2603.21383"  # PivotRL
+    - "2606.08501"  # Back on Track / PAPO
+    - "2606.09076"  # Beyond Scalar Rewards / Z-Reward
+    - "2604.05013"  # Scaling Coding Agents via Atomic Skills
+    - "2603.05218"  # KARL
+    - "2606.26300"  # The Verification Horizon
+    - "2605.29682"  # Scaling Laws for Agent Harnesses
+    - "2606.02113"  # Primer on Post-Training Reasoning Data
+    - "2606.32032"  # RLMF: Metacognitive Feedback RL
+    - "2605.14163"  # Agentic Systems as Boosting Weak Reasoners
+    - "2605.02572"  # Horizon Generalization
+    - "2606.26294"  # Red Queen Gödel Machine
+    - "2606.26797"  # Reasoning Quality Emerges Early
+    - "2606.07082"  # Geometry of On-Policy Distillation
+    - "2605.22502"  # Compiling Agentic Workflows into Weights
+    - "2602.06960"  # InftyThink+
+    - "2504.13837"  # Does RL Really Incentivize Reasoning Beyond the Base Model?
 
   researchers:
     - name: "Alex Zook"
