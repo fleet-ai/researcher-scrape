@@ -13,7 +13,7 @@ flowchart TD
     C["<b>Phase 2</b> — Graph expansion (BFS, depth=1)<br/>get paper.authorships<br/>get paper.citations<br/>get paper.referenced_works<br/>via OpenAlex"]
     C -->|"1192 papers processed<br/>5096 researchers"| D
 
-    D["<b>Phase 2b</b> — Topic keyword search<br/>OpenAlex /works?search=&lt;kw&gt;<br/>over categories in config"]
+    D["<b>Phase 2b</b> — Topic keyword search<br/>OpenAlex /works?search=kw<br/>over categories in config"]
     D -->|"+10,063 researchers<br/>= 15,159 total"| E
 
     E["<b>Phase 3</b> — Career-stage classification<br/>Sonnet 4.5 via OpenRouter<br/>(batch of 20)"]
@@ -22,10 +22,10 @@ flowchart TD
     F["<b>Phase 4</b> — Category-fit classification<br/>Sonnet 4.5 via OpenRouter<br/>(batch of 15)"]
     F -->|"15,159 labeled<br/>with per-category fit"| G
 
-    G["<b>Phase 5</b> — Filter<br/>· max_h_index &lt; 40<br/>· career_stage ∈ {phd, recent, junior, mid}<br/>· has ≥ 1 matched category<br/>· not in exclude list"]
+    G["<b>Phase 5</b> — Filter<br/>· max_h_index under 40<br/>· career_stage in allowed set<br/>· has ≥ 1 matched category<br/>· not in exclude list"]
     G -->|"~N filtered"| H
 
-    H["<b>Phase 6</b> — Profile enrichment<br/>OpenAlex /authors?search=&lt;name&gt;<br/>fills h-index, cited-by, institution"]
+    H["<b>Phase 6</b> — Profile enrichment<br/>OpenAlex /authors?search={name}<br/>fills h-index, cited-by, institution"]
     H -->|"enriched"| I
 
     I["<b>Phase 7</b> — Output<br/>combined.csv + one CSV per position<br/><b>researchers.xlsx</b> with a tab per position"]
@@ -50,14 +50,14 @@ sequenceDiagram
     E->>OA: /works/{id}?select=referenced_works
     OA-->>E: reference IDs
     Note over E: BFS: repeat until max_depth
-    E->>OA: /works?search=&lt;keyword&gt; (per topic)
+    E->>OA: /works?search={keyword} (per topic)
     OA-->>E: topic papers → authors
     E->>OR: classify career_stage (batch 20)
     OR-->>E: {stage} per researcher
     E->>OR: classify category_fit (batch 15)
     OR-->>E: {scores} per category
     Note over E: filter + enrich (OpenAlex /authors)
-    E->>OA: /authors?search=&lt;name&gt;
+    E->>OA: /authors?search={name}
     OA-->>E: h_index, cited_by, institution
     E-->>U: data/expand_output/researchers.xlsx
     E->>SL: files.getUploadURLExternal + complete
