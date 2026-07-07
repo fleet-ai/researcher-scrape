@@ -631,6 +631,9 @@ def main():
     parser.add_argument("--max-depth", type=int, default=None,
                         help="Override max expansion depth (0=seeds only, 1=one hop, 2=two hops)")
     parser.add_argument("--skip-emails", action="store_true", help="Skip email discovery")
+    parser.add_argument("--skip-enrichment", action="store_true",
+                        help="Skip OpenAlex profile enrichment (h-index, institution). "
+                             "Useful when OpenAlex is 429-ing hard; xlsx will have h=0 for uncached authors.")
     parser.add_argument("--skip-classify", action="store_true", help="Skip LLM classification")
     parser.add_argument("--skip-topics", action="store_true", help="Skip topic keyword search")
     parser.add_argument("--dry-run", action="store_true", help="Expand only, skip classify/enrich/email")
@@ -720,8 +723,11 @@ def main():
     researchers = apply_filters(researchers, config, exclude_names)
 
     # Phase 6: Enrich
-    log.info("=== Phase 6: Enrichment ===")
-    enrich(researchers, skip_emails=args.skip_emails)
+    if args.skip_enrichment:
+        log.info("=== Phase 6: Enrichment SKIPPED (--skip-enrichment) ===")
+    else:
+        log.info("=== Phase 6: Enrichment ===")
+        enrich(researchers, skip_emails=args.skip_emails)
 
     # Phase 7: Output
     log.info("=== Phase 7: Output ===")

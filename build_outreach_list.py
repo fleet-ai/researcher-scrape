@@ -105,24 +105,27 @@ def _normalize(s: str) -> str:
     return re.sub(r"\s+", " ", s.lower().strip())
 
 
+import oa_throttle
+
+
 def _openalex_get(path: str, params: dict | None = None) -> dict | None:
     url = f"{OPENALEX_API}{path}"
     if params is None:
         params = {}
     params["mailto"] = OPENALEX_EMAIL
-    for attempt in range(5):
+    for attempt in range(3):
+        oa_throttle.wait()
         try:
             resp = requests.get(url, params=params, timeout=30)
             if resp.status_code == 429:
-                wait = min(30 * (2 ** attempt), 300)
-                log.warning(f"OpenAlex rate limited, sleeping {wait}s")
-                time.sleep(wait)
+                oa_throttle.penalize("429")
+                log.warning(f"OpenAlex 429 — cooldown enforced ({oa_throttle.penalty_remaining():.0f}s)")
                 continue
             if resp.status_code != 200:
                 return None
             return resp.json()
         except Exception:
-            if attempt < 4:
+            if attempt < 2:
                 time.sleep(2)
     return None
 

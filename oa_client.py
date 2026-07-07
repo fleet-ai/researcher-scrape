@@ -18,6 +18,8 @@ import urllib.parse
 
 import requests
 
+import oa_throttle
+
 log = logging.getLogger(__name__)
 
 OA_API = "https://api.openalex.org"
@@ -88,29 +90,22 @@ class OAClient:
     Public surface matches s2_client.S2Client so expand.py is engine-agnostic.
     """
 
-    def __init__(self, mailto: str | None = None, delay: float | None = None):
+    def __init__(self, mailto: str | None = None):
         self.mailto = mailto or OA_EMAIL
-        self.delay = delay if delay is not None else 0.11  # ~9 req/s, under polite pool 10 rps
-        self._last_call = 0.0
 
     def _get(self, path: str, params: dict | None = None) -> dict | None:
-        elapsed = time.time() - self._last_call
-        if elapsed < self.delay:
-            time.sleep(self.delay - elapsed)
-
         if params is None:
             params = {}
         params["mailto"] = self.mailto
 
         url = f"{OA_API}/{path.lstrip('/')}"
-        for attempt in range(4):
+        for attempt in range(3):
+            oa_throttle.wait()
             try:
-                self._last_call = time.time()
                 resp = requests.get(url, params=params, timeout=30)
                 if resp.status_code == 429:
-                    wait = min(2 ** attempt * 5, 60)
-                    log.warning(f"OA 429 on {path}, sleeping {wait}s")
-                    time.sleep(wait)
+                    oa_throttle.penalize("429")
+                    log.warning(f"OA 429 on {path} — cooldown enforced ({oa_throttle.penalty_remaining():.0f}s)")
                     continue
                 if resp.status_code == 404:
                     return None
@@ -120,7 +115,7 @@ class OAClient:
                 return resp.json()
             except Exception as e:
                 log.warning(f"OA request failed (attempt {attempt + 1}): {e}")
-                if attempt < 3:
+                if attempt < 2:
                     time.sleep(2 ** attempt)
         return None
 
