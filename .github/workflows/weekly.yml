@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
     inputs:
       max_depth:
-        description: "BFS depth (0=seeds only, 1=one hop, 2=two hops)"
-        default: "2"
+        description: "BFS depth (0=seeds only, 1=one hop; 2 needs batch works-fetching first)"
+        default: "1"
         required: false
       slack_channel:
         description: "Slack channel to post to (empty = skip)"
@@ -34,7 +34,7 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
 
-      - name: Run pipeline
+      - name: Run pipeline (wide pool)
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
@@ -43,22 +43,52 @@ jobs:
           python expand.py \
             --seeds seeds_fleet.yaml \
             --config config_fleet.yaml \
-            --max-depth "${{ github.event.inputs.max_depth || '2' }}" \
+            --max-depth "${{ github.event.inputs.max_depth || '1' }}" \
             --output-dir data/expand_output \
             --slack-channel "${{ github.event.inputs.slack_channel || 'hiring' }}"
 
-      - name: Upload xlsx artifact
+      - name: Web-verify shortlist (top 40 per position)
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: python verify_shortlist.py --top 40
+
+      - name: Upload wide-pool xlsx
         uses: actions/upload-artifact@v4
         with:
           name: researchers-${{ github.run_id }}
           path: data/expand_output/researchers.xlsx
           retention-days: 90
 
+      - name: Upload shortlist xlsx
+        uses: actions/upload-artifact@v4
+        with:
+          name: shortlist-${{ github.run_id }}
+          path: |
+            data/expand_output/shortlist.xlsx
+            data/expand_output/shortlist_*.csv
+          retention-days: 90
+
+      - name: Post shortlist to Slack
+        if: ${{ github.event.inputs.slack_channel != '' }}
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        run: |
+          python - <<'EOF'
+          import os
+          from slack_post import upload_file
+          channel = "${{ github.event.inputs.slack_channel || 'hiring' }}"
+          token = os.environ["SLACK_BOT_TOKEN"]
+          upload_file("data/expand_output/shortlist.xlsx", channel, token,
+                      initial_comment=":dart: Weekly verified shortlist — top 40 per position, web-checked employers + personal emails")
+          EOF
+
       - name: Commit updated caches
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/expand_cache.json data/enrich_cache.json data/llm_cache.json 2>/dev/null || true
+          git add data/expand_cache.json data/enrich_cache.json data/enrich_cache_by_id.json \
+                  data/email_cache.json data/institution_domains.json data/verify_cache.json \
+                  data/llm_cache.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No cache changes to commit."
           else

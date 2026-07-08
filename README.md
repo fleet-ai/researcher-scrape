@@ -2,12 +2,13 @@
 
 Discovery pipeline for ML researchers, organized around five hiring positions: **World Models, Agentic Benchmarks, STEM Benchmarks, Environment Generation, Post-Training.**
 
-Two pipelines live here:
+Three scripts live here:
 
 | Script | What it does | When to use |
 |---|---|---|
-| `expand.py` | **Primary.** Seed papers/researchers → citation-graph BFS (OpenAlex) → LLM career-stage + position-fit classification → filter → profile + email enrichment → **xlsx with one tab per position** | Weekly hiring list. Runs on a cron. |
-| `scrape.py` | Legacy conference sweep: NeurIPS/ICML/ICLR 2025 full paper lists → LLM topic filter → ranked flat CSV | One-off conference-wide sweeps |
+| `expand.py` | **Primary.** Seed papers/researchers → citation-graph BFS (OpenAlex) → ID-batch profile enrichment → LLM career-stage + position-fit classification → geography/stage filter → emails → **wide pool xlsx** (tab per position) | Weekly, via cron |
+| `verify_shortlist.py` | **Final mile.** Top-40 per position → per-person **live web verification** (current employer with transitions, PhD status, personal email, key work, reasoned verdict) → **recruiter shortlist xlsx** | After every expand run |
+| `scrape.py` | Legacy conference sweep: NeurIPS/ICML/ICLR 2025 full paper lists → LLM topic filter → ranked flat CSV | One-off sweeps |
 
 See **[PIPELINE.md](PIPELINE.md)** for the full phase-by-phase flow, sequence diagram, latest run counts, and design decisions (why enrichment is by author ID, why topic search was removed, why filters run twice).
 
@@ -37,11 +38,23 @@ python expand.py --seeds seeds_fleet.yaml --config config_fleet.yaml --resume
 - `seeds_fleet.yaml` — seed papers (arxiv IDs, one commented section per position) and seed researchers. Add papers here; IDs should be verified (wrong IDs walk the wrong citation graph).
 - `config_fleet.yaml` — the five categories (names drive LLM classification + xlsx tabs), filters (h-index cap, career stages, excluded institutions), expansion fan-out.
 
-**Output:** `data/expand_output/researchers.xlsx` — Combined tab + one tab per position. Also per-position CSVs.
+**Output:** `data/expand_output/researchers.xlsx` — Combined tab + one tab per position (sorted recruitable Yes → Stretch → Unlikely). Also per-position CSVs.
+
+## Usage — verify_shortlist.py (recruiter shortlist)
+
+```bash
+export OPENROUTER_API_KEY="sk-or-..."
+python verify_shortlist.py                    # all tabs, top 40 each
+python verify_shortlist.py --top 25 --tabs world_models post_training
+```
+
+For each candidate an LLM with live web search (OpenRouter `:online`) checks homepage / Scholar / LinkedIn and returns: specific career stage ("Recent grad (PhD 24, UPenn) -> AI2"), personal email, website, one-line key work with venues, and a verdict with reason ("Unlikely - at OpenAI", "Yes - just switched labs"). Identity is confirmed against known papers; unconfirmed rows are skipped. Results cached in `data/verify_cache.json`.
+
+**Output:** `data/expand_output/shortlist.xlsx` (tab per position, Yes → Maybe → Unlikely) + per-position `shortlist_*.csv`.
 
 ## Weekly cron
 
-`.github/workflows/weekly.yml` runs the full pipeline Mondays 13:00 UTC, uploads the xlsx as an artifact, optionally posts to `#hiring`, and commits caches back. Repo secrets needed: `OPENROUTER_API_KEY`, `SLACK_BOT_TOKEN`.
+`.github/workflows/weekly.yml`, Mondays 13:00 UTC (or manual: Actions → weekly-researcher-discovery → Run workflow): runs `expand.py`, then `verify_shortlist.py --top 40`, uploads **both** xlsx files as 90-day artifacts, posts the shortlist to `#hiring`, and commits caches back. Repo secrets (set): `OPENROUTER_API_KEY`, `SLACK_BOT_TOKEN`.
 
 ## Caching
 
