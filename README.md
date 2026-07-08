@@ -1,61 +1,69 @@
 # researcher-scrape
 
-Discovery pipeline for ML researchers publishing at top conferences, ranked by impact and filtered for relevance to RL, post-training, and agentic AI.
+Discovery pipeline for ML researchers, organized around five hiring positions: **World Models, Agentic Benchmarks, STEM Benchmarks, Environment Generation, Post-Training.**
 
-## Pipeline
+Two pipelines live here:
 
-```
-Conference website JSONs (NeurIPS, ICML, ICLR 2025)
-        │
-        ▼
-LLM paper classification (Sonnet 4.5 via OpenRouter)
-        │
-        ▼
-Extract ALL authors from relevant papers
-        │
-        ▼
-OpenAlex profile enrichment (h-index, citations)
-        │
-        ▼
-Ranked CSV (priority_score = h_index + papers*10 + log(1 + 2yr_citedness)*15)
-```
+| Script | What it does | When to use |
+|---|---|---|
+| `expand.py` | **Primary.** Seed papers/researchers → citation-graph BFS (OpenAlex) → LLM career-stage + position-fit classification → filter → profile + email enrichment → **xlsx with one tab per position** | Weekly hiring list. Runs on a cron. |
+| `scrape.py` | Legacy conference sweep: NeurIPS/ICML/ICLR 2025 full paper lists → LLM topic filter → ranked flat CSV | One-off conference-wide sweeps |
 
-1. **Fetch papers** from conference virtual site JSON endpoints (NeurIPS, ICML, ICLR 2025)
-2. **LLM paper filter** (Sonnet 4.5 via OpenRouter): classifies each paper as relevant or not, in batches of 50 titles
-3. **Extract authors** from relevant papers only (no keyword/institution filtering)
-4. **OpenAlex enrichment** (optional): resolves researcher profiles (h-index, citation count, works count, 2yr citedness)
-5. **Priority scoring**: `h_index + paper_count * 10 + log(1 + 2yr_mean_citedness) * 15`
+See **[PIPELINE.md](PIPELINE.md)** for the full phase-by-phase flow, sequence diagram, latest run counts, and design decisions (why enrichment is by author ID, why topic search was removed, why filters run twice).
 
-## Topics of Interest
-
-RL, RLHF, GRPO, DPO, PPO, policy optimization, reward modeling, multi-agent RL, offline RL, post-training, alignment, preference optimization, instruction tuning, world models, model-based RL, environment simulation, sim-to-real, LLM training, distributed training, scaling laws, agentic AI, tool use, code generation agents, planning, reasoning chains, reward hacking, LLM-as-judge.
-
-## Output
-
-`data/researchers.csv` — one row per researcher, sorted by priority score.
-
-Columns: `priority_score`, `name`, `h_index`, `cited_by_count`, `works_count`, `2yr_mean_citedness`, `institution`, `paper_count`, `relevant_papers`, `venues`, `linkedin_search_url`, `google_scholar_url`
-
-## Caching
-
-- **LLM cache** (`data/llm_cache.json`): paper classification results are cached per conference, so re-runs skip the expensive LLM step
-- **Enrichment cache** (`data/enrich_cache.json`): OpenAlex profile lookups are cached per researcher name
-
-## Usage
+## Usage — expand.py (primary)
 
 ```bash
 pip install -r requirements.txt
 export OPENROUTER_API_KEY="sk-or-..."
 
-# Full pipeline (LLM classification + OpenAlex enrichment)
-python scrape.py
+# Full pipeline: BFS + LLM classify + filter + enrich + emails + xlsx
+python expand.py --seeds seeds_fleet.yaml --config config_fleet.yaml
 
-# Skip enrichment (faster, no OpenAlex API needed)
-python scrape.py --skip-enrichment
+# Resume from cached state (skips everything already computed)
+python expand.py --seeds seeds_fleet.yaml --config config_fleet.yaml --resume
 
-# Skip LLM classification (include all papers)
-python scrape.py --skip-llm
+# Useful flags
+#   --max-depth 0|1|2     BFS hops (default from config; keep at 1)
+#   --skip-emails         skip the email cascade
+#   --skip-enrichment     skip profile enrichment entirely
+#   --skip-classify       skip LLM phases
+#   --dry-run             expand only, write raw output
+#   --dedup-csv FILE      drop names already in FILE
+#   --slack-channel NAME  upload xlsx to Slack after the run (needs SLACK_BOT_TOKEN)
+```
 
-# Only enrich researchers with 3+ papers (default: 2)
-python scrape.py --min-papers 3
+**Inputs:**
+- `seeds_fleet.yaml` — seed papers (arxiv IDs, one commented section per position) and seed researchers. Add papers here; IDs should be verified (wrong IDs walk the wrong citation graph).
+- `config_fleet.yaml` — the five categories (names drive LLM classification + xlsx tabs), filters (h-index cap, career stages, excluded institutions), expansion fan-out.
+
+**Output:** `data/expand_output/researchers.xlsx` — Combined tab + one tab per position. Also per-position CSVs.
+
+## Weekly cron
+
+`.github/workflows/weekly.yml` runs the full pipeline Mondays 13:00 UTC, uploads the xlsx as an artifact, optionally posts to `#hiring`, and commits caches back. Repo secrets needed: `OPENROUTER_API_KEY`, `SLACK_BOT_TOKEN`.
+
+## Caching
+
+All under `data/`, all committed back by the cron so repeat runs only pay for the delta:
+
+- `expand_cache.json` — graph state + LLM labels (drives `--resume`)
+- `enrich_cache_by_id.json` — OpenAlex profiles keyed by author ID (collision-proof)
+- `enrich_cache.json` — name-based profile lookups (fallback path)
+- `email_cache.json` — email results incl. misses
+- `institution_domains.json` — institution → email-domain mappings
+- `llm_cache.json` — `scrape.py` conference classifications
+
+## API notes
+
+- **OpenAlex** is the graph + enrichment backbone (no key needed; polite pool via `mailto`). All callers share one throttle (`oa_throttle.py`, 2 RPS sustained); a single 429 triggers a 15-minute cooldown and an immediate fallback to Semantic Scholar rather than retries.
+- **Semantic Scholar** is the enrichment fallback (`s2_client.py`). Unauthenticated ~0.3 RPS; set `S2_API_KEY` for 10x.
+- **OpenRouter** (Sonnet 4.5) does paper/researcher classification.
+
+## Usage — scrape.py (legacy conference sweep)
+
+```bash
+python scrape.py                    # full: LLM filter + enrichment → data/researchers.csv
+python scrape.py --skip-enrichment  # no OpenAlex
+python scrape.py --skip-llm         # include all papers
 ```

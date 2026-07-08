@@ -1,0 +1,20 @@
+categories:
+  - name: "World Models"
+    keywords: ["world model", "generative simulation"]
+  - name: "Environment Generation"
+    keywords: ["environment generation", "procedural generation"]
+
+filters:
+  max_h_index: 40
+  min_papers: 1
+  career_stages: [graduating_phd, recent_grad, junior_industry, mid_industry]
+  exclude_institutions: []
+  exclude_names: []
+
+expansion:
+  max_depth: 1          # Only 1 hop for testing
+  max_coauthors_per_paper: 5
+  max_citations_per_paper: 5
+  max_references_per_paper: 5
+  prefer_recent: true
+  topic_search_limit: 10

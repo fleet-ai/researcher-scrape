@@ -1,0 +1,4 @@
+seeds:
+  papers:
+    - "2409.17652"  # FactorSim — just 1 paper for testing
+  researchers: []
