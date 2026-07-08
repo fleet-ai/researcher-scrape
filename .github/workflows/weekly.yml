@@ -69,7 +69,7 @@ jobs:
           retention-days: 90
 
       - name: Post shortlist to Slack
-        if: ${{ github.event.inputs.slack_channel != '' }}
+        if: ${{ (github.event.inputs.slack_channel || 'hiring') != '' }} 
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         run: |
