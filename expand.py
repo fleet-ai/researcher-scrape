@@ -466,24 +466,82 @@ def apply_filters(researchers: dict, config: dict, exclude_names: set) -> dict:
 # ── Phase 6: Enrichment ───────────────────────────────────────────────────────
 
 def enrich(researchers: dict, skip_emails: bool = False):
-    """OpenAlex enrichment + email cascade."""
-    # OpenAlex
+    """Profile enrichment + email cascade.
+
+    Primary path: batch OpenAlex lookups by author ID (50/call). The ID was
+    captured from the paper's authorships during the graph walk, so it names
+    the exact person — immune to the display-name collisions that a search
+    by name suffers (e.g. the wrong high-h "Chao Wang"). Values from this
+    path OVERWRITE whatever name-based enrichment may have filled earlier.
+    Fallback for researchers without an ID: name search (OpenAlex → S2).
+    """
+    from oa_client import OAClient
+    oa = OAClient()
+
+    id_cache = _load_json(DATA_DIR / "enrich_cache_by_id.json")
+    with_id = [(k, r) for k, r in researchers.items()
+               if r.s2_author_id and r.s2_author_id.startswith("A")]
+    to_fetch = [r.s2_author_id for k, r in with_id if r.s2_author_id not in id_cache]
+    log.info(f"  ID-based enrichment: {len(with_id)} researchers with OpenAlex IDs "
+             f"({len(id_cache)} cached, {len(to_fetch)} to fetch)")
+
+    for i in range(0, len(to_fetch), 50):
+        batch = to_fetch[i:i + 50]
+        profiles = oa.get_authors_batch(batch)
+        for aid in batch:
+            id_cache[aid] = profiles.get(aid, {})
+        if (i // 50) % 5 == 0:
+            _save_json(DATA_DIR / "enrich_cache_by_id.json", id_cache)
+            log.info(f"  Fetched {min(i + 50, len(to_fetch))}/{len(to_fetch)} profiles...")
+    _save_json(DATA_DIR / "enrich_cache_by_id.json", id_cache)
+
+    id_enriched = 0
+    for key, r in with_id:
+        p = id_cache.get(r.s2_author_id) or {}
+        if not p:
+            continue
+        # Sanity: the ID must belong to this person. Graph-walk IDs always do,
+        # but seed researchers got theirs from a name search which can top-hit
+        # the wrong profile. Require one shared name token; otherwise leave the
+        # row to the name-based fallback.
+        r_tokens = {t.lower() for t in r.name.replace(",", " ").split() if len(t) > 2}
+        p_tokens = {t.lower() for t in (p.get("name") or "").replace(",", " ").split() if len(t) > 2}
+        if r_tokens and p_tokens and not (r_tokens & p_tokens):
+            log.warning(f"  ID/name mismatch, skipping ID-enrich: {r.name!r} vs {p.get('name')!r}")
+            continue
+        # Authoritative: overwrite, don't merge
+        r.h_index = p.get("hIndex") or 0
+        r.cited_by_count = p.get("citationCount") or 0
+        r.works_count = p.get("paperCount") or 0
+        if not r.paper_count:
+            r.paper_count = p.get("paperCount") or 0
+        affs = p.get("affiliations") or []
+        if affs:
+            r.institution = affs[0]
+        id_enriched += 1
+    log.info(f"  ID-based enrichment done: {id_enriched}/{len(with_id)}")
+
+    # Fallback: name-based (OpenAlex search → S2) for researchers with no ID
     enrich_cache = _load_json(DATA_DIR / "enrich_cache.json")
-    enriched = 0
+    name_enriched = 0
     for key, r in researchers.items():
-        if r.h_index == 0 or not r.institution or r.paper_count == 0:
+        if r.s2_author_id and r.s2_author_id.startswith("A") and id_cache.get(r.s2_author_id):
+            continue
+        if r.h_index == 0 or not r.institution:
             result = openalex_enrich(r.name, r.institution, enrich_cache)
             if result:
-                r.h_index = result.get("h_index", r.h_index)
-                r.cited_by_count = result.get("cited_by_count", r.cited_by_count)
-                r.works_count = result.get("works_count", r.works_count)
+                r.h_index = result.get("h_index", r.h_index) or r.h_index
+                r.cited_by_count = result.get("cited_by_count", r.cited_by_count) or r.cited_by_count
+                r.works_count = result.get("works_count", r.works_count) or r.works_count
                 if not r.paper_count:
                     r.paper_count = result.get("works_count", 0) or r.paper_count
                 if not r.institution:
                     r.institution = result.get("institution", "") or r.institution
-                enriched += 1
+                if not r.homepage and result.get("homepage"):
+                    r.homepage = result["homepage"]
+                name_enriched += 1
     _save_json(DATA_DIR / "enrich_cache.json", enrich_cache)
-    log.info(f"  OpenAlex enriched {enriched} researchers")
+    log.info(f"  Name-based fallback enriched: {name_enriched}")
 
     if skip_emails:
         return
@@ -728,6 +786,30 @@ def main():
     else:
         log.info("=== Phase 6: Enrichment ===")
         enrich(researchers, skip_emails=args.skip_emails)
+
+        # Phase 6b: Re-filter with enriched values. Phase 5 ran while h_index
+        # was still 0 and institutions were empty, so the h cap and the
+        # institution exclusions never actually bit. Apply them now.
+        log.info("=== Phase 6b: Post-enrichment re-filter ===")
+        filters = config.get("filters", {})
+        max_h = filters.get("max_h_index", 40)
+        excl_inst = {i.lower() for i in filters.get("exclude_institutions", [])}
+        hard_recruit = {"openai", "anthropic", "google deepmind", "deepmind"}
+        before = len(researchers)
+        dropped = {"h_index": 0, "institution": 0}
+        kept = {}
+        for key, r in researchers.items():
+            if r.h_index and r.h_index >= max_h:
+                dropped["h_index"] += 1
+                continue
+            if any(exc in (r.institution or "").lower() for exc in excl_inst):
+                dropped["institution"] += 1
+                continue
+            if any(hr in (r.institution or "").lower() for hr in hard_recruit):
+                r.recruitable = "Unlikely"
+            kept[key] = r
+        researchers = kept
+        log.info(f"  Re-filtered: {before} -> {len(researchers)} (dropped: {dropped})")
 
     # Phase 7: Output
     log.info("=== Phase 7: Output ===")

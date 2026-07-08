@@ -118,9 +118,12 @@ def _openalex_get(path: str, params: dict | None = None) -> dict | None:
         try:
             resp = requests.get(url, params=params, timeout=30)
             if resp.status_code == 429:
+                # Do NOT retry — one 429 means the IP is throttled and each
+                # retry burns another 15-min cooldown before hitting the same
+                # wall. Let the caller fall back to another engine.
                 oa_throttle.penalize("429")
                 log.warning(f"OpenAlex 429 — cooldown enforced ({oa_throttle.penalty_remaining():.0f}s)")
-                continue
+                return None
             if resp.status_code != 200:
                 return None
             return resp.json()
@@ -130,24 +133,21 @@ def _openalex_get(path: str, params: dict | None = None) -> dict | None:
     return None
 
 
-def enrich_researcher(name: str, institution: str, cache: dict) -> dict:
-    """Look up h-index from OpenAlex. Returns enrichment dict."""
-    cache_key = _normalize(name)
-    if cache_key in cache:
-        return cache[cache_key]
-
+def _enrich_via_openalex(name: str, institution: str) -> dict:
+    """Try OpenAlex. Returns {} on miss or IP throttle."""
+    # Cheap short-circuit if OpenAlex has us in an extended penalty (>60s).
+    # Waiting 15 min just to hit another 429 is wasted time; go to S2 instead.
+    if oa_throttle.penalty_remaining() > 60:
+        return {}
     data = _openalex_get("/authors", {
         "filter": f"display_name.search:{name}",
         "per_page": 5,
         "select": "id,display_name,summary_stats,last_known_institutions",
     })
     if not data or not data.get("results"):
-        cache[cache_key] = {}
         return {}
-
     name_norm = _normalize(name)
     inst_norm = _normalize(institution) if institution else ""
-
     best = None
     for candidate in data["results"]:
         if _normalize(candidate.get("display_name", "")) != name_norm:
@@ -161,22 +161,76 @@ def enrich_researcher(name: str, institution: str, cache: dict) -> dict:
             best = candidate
         if best:
             break
-
     if not best:
-        cache[cache_key] = {}
         return {}
-
     stats = best.get("summary_stats", {})
     insts = best.get("last_known_institutions") or []
-    enriched = {
+    return {
         "h_index": stats.get("h_index", 0),
         "cited_by_count": stats.get("cited_by_count", 0),
         "works_count": stats.get("works_count", 0),
         "2yr_mean_citedness": stats.get("2yr_mean_citedness", 0),
         "institution": insts[0].get("display_name", "") if insts else "",
+        "source": "openalex",
     }
-    cache[cache_key] = enriched
-    return enriched
+
+
+_S2_CLIENT = None
+
+
+def _get_s2():
+    global _S2_CLIENT
+    if _S2_CLIENT is None:
+        from s2_client import S2Client
+        _S2_CLIENT = S2Client()
+    return _S2_CLIENT
+
+
+def _enrich_via_s2(name: str) -> dict:
+    """Try Semantic Scholar. Returns {} on miss."""
+    try:
+        author = _get_s2().search_author(name)
+    except Exception as e:
+        log.warning(f"S2 lookup failed for {name}: {e}")
+        return {}
+    if not author:
+        return {}
+    if _normalize(author.get("name", "")) != _normalize(name):
+        # Loose match, but tolerate — S2's search is fuzzy
+        pass
+    affiliations = author.get("affiliations") or []
+    return {
+        "h_index": author.get("hIndex") or 0,
+        "cited_by_count": author.get("citationCount") or 0,
+        "works_count": author.get("paperCount") or 0,
+        "institution": affiliations[0] if affiliations else "",
+        "homepage": author.get("homepage", "") or "",
+        "s2_author_id": author.get("authorId", ""),
+        "source": "semanticscholar",
+    }
+
+
+def enrich_researcher(name: str, institution: str, cache: dict) -> dict:
+    """Look up profile via OpenAlex first (if IP not in penalty), fall back to
+    Semantic Scholar. Merged result cached under normalized name."""
+    cache_key = _normalize(name)
+    if cache_key in cache:
+        return cache[cache_key]
+
+    result = _enrich_via_openalex(name, institution)
+    if not result or not result.get("h_index"):
+        s2 = _enrich_via_s2(name)
+        if s2:
+            # Merge: OpenAlex fields win when both exist, but S2 fills gaps
+            merged = dict(s2)
+            merged.update({k: v for k, v in result.items() if v})
+            # Preserve whichever engine actually delivered
+            if result.get("source") and result.get("h_index"):
+                merged["source"] = "openalex+s2"
+            result = merged
+
+    cache[cache_key] = result
+    return result
 
 
 # --- Email from caches ---

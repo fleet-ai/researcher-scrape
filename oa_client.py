@@ -104,9 +104,12 @@ class OAClient:
             try:
                 resp = requests.get(url, params=params, timeout=30)
                 if resp.status_code == 429:
+                    # Do NOT retry — a 429 means the IP is throttled; each
+                    # retry burns another 15-min cooldown before hitting the
+                    # same wall. Return None and let the caller fall back.
                     oa_throttle.penalize("429")
                     log.warning(f"OA 429 on {path} — cooldown enforced ({oa_throttle.penalty_remaining():.0f}s)")
-                    continue
+                    return None
                 if resp.status_code == 404:
                     return None
                 if resp.status_code != 200:
@@ -235,6 +238,26 @@ class OAClient:
         if not data or not data.get("results"):
             return []
         return [_work_to_paper(w) for w in data["results"][:limit]]
+
+    def get_authors_batch(self, author_ids: list[str]) -> dict:
+        """Fetch up to 50 author profiles by OpenAlex ID in one call.
+
+        Returns {short_id: author_dict} using the same shape as search_author.
+        This is the collision-proof enrichment path: IDs come from the works'
+        authorships during the graph walk, so they identify the exact person —
+        no display-name search involved.
+        """
+        ids = [_short_id(a) for a in author_ids if a][:50]
+        if not ids:
+            return {}
+        data = self._get("authors", {
+            "filter": "ids.openalex:" + "|".join(ids),
+            "per-page": str(len(ids)),
+            "select": AUTHOR_FIELDS,
+        })
+        if not data or not data.get("results"):
+            return {}
+        return {_short_id(a.get("id", "")): _author_to_dict(a) for a in data["results"]}
 
     # --- Search ---
 
