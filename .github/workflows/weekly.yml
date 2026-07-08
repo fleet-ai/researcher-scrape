@@ -69,17 +69,24 @@ jobs:
           retention-days: 90
 
       - name: Post shortlist to Slack
-        if: ${{ (github.event.inputs.slack_channel || 'hiring') != '' }} 
+        if: ${{ (github.event.inputs.slack_channel || 'hiring') != '' }}
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         run: |
           python - <<'EOF'
-          import os
+          import os, sys
           from slack_post import upload_file
           channel = "${{ github.event.inputs.slack_channel || 'hiring' }}"
           token = os.environ["SLACK_BOT_TOKEN"]
-          upload_file("data/expand_output/shortlist.xlsx", channel, token,
-                      initial_comment=":dart: Weekly verified shortlist — top 40 per position, web-checked employers + personal emails")
+          result = upload_file("data/expand_output/shortlist.xlsx", channel, token,
+                               initial_comment=":dart: Weekly verified shortlist — top 40 per position, web-checked employers + personal emails")
+          if not result:
+              # Fail LOUDLY: a green delivery step that delivered nothing is
+              # how a missing post goes unnoticed for weeks. Most common
+              # cause: the bot is not a member of the (private) channel —
+              # fix with /invite @claude2 in #hiring.
+              print(f"::error::Slack upload to #{channel} failed — is @claude2 invited to the channel?")
+              sys.exit(1)
           EOF
 
       - name: Commit updated caches
