@@ -76,6 +76,7 @@ seeds:
     - "2512.22857"  # AutoForge
     - "2511.19304"  # AutoEnv
     - "2604.06126"  # Gym-Anything
+    - "2607.03523"  # Anchored Self-Play for Code Repair (Stanford; self-play bug curriculum)
 
     # ── Post-Training (22) ─────────────────────────────────────
     - "2512.04388"  # Conductor: LLM orchestrator via RL
