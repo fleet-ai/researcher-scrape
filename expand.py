@@ -44,6 +44,7 @@ class Researcher:
     name: str
     s2_author_id: str = ""
     institution: str = ""
+    country: str = ""
     homepage: str = ""
     h_index: int = 0
     cited_by_count: int = 0
@@ -90,7 +91,7 @@ def _serialize_researchers(researchers: dict) -> list[dict]:
     for key, r in researchers.items():
         out.append({
             "key": key, "name": r.name, "s2_author_id": r.s2_author_id,
-            "institution": r.institution, "homepage": r.homepage,
+            "institution": r.institution, "country": r.country, "homepage": r.homepage,
             "h_index": r.h_index, "cited_by_count": r.cited_by_count,
             "works_count": r.works_count, "paper_count": r.paper_count,
             "key_papers": r.key_papers[:10], "career_stage": r.career_stage,
@@ -108,7 +109,8 @@ def _deserialize_researchers(data: list[dict]) -> dict:
     for d in data:
         r = Researcher(
             name=d["name"], s2_author_id=d.get("s2_author_id", ""),
-            institution=d.get("institution", ""), homepage=d.get("homepage", ""),
+            institution=d.get("institution", ""), country=d.get("country", ""),
+            homepage=d.get("homepage", ""),
             h_index=d.get("h_index", 0), cited_by_count=d.get("cited_by_count", 0),
             works_count=d.get("works_count", 0), paper_count=d.get("paper_count", 0),
             key_papers=d.get("key_papers", []), career_stage=d.get("career_stage", ""),
@@ -204,7 +206,17 @@ def expand_graph(queue: deque, researchers: dict, s2: OAClient,
         authors = paper_info.get("authors") or []
         paper_title = paper_info.get("title", "")
 
-        for author in authors[:max_coauthors]:
+        # Take authors from BOTH ends of the list. ML papers put senior
+        # authors (PIs, founders) last; authors[:N] alone silently dropped
+        # exactly the people whose networks we want (e.g. the LAB-Bench PI
+        # never entered the graph despite us seeding his paper).
+        if len(authors) > max_coauthors:
+            half = max_coauthors // 2
+            selected = authors[:max_coauthors - half] + authors[-half:]
+        else:
+            selected = authors
+
+        for author in selected:
             name = author.get("name", "")
             if not name or len(name) < 3:
                 continue
@@ -305,8 +317,13 @@ Researchers:
 
 
 def classify_career_stages(researchers: dict, api_key: str, cache: dict):
-    """Batch-classify career stages via LLM. Modifies researchers in-place."""
-    cached_stages = cache.get("career_stages", {})
+    """Batch-classify career stages via LLM. Modifies researchers in-place.
+
+    Cache key is versioned: v1 labels were produced BEFORE enrichment, when
+    the prompt said "Institution: unknown, h-index: 0" for everyone — 71%
+    came back "unknown". v2 labels are classified on enriched profiles.
+    """
+    cached_stages = cache.get("career_stages_v2", {})
     to_classify = []
     for key, r in researchers.items():
         if key in cached_stages:
@@ -346,7 +363,7 @@ def classify_career_stages(researchers: dict, api_key: str, cache: dict):
         log.info(f"  Career stage batch {batch_num}/{total_batches}")
         time.sleep(0.5)
 
-    cache["career_stages"] = cached_stages
+    cache["career_stages_v2"] = cached_stages
 
 
 # ── Phase 4: LLM category fit classification ─────────────────────────────────
@@ -417,7 +434,15 @@ def classify_categories(researchers: dict, categories: list, api_key: str, cache
 # ── Phase 5: Filtering ────────────────────────────────────────────────────────
 
 def apply_filters(researchers: dict, config: dict, exclude_names: set) -> dict:
-    """Apply configured filters. Returns filtered dict."""
+    """Apply configured filters. Returns filtered dict.
+
+    Runs AFTER ID-based enrichment, so h_index / institution / country are
+    real. Policy: hard-drop only what we can never hire (wrong geography,
+    excluded orgs, no category fit, too-early PhDs); seniors and h>=cap
+    people are KEPT but flagged recruitable="Stretch" — a founder or PI who
+    is interested is very recruitable, and dropping them silently is how we
+    lost the LAB-Bench PI from the sheet.
+    """
     filters = config.get("filters", {})
     max_h = filters.get("max_h_index", 40)
     min_papers = filters.get("min_papers", 1)
@@ -426,54 +451,69 @@ def apply_filters(researchers: dict, config: dict, exclude_names: set) -> dict:
     ]))
     exclude_institutions = {i.lower() for i in filters.get("exclude_institutions", [])}
     user_exclude_names = {n.lower() for n in filters.get("exclude_names", [])}
+    allowed_countries = {c.upper() for c in filters.get("allowed_countries", [])}
+    drop_stages = set(filters.get("drop_stages", ["early_phd"]))
 
     filtered = {}
-    removed = {"h_index": 0, "papers": 0, "stage": 0, "institution": 0, "name": 0, "category": 0, "dedup": 0}
+    removed = {"papers": 0, "stage": 0, "institution": 0, "country": 0,
+               "name": 0, "category": 0, "dedup": 0}
+    flagged = {"stretch": 0, "unlikely": 0}
+
+    hard_recruit = {"openai", "anthropic", "google deepmind", "deepmind"}
 
     for key, r in researchers.items():
         if key in exclude_names or r.name.lower() in user_exclude_names:
             removed["dedup"] += 1
             continue
-        if r.h_index and r.h_index >= max_h:
-            removed["h_index"] += 1
-            continue
         if r.paper_count and r.paper_count < min_papers:
             removed["papers"] += 1
             continue
-        if r.career_stage and r.career_stage not in allowed_stages and r.career_stage != "unknown":
+        if r.career_stage in drop_stages:
             removed["stage"] += 1
             continue
         if any(exc in (r.institution or "").lower() for exc in exclude_institutions):
             removed["institution"] += 1
             continue
+        # Geography: drop only when the country is KNOWN and disallowed.
+        # Unknown country (no institution data) stays in — dropping on
+        # missing data would cut ~30% of the sheet for no signal.
+        if allowed_countries and r.country and r.country.upper() not in allowed_countries:
+            removed["country"] += 1
+            continue
         if not r.categories:
             removed["category"] += 1
             continue
 
-        # Flag recruitability
-        hard_recruit = {"openai", "anthropic", "google deepmind", "deepmind"}
+        # Flag, don't drop
         if any(hr in (r.institution or "").lower() for hr in hard_recruit):
             r.recruitable = "Unlikely"
-        elif r.career_stage in ("senior", "professor", "founder"):
-            r.recruitable = "Unlikely"
+            flagged["unlikely"] += 1
+        elif (r.career_stage in ("senior", "professor", "founder")
+              or (r.h_index and r.h_index >= max_h)):
+            r.recruitable = "Stretch"
+            flagged["stretch"] += 1
+        elif r.career_stage in allowed_stages or r.career_stage == "unknown" or not r.career_stage:
+            r.recruitable = "Yes"
 
         filtered[key] = r
 
-    log.info(f"  Filtered: {len(researchers)} -> {len(filtered)} (removed: {removed})")
+    log.info(f"  Filtered: {len(researchers)} -> {len(filtered)} "
+             f"(removed: {removed}, flagged: {flagged})")
     return filtered
 
 
 # ── Phase 6: Enrichment ───────────────────────────────────────────────────────
 
-def enrich(researchers: dict, skip_emails: bool = False):
-    """Profile enrichment + email cascade.
+def enrich_profiles_by_id(researchers: dict):
+    """Batch OpenAlex profile fetch by author ID for ALL researchers.
 
-    Primary path: batch OpenAlex lookups by author ID (50/call). The ID was
-    captured from the paper's authorships during the graph walk, so it names
-    the exact person — immune to the display-name collisions that a search
-    by name suffers (e.g. the wrong high-h "Chao Wang"). Values from this
-    path OVERWRITE whatever name-based enrichment may have filled earlier.
-    Fallback for researchers without an ID: name search (OpenAlex → S2).
+    The ID was captured from the paper's authorships during the graph walk,
+    so it names the exact person — immune to the display-name collisions
+    that a search by name suffers (e.g. the wrong high-h "Chao Wang").
+    Runs BEFORE classification: at ~50 profiles per call the whole graph
+    enriches in about a minute, and the career-stage LLM then sees real
+    h-index / institution / country instead of zeros (which previously made
+    it label 71% of people "unknown").
     """
     from oa_client import OAClient
     oa = OAClient()
@@ -490,7 +530,7 @@ def enrich(researchers: dict, skip_emails: bool = False):
         profiles = oa.get_authors_batch(batch)
         for aid in batch:
             id_cache[aid] = profiles.get(aid, {})
-        if (i // 50) % 5 == 0:
+        if (i // 50) % 10 == 0:
             _save_json(DATA_DIR / "enrich_cache_by_id.json", id_cache)
             log.info(f"  Fetched {min(i + 50, len(to_fetch))}/{len(to_fetch)} profiles...")
     _save_json(DATA_DIR / "enrich_cache_by_id.json", id_cache)
@@ -518,15 +558,18 @@ def enrich(researchers: dict, skip_emails: bool = False):
         affs = p.get("affiliations") or []
         if affs:
             r.institution = affs[0]
+        if p.get("country"):
+            r.country = p["country"]
         id_enriched += 1
     log.info(f"  ID-based enrichment done: {id_enriched}/{len(with_id)}")
 
-    # Fallback: name-based (OpenAlex search → S2) for researchers with no ID
+
+def enrich(researchers: dict, skip_emails: bool = False):
+    """Post-filter enrichment: name-search fallback for rows the ID pass
+    missed, then the email cascade. Runs only on filter survivors."""
     enrich_cache = _load_json(DATA_DIR / "enrich_cache.json")
     name_enriched = 0
     for key, r in researchers.items():
-        if r.s2_author_id and r.s2_author_id.startswith("A") and id_cache.get(r.s2_author_id):
-            continue
         if r.h_index == 0 or not r.institution:
             result = openalex_enrich(r.name, r.institution, enrich_cache)
             if result:
@@ -568,10 +611,12 @@ def enrich(researchers: dict, skip_emails: bool = False):
 # ── Phase 7: Output ───────────────────────────────────────────────────────────
 
 OUTPUT_FIELDS = [
-    "name", "career_stage", "institution", "categories", "key_papers",
+    "name", "career_stage", "institution", "country", "categories", "key_papers",
     "email", "email_source", "homepage", "h_index", "cited_by_count",
     "paper_count", "source_type", "depth", "recruitable",
 ]
+
+_RECRUIT_ORDER = {"Yes": 0, "Stretch": 1, "Unlikely": 2}
 
 
 def write_output(researchers: dict, categories: list, output_dir: Path) -> tuple[Path, dict, list[dict]]:
@@ -581,11 +626,14 @@ def write_output(researchers: dict, categories: list, output_dir: Path) -> tuple
     output_dir.mkdir(parents=True, exist_ok=True)
 
     all_rows = []
-    for key, r in sorted(researchers.items(), key=lambda x: x[1].h_index, reverse=True):
+    # Recruitable Yes first, then Stretch, then Unlikely; h-index desc within
+    for key, r in sorted(researchers.items(),
+                         key=lambda x: (_RECRUIT_ORDER.get(x[1].recruitable, 0), -x[1].h_index)):
         row = {
             "name": r.name,
             "career_stage": r.career_stage,
             "institution": r.institution,
+            "country": r.country or "?",
             "categories": "; ".join(r.categories),
             "key_papers": " | ".join(r.key_papers[:5]),
             "email": r.email,
@@ -764,52 +812,39 @@ def main():
         write_output(researchers, config.get("categories", []), Path(args.output_dir))
         return
 
-    # Phase 3: Career stage classification
+    # Phase 3: Profile enrichment by author ID — BEFORE classification, so
+    # the career-stage LLM sees real h-index / institution / country instead
+    # of zeros. ~1 minute for the whole graph at 50 profiles per call.
+    if not args.skip_enrichment:
+        log.info("=== Phase 3: Profile Enrichment (by author ID) ===")
+        enrich_profiles_by_id(researchers)
+        # Persist enriched fields into the resume cache
+        expand_cache["researchers"] = _serialize_researchers(researchers)
+        _save_json(EXPAND_CACHE_PATH, expand_cache)
+
+    # Phase 4: Career stage classification
     if not args.skip_classify and openrouter_key:
-        log.info("=== Phase 3: Career Stage Classification ===")
+        log.info("=== Phase 4: Career Stage Classification ===")
         classify_career_stages(researchers, openrouter_key, expand_cache)
         _save_json(EXPAND_CACHE_PATH, expand_cache)
 
-    # Phase 4: Category classification
+    # Phase 5: Category classification
     if not args.skip_classify and openrouter_key:
-        log.info("=== Phase 4: Category Classification ===")
+        log.info("=== Phase 5: Category Classification ===")
         classify_categories(researchers, config.get("categories", []), openrouter_key, expand_cache)
         _save_json(EXPAND_CACHE_PATH, expand_cache)
 
-    # Phase 5: Filter
-    log.info("=== Phase 5: Filtering ===")
+    # Phase 6: Filter (runs on enriched values; flags Stretch/Unlikely
+    # instead of dropping seniors — see apply_filters)
+    log.info("=== Phase 6: Filtering ===")
     researchers = apply_filters(researchers, config, exclude_names)
 
-    # Phase 6: Enrich
+    # Phase 6b: Fallback enrichment + emails, survivors only
     if args.skip_enrichment:
-        log.info("=== Phase 6: Enrichment SKIPPED (--skip-enrichment) ===")
+        log.info("=== Phase 6b: Fallback enrichment SKIPPED (--skip-enrichment) ===")
     else:
-        log.info("=== Phase 6: Enrichment ===")
+        log.info("=== Phase 6b: Fallback Enrichment + Emails ===")
         enrich(researchers, skip_emails=args.skip_emails)
-
-        # Phase 6b: Re-filter with enriched values. Phase 5 ran while h_index
-        # was still 0 and institutions were empty, so the h cap and the
-        # institution exclusions never actually bit. Apply them now.
-        log.info("=== Phase 6b: Post-enrichment re-filter ===")
-        filters = config.get("filters", {})
-        max_h = filters.get("max_h_index", 40)
-        excl_inst = {i.lower() for i in filters.get("exclude_institutions", [])}
-        hard_recruit = {"openai", "anthropic", "google deepmind", "deepmind"}
-        before = len(researchers)
-        dropped = {"h_index": 0, "institution": 0}
-        kept = {}
-        for key, r in researchers.items():
-            if r.h_index and r.h_index >= max_h:
-                dropped["h_index"] += 1
-                continue
-            if any(exc in (r.institution or "").lower() for exc in excl_inst):
-                dropped["institution"] += 1
-                continue
-            if any(hr in (r.institution or "").lower() for hr in hard_recruit):
-                r.recruitable = "Unlikely"
-            kept[key] = r
-        researchers = kept
-        log.info(f"  Re-filtered: {before} -> {len(researchers)} (dropped: {dropped})")
 
     # Phase 7: Output
     log.info("=== Phase 7: Output ===")

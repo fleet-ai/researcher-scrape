@@ -11,13 +11,51 @@ categories:
     keywords: []
 
 filters:
-  max_h_index: 40
+  max_h_index: 40          # h >= this -> recruitable: Stretch (kept, flagged)
   min_papers: 1
-  career_stages:
+  career_stages:           # stages that get recruitable: Yes
     - graduating_phd
     - recent_grad
     - junior_industry
     - mid_industry
+  drop_stages:             # stages dropped outright (too early to hire)
+    - early_phd
+  # Geography: keep only researchers whose institution country is one of
+  # these. Unknown country (no institution data) is kept and shown as "?".
+  allowed_countries:
+    - US
+    - CA
+    - GB
+    - AT
+    - BE
+    - BG
+    - HR
+    - CY
+    - CZ
+    - DK
+    - EE
+    - FI
+    - FR
+    - DE
+    - GR
+    - HU
+    - IE
+    - IT
+    - LV
+    - LT
+    - LU
+    - MT
+    - NL
+    - PL
+    - PT
+    - RO
+    - SK
+    - SI
+    - ES
+    - SE
+    - CH
+    - "NO"
+    - IS
   exclude_institutions:
     - OpenAI
     - Anthropic

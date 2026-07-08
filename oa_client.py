@@ -77,6 +77,7 @@ def _author_to_dict(a: dict) -> dict:
         "authorId": _short_id(a.get("id", "")),
         "name": a.get("display_name", ""),
         "affiliations": [i.get("display_name", "") for i in insts if i.get("display_name")],
+        "country": next((i.get("country_code", "") for i in insts if i.get("country_code")), ""),
         "hIndex": stats.get("h_index", 0),
         "citationCount": a.get("cited_by_count", 0),
         "paperCount": a.get("works_count", 0),
