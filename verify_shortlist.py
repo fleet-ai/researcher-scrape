@@ -171,7 +171,7 @@ def process_tab(csv_path: Path, category: str, top_n: int, api_key: str,
             log.info(f"  [{i}] {row['name']}: identity not confirmed, skipping")
             continue
         out_rows.append({
-            "#": len(out_rows) + 1,
+            "#": 0,  # assigned after the verified-recruitability sort
             "Name": row["name"],
             "Career Stage": v.get("career_stage", ""),
             "Key Work": v.get("key_work", ""),
@@ -181,6 +181,20 @@ def process_tab(csv_path: Path, category: str, top_n: int, api_key: str,
         })
         if i % 10 == 0:
             log.info(f"  [{category}] {i}/{len(ranked)} verified, {len(out_rows)} confirmed")
+
+    # Order by the VERIFIED verdict, not the pipeline's pre-verification
+    # guess: web research regularly discovers "actually tenured faculty" or
+    # "actually at OpenAI" — those belong below the clean Yes rows.
+    def verdict_rank(r):
+        v = (r["Recruitable?"] or "").lower()
+        if v.startswith("yes"):
+            return 0
+        if v.startswith("maybe"):
+            return 1
+        return 2
+    out_rows.sort(key=verdict_rank)
+    for n, r in enumerate(out_rows, 1):
+        r["#"] = n
 
     out_path = out_dir / f"shortlist_{csv_path.stem}.csv"
     with open(out_path, "w", newline="") as f:
