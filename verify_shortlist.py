@@ -170,12 +170,36 @@ def process_tab(csv_path: Path, category: str, top_n: int, api_key: str,
         if not v or not v.get("identity_confirmed"):
             log.info(f"  [{i}] {row['name']}: identity not confirmed, skipping")
             continue
+
+        # Email fallback chain. The search model only sees snippets and
+        # misses most contact pages, so on its own it finds ~1/3 of emails:
+        #   1. personal email the web agent found
+        #   2. scrape the person's verified website directly
+        #   3. the wide pool's email (institutional/inferred) — better than blank
+        email = v.get("personal_email", "")
+        if not email and v.get("website"):
+            from scrape_emails import scrape_page_emails
+            url = v["website"]
+            if not url.startswith("http"):
+                url = "https://" + url
+            found = scrape_page_emails(url)
+            name_parts = {p.lower() for p in row["name"].split() if len(p) > 2}
+            for e in found:
+                if any(part in e.split("@")[0].lower() for part in name_parts):
+                    email = e
+                    break
+            if not email and found:
+                email = found[0]
+        if not email and row.get("email"):
+            src = row.get("email_source", "")
+            email = f"{row['email']} ({src or 'institutional'})"
+
         out_rows.append({
             "#": 0,  # assigned after the verified-recruitability sort
             "Name": row["name"],
             "Career Stage": v.get("career_stage", ""),
             "Key Work": v.get("key_work", ""),
-            "Personal Email": v.get("personal_email", ""),
+            "Personal Email": email,
             "Website": v.get("website", ""),
             "Recruitable?": v.get("recruitable", ""),
         })
