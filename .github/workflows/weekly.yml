@@ -93,9 +93,14 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/expand_cache.json data/enrich_cache.json data/enrich_cache_by_id.json \
-                  data/email_cache.json data/institution_domains.json data/verify_cache.json \
-                  data/llm_cache.json 2>/dev/null || true
+          # One add per file: a single missing pathspec fails the whole
+          # `git add list...`, and with stderr suppressed the step silently
+          # commits nothing (this bit us on 2026-07-08 — llm_cache.json no
+          # longer exists, so NO caches from CI runs were being committed).
+          for f in data/expand_cache.json data/enrich_cache.json data/enrich_cache_by_id.json \
+                   data/email_cache.json data/institution_domains.json data/verify_cache.json; do
+            git add "$f" || echo "::warning::could not add $f"
+          done
           if git diff --cached --quiet; then
             echo "No cache changes to commit."
           else
