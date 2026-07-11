@@ -240,6 +240,26 @@ class OAClient:
             return []
         return [_work_to_paper(w) for w in data["results"][:limit]]
 
+    def get_works_batch(self, work_ids: list[str]) -> dict:
+        """Fetch up to 50 works by OpenAlex ID in one call.
+
+        Returns {short_id: paper_dict}. This is what makes depth-2 BFS
+        viable: leaf papers only need their authorships (and
+        referenced_works come embedded), so a 50K-paper frontier costs
+        ~1K calls instead of 50K.
+        """
+        ids = [_short_id(w) for w in work_ids if w][:50]
+        if not ids:
+            return {}
+        data = self._get("works", {
+            "filter": "ids.openalex:" + "|".join(ids),
+            "per-page": str(len(ids)),
+            "select": WORK_FIELDS,
+        })
+        if not data or not data.get("results"):
+            return {}
+        return {_short_id(w.get("id", "")): _work_to_paper(w) for w in data["results"]}
+
     def get_authors_batch(self, author_ids: list[str]) -> dict:
         """Fetch up to 50 author profiles by OpenAlex ID in one call.
 

@@ -58,6 +58,7 @@ class Researcher:
     email_source: str = ""
     source_type: str = ""   # seed, coauthor, citation, reference, topic_search
     depth: int = 0
+    found_via: str = ""     # provenance chain back to the seed, e.g. "GenSim2 <- cites <- cites"
     recruitable: str = "Yes"
 
 
@@ -98,6 +99,7 @@ def _serialize_researchers(researchers: dict) -> list[dict]:
             "categories": r.categories, "category_scores": r.category_scores,
             "email": r.email, "email_source": r.email_source,
             "source_type": r.source_type, "depth": r.depth,
+            "found_via": r.found_via,
             "recruitable": r.recruitable,
         })
     return out
@@ -117,15 +119,26 @@ def _deserialize_researchers(data: list[dict]) -> dict:
             categories=d.get("categories", []), category_scores=d.get("category_scores", {}),
             email=d.get("email", ""), email_source=d.get("email_source", ""),
             source_type=d.get("source_type", ""), depth=d.get("depth", 0),
+            found_via=d.get("found_via", ""),
             recruitable=d.get("recruitable", "Yes"),
         )
         researchers[d["key"]] = r
     return researchers
 
 
+def _seed_label(title: str) -> str:
+    """Short human label for provenance chains: text before ':' or first 4 words."""
+    if not title:
+        return "?"
+    head = title.split(":")[0].strip()
+    if len(head) > 40:
+        head = " ".join(head.split()[:4])
+    return head[:40]
+
+
 def resolve_seeds(seeds_cfg: dict, s2: OAClient) -> tuple[deque, dict]:
     """Resolve seed papers and researchers. Returns (queue, researchers)."""
-    queue = deque()  # (paper_id, depth, source_type)
+    queue = deque()  # (paper_id, depth, source_type, via)
     researchers = {}
     seen_papers = set()
 
@@ -133,7 +146,7 @@ def resolve_seeds(seeds_cfg: dict, s2: OAClient) -> tuple[deque, dict]:
     for arxiv_id in seeds_cfg.get("papers", []):
         paper = s2.paper_by_arxiv_id(arxiv_id)
         if paper and paper.get("paperId"):
-            queue.append((paper["paperId"], 0, "seed"))
+            queue.append((paper["paperId"], 0, "seed", _seed_label(paper.get("title", arxiv_id))))
             seen_papers.add(paper["paperId"])
             log.info(f"  Seed paper: {paper.get('title', arxiv_id)[:80]}")
         else:
@@ -143,7 +156,7 @@ def resolve_seeds(seeds_cfg: dict, s2: OAClient) -> tuple[deque, dict]:
     for title in seeds_cfg.get("paper_titles", []):
         paper = s2.paper_by_title(title)
         if paper and paper.get("paperId"):
-            queue.append((paper["paperId"], 0, "seed"))
+            queue.append((paper["paperId"], 0, "seed", _seed_label(paper.get("title", title))))
             seen_papers.add(paper["paperId"])
             log.info(f"  Seed paper (title): {paper.get('title', title)[:80]}")
         else:
@@ -176,7 +189,7 @@ def resolve_seeds(seeds_cfg: dict, s2: OAClient) -> tuple[deque, dict]:
             for p in papers:
                 pid = p.get("paperId")
                 if pid and pid not in seen_papers:
-                    queue.append((pid, 0, "seed"))
+                    queue.append((pid, 0, "seed", f"{name} (seed researcher)"))
                     seen_papers.add(pid)
                     researchers[key].key_papers.append(p.get("title", ""))
         log.info(f"  Seed researcher: {name} ({institution}), {len(researchers[key].key_papers)} papers queued")
@@ -190,71 +203,97 @@ def expand_graph(queue: deque, researchers: dict, s2: OAClient,
                  max_depth: int = 2, max_coauthors: int = 10,
                  max_citations: int = 50, max_references: int = 30,
                  prefer_recent: bool = True) -> set:
-    """BFS over the citation graph. Modifies researchers in-place. Returns seen_papers."""
-    seen_papers = {pid for pid, _, _ in queue}
+    """Level-synchronous BFS over the citation graph.
+
+    Works are fetched in batches of 50 per OpenAlex call, which is what
+    makes depth 2 viable: a 50K-paper leaf frontier costs ~1K calls
+    (~10 min) instead of 50K (~7 h). References come embedded in the
+    batched work objects, so only citation lookups are per-paper — and
+    those exist only on non-leaf levels.
+
+    Each queue entry carries a provenance string; researchers record it as
+    found_via, e.g. "GenSim2 <- cites <- cited-by".
+
+    Modifies researchers in-place. Returns seen_papers.
+    """
+    seen_papers = {entry[0] for entry in queue}
+    level = list(queue)
     processed = 0
 
-    while queue:
-        paper_id, depth, source_type = queue.popleft()
-        processed += 1
-        if processed % 50 == 0:
-            log.info(f"  Processed {processed} papers, {len(researchers)} researchers, queue={len(queue)}")
+    while level:
+        depth = level[0][1]
+        ids = [entry[0] for entry in level]
+        log.info(f"  Level {depth}: fetching {len(ids)} papers "
+                 f"({(len(ids) + 49) // 50} batch calls)")
 
-        # Get co-authors + title in a single OpenAlex call (paper_by_s2_id
-        # already embeds authorships via _work_to_paper).
-        paper_info = s2.paper_by_s2_id(paper_id) or {}
-        authors = paper_info.get("authors") or []
-        paper_title = paper_info.get("title", "")
+        works = {}
+        for i in range(0, len(ids), 50):
+            works.update(s2.get_works_batch(ids[i:i + 50]))
 
-        # Take authors from BOTH ends of the list. ML papers put senior
-        # authors (PIs, founders) last; authors[:N] alone silently dropped
-        # exactly the people whose networks we want (e.g. the LAB-Bench PI
-        # never entered the graph despite us seeding his paper).
-        if len(authors) > max_coauthors:
-            half = max_coauthors // 2
-            selected = authors[:max_coauthors - half] + authors[-half:]
-        else:
-            selected = authors
+        next_level = []
+        for paper_id, d, source_type, via in level:
+            processed += 1
+            if processed % 500 == 0:
+                log.info(f"  Processed {processed} papers, {len(researchers)} researchers")
 
-        for author in selected:
-            name = author.get("name", "")
-            if not name or len(name) < 3:
-                continue
-            key = _cache_key(name)
-            if key not in researchers:
-                researchers[key] = Researcher(
-                    name=name,
-                    s2_author_id=author.get("authorId", ""),
-                    institution=_extract_affiliation(author),
-                    h_index=author.get("hIndex") or 0,
-                    cited_by_count=author.get("citationCount") or 0,
-                    paper_count=author.get("paperCount") or 0,
-                    key_papers=[paper_title] if paper_title else [],
-                    source_type=source_type if source_type != "seed" else "coauthor",
-                    depth=depth,
-                )
+            paper_info = works.get(paper_id) or {}
+            authors = paper_info.get("authors") or []
+            paper_title = paper_info.get("title", "")
+
+            # Authors from BOTH ends: ML papers put PIs last; taking only
+            # authors[:N] silently dropped exactly the senior authors whose
+            # networks we want.
+            if len(authors) > max_coauthors:
+                half = max_coauthors // 2
+                selected = authors[:max_coauthors - half] + authors[-half:]
             else:
-                if paper_title and paper_title not in researchers[key].key_papers:
-                    researchers[key].key_papers.append(paper_title)
-                researchers[key].depth = min(researchers[key].depth, depth)
+                selected = authors
 
-        # Expand further if not at max depth
-        if depth < max_depth:
-            citations = s2.get_citations(paper_id, limit=max_citations)
-            if prefer_recent:
-                citations.sort(key=lambda c: c.get("year") or 0, reverse=True)
-            for cit in citations:
-                cit_id = cit.get("paperId")
-                if cit_id and cit_id not in seen_papers:
-                    seen_papers.add(cit_id)
-                    queue.append((cit_id, depth + 1, "citation"))
+            for author in selected:
+                name = author.get("name", "")
+                if not name or len(name) < 3:
+                    continue
+                key = _cache_key(name)
+                if key not in researchers:
+                    researchers[key] = Researcher(
+                        name=name,
+                        s2_author_id=author.get("authorId", ""),
+                        institution=_extract_affiliation(author),
+                        h_index=author.get("hIndex") or 0,
+                        cited_by_count=author.get("citationCount") or 0,
+                        paper_count=author.get("paperCount") or 0,
+                        key_papers=[paper_title] if paper_title else [],
+                        source_type=source_type if source_type != "seed" else "coauthor",
+                        depth=d,
+                        found_via=via,
+                    )
+                else:
+                    if paper_title and paper_title not in researchers[key].key_papers:
+                        researchers[key].key_papers.append(paper_title)
+                    if d < researchers[key].depth:
+                        researchers[key].depth = d
+                        researchers[key].found_via = via
 
-            references = s2.get_references(paper_id, limit=max_references)
-            for ref in references:
-                ref_id = ref.get("paperId")
-                if ref_id and ref_id not in seen_papers:
-                    seen_papers.add(ref_id)
-                    queue.append((ref_id, depth + 1, "reference"))
+            if d < max_depth:
+                # Citations still need one call per paper (can't batch
+                # different cite-targets into one filter).
+                citations = s2.get_citations(paper_id, limit=max_citations)
+                if prefer_recent:
+                    citations.sort(key=lambda c: c.get("year") or 0, reverse=True)
+                for cit in citations[:max_citations]:
+                    cit_id = cit.get("paperId")
+                    if cit_id and cit_id not in seen_papers:
+                        seen_papers.add(cit_id)
+                        next_level.append((cit_id, d + 1, "citation", f"{via} <- cites"))
+
+                # References are embedded in the batched work — no extra call.
+                refs = (paper_info.get("referenced_works") or [])[:max_references]
+                for ref_id in refs:
+                    if ref_id and ref_id not in seen_papers:
+                        seen_papers.add(ref_id)
+                        next_level.append((ref_id, d + 1, "reference", f"{via} <- cited-by"))
+
+        level = next_level
 
     log.info(f"  BFS done: {processed} papers processed, {len(researchers)} researchers found")
     return seen_papers
@@ -613,7 +652,7 @@ def enrich(researchers: dict, skip_emails: bool = False):
 OUTPUT_FIELDS = [
     "name", "career_stage", "institution", "country", "categories", "key_papers",
     "email", "email_source", "homepage", "h_index", "cited_by_count",
-    "paper_count", "source_type", "depth", "recruitable",
+    "paper_count", "source_type", "depth", "found_via", "recruitable",
 ]
 
 _RECRUIT_ORDER = {"Yes": 0, "Stretch": 1, "Unlikely": 2}
@@ -644,6 +683,7 @@ def write_output(researchers: dict, categories: list, output_dir: Path) -> tuple
             "paper_count": r.paper_count,
             "source_type": r.source_type,
             "depth": r.depth,
+            "found_via": r.found_via,
             "recruitable": r.recruitable,
         }
         all_rows.append(row)
@@ -750,6 +790,13 @@ def main():
     parser.add_argument("--slack-channel", default="",
                         help="Slack channel name or ID (e.g. 'hiring'). If set and "
                              "SLACK_BOT_TOKEN is in env, uploads the xlsx and posts a summary.")
+    parser.add_argument("--cache", default=str(EXPAND_CACHE_PATH),
+                        help="Path for the expansion/LLM-label cache. Use a separate file "
+                             "for exploratory runs so the main pipeline's cache is untouched.")
+    parser.add_argument("--min-key-papers", type=int, default=0,
+                        help="Before LLM classification, drop researchers found at depth>=2 "
+                             "with fewer than N in-graph papers. Depth-2 frontiers are huge "
+                             "and dominated by one-off co-authors; N=2 keeps the LLM bill sane.")
     args = parser.parse_args()
 
     with open(args.seeds) as f:
@@ -759,7 +806,8 @@ def main():
 
     openrouter_key = os.environ.get("OPENROUTER_API_KEY", "")
     s2 = OAClient()
-    expand_cache = _load_json(EXPAND_CACHE_PATH)
+    cache_path = Path(args.cache)
+    expand_cache = _load_json(cache_path)
 
     # Depth override
     exp = config.get("expansion", {})
@@ -804,13 +852,24 @@ def main():
         expand_cache["researchers"] = _serialize_researchers(researchers)
         expand_cache["seen_papers"] = list(seen_papers)
         expand_cache["last_depth"] = max_depth
-        _save_json(EXPAND_CACHE_PATH, expand_cache)
+        _save_json(cache_path, expand_cache)
         log.info(f"  Expansion state saved ({len(researchers)} researchers, depth={max_depth})")
 
     if args.dry_run:
         log.info("Dry run — writing raw expansion output")
         write_output(researchers, config.get("categories", []), Path(args.output_dir))
         return
+
+    # Deep-frontier gate: at depth>=2 the frontier is dominated by one-off
+    # co-authors of tangentially-related papers. Requiring >=N in-graph
+    # papers before spending LLM tokens on someone keeps classification
+    # tractable without losing anyone with a real footprint in the topic.
+    if args.min_key_papers > 1:
+        before = len(researchers)
+        researchers = {k: r for k, r in researchers.items()
+                       if r.depth < 2 or len(r.key_papers) >= args.min_key_papers}
+        log.info(f"  Deep-frontier gate (depth>=2 needs {args.min_key_papers}+ in-graph papers): "
+                 f"{before} -> {len(researchers)}")
 
     # Phase 3: Profile enrichment by author ID — BEFORE classification, so
     # the career-stage LLM sees real h-index / institution / country instead
@@ -820,19 +879,19 @@ def main():
         enrich_profiles_by_id(researchers)
         # Persist enriched fields into the resume cache
         expand_cache["researchers"] = _serialize_researchers(researchers)
-        _save_json(EXPAND_CACHE_PATH, expand_cache)
+        _save_json(cache_path, expand_cache)
 
     # Phase 4: Career stage classification
     if not args.skip_classify and openrouter_key:
         log.info("=== Phase 4: Career Stage Classification ===")
         classify_career_stages(researchers, openrouter_key, expand_cache)
-        _save_json(EXPAND_CACHE_PATH, expand_cache)
+        _save_json(cache_path, expand_cache)
 
     # Phase 5: Category classification
     if not args.skip_classify and openrouter_key:
         log.info("=== Phase 5: Category Classification ===")
         classify_categories(researchers, config.get("categories", []), openrouter_key, expand_cache)
-        _save_json(EXPAND_CACHE_PATH, expand_cache)
+        _save_json(cache_path, expand_cache)
 
     # Phase 6: Filter (runs on enriched values; flags Stretch/Unlikely
     # instead of dropping seniors — see apply_filters)
@@ -851,7 +910,7 @@ def main():
     xlsx_path, per_cat_rows, all_rows = write_output(
         researchers, config.get("categories", []), Path(args.output_dir)
     )
-    _save_json(EXPAND_CACHE_PATH, expand_cache)
+    _save_json(cache_path, expand_cache)
 
     # Phase 8: Slack (optional)
     slack_token = os.environ.get("SLACK_BOT_TOKEN", "")

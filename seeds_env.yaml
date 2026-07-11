@@ -1,0 +1,29 @@
+# Environment Generation / Scaling only — used for the deep (depth-2) crawl.
+# Mirror of the Environment Generation section in seeds_fleet.yaml.
+seeds:
+  papers:
+    - "2604.28181"  # Synthetic Computers at Scale
+    - "2606.25996"  # Autodata: agentic data scientist
+    - "2606.17682"  # From Trainee to Trainer
+    - "2604.13018"  # Autonomous Long-Horizon Engineering for ML Research (AiScientist)
+    - "2606.07513"  # Agentopia
+    - "2604.15034"  # Autogenesis: Self-Evolving Agent Protocol
+    - "2601.03335"  # Digital Red Queen: Adversarial Program Evolution
+    - "2606.16774"  # OpenClaw-Skill
+    - "2603.04448"  # SkillNet
+    - "2604.20987"  # Co-Evolving LLM Decision and Skill Banks
+    - "2602.16928"  # Discovering Multi-Agent Learning Algorithms with LLMs
+    - "2606.19370"  # Human-like autonomy from self-play + human demos
+    - "2012.02096"  # PAIRED (UED anchor)
+    - "2502.14499"  # MLGym
+    - "2506.10055"  # TaskCraft
+    - "2508.05004"  # R-Zero: Self-Evolving Reasoning from Zero Data
+    - "2511.03773"  # Scaling Agent Learning via Experience Synthesis
+    - "2512.22857"  # AutoForge
+    - "2511.19304"  # AutoEnv
+    - "2604.06126"  # Gym-Anything
+    - "2607.03523"  # Anchored Self-Play for Code Repair
+
+  researchers:
+    - name: "Sam Earle"
+      institution: "New York University"
