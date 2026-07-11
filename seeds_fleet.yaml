@@ -101,6 +101,7 @@ seeds:
     - "2605.22502"  # Compiling Agentic Workflows into Weights
     - "2602.06960"  # InftyThink+
     - "2504.13837"  # Does RL Really Incentivize Reasoning Beyond the Base Model?
+    - "2602.22480"  # VeRO: An Evaluation Harness for Agents to Optimize Agents
 
   researchers:
     - name: "Alex Zook"
