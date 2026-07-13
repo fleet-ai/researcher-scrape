@@ -701,10 +701,11 @@ def write_output(researchers: dict, categories: list, output_dir: Path) -> tuple
         _write_csv(output_dir / f"{safe_name}.csv", cat_rows)
         log.info(f"  {safe_name}.csv: {len(cat_rows)} researchers")
 
-    # XLSX with one tab per position + Combined
+    # XLSX: one tab per position, plus a Combined tab only when >1 position
     xlsx_path = output_dir / "researchers.xlsx"
     _write_xlsx(xlsx_path, per_cat_rows, all_rows)
-    log.info(f"  {xlsx_path.name}: {len(per_cat_rows)} position tabs + Combined")
+    extra = " + Combined" if len(per_cat_rows) > 1 else ""
+    log.info(f"  {xlsx_path.name}: {len(per_cat_rows)} position tab(s){extra}")
     return xlsx_path, per_cat_rows, all_rows
 
 
@@ -744,7 +745,10 @@ def _write_xlsx(path: Path, per_cat_rows: dict, all_rows: list[dict]):
             width = max(12, min(60, max((len(str(r.get(f, ""))) for r in rows), default=len(f)) + 2))
             ws.column_dimensions[ws.cell(row=1, column=i).column_letter].width = width
 
-    _add_sheet("Combined", all_rows)
+    # With a single category the Combined tab is an identical copy of the one
+    # position tab — emit just the position tab in that case.
+    if len(per_cat_rows) > 1:
+        _add_sheet("Combined", all_rows)
     for cat_name, rows in per_cat_rows.items():
         _add_sheet(cat_name, rows)
 
