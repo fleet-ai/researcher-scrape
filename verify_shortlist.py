@@ -34,6 +34,7 @@ log = logging.getLogger(__name__)
 
 DATA_DIR = Path(__file__).parent / "data"
 VERIFY_CACHE_PATH = DATA_DIR / "verify_cache.json"
+HUNT_CACHE_PATH = DATA_DIR / "email_hunt_cache.json"
 
 OPENROUTER_API = "https://openrouter.ai/api/v1/chat/completions"
 # ":online" enables OpenRouter's web-search augmentation on any model
@@ -149,7 +150,7 @@ SHORTLIST_FIELDS = ["#", "Name", "Career Stage", "Key Work", "Personal Email", "
 
 
 def process_tab(csv_path: Path, category: str, top_n: int, api_key: str,
-                cache: dict, out_dir: Path) -> list[dict]:
+                cache: dict, hunt_cache: dict, out_dir: Path) -> list[dict]:
     with open(csv_path) as f:
         rows = list(csv.DictReader(f))
     ranked = rank_rows(rows)[:top_n]
@@ -171,26 +172,22 @@ def process_tab(csv_path: Path, category: str, top_n: int, api_key: str,
             log.info(f"  [{i}] {row['name']}: identity not confirmed, skipping")
             continue
 
-        # Email fallback chain. The search model only sees snippets and
-        # misses most contact pages, so on its own it finds ~1/3 of emails:
-        #   1. personal email the web agent found
-        #   2. scrape the person's verified website directly
-        #   3. the wide pool's email (institutional/inferred) — better than blank
+        # Email policy: personal > academic > BLANK. Never a corporate
+        # address — mailing someone at the employer we're recruiting them
+        # away from is worse than no email. The hunt goes homepage (incl.
+        # CV PDFs + de-obfuscation) -> GitHub commit emails -> their own
+        # arXiv paper first pages.
+        from email_hunt import hunt_personal_email, domain_kind
         email = v.get("personal_email", "")
-        if not email and v.get("website"):
-            from scrape_emails import scrape_page_emails
-            url = v["website"]
-            if not url.startswith("http"):
-                url = "https://" + url
-            found = scrape_page_emails(url)
-            name_parts = {p.lower() for p in row["name"].split() if len(p) > 2}
-            for e in found:
-                if any(part in e.split("@")[0].lower() for part in name_parts):
-                    email = e
-                    break
-            if not email and found:
-                email = found[0]
-        if not email and row.get("email"):
+        if email and domain_kind(email) in ("corporate", "junk"):
+            email = ""
+        if not email or domain_kind(email) != "personal":
+            titles = [t.strip() for t in (row.get("key_papers") or "").split("|")]
+            hunted = hunt_personal_email(row["name"], v.get("website", ""),
+                                         titles, cache=hunt_cache)
+            if hunted and (not email or domain_kind(hunted) == "personal"):
+                email = hunted
+        if not email and row.get("email") and domain_kind(row["email"]) == "academic":
             email = row["email"]
 
         out_rows.append({
@@ -273,11 +270,13 @@ def main():
         return
 
     cache = _load_json(VERIFY_CACHE_PATH)
+    hunt_cache = _load_json(HUNT_CACHE_PATH)
     tabs = {}
     for p in csvs:
         category = p.stem.replace("_", " ").title()
-        tabs[category] = process_tab(p, category, args.top, api_key, cache, in_dir)
+        tabs[category] = process_tab(p, category, args.top, api_key, cache, hunt_cache, in_dir)
 
+    HUNT_CACHE_PATH.write_text(json.dumps(hunt_cache, indent=1, ensure_ascii=False))
     write_shortlist_xlsx(tabs, in_dir / "shortlist.xlsx")
     log.info("Done.")
 

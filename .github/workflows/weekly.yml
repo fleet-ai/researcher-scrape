@@ -32,7 +32,9 @@ jobs:
           python-version: "3.12"
 
       - name: Install deps
-        run: pip install -r requirements.txt
+        run: |
+          sudo apt-get install -y -q poppler-utils   # pdftotext, for CV/arXiv email hunting
+          pip install -r requirements.txt
 
       - name: Run pipeline (wide pool)
         env:
@@ -50,6 +52,7 @@ jobs:
       - name: Web-verify shortlist (top 40 per position)
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN || github.token }}   # raises rate limit for commit-email hunting
         run: python verify_shortlist.py --top 40
 
       - name: Upload wide-pool xlsx
