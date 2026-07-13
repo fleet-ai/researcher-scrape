@@ -23,6 +23,7 @@ seeds:
     - "2511.19304"  # AutoEnv
     - "2604.06126"  # Gym-Anything
     - "2607.03523"  # Anchored Self-Play for Code Repair
+    - "2606.22388"  # PlanBench-XL: Long-Horizon Planning in Large-Scale Tool Ecosystems
 
   researchers:
     - name: "Sam Earle"

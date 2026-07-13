@@ -77,6 +77,7 @@ seeds:
     - "2511.19304"  # AutoEnv
     - "2604.06126"  # Gym-Anything
     - "2607.03523"  # Anchored Self-Play for Code Repair (Stanford; self-play bug curriculum)
+    - "2606.22388"  # PlanBench-XL: Long-Horizon Planning in Large-Scale Tool Ecosystems
 
     # ── Post-Training (22) ─────────────────────────────────────
     - "2512.04388"  # Conductor: LLM orchestrator via RL

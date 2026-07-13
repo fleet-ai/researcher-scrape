@@ -191,8 +191,7 @@ def process_tab(csv_path: Path, category: str, top_n: int, api_key: str,
             if not email and found:
                 email = found[0]
         if not email and row.get("email"):
-            src = row.get("email_source", "")
-            email = f"{row['email']} ({src or 'institutional'})"
+            email = row["email"]
 
         out_rows.append({
             "#": 0,  # assigned after the verified-recruitability sort
