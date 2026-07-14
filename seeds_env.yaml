@@ -24,6 +24,7 @@ seeds:
     - "2604.06126"  # Gym-Anything
     - "2607.03523"  # Anchored Self-Play for Code Repair
     - "2606.22388"  # PlanBench-XL: Long-Horizon Planning in Large-Scale Tool Ecosystems
+    - "2606.26294"  # Red Queen Gödel Machine: Co-Evolving Agents and Their Evaluators
 
   researchers:
     - name: "Sam Earle"
