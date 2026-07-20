@@ -150,14 +150,26 @@ SHORTLIST_FIELDS = ["#", "Name", "Career Stage", "Key Work", "Personal Email", "
 
 
 def process_tab(csv_path: Path, category: str, top_n: int, api_key: str,
-                cache: dict, hunt_cache: dict, out_dir: Path) -> list[dict]:
+                cache: dict, hunt_cache: dict, out_dir: Path,
+                max_verify: int = 0) -> list[dict]:
     with open(csv_path) as f:
         rows = list(csv.DictReader(f))
-    ranked = rank_rows(rows)[:top_n]
-    log.info(f"[{category}] verifying top {len(ranked)} of {len(rows)} candidates")
+    # Verify-then-cut, not cut-then-verify: walk the ranked list and keep
+    # going until top_n slots are filled with identity-confirmed Yes/Maybe
+    # candidates. Unconfirmed identities and verified-Unlikely rows consume
+    # verification budget but never a slot. max_verify bounds the walk so a
+    # tab full of Unlikelies can't burn the whole pool (0 = 4x top_n).
+    ranked = rank_rows(rows)
+    cap = max_verify or 4 * top_n
+    ranked = ranked[:cap]
+    log.info(f"[{category}] filling {top_n} Yes/Maybe slots from {len(rows)} "
+             f"candidates (verify cap {len(ranked)})")
 
     out_rows = []
+    n_unconfirmed = n_unlikely = 0
     for i, row in enumerate(ranked, 1):
+        if len(out_rows) >= top_n:
+            break
         ck = f"{_normalize(row['name'])}::{category}"
         if ck in cache:
             v = cache[ck]
@@ -169,7 +181,14 @@ def process_tab(csv_path: Path, category: str, top_n: int, api_key: str,
             time.sleep(1)
 
         if not v or not v.get("identity_confirmed"):
+            n_unconfirmed += 1
             log.info(f"  [{i}] {row['name']}: identity not confirmed, skipping")
+            continue
+
+        verdict = (v.get("recruitable") or "").strip().lower()
+        if not (verdict.startswith("yes") or verdict.startswith("maybe")):
+            n_unlikely += 1
+            log.info(f"  [{i}] {row['name']}: {v.get('recruitable', 'no verdict')}, excluded")
             continue
 
         # Email policy: personal > academic > BLANK. Never a corporate
@@ -200,18 +219,16 @@ def process_tab(csv_path: Path, category: str, top_n: int, api_key: str,
             "Recruitable?": v.get("recruitable", ""),
         })
         if i % 10 == 0:
-            log.info(f"  [{category}] {i}/{len(ranked)} verified, {len(out_rows)} confirmed")
+            log.info(f"  [{category}] {i} examined, {len(out_rows)}/{top_n} slots filled")
 
-    # Order by the VERIFIED verdict, not the pipeline's pre-verification
-    # guess: web research regularly discovers "actually tenured faculty" or
-    # "actually at OpenAI" — those belong below the clean Yes rows.
+    log.info(f"[{category}] examined {min(i, len(ranked)) if ranked else 0}: "
+             f"{len(out_rows)} listed, {n_unlikely} unlikely (excluded), "
+             f"{n_unconfirmed} unconfirmed (skipped)")
+
+    # Order by the VERIFIED verdict (Yes before Maybe), then the walk order,
+    # which already encodes the pipeline's hirability rank.
     def verdict_rank(r):
-        v = (r["Recruitable?"] or "").lower()
-        if v.startswith("yes"):
-            return 0
-        if v.startswith("maybe"):
-            return 1
-        return 2
+        return 0 if (r["Recruitable?"] or "").lower().startswith("yes") else 1
     out_rows.sort(key=verdict_rank)
     for n, r in enumerate(out_rows, 1):
         r["#"] = n
@@ -250,7 +267,10 @@ def write_shortlist_xlsx(tabs: dict, out_path: Path):
 def main():
     parser = argparse.ArgumentParser(description="Web-verify top candidates into recruiter-ready shortlists")
     parser.add_argument("--input-dir", default="data/expand_output")
-    parser.add_argument("--top", type=int, default=40, help="Candidates to verify per tab")
+    parser.add_argument("--top", type=int, default=40,
+                        help="Confirmed Yes/Maybe rows per tab (not candidates examined)")
+    parser.add_argument("--max-verify", type=int, default=0,
+                        help="Cap on candidates examined per tab while filling slots (0 = 4x top)")
     parser.add_argument("--tabs", nargs="*", default=None,
                         help="Tab stems to process (default: every per-position CSV found)")
     args = parser.parse_args()
@@ -274,7 +294,8 @@ def main():
     tabs = {}
     for p in csvs:
         category = p.stem.replace("_", " ").title()
-        tabs[category] = process_tab(p, category, args.top, api_key, cache, hunt_cache, in_dir)
+        tabs[category] = process_tab(p, category, args.top, api_key, cache, hunt_cache, in_dir,
+                                     max_verify=args.max_verify)
 
     HUNT_CACHE_PATH.write_text(json.dumps(hunt_cache, indent=1, ensure_ascii=False))
     write_shortlist_xlsx(tabs, in_dir / "shortlist.xlsx")

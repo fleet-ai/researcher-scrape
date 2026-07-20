@@ -44,11 +44,11 @@ python expand.py --seeds seeds_fleet.yaml --config config_fleet.yaml --resume
 
 ```bash
 export OPENROUTER_API_KEY="sk-or-..."
-python verify_shortlist.py                    # all tabs, top 40 each
+python verify_shortlist.py                    # all tabs, 40 confirmed Yes/Maybe rows each
 python verify_shortlist.py --top 25 --tabs world_models post_training
 ```
 
-For each candidate an LLM with live web search (OpenRouter `:online`) checks homepage / Scholar / LinkedIn and returns: specific career stage ("Recent grad (PhD 24, UPenn) -> AI2"), personal email, website, one-line key work with venues, and a verdict with reason ("Unlikely - at OpenAI", "Yes - just switched labs"). Identity is confirmed against known papers; unconfirmed rows are skipped. Results cached in `data/verify_cache.json`.
+For each candidate an LLM with live web search (OpenRouter `:online`) checks homepage / Scholar / LinkedIn and returns: specific career stage ("Recent grad (PhD 24, UPenn) -> AI2"), personal email, website, one-line key work with venues, and a verdict with reason ("Unlikely - at OpenAI", "Yes - just switched labs"). Verification walks the ranked list and keeps filling until `--top` slots hold identity-confirmed Yes/Maybe candidates (verify-then-cut): unconfirmed identities and verified-Unlikely rows are excluded and never consume a slot. `--max-verify` caps the walk (default 4x top). Results cached in `data/verify_cache.json`.
 
 **Output:** `data/expand_output/shortlist.xlsx` (tab per position, Yes → Maybe → Unlikely) + per-position `shortlist_*.csv`.
 
