@@ -1,0 +1,65 @@
+# Post-Training deep-crawl config (depth 2, single category).
+categories:
+  - name: "Post-Training"
+    keywords: []
+
+filters:
+  max_h_index: 40          # h >= this -> recruitable: Stretch (kept, flagged)
+  min_papers: 1
+  career_stages:
+    - graduating_phd
+    - recent_grad
+    - junior_industry
+    - mid_industry
+  drop_stages:
+    - early_phd
+  allowed_countries:
+    - US
+    - CA
+    - GB
+    - AT
+    - BE
+    - BG
+    - HR
+    - CY
+    - CZ
+    - DK
+    - EE
+    - FI
+    - FR
+    - DE
+    - GR
+    - HU
+    - IE
+    - IT
+    - LV
+    - LT
+    - LU
+    - MT
+    - NL
+    - PL
+    - PT
+    - RO
+    - SK
+    - SI
+    - ES
+    - SE
+    - CH
+    - "NO"
+    - IS
+  exclude_institutions:
+    - OpenAI
+    - Anthropic
+    - DeepSeek
+    - Moonshot
+    - Alibaba
+    - ByteDance
+  exclude_names: []
+
+expansion:
+  max_depth: 2
+  max_coauthors_per_paper: 10
+  max_citations_per_paper: 50
+  max_references_per_paper: 30
+  prefer_recent: true
+  topic_search_limit: 0

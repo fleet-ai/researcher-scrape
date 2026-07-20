@@ -1,0 +1,84 @@
+# Post-Training only — used for the deep (depth-2) crawl.
+# Base: the Post-Training section of seeds_fleet.yaml (23 papers).
+# Additions curated 2026-07-16 from research weeklies (Apr 30 - Jun 18),
+# #team-research paper shares, and fleet-research reading notes
+# (papers/, threads/task-rl, threads/multi-path-verification,
+# archive/selfplay paper survey). Every ID verified on OpenAlex.
+seeds:
+  papers:
+    # ── From seeds_fleet.yaml Post-Training (23) ──────────────
+    - "2512.04388"  # Conductor: LLM orchestrator via RL
+    - "2512.13607"  # Nemotron-Cascade
+    - "2601.05242"  # GDPO
+    - "2512.23707"  # Training AI Co-Scientists Using Rubric Rewards
+    - "2601.20802"  # RL via Self-Distillation (SDPO)
+    - "2603.21383"  # PivotRL
+    - "2606.08501"  # Back on Track / PAPO
+    - "2606.09076"  # Beyond Scalar Rewards / Z-Reward
+    - "2604.05013"  # Scaling Coding Agents via Atomic Skills
+    - "2603.05218"  # KARL
+    - "2606.26300"  # The Verification Horizon
+    - "2605.29682"  # Scaling Laws for Agent Harnesses
+    - "2606.02113"  # Primer on Post-Training Reasoning Data
+    - "2606.32032"  # RLMF: Metacognitive Feedback RL
+    - "2605.14163"  # Agentic Systems as Boosting Weak Reasoners
+    - "2605.02572"  # Horizon Generalization
+    - "2606.26294"  # Red Queen Gödel Machine
+    - "2606.26797"  # Reasoning Quality Emerges Early
+    - "2606.07082"  # Geometry of On-Policy Distillation
+    - "2605.22502"  # Compiling Agentic Workflows into Weights
+    - "2602.06960"  # InftyThink+
+    - "2504.13837"  # Does RL Really Incentivize Reasoning Beyond the Base Model?
+    - "2602.22480"  # VeRO: An Evaluation Harness for Agents to Optimize Agents
+
+    # ── On-policy self-distillation family ────────────────────
+    - "2601.18734"  # Self-Distilled Reasoner (OPSD)
+    - "2607.05184"  # Rethinking On-Policy Self-Distillation for Thinking Models
+    - "2607.02234"  # Purified OPSD
+    - "2604.02288"  # Unifying Group-Relative and Self-Distillation Policy Optimization
+
+    # ── RL recipes ────────────────────────────────────────────
+    - "2512.16649"  # JustRL: Scaling a 1.5B LLM with a Simple RL Recipe
+    - "2601.15165"  # The Flexibility Trap (JustGRPO, ICML 2026 outstanding paper)
+    - "2510.11701"  # Demystifying RL in Agentic Reasoning
+
+    # ── Process rewards / verifiers / reward models ───────────
+    - "2502.01456"  # PRIME: Process Reinforcement through Implicit Rewards
+    - "2601.18984"  # Save the Good Prefix (VPPO)
+    - "2603.18859"  # RewardFlow: Topology-Aware Reward Propagation
+    - "2506.09942"  # VerIF: Verification Engineering for RL
+    - "2601.03525"  # Beyond Binary: Dense Verifiable Rewards (VeRPO)
+    - "2602.07594"  # Learning to Self-Verify
+    - "2209.13085"  # Defining and Characterizing Reward Hacking
+
+    # ── Agentic RL training ───────────────────────────────────
+    - "2509.02479"  # SimpleTIR: Multi-Turn Tool-Integrated Reasoning RL
+    - "2508.03680"  # Agent Lightning: Train ANY AI Agents with RL
+    - "2505.16421"  # WebAgent-R1
+    - "2504.20073"  # RAGEN / StarPO
+    - "2510.04206"  # AgentRL: Multi-Turn Multi-Task Agentic RL
+    - "2602.02619"  # daVinci-Agency: Long-Horizon Agency Data-Efficiently
+    - "2602.02482"  # Expanding RL Capabilities via Text Feedback
+    - "2602.02488"  # RLAnything: Forge Environment, Policy, and Reward Model
+
+    # ── Self-play RL ──────────────────────────────────────────
+    - "2506.24119"  # SPIRAL: Self-Play on Zero-Sum Games
+    - "2509.25541"  # Vision-Zero: VLM Self-Improvement via Gamified Self-Play
+    - "2501.14225"  # Multi-agent KTO
+    - "2505.13886"  # Game-RL / Code2Logic
+
+    # ── RL data recipes / curriculum ──────────────────────────
+    - "2606.24855"  # OpenThoughts-Agent: Data Recipes for Agentic Models
+    - "2605.24218"  # QUEST: Training Deep Research Agents with Synthetic Tasks
+    - "2512.01311"  # CuES: Curiosity-driven Synthesis for Agentic RL
+    - "2510.01135"  # Prompt Curriculum Learning
+
+    # ── Compositional generalization / capability boundary ────
+    - "2606.18089"  # From Reasoning Traces to Reusable Modules
+    - "2509.25123"  # From f(x) and g(x) to f(g(x))
+    - "2512.01970"  # Atomic Skills are the Prerequisite
+    - "2604.14877"  # Does RL Expand the Capability Boundary? PASS@(k,T)
+
+  researchers:
+    - name: "Nicklas Hansen"
+      institution: "UC San Diego"
