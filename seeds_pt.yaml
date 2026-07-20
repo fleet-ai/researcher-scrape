@@ -1,9 +1,11 @@
 # Post-Training only — used for the deep (depth-2) crawl.
 # Base: the Post-Training section of seeds_fleet.yaml (23 papers).
-# Additions curated 2026-07-16 from research weeklies (Apr 30 - Jun 18),
-# #team-research paper shares, and fleet-research reading notes
-# (papers/, threads/task-rl, threads/multi-path-verification,
-# archive/selfplay paper survey). Every ID verified on OpenAlex.
+# Additions curated 2026-07-16/20 from: the NLP Newsletter "Top AI
+# Papers of the Week" (nlp.elvissaravia.com, all 44 issues Sep 2025 -
+# Jul 2026, 380 unique papers scanned), #team-research paper shares,
+# and fleet-research reading notes (papers/, threads/task-rl,
+# threads/multi-path-verification, archive/selfplay paper survey).
+# Every ID verified on OpenAlex. Approved by Deniz 2026-07-20.
 seeds:
   papers:
     # ── From seeds_fleet.yaml Post-Training (23) ──────────────
@@ -78,6 +80,49 @@ seeds:
     - "2509.25123"  # From f(x) and g(x) to f(g(x))
     - "2512.01970"  # Atomic Skills are the Prerequisite
     - "2604.14877"  # Does RL Expand the Capability Boundary? PASS@(k,T)
+
+    # ── Weeklies: RL recipes and scaling ──────────────────────
+    - "2510.13786"  # The Art of Scaling RL Compute (ScaleRL)
+    - "2512.07783"  # Pre-Training, Mid-Training, and RL Interplay
+    - "2510.06557"  # The Markovian Thinker
+    - "2510.07312"  # Reasoning over Longer Horizons via RL
+    - "2509.03646"  # Emergent Hierarchical Reasoning (HICRA)
+    - "2511.14617"  # Seer: Fast RL for LLMs
+    - "2510.26788"  # Precision-RL (FP16 RL stability)
+    - "2607.13394"  # GFlowRL
+    - "2509.08827"  # A Survey of RL for Large Reasoning Models
+
+    # ── Weeklies: reward signals, verifiers, judges ───────────
+    - "2607.05391"  # Verification as a Scaling Axis
+    - "2510.07242"  # Hybrid Reinforcement (HERO)
+    - "2511.01758"  # RLAC: Adversarial Critic for RL Post-Training
+    - "2607.01181"  # RLVR Meets Human Likeness
+    - "2510.23038"  # TIR-Judge
+    - "2509.04903"  # ACE-RL (checklist rewards)
+    - "2602.16154"  # REMUL (CoT faithfulness training)
+    - "2509.13351"  # Teaching LLMs to Plan (verifier-checked PDDL)
+
+    # ── Weeklies: RL data and distillation ────────────────────
+    - "2510.06499"  # Webscale-RL
+    - "2511.19333"  # Training LLMs with Reasoning Traces
+    - "2509.22230"  # Reasoning Traces Tailored for Small Models
+    - "2601.21343"  # Self-Improving Pretraining (Meta FAIR)
+    - "2509.19894"  # PromptCoT 2.0
+    - "2510.15103"  # Continual Learning via Sparse Memory Finetuning
+
+    # ── Weeklies: agentic RL, recipes, model post-training ────
+    - "2509.08755"  # AgentGym-RL
+    - "2602.08234"  # SkillRL
+    - "2509.25454"  # DeepSearch (MCTS inside RL training)
+    - "2509.20357"  # Think, Chat Better (RL with Model-rewarded Thinking)
+    - "2509.07604"  # K2-Think (full SFT+RLVR recipe)
+    - "2509.23045"  # Kimi-Dev
+    - "2509.06283"  # SFR-DeepResearch
+    - "2509.24527"  # Training Agents Inside Scalable World Models
+    - "2509.04475"  # ParaThinker
+    - "2512.16848"  # LaMer (meta-RL at test time)
+    - "2511.16652"  # EGGROLL (evolution strategies at hyperscale)
+    - "2604.21590"  # AgenticQwen-30B-A3B
 
   researchers:
     - name: "Nicklas Hansen"
