@@ -3319,5 +3319,115 @@
   "website": "https://openreview.net/profile?id=~Hanyang_Wang5",
   "recruitable": "Yes - MS student, strong post-training focus",
   "notes": "Confirmed via SkillRL paper match. MS at UChicago (joined July 2024), previously undergrad at Nottingham (2020-2024). Research directly aligned: LLM post-training, agentic RL, RLHF. Active publications in agent learning and policy optimization. Note: Different person from Tsinghua's Hanyang Wang (3D vision)."
+ },
+ "xuanliang zhang::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD student (2nd year), Harbin Institute of Technology",
+  "current_employer": "Harbin Institute of Technology (HIT-SCIR)",
+  "key_work": "Scaling Laws for Agent Harnesses via Effective Feedback Compute (arXiv 26), Table Reasoning Survey (Frontiers 25)",
+  "personal_email": "xuanliangzhang@ir.hit.edu.cn",
+  "website": "https://zhxlia.github.io/",
+  "recruitable": "Yes - early-stage PhD, academic setting",
+  "notes": "Focus: table reasoning, LLM evaluation, mechanistic interpretability. Recent work on agent feedback scaling laws highly relevant to post-training (feedback quality, test-time compute). Supervised by Wanxiang Che & Qingfu Zhu. h-index 3 matches, active publication record 2024-26."
+ },
+ "narutatsu ri::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD student (1st yr), Princeton",
+  "current_employer": "Princeton University",
+  "key_work": "Rethinking On-Policy Self-Distillation for Thinking Models (ICML 26), Self-Distillation Zero (ICML 26)",
+  "personal_email": "",
+  "website": "https://narutatsuri.github.io/",
+  "recruitable": "Yes - early PhD",
+  "notes": "Started PhD Fall 2025 under Sanjeev Arora at Princeton Language + Intelligence. Gordon Wu Fellow. Recent BS/MS from Columbia (2024). Focus on thinking models, self-distillation, RL from feedback - directly relevant to post-training. Multiple ICML 26 workshop papers on reasoning and safety in thinking models. Active researcher with strong publication velocity."
+ },
+ "mohan jiang::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD student (current), Shanghai Jiao Tong University",
+  "current_employer": "Shanghai Jiao Tong University / Shanghai Innovation Institute",
+  "key_work": "daVinci-Agency (2026) - long-horizon agency; AgencyBench (ACL 24) - 1M-token agent eval",
+  "personal_email": "",
+  "website": "https://mhjiang.site/",
+  "recruitable": "Yes - PhD student, strong post-training fit",
+  "notes": "PhD student advised by Dequan Wang & Pengfei Liu. Research focus on agentic AI, multimodal LLMs, and agent evaluation - directly aligned with post-training work. Active researcher with recent publications on agent systems and benchmarking. Visiting intern at SII. No personal email found on public profiles."
+ },
+ "richard zhuang::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "MS student (1st yr), Stanford",
+  "current_employer": "Stanford University (SAIL - research assistant with Prof. Ludwig Schmidt)",
+  "key_work": "OpenThoughts-Agent (2026) - data recipes for post-training agents; EmbedLLM (ICLR 25 Spotlight) - LLM routing",
+  "personal_email": "",
+  "website": "https://richardzhuang0412.github.io/",
+  "recruitable": "Yes - MS student, strong post-training focus",
+  "notes": "Core contributor on OpenThoughts-Agent project focused on data-centric post-training for agentic models. Previous internship at Bespoke Labs (RL for tool-use). MS 2025-2027, graduated Berkeley 2025. Strong alignment with post-training role given explicit research focus on data recipes that foster agent capabilities (reasoning, planning). Model reached 44.8% on agentic benchmarks."
+ },
+ "benjamin feuer::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD 25, NYU) -> Stanford Postdoc",
+  "current_employer": "Stanford University (Postdoc with Percy Liang & Ludwig Schmidt); Open Athena (Member of Technical Staff)",
+  "key_work": "OpenThoughts (ICLR 26 Oral), Marin post-training lead (open frontier model)",
+  "personal_email": "",
+  "website": "https://penfever.github.io/",
+  "recruitable": "Maybe - leading Marin post-training",
+  "notes": "Post-training lead on Marin project at Open Athena (constitutional open AI foundation models). Strong post-training focus: WILDCHAT-50M synthetic data work, OpenThoughts reasoning data recipes. Also Research Fellow at Oumi.AI. Recently joined Open Athena (Jan 2025), turned down Anthropic interview to work on open models. Passionate about open-source AI development."
+ },
+ "yuekun yao::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD, Saarland University) -> Postdoc at OSU",
+  "current_employer": "The Ohio State University",
+  "key_work": "QUEST (2026) - deep research agents w/ synthetic tasks; LLM implicit multi-hop reasoning (EMNLP 25)",
+  "personal_email": "",
+  "website": "https://ykyaol7.github.io/",
+  "recruitable": "Yes - academic postdoc",
+  "notes": "Works with Huan Sun at OSU on LLM reasoning, generalization, interpretability. QUEST directly relevant to post-training (RL, SFT pipeline for agents). PhD focused on semantic parsing & compositional generalization. Active researcher in transformer limitations and training recipes."
+ },
+ "yuxuan li::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD student (2024-2028), University of Waterloo",
+  "current_employer": "University of Waterloo (R2L Lab, Vector Institute) + ServiceNow Research intern",
+  "key_work": "CANDERE-COACH - RL from noisy feedback (2024), Atomic to Composite RL reasoning (ICLR 26 sub)",
+  "personal_email": "mail@yuxuanli.net",
+  "website": "https://liyuxuan.me/",
+  "recruitable": "Yes - early PhD, industry internship experience",
+  "notes": "Strong fit for post-training: works on RL from human feedback, noisy feedback, and LLM planning. Currently interning at ServiceNow Research (Jul 2025-present). MS from UAlberta (2021-2024) with Matt Taylor on human-in-the-loop RL. Research spans RL, robotics, human-centered AI, and LLM reasoning - directly relevant to RLHF/post-training work."
+ },
+ "amirhossein kazemnejad::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (MSc 23, McGill) -> Mila Research",
+  "current_employer": "Mila - Quebec Artificial Intelligence Institute",
+  "key_work": "VinePPO (ICML 25) - credit assignment for RL tuning of LLMs, NoPE positional encoding (NeurIPS 23)",
+  "personal_email": "",
+  "website": "https://kazemnejad.com",
+  "recruitable": "Yes - academic research role",
+  "notes": "Strong fit for post-training: VinePPO directly addresses RL finetuning of LLMs with improved credit assignment. Currently at Mila (Dec 2023-present) working on RL algorithms for LLMs. NoPE work used in Llama 4 & Cohere Command A. Also maintains open-source RL-for-LLM library (nano-aha-moment)."
+ },
+ "sumeet motwani::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD student (2024-2027), Oxford",
+  "current_employer": "Google X (AI Resident, Oct 2025-present)",
+  "key_work": "Bootstrapping LLMs via RL for long-horizon reasoning (arXiv 25), Agent Q web agents w/ RL post-training",
+  "personal_email": "",
+  "website": "https://sumeetmotwani.com/",
+  "recruitable": "Maybe - currently at Google X",
+  "notes": "Focus: RL post-training, long-horizon reasoning, agentic systems. Recent internships: MSR AI Frontiers (RL rewards), MultiOn (Agent Q). Funded by Eric Schmidt/CAIF. Advised by Torr & Schroeder de Witt."
+ },
+ "pranav atreya::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD student (2nd yr), UC Berkeley",
+  "current_employer": "UC Berkeley RAIL Lab (advisor: Sergey Levine)",
+  "key_work": "AutoEval (CoRL 24) - autonomous robot policy evaluation, LLM-as-a-Verifier - verification framework for LLMs",
+  "personal_email": "",
+  "website": "https://pranavatreya.github.io/",
+  "recruitable": "Maybe - early PhD at top lab",
+  "notes": "Strong fit for post-training: recent work on LLM verification/test-time sampling achieving SOTA on Terminal-Bench (86.4%) and SWE-Bench (77.8%). Also robotics work (AutoEval, autonomous improvement). NSF GRFP fellow. Started PhD Aug 2023, so likely 2026-2027 graduation. May be open to internships but early for full-time."
+ },
+ "leitian tao::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD student (2023-2028), UW-Madison",
+  "current_employer": "Meta FAIR (Research Scientist Intern, Feb 2026-Present)",
+  "key_work": "Hybrid Reinforcement (sparse→dense rewards), CodeLutra (code gen w/ preference learning)",
+  "personal_email": "leitiantao@cs.wisc.edu",
+  "website": "https://taoleitian.github.io/",
+  "recruitable": "Maybe - currently at Meta FAIR",
+  "notes": "Focus: LLM post-training, alignment, reasoning, RL. Currently interning at Meta FAIR with Jason Weston/Ping Yu on reasoning beyond binary rewards. Previous Adobe internship on code generation. Presenting at ICLR 2026. Open to discussing opportunities per LinkedIn."
  }
 }
