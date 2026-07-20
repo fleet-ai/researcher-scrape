@@ -1998,5 +1998,1326 @@
   "website": "https://scholar.google.com/citations?user=euUV4iUAAAAJ",
   "recruitable": "Unlikely - senior at Meta FAIR",
   "notes": "Senior researcher at Meta FAIR since 2017. Recent focus on latent action world models and video self-supervised learning directly aligned with world models hiring. 8+ years at Meta suggests established position."
+ },
+ "georgios n. yannakakis::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior (PhD 2006, Edinburgh) -> Professor at U Malta since 2012",
+  "current_employer": "University of Malta (Professor & Director, Institute of Digital Games)",
+  "key_work": "Search-based PCG taxonomy (IEEE TCIAIG 11), Experience-driven PCG, PCG via RL",
+  "personal_email": "",
+  "website": "https://yannakakis.net/",
+  "recruitable": "Unlikely - tenured professor, IEEE Fellow, EiC, 2 startups",
+  "notes": "Co-founder of humanfeedback.ai and modl.ai. IEEE Fellow (2024). Editor-in-Chief of IEEE Transactions on Games. Leading figure in PCG and game AI with 350+ publications. Deep expertise in procedural content generation and player modeling highly relevant to environment generation, but very established with multiple leadership roles and entrepreneurial ventures."
+ },
+ "yixin nie::Environment Generation": {
+  "identity_confirmed": false,
+  "career_stage": "",
+  "current_employer": "",
+  "key_work": "",
+  "personal_email": "",
+  "website": "",
+  "recruitable": "",
+  "notes": "Identity mismatch: The Yixin Nie found (easonnie.github.io) is a Research Scientist at Meta AI (2022-present) with PhD from UNC Chapel Hill (2017-2022), working on LLM RLHF and 3D generation. Known papers include '3DGen: Triplane Latent Diffusion for Textured Mesh Generation' and 'TVLT'. The provided paper 'Autodata: An agentic data scientist' and affiliation 'Tsinghua University' do not match this researcher's profile. The ORCID entry showing Tsinghua affiliation appears to be a different person with the same name."
+ },
+ "weiyuan li::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "MS grad (2023, ECNU) -> Researcher at Alibaba Group",
+  "current_employer": "Alibaba Group",
+  "key_work": "Agentopia (arXiv 26) - 10yr agent society sim; SmartRAG (ICLR 25) - RL for retrieval",
+  "personal_email": "",
+  "website": "https://github.com/rxlqn",
+  "recruitable": "Maybe - at Alibaba",
+  "notes": "Focus on LLM agents & RL; previously at xiaobing.ai (2023-25). No direct env generation work but agent simulation experience relevant. Active in multi-agent systems and RL for LLMs."
+ },
+ "mingfei sun::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Established academic (PhD '20, HKUST) -> Lecturer/Assoc Prof track",
+  "current_employer": "University of Manchester",
+  "key_work": "SMACv2 (NeurIPS 23) - cooperative MARL benchmark, Diffusion models for imitation (ICLR 23)",
+  "personal_email": "",
+  "website": "https://mingfeisun.github.io/",
+  "recruitable": "Maybe - tenured track academic",
+  "notes": "Lecturer since Dec 2022, previously MSR Cambridge researcher. Focus on RL/generative models but not specifically environment generation. Recent awards: ICML 26 Gold Reviewer, EPSRC funding, AAMAS 23 Best Paper. Active in multi-agent RL and policy gradients rather than procedural content generation."
+ },
+ "swarnadeep saha::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD 24, UNC Chapel Hill) -> Meta FAIR",
+  "current_employer": "Meta FAIR (Alignment Team)",
+  "key_work": "Branch-Solve-Merge (NAACL 24), System-1.x (ICLR 25) - LLM reasoning & planning",
+  "personal_email": "",
+  "website": "https://swarnahub.github.io/",
+  "recruitable": "Unlikely - at Meta FAIR",
+  "notes": "Google PhD Fellow, joined Meta FAIR Aug 2024 as Research Scientist working on LLM alignment/reasoning with Jason Weston. No direct environment generation work found - focuses on LLM reasoning, planning, evaluation, and self-improvement. Strong RL background (J1 paper on RL for LLM judges). Recent hire at top lab."
+ },
+ "wataru okamoto::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Industry researcher (PhD ~2021, Chiba University) -> Rakuten Group",
+  "current_employer": "Rakuten Group, Inc.",
+  "key_work": "ACDR for fault-tolerant quadruped locomotion (arXiv 2021) - dynamics randomization curriculum",
+  "personal_email": "",
+  "website": "https://github.com/wataru0",
+  "recruitable": "Maybe - at major Japanese tech company",
+  "notes": "Focus on RL with dynamics randomization for robotics, not directly environment generation. Based in Tokyo. GitHub shows iOS/ML work. Limited recent academic activity (last paper 2021). Qiita profile suggests applied ML role."
+ },
+ "anuj mahajan::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD '22, Oxford) -> Apple '24 -> Meta '25",
+  "current_employer": "Meta",
+  "key_work": "Open-Ended Learning/Generally Capable Agents (NeurIPS 23), SMACv2 multi-agent benchmark (arXiv 21)",
+  "personal_email": "",
+  "website": "https://anuj-mahajan.github.io/",
+  "recruitable": "Unlikely - at Meta",
+  "notes": "Currently AI Research Scientist at Meta Superintelligence Labs (Oct 2025-present) working on foundation models + RL agents. Was Senior Research Scientist at Apple ML Foundations (Feb 2024-Oct 2025). PhD Oxford '22 advised by Shimon Whiteson. XLand/open-ended learning background but not specifically environment generation - focus is multi-agent RL and foundation model agents. Recent move to Meta suggests settled."
+ },
+ "joseph o’brien::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD ~23, Stanford) -> Google",
+  "current_employer": "Google (DeepMind/Research)",
+  "key_work": "Generative Agents (UIST 23) - LLM agents simulating human behavior in interactive environments",
+  "personal_email": "",
+  "website": "https://hci.stanford.edu/publications/paper.php?id=482",
+  "recruitable": "Maybe - at Google",
+  "notes": "Co-author on seminal generative agents work with Stanford HCI group. Now at Google Research/DeepMind per author affiliations. Work on agent simulation in game environments relevant to procedural generation, though not directly environment generation. Email jobrien3@stanford.edu may still forward."
+ },
+ "joon sung park::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD '25, Stanford) -> Simile (own startup)",
+  "current_employer": "Simile",
+  "key_work": "Generative Agents (UIST '23 Best Paper), Generative Agent Simulations of 1,000 People (arXiv '24)",
+  "personal_email": "",
+  "website": "https://www.joonsungpark.com/",
+  "recruitable": "Unlikely - CEO/Co-founder at own startup",
+  "notes": "Won Arthur Samuel Best Thesis Award (top CS PhD thesis at Stanford '25). Founded Simile June 2025 as CEO. Work on generative agents/simulations not directly environment generation, but agent behavior in simulated worlds. Microsoft Research PhD Fellow '22. Unlikely to leave own company this early."
+ },
+ "vikram kumaran::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD 24, NC State) -> Research Scholar at NC State",
+  "current_employer": "North Carolina State University (AI Institute for Engaged Learning)",
+  "key_work": "SceneCraft (AIIDE 23), NarrativeGenie (AAAI 24) - LLM-driven narrative/scene generation for games",
+  "personal_email": "",
+  "website": "https://intellimedia.ncsu.edu/people/vkumara/",
+  "recruitable": "Yes - postdoc/research scholar position, game-focused narrative generation",
+  "notes": "PhD 2024 from NC State. Current work on procedural content generation for narrative games using LLMs. Strong fit for environment generation via his SceneCraft framework (automated scene generation) and procedural level generation work. Also has industry background as Lead Data Scientist at Cisco. Active researcher with 6 h-index and recent publications in AAAI/AIIDE on generative AI for interactive narratives."
+ },
+ "rémy portelas::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD 2022, Bordeaux) -> Ubisoft La Forge",
+  "current_employer": "Ubisoft La Forge (Bordeaux)",
+  "key_work": "TeachMyAgent benchmark (ICML 21), ALP-GMM teacher algorithms (CoRL 20) - curriculum learning for env generation",
+  "personal_email": "",
+  "website": "https://scholar.google.com/citations?user=8xxuvpoAAAAJ",
+  "recruitable": "Maybe - industry R&D",
+  "notes": "PhD on Automatic Curriculum Learning with Oudeyer (Inria) & Hofmann (MSR). Postdoc at Inria/MSR Montreal 2022-2023, now R&D Scientist at Ubisoft since Mar 2023. Strong fit: ACL work directly involves procedural environment generation and parameterized task spaces. Currently at gaming industry research lab, may be open to academic/research opportunities."
+ },
+ "frederic runge::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD candidate (final year), University of Freiburg",
+  "current_employer": "University of Freiburg - Machine Learning Lab",
+  "key_work": "RNAinformer (ICLR 25) - generative transformer for RNA design, Partial RNA Design (bioRxiv 23)",
+  "personal_email": "",
+  "website": "https://ml.informatik.uni-freiburg.de/profile/runge/",
+  "recruitable": "Yes - finishing PhD",
+  "notes": "Strong generative modeling background (transformers, RL, meta-learning) applied to RNA design. Work on RNAinformer shows generative design capabilities with structure constraints. PhD work 2020-present under Frank Hutter. No direct environment generation work, but generative design methodology could transfer to procedural content/environment generation domains."
+ },
+ "miguel gonzález-duque::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD 23, IT Univ Copenhagen) -> DBTune",
+  "current_employer": "DBTune",
+  "key_work": "MarioGPT (NeurIPS 23) - text2level generation, Mario plays on a manifold (AISTATS 24) - latent space content generation",
+  "personal_email": "miguelgondu@gmail.com",
+  "website": "https://www.miguelgondu.com",
+  "recruitable": "Yes - at small startup",
+  "notes": "Senior ML Engineer at DBTune (Malmö) since Jan 2025. PhD focused on procedural content generation, Bayesian optimization, and generative models for games. Strong fit for environment generation: published on text-to-level generation (MarioGPT) and functional content generation in latent spaces using differential geometry. Previously worked on protein optimization at MLLS (2023-2024)."
+ },
+ "yujin tang::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD '23 (U Tokyo) -> Sakana AI (2024-present)",
+  "current_employer": "Sakana AI",
+  "key_work": "Automating Search for ALife with FMs (ALIFE 25), CycleQD skill acquisition for LLMs (ICLR 25)",
+  "personal_email": "",
+  "website": "https://lerrytang.github.io/",
+  "recruitable": "Maybe - at Sakana AI",
+  "notes": "Research scientist at Sakana AI since Jan 2024 (previously Google Brain/DeepMind 2019-2023). Strong evolutionary computing background (EvoJAX creator, GECCO best papers). Recent work on automated ALife discovery and LLM adaptation highly relevant to env generation. At well-funded AI startup, but relatively recent join suggests openness possible."
+ },
+ "jorge leandro::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior engineer (PhD 2014, USP) -> MSR since 2022",
+  "current_employer": "Microsoft Research",
+  "key_work": "GENEVA (IEEE CoG 24) - LLM-generated branching narrative graphs for RPGs",
+  "personal_email": "",
+  "website": "https://www.microsoft.com/en-us/research/people/jorgeleandro/",
+  "recruitable": "Maybe - senior at MSR",
+  "notes": "Background in CV/ML, now focused on AI for games and narrative generation. GENEVA work is tangentially related to environment generation (procedural content), but primarily narrative-focused. PhD in computer vision (2014), MBA in AI/Big Data (2022). Based in São Paulo, Brazil."
+ },
+ "manuel eberhardinger::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD candidate (final yr), Stuttgart Media University",
+  "current_employer": "Stuttgart Media University (HdM) - Institute for Applied AI + Veralys GmbH (Managing Director)",
+  "key_work": "From Code to Play (IEEE ToG 25) - LLM program synthesis for games, Baba is You level generation",
+  "personal_email": "eberhardinger@hdm-stuttgart.de",
+  "website": "https://ai.hdm-stuttgart.de",
+  "recruitable": "Yes - academic + startup founder, strong env generation focus",
+  "notes": "PhD since Oct 2021, final phase per AIIDE DC statement. Heavy focus on procedural content generation via program synthesis (Atari, Baba is You, maze gen, TAG tabletop). Recent IEEE ToG paper benchmarks LLMs for game code synthesis across 29 tasks. Also runs Veralys GmbH. 51 public repos, active researcher in interpretable RL + PCG."
+ },
+ "timothy merino::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD candidate (2023-2027), NYU Tandon",
+  "current_employer": "New York University (Game Innovation Lab)",
+  "key_work": "Dream Cubed (2024) - 3D voxel diffusion for Minecraft; Moonshine (AAAI 23) - distilling PCG into steerable models",
+  "personal_email": "",
+  "website": "https://scholar.google.com/citations?user=VL4xgY8AAAAJ",
+  "recruitable": "Yes - mid-PhD, strong env generation focus",
+  "notes": "PhD advisor: Julian Togelius. Core focus on procedural content generation and 3D environment synthesis (Minecraft). Recent work on large-scale voxel diffusion models with billions of tokens. Also works on narrative-driven game generation. Active researcher with multiple 2024-2025 publications in generative models for interactive 3D worlds."
+ },
+ "yuchen li::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (MA 22, NYU) -> Research Assistant, SUSTech",
+  "current_employer": "Southern University of Science and Technology (SUSTech)",
+  "key_work": "Measuring Diversity of Game Scenarios (IEEE ToG 25), Fun as Moderate Divergence (IEEE ToG 24)",
+  "personal_email": "yl6394@nyu.edu",
+  "website": "https://doveliyuchen.github.io/",
+  "recruitable": "Yes - applying for PhD positions",
+  "notes": "Full-time RA at SUSTech since Spring 2023. Focus on PCG, game scenario generation, and diversity metrics. Currently applying for PhD programs (available Fall 2024 per CV). Strong fit for environment generation via procedural content generation background. Also affiliated with NYU as email suggests ongoing connection."
+ },
+ "lei chen::Environment Generation": {
+  "identity_confirmed": false,
+  "career_stage": "",
+  "current_employer": "",
+  "key_work": "",
+  "personal_email": "",
+  "website": "",
+  "recruitable": "",
+  "notes": "Cannot confirm identity. Found multiple Lei Chen researchers: (1) HKU PhD candidate in bioinformatics/NLP (jasonclei.github.io), (2) Two Sigma AI scientist, NYU PhD 2025 with Joan Bruna focusing on LLM theory (leichen2018.github.io), (3) Huawei researcher. None match 'University of Leeds' or the paper 'Toward Autonomous Long-Horizon Engineering for ML Research'. The paper appears in search results but no clear author profile links to it. Need additional identifying information to confirm correct Lei Chen."
+ },
+ "baixuan li::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD student, Southeast University",
+  "current_employer": "Southeast University (also affiliated with UniPat AI)",
+  "key_work": "AutoForge (arXiv 25) - automated env synthesis for agentic RL; Towards General Agentic Intelligence via Environment Scaling",
+  "personal_email": "",
+  "website": "https://github.com/BaixuanLi",
+  "recruitable": "Yes - PhD student with strong env generation focus",
+  "notes": "Active researcher in environment generation/scaling for agentic RL. Multiple 2025 preprints on environment synthesis. GitHub shows IELTS-Prompt, Knowledge-Tracing, and other projects. Also affiliated with UniPat AI (likely startup/industry collaboration). Strong match for environment generation role."
+ },
+ "fanzhe meng::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Undergrad (3rd yr), UESTC",
+  "current_employer": "Student - RUC AI Box Lab (intern)",
+  "key_work": "Toward Autonomous Long-Horizon Engineering for ML Research, BeyondSWE - code agents beyond single-repo",
+  "personal_email": "mengfanzhe16@gmail.com",
+  "website": "https://mengfanzhe0127.github.io/",
+  "recruitable": "Yes - undergrad, early career",
+  "notes": "Strong coding agent work but limited env generation focus. LLM/agent research in conversational rec systems. CV shows interest in autonomous research systems. May graduate 2026-2027."
+ },
+ "carlos florensa::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 2020, UC Berkeley -> Covariant (acquired by Amazon) -> OpenAI",
+  "current_employer": "OpenAI",
+  "key_work": "Reverse Curriculum Generation (CoRL 17), Automatic Goal Generation for RL Agents (ICML 18)",
+  "personal_email": "",
+  "website": "https://sites.google.com/view/carlosflorensa",
+  "recruitable": "Unlikely - at OpenAI",
+  "notes": "Leading video speech-to-speech research at OpenAI since Oct 2024. Strong env generation background (curriculum generation, automatic goal discovery). Previously 5yrs at Covariant building robotic AI systems."
+ },
+ "robert kirk::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD Jan 25, UCL) -> UK AISI",
+  "current_employer": "UK AI Safety Institute",
+  "key_work": "MiniHack (NeurIPS 21) - RL sandbox for generalisation; Survey of Zero-shot Gen in Deep RL",
+  "personal_email": "",
+  "website": "https://robertkirk.github.io/",
+  "recruitable": "Unlikely - at UK AISI",
+  "notes": "Acting lead of alignment red-teaming at UK AISI (government AI safety org). PhD thesis on generalisation & eval for superhuman AI. MiniHack is directly relevant - versatile RL environment creation tool. Strong generalisation/robustness focus but now in gov safety role."
+ },
+ "francisco baeta::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD candidate (final years), University of Coimbra",
+  "current_employer": "University of Coimbra (CISUC, CDV Lab)",
+  "key_work": "TGPGAN (GECCO 22) - GP-based generators for GANs, Evolutionary approaches in generative adversarial models",
+  "personal_email": "fjrbaeta@dei.uc.pt",
+  "website": "https://cdv.dei.uc.pt/people/francisco-baeta",
+  "recruitable": "Yes - academic PhD candidate",
+  "notes": "Focus on evolutionary computation + generative models (GANs with GP/GA generators). Recent work on expression-based generation. Relevant to procedural environment generation via evolutionary methods. Active publications through 2024."
+ },
+ "j. v. nash::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Graduating undergrad (May 2026), Connecticut College",
+  "current_employer": "Roblox (SWE intern, started Jun 2026)",
+  "key_work": "EvoSim - evolution simulation environment, SCOPE hexapod gait generation",
+  "personal_email": "jnash1@conncoll.edu",
+  "website": "https://jaybnash.com/",
+  "recruitable": "Yes - graduating May 2026, strong simulation/env background",
+  "notes": "Undergrad researcher in Autonomous Agent Learning Lab (Parker/O'Connor). 6 papers on evolutionary algorithms, agent-based sims, and policy learning. Developed simulation environments for multiple studies. Currently working on honors thesis on NetHack with learned policy. Double major CS/Physics. Has distributed compute cluster experience. Summer SWE at Roblox but graduating soon."
+ },
+ "benjamin eysenbach::Environment Generation": null,
+ "eugene vinitsky::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD 22, Berkeley) -> Asst Prof NYU (Sep 24)",
+  "current_employer": "NYU Tandon (Civil/CS/CDS) + Percepta (founding researcher)",
+  "key_work": "GPUDrive (ICLR 25) - 1M FPS multi-agent sim, UED papers (NeurIPS 20, ICML 22)",
+  "personal_email": "",
+  "website": "https://www.eugenevinitsky.com/",
+  "recruitable": "Unlikely - new faculty",
+  "notes": "Started NYU faculty position Sep 24, actively recruiting students for Fall 26. Core expertise in UED, multi-agent RL, sim-to-real. Founded Percepta (research scientist role). Strong environment generation background but now in academic tenure track."
+ },
+ "andrew k. lampinen::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 2020, Stanford -> Anthropic (joined Mar 2026)",
+  "current_employer": "Anthropic",
+  "key_work": "Automated curricula setter-solver (ICLR 20), Aligning machine/human visual representations (Nature 25)",
+  "personal_email": "andrew.lampinen@gmail.com",
+  "website": "https://lampinen.github.io/",
+  "recruitable": "Unlikely - at Anthropic",
+  "notes": "Just joined Anthropic alignment team Mar 2026 after 5.5yrs at DeepMind. Research spans learning/generalization, grounded language agents in virtual environments, compositional generalization - relevant to env generation. Senior researcher (was Staff at DeepMind)."
+ },
+ "rasmus palm::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Postdoc, IT University of Copenhagen",
+  "current_employer": "IT University of Copenhagen (Creative AI Lab)",
+  "key_work": "EvoCraft (arXiv 20) - Minecraft open-endedness, Variational Neural CA (CoG 21)",
+  "personal_email": "",
+  "website": "https://rasmusbergpalm.github.io/",
+  "recruitable": "Yes - academic postdoc",
+  "notes": "Strong fit for env generation: EvoCraft (Minecraft procedural generation), game level difficulty adaptation, Neural CA for generative models. Multiple verified emails (rasmb@itu.dk, rasmus@dtu.dk). SINTEF affiliation not found in recent sources - appears to have moved to ITU Copenhagen."
+ },
+ "sainbayar sukhbaatar::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 2018, NYU -> Meta FAIR (6+ years)",
+  "current_employer": "Meta FAIR",
+  "key_work": "Intrinsic Motivation via Asymmetric Self-Play (ICLR 18) - automatic curriculum generation in RL environments",
+  "personal_email": "",
+  "website": "https://tesatory.github.io/",
+  "recruitable": "Unlikely - at Meta FAIR",
+  "notes": "Senior research scientist at Meta FAIR Paris since 2018. Strong fit for env generation (MazeBase, asymmetric self-play for curriculum). Recent focus on LLM reasoning/memory. Established researcher, unlikely to move from FAIR."
+ },
+ "lara j. martin::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 21, Georgia Tech -> Assistant Professor",
+  "current_employer": "University of Maryland, Baltimore County (UMBC)",
+  "key_work": "Improvisational Storytelling in Open Worlds (ICIDS 16), Story Realization (AAAI 20)",
+  "personal_email": "laramar@umbc.edu",
+  "website": "https://laramartin.net",
+  "recruitable": "Unlikely - tenured faculty",
+  "notes": "Assistant Professor at UMBC since ~2021 (after CIFellow postdoc at UPenn). Focus on NLG, story generation, and interactive narratives - not environment generation. Last known Google affiliation appears stale/incorrect per all current sources."
+ },
+ "yunzhe tao::Environment Generation": {
+  "identity_confirmed": false,
+  "career_stage": "",
+  "current_employer": "",
+  "key_work": "",
+  "personal_email": "",
+  "website": "",
+  "recruitable": "",
+  "notes": "Cannot confirm identity - the paper 'Agentopia: Long-Term Life Simulation and Learning in Agent Societies' does not appear in any search results for Yunzhe Tao. Found papers on RL (REPAINT, DeepRacer, B-coder) but no match to the provided paper title. The h-index and research focus don't align with environment generation work."
+ },
+ "roberta răileanu::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 21, NYU -> Meta FAIR -> Google DeepMind (Senior Staff, 2025)",
+  "current_employer": "Google DeepMind",
+  "key_work": "MLGym (2025) - AI research agents, Open-Ended Learning Leads to Generally Capable Agents",
+  "personal_email": "",
+  "website": "https://rraileanu.github.io/",
+  "recruitable": "Unlikely - Senior Staff at DeepMind, leads Open-Endedness team",
+  "notes": "Confirmed match on MLGym, Open-Ended Learning, AMIGo papers. Senior leader (Open-Endedness Team Lead + Honorary Prof at UCL). Previously led Llama 3 Tool Use at Meta. Strong RL/open-ended learning background but no direct environment generation focus in recent work."
+ },
+ "cédric colas::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD 21, Inria) -> Postdoc MIT/Inria",
+  "current_employer": "Inria & Sorbonne University (Marie Curie Fellow, Oct 2025-present)",
+  "key_work": "Teacher algorithms for curriculum learning (CoRL 19), Automatic curriculum learning survey (IJCAI 20)",
+  "personal_email": "",
+  "website": "https://cedriccolas.com",
+  "recruitable": "Yes - academic postdoc, Marie Curie ending soon",
+  "notes": "Strong match for env generation: curriculum learning, procedural content generation, autotelic agents. PhD 2021 Inria (Best PhD Thesis Award 2022 France). Marie Curie postdoc MIT (2022-2025) + Inria, now at Sorbonne/Inria (Oct 2025+). Recent work on LLM agents, program synthesis. Email on scholar: ccolas@mit.edu (institutional)"
+ },
+ "c. daniel freeman::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 17, UC Berkeley -> Anthropic (2023)",
+  "current_employer": "Anthropic",
+  "key_work": "Brax (NeurIPS 21) - differentiable physics engine for large-scale rigid body simulation",
+  "personal_email": "",
+  "website": "https://scholar.google.com/citations?user=t5Xsx0IAAAAJ",
+  "recruitable": "Unlikely - at Anthropic",
+  "notes": "Member of Technical Staff at Anthropic since Nov 2023. Previously Google Research/Brain (2018-2023) as AI Resident then SWE. Brax work directly relevant to environment generation - built scalable physics simulation infrastructure. PhD in quantum information/condensed matter."
+ },
+ "drew linsley::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Early-career faculty (PhD 2016, Boston College) -> Brown University",
+  "current_employer": "Brown University",
+  "key_work": "3D-PC benchmark for visual perspective taking (ICLR 25), ecological objectives for human-AI alignment",
+  "personal_email": "drew_linsley@brown.edu",
+  "website": "https://sites.brown.edu/drewlinsley/",
+  "recruitable": "Unlikely - tenured track faculty",
+  "notes": "Assistant Professor (Research) in Computational Neuroscience/AI at Brown since 2021. Focus on biological vision and neuroscience-inspired AI, not environment generation. Also Chief Scientist at BrainScope and CEO at Operant BioPharma. Research direction (visual reasoning, brain-AI alignment) misaligned with environment generation role."
+ },
+ "joão correia::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Assistant Professor (PhD ~2018, U Coimbra)",
+  "current_employer": "University of Coimbra",
+  "key_work": "GP-Based Generative Adversarial Models (GPTP 22), Evolutionary Generative Models - procedural content generation",
+  "personal_email": "",
+  "website": "https://apps.uc.pt/mypage/faculty/uc40050",
+  "recruitable": "Maybe - tenured academic",
+  "notes": "Faculty at U Coimbra since PhD. Research in evolutionary computation for generative models, GANs, procedural generation. Active in EvoStar conferences (chair roles). Relevant for environment generation via evolutionary/procedural methods but academic position may limit mobility."
+ },
+ "ilia kulikov::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 22, NYU -> Meta FAIR (4+ yrs)",
+  "current_employer": "Meta FAIR",
+  "key_work": "Autodata (arXiv 24) - agentic synthetic data generation, Unlikelihood training for text generation",
+  "personal_email": "",
+  "website": "https://uralik.github.io",
+  "recruitable": "Unlikely - at Meta FAIR",
+  "notes": "Senior research scientist at Meta FAIR since Feb 2022. Focus on NLP/text generation, not environment generation. h-index 16 (not 12). Last known institution in query appears incorrect - no PTB affiliation found."
+ },
+ "reza khoshkangini::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 2017, University of Padova -> Associate Professor",
+  "current_employer": "Malmö University",
+  "key_work": "PCG for gamification (UMUAI 21), ML-based personalized challenge generation",
+  "personal_email": "reza.khoshkangini@mau.se",
+  "website": "https://mau.se/en/persons/reza.khoshkangini/",
+  "recruitable": "Maybe - tenured academic",
+  "notes": "Research focus on procedural content generation and ML for gamification, not environment generation for embodied AI/robotics. Work is in game challenges/mobility apps rather than 3D spatial environments. Has been at Malmö since 2022 as Associate Professor after postdoc at Halmstad. Academic trajectory suggests unlikely to leave tenure track."
+ },
+ "stephen lee-urban::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 2012, Lehigh -> GTRI (2013-present) -> Lehigh Teaching Professor",
+  "current_employer": "Lehigh University (Teaching Professor)",
+  "key_work": "Automated Scenario Generation (FDG 12), Skill-based Mission Generation (PCG 12) - game env generation",
+  "personal_email": "urban.stephen@gmail.com",
+  "website": "https://faculty.cc.gatech.edu/~surban6/",
+  "recruitable": "Maybe - teaching track",
+  "notes": "Senior at GTRI 2013-present doing applied research (spectrum, cyber, visualization). Also Teaching Professor at Lehigh CSE. PhD work on hierarchical planning and automated scenario/mission generation for games/training. Relevant env generation experience but 12+ years post-PhD in applied/teaching roles."
+ },
+ "djordje grbic::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 18, U Geneva -> Associate Professor",
+  "current_employer": "IT University of Copenhagen",
+  "key_work": "EvoCraft (open-ended evolution in Minecraft), CPPN2WFC (WFC for coherent content generation)",
+  "personal_email": "",
+  "website": "https://real.itu.dk/people/djordje-grbic/",
+  "recruitable": "Maybe - tenured faculty",
+  "notes": "Associate Prof at ITU since 2022. Research in safe RL, ML for operations research, and artificial life. Strong background in evolutionary computation and procedural content generation relevant to environment generation. Academic position makes recruiting challenging but has industry project experience (DARPA self-driving safety)."
+ },
+ "vanessa volz::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 2019 (TU Dortmund) -> modl.ai (2019-2024) -> CWI tenure track (2024+) + Interim Prof (Wuppertal, 2025+)",
+  "current_employer": "Centrum Wiskunde & Informatica (CWI)",
+  "key_work": "Evolving Mario Levels in GAN Latent Space (GECCO 18), CPPN2GAN for large-scale pattern generation (GECCO 20)",
+  "personal_email": "",
+  "website": "https://www.cwi.nl/en/people/vanessa-volz/",
+  "recruitable": "Maybe - tenure track position",
+  "notes": "Tenure track researcher at CWI (Apr 2024+) in Evolutionary Intelligence group. Also holds interim professorship at Bergische Universität Wuppertal (Oct 2025+). Core expertise in procedural content generation for games using evolutionary algorithms and GANs - directly relevant for environment generation. Previously at modl.ai (2019-2024). May be open to industry given recent startup background, but tenure track position suggests academic commitment."
+ },
+ "anton raichuk::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 12 (Waterloo) -> Google (12+ yrs tenure)",
+  "current_employer": "Google",
+  "key_work": "Brax - differentiable physics engine (NeurIPS 21), Braxlines - RL toolkit",
+  "personal_email": "",
+  "website": "https://research.google/people/antonraichuk/",
+  "recruitable": "Unlikely - at Google",
+  "notes": "Senior SWE at Google since Dec 2012 (13+ yrs). Zurich-based. Work on Brax (physics simulation) relevant to env generation but long tenure suggests low mobility. No personal site/email found."
+ },
+ "bryan lim::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD grad (Imperial College London) -> working on robots/agents independently",
+  "current_employer": "Independent (previously Autodesk AI Lab as Principal Research Scientist)",
+  "key_work": "DA-QD (ICRA 22) - dynamics models for QD, Env trajectory priors for locomotion (ICRA 22)",
+  "personal_email": "",
+  "website": "https://limbryan.github.io/",
+  "recruitable": "Yes - recently left Autodesk, exploring new directions",
+  "notes": "Strong fit: PhD focused on QD+RL for skill discovery, multiple papers on environment generation for robotics (trajectory generators, diverse environments). Recently transitioned from Autodesk (9/2025 news about AEC foundation model). Personal site says 'doing something new - working on robots and agents'. h-index 9 per Scholar (485 citations). Twitter active @bryanlimwt."
+ },
+ "pranjal aggarwal::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD Year 2, CMU LTI",
+  "current_employer": "Carnegie Mellon University (interned Meta FAIR 2025)",
+  "key_work": "Gym-Anything (arXiv 26) - turns any software into agent env w/ 10K+ tasks across 200 apps",
+  "personal_email": "",
+  "website": "https://pranjal2041.github.io/",
+  "recruitable": "Maybe - SoftBank-Arm Fellow, early PhD",
+  "notes": "Strong fit for env generation role. Gym-Anything directly relevant - automated framework for creating computer-use agent environments with realistic data/tasks/verification. Also has CUA-World-Long benchmark (200 long-horizon tasks, 500+ steps). 2nd year PhD advised by Sean Welleck, prestigious fellowship recipient. May be open to internships but likely committed to PhD program for now."
+ },
+ "ahmad ridley::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior researcher (PhD ~2004, UMD)",
+  "current_employer": "National Security Agency (NSA)",
+  "key_work": "Network Environment Design for Autonomous Cyberdefense (arXiv 21), CAGE Challenge 4 - MARL cyber env (AAAI 25)",
+  "personal_email": "",
+  "website": "https://openreview.net/profile?id=%7EAhmad_Ridley1",
+  "recruitable": "Unlikely - at NSA",
+  "notes": "Senior research mathematician at NSA's Laboratory for Advanced Cybersecurity Research. Focus on RL/MARL environments for cyber defense, directly relevant to environment generation. Email: adridle@uwe.nsa.gov (institutional only found). Government position makes recruitment challenging."
+ },
+ "andrzej banburski-fahey::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 17, Perimeter Institute -> MIT postdoc (18-22) -> MSR (22-present, 4+ yrs)",
+  "current_employer": "Microsoft Research",
+  "key_work": "LLMR: prompt-based 3D world creation (arXiv 22), DreamGarden: LLM game env assistant (CHI 25 Best Paper)",
+  "personal_email": "",
+  "website": "https://www.microsoft.com/en-us/research/people/abanburski/",
+  "recruitable": "Maybe - senior at MSR",
+  "notes": "Principal Researcher leading 'Speaking the World into Existence' project with Jaron Lanier on prompt-based interactive 3D scene generation. Strong fit for env generation (LLMR, DreamGarden). 4+ years at MSR as principal researcher suggests seniority/stability."
+ },
+ "erik frey::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior Engineer, Google DeepMind",
+  "current_employer": "Google DeepMind",
+  "key_work": "Brax physics engine (2021), MuJoCo Playground - GPU-accelerated sim-to-real (2024)",
+  "personal_email": "erik@fawx.com",
+  "website": "https://fawx.com/",
+  "recruitable": "Maybe - senior at Google",
+  "notes": "Works on robotics simulation at Google DeepMind. Recent work on Gemini Robotics (2025) and MuJoCo Playground for sim-to-real transfer. Strong background in differentiable physics engines and large-scale simulation - highly relevant for environment generation. Email verified on personal site."
+ },
+ "samyak parajuli::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD student (2nd yr), UT Austin",
+  "current_employer": "UT Austin (PhD student, advised by Amy Zhang)",
+  "key_work": "DreamGarden (CHI 25 Best Paper) - game generation from prompts",
+  "personal_email": "",
+  "website": "https://samp830.github.io/",
+  "recruitable": "Maybe - early PhD",
+  "notes": "NSF CSGrad4US Fellow. Prior: Perplexity AI (pretraining/RLHF), Scale AI (multimodal). Interests: multimodal learning, self-supervised learning in decision-making. MS/BS Berkeley (worked with Bayen, Levine on multi-agent RL). DreamGarden work directly relevant to env generation."
+ },
+ "florian rupp::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD Dec 2025, Uni Mannheim) -> Postdoc HdM Stuttgart",
+  "current_employer": "Hochschule der Medien Stuttgart",
+  "key_work": "G-PCGRL (FDG 24) - RL for procedural graph generation, Level balancing via RL (IEEE ToG 24)",
+  "personal_email": "",
+  "website": "https://www.kaiec.de/people/florian-rupp/",
+  "recruitable": "Yes - fresh PhD, academic postdoc",
+  "notes": "Defended Dec 11, 2025 (magna cum laude). Core expertise: procedural content generation + RL for game level generation/balancing. Also lecturer at TH Mannheim (Mar 2023-present). Strong publication record in game AI venues (IEEE CoG, FDG, IEEE ToG). Research directly aligned with environment generation via RL-based PCG methods."
+ },
+ "edward grefenstette::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior (PhD 2013, Oxford) -> Director of Research",
+  "current_employer": "Google DeepMind",
+  "key_work": "Replay-Guided Adversarial Environment Design, Evolving Curricula with Regret-Based Environment Design",
+  "personal_email": "****@egrefen.com",
+  "website": "https://www.egrefen.com/",
+  "recruitable": "Unlikely - Director of Research at DeepMind",
+  "notes": "Director of Research at DeepMind (Jun 2023-present), also Honorary Professor at UCL. Previously Head of ML at Cohere (2022-2023), FAIR RL Area Lead, and DeepMind Staff Scientist. Co-founded Dark Blue Labs (acquired by DeepMind). Strong match for environment generation - led work on procedural curriculum generation and adversarial environment design. Very senior role makes recruitment unlikely."
+ },
+ "tim rocktäschel::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 2017, UCL -> Professor UCL + Director/Principal Scientist DeepMind",
+  "current_employer": "Google DeepMind (Director/Principal Scientist, Open-Endedness Team Lead) + UCL Professor",
+  "key_work": "Genie (ICML 24 Best Paper) - generative interactive envs, Genie 2 & 3 - foundation world models",
+  "personal_email": "tim.rocktaeschel@gmail.com",
+  "website": "https://rockt.ai/",
+  "recruitable": "Unlikely - Director at DeepMind",
+  "notes": "Senior leader (Director/L7+) at DeepMind leading Open-Endedness team. Perfect fit for env generation (Genie series, procedural generation work). Also Professor at UCL, ELLIS Fellow. Co-founded Recursive (acquired by Meta). 2x ICML 24 Best Papers. Very senior, unlikely to move from DeepMind leadership role."
+ },
+ "olivier bachem::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 2018, ETH Zurich -> Google DeepMind (Senior Director)",
+  "current_employer": "Google DeepMind",
+  "key_work": "Brax (NeurIPS 21) - differentiable physics engine for large-scale rigid body simulation",
+  "personal_email": "",
+  "website": "https://olivierbachem.ch/",
+  "recruitable": "Unlikely - Senior Director at DeepMind",
+  "notes": "Co-leads Gemma (Google's open-weight LLM program). Senior leadership role. Brax relevant for env generation (physics sim for RL). No personal email found on homepage."
+ },
+ "adam santoro::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 2015, U Toronto -> DeepMind since 2015",
+  "current_employer": "Google DeepMind",
+  "key_work": "Automated curricula through setter-solver (NeurIPS 19) - goal generation for RL agents",
+  "personal_email": "",
+  "website": "https://scholar.google.com/citations?user=evIkDWoAAAAJ",
+  "recruitable": "Unlikely - Senior Staff at DeepMind",
+  "notes": "Senior Staff Research Scientist (promoted Jan 2024) with 10+ years at DeepMind. Focus on LLM reasoning, adaptive computation, and interactive intelligence. Setter-solver work directly relevant to environment generation. Very senior and established at top lab."
+ },
+ "josh merel::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD '21 (Columbia) -> DeepMind -> Meta -> CTO/Co-founder",
+  "current_employer": "Amazon (via Fauna Robotics acquisition, Jan 2026)",
+  "key_work": "Neural Probabilistic Motor Primitives (ICLR 19), DeepMind Control Suite",
+  "personal_email": "",
+  "website": "https://www.linkedin.com/in/josh-merel-9222b72a2",
+  "recruitable": "Unlikely - just acquired by Amazon",
+  "notes": "Founded Fauna Robotics (humanoid robots), acquired by Amazon Jan 2026. Previously 3yr at DeepMind, 2yr at Meta Research. Strong motor control/embodied AI background but not environment generation focus. Likely locked into Amazon integration."
+ },
+ "carrie j. cai::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior (PhD ~2017, MIT) -> Google DeepMind",
+  "current_employer": "Google DeepMind",
+  "key_work": "Generative Agents (UIST 23) - LLM agents simulating human behavior in interactive environments",
+  "personal_email": "cjcai@alum.mit.edu",
+  "website": "https://sites.google.com/view/carriecai/home",
+  "recruitable": "Unlikely - Senior Staff at DeepMind",
+  "notes": "Senior Staff Research Scientist & Manager/Area Lead of Human-AI Interaction in PAIR group. Focus on LLM interaction and controllable AI. Generative Agents work highly relevant to environment generation (simulated town with 25 agents). 7 paper awards, established researcher unlikely to move."
+ },
+ "sébastien racanière::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior researcher (PhD ~2010s) -> DeepMind (2017+)",
+  "current_employer": "Google DeepMind",
+  "key_work": "Imagination-Augmented Agents (NeurIPS 17), Automated Curricula via Setter-Solver (arXiv 19)",
+  "personal_email": "",
+  "website": "https://scholar.google.com/citations?user=o-h0vrQAAAAJ",
+  "recruitable": "Unlikely - at DeepMind",
+  "notes": "Staff Research Engineer at DeepMind since ~2017. Current focus on symmetries in ML, past work in RL/curriculum learning. Recurrent Environment Simulators (ICLR 17) directly relevant to env generation. Long tenure at top lab suggests low mobility."
+ },
+ "aleksandra faust::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior (PhD ~2012, UNM) -> Google DeepMind Director -> Genesis Therapeutics CAIO",
+  "current_employer": "Genesis Therapeutics (CAIO, Jun 2025-Jan 2026) + Google DeepMind (returned Feb 2026)",
+  "key_work": "Environment Generation for Zero-Shot Compositional RL (NeurIPS 21), Targeted Environment Design from Offline Data (21)",
+  "personal_email": "",
+  "website": "https://www.afaust.info/home",
+  "recruitable": "Unlikely - Director at DeepMind, just returned Feb 2026 after CAIO stint",
+  "notes": "Led Gemini self-improvement research (20-person team), founded AutoRL field. IEEE Fellow. Perfect match for env generation (her core research area), but very senior (Director level) and just rejoined DeepMind Feb 2026 after 7mo as Genesis CAIO. Also serves on Genesis board + GuardianCare AI board."
+ },
+ "giuseppe valetto::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior industry researcher (PhD ~2000s, Columbia) -> AWorld (2023-present)",
+  "current_employer": "AWorld",
+  "key_work": "Personalized gamification challenges via ML (UMUAI 21), Multi-Armed Bandit for sustainability goals (TORS 26)",
+  "personal_email": "",
+  "website": "https://dl.acm.org/profile/81100239148",
+  "recruitable": "Maybe - sustainability-focused role",
+  "notes": "AI & Data Process Owner at AWorld (sustainability app). Research focus on gamification/personalization for behavior change, not environment generation. Long academic background (Columbia, FBK) but now in applied sustainability tech. SeaWorld affiliation appears outdated/incorrect."
+ },
+ "sam snodgrass::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 17, Drexel -> Industry (8 yrs post-PhD)",
+  "current_employer": "Escape Velocity Entertainment (Machine Learning Lead, Aug 2025-present)",
+  "key_work": "Learning to Generate Video Game Maps Using Markov Models (IEEE TCIAIG 16), PCGML survey",
+  "personal_email": "",
+  "website": "https://sites.google.com/site/sampsnodgrass/",
+  "recruitable": "Yes - startup role, direct env gen expertise",
+  "notes": "Strong match: PhD thesis on PCG using Markov models for game map generation. 3yr at modl.ai (AI for game design tools), 8mo Unity Research, postdoc at Northeastern. Currently ML Lead at game startup. Verified email @modl.ai. Expertise in procedural generation, PCGML, game environments across multiple domains (Mario, Loderunner, Kid Icarus). Recent transition to startup suggests openness."
+ },
+ "i̇zzeddin gür::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 2019, UC Santa Barbara -> Google DeepMind (5+ yrs)",
+  "current_employer": "Google DeepMind",
+  "key_work": "Environment Generation for Zero-Shot Compositional RL (NeurIPS 21), Adversarial Env Gen for Web Nav (ICLR 21)",
+  "personal_email": "",
+  "website": "https://scholar.google.ca/citations?hl=en&user=qS_ugJAAAAAJ",
+  "recruitable": "Unlikely - at DeepMind",
+  "notes": "Senior Research Scientist at DeepMind since Jan 2023, Research Scientist at Google since Aug 2019. Core expertise in environment generation, curriculum learning, and RL for web navigation. Strong publication record in target area but deeply embedded in top-tier industry lab."
+ },
+ "sertan girgin::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior researcher (PhD ~2010s) -> Google DeepMind (long tenure)",
+  "current_employer": "Google DeepMind",
+  "key_work": "Brax physics engine (2021), RL for mean field games & on-policy methods",
+  "personal_email": "",
+  "website": "https://sites.google.com/site/girgint/home",
+  "recruitable": "Unlikely - at Google DeepMind",
+  "notes": "Senior ML researcher at DeepMind with extensive RL background. Recent work on Gemini/Gemma models (2024), BOND distillation, MusicRL. Previously YouTube team. Strong RL foundations but recent focus on LLMs rather than environment generation specifically."
+ },
+ "bob mcgrew::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD incomplete (Stanford, 2005-2016) -> PayPal/Palantir veteran -> OpenAI CRO (2017-2024) -> US Army Reserve + stealth startup",
+  "current_employer": "Arda AI (co-founder/CEO) + US Army Reserve (Lt. Colonel, Detachment 2011)",
+  "key_work": "GPT-4, o1 reasoning model leadership at OpenAI; GLIDE text-guided diffusion (ICML 22)",
+  "personal_email": "",
+  "website": "https://www.linkedin.com/in/bobmcgrew",
+  "recruitable": "Unlikely - co-founding Arda AI",
+  "notes": "Former OpenAI Chief Research Officer (led ChatGPT/GPT-4/o1 development). Recently left to co-found Arda AI (automation startup) while serving as Army Reserve officer advising on AI/tech. Papers match: HER, multi-goal RL, emergent tool use. Not environment generation focused - his work was foundation models & RL at scale. Senior exec unlikely to move to academic/research role."
+ },
+ "alex iacob::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD candidate (4th yr), University of Cambridge",
+  "current_employer": "University of Cambridge (CaMLSys Lab)",
+  "key_work": "Red Queen Gödel Machine (arXiv 26) - co-evolving agents & evaluators; Photon federated LLM pretraining",
+  "personal_email": "",
+  "website": "https://www.linkedin.com/in/alex-iacob-898775194",
+  "recruitable": "Yes - academic researcher",
+  "notes": "PhD 2022-present in ML Systems group under Nicholas Lane. Recent work on self-improving agents and federated learning. No direct environment generation work found, but RQGM involves evolving evaluation environments/objectives. Research intern at Flower Labs (May-Sep 2024). Active researcher with ICLR 26 papers. No personal website found beyond LinkedIn."
+ },
+ "ambroise odonnat::Environment Generation": {
+  "identity_confirmed": false,
+  "career_stage": "",
+  "current_employer": "",
+  "key_work": "",
+  "personal_email": "",
+  "website": "",
+  "recruitable": "",
+  "notes": "Cannot confirm identity - the known paper 'The Red Queen Gödel Machine: Co-Evolving Agents and Their Evaluators' does not appear in any search results for Ambroise Odonnat. The researcher found works on LLMs, Vision Transformers, time series, and OOD generalization, but no papers matching the provided title. This may be a different person with the same name."
+ },
+ "jason weston::Environment Generation": {
+  "identity_confirmed": false,
+  "career_stage": "",
+  "current_employer": "",
+  "key_work": "",
+  "personal_email": "",
+  "website": "",
+  "recruitable": "",
+  "notes": "Cannot confirm identity - the known papers (Autodata, Scaling Agent Learning via Experience Synthesis, Curriculum learning) do not match Jason Weston's publication record. Jason Weston at Meta FAIR/NYU is a highly cited senior researcher (h-index 123, not 94) known for NLP/LLM work (Memory Networks, Self-Rewarding LLMs, NLP from Scratch), not environment generation or the papers listed. This appears to be a different researcher with the same name."
+ },
+ "xian li::Environment Generation": {
+  "identity_confirmed": false,
+  "career_stage": "",
+  "current_employer": "",
+  "key_work": "",
+  "personal_email": "",
+  "website": "",
+  "recruitable": "",
+  "notes": "Found multiple researchers named Xian Li: (1) Meta FAIR Principal Researcher (PhD RPI 2013, machine translation/LLMs), (2) Amazon Principal Scientist (PhD Binghamton 2013, product graphs/GenAI), (3) Amazon Applied Scientist (knowledge graphs/NLP). None match the papers 'Autodata' or 'Scaling Agent Learning via Experience Synthesis' from search results. The ICLR 2026 paper 'Scaling Agent Learning via Experience Synthesis' appears on OpenReview under a Xian Li profile at Meta, but cannot definitively link to h-index 64 or Xihua University affiliation. Unable to confirm identity without additional distinguishing information."
+ },
+ "nicholas d. lane::Environment Generation": {
+  "identity_confirmed": false,
+  "career_stage": "",
+  "current_employer": "",
+  "key_work": "",
+  "personal_email": "",
+  "website": "",
+  "recruitable": "",
+  "notes": "Cannot confirm identity - the known paper 'The Red Queen Gödel Machine: Co-Evolving Agents and Their Evaluators' does not appear in Nicholas D. Lane's publication record. Lane's research focuses on mobile ML systems, federated learning, and on-device AI, not environment generation or co-evolution. This appears to be a different researcher with the same name."
+ },
+ "sudha rao::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior researcher (PhD ~2018, UMD) -> Microsoft Research",
+  "current_employer": "Microsoft Research",
+  "key_work": "GENEVA (CoG 24) - LLM-driven branching game narratives, Player-driven emergence in LLM game narrative",
+  "personal_email": "",
+  "website": "https://raosudha.weebly.com/",
+  "recruitable": "Unlikely - at MSR",
+  "notes": "Principal Researcher at MSR focusing on LLMs for game narratives. Work on narrative graphs led to XBOX-Inworld AI partnership. ACL 2018 best paper. Not environment generation focused - works on narrative/story generation in games, not spatial/3D environments."
+ },
+ "peng, yiran::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Current PhD student (2025-present), HKUST(GZ)",
+  "current_employer": "HKUST(GZ) + DeepWisdom Research (intern)",
+  "key_work": "AutoEnv (ICLR 26 sub) - automated heterogeneous env generation; AutoWebWorld - web env synthesis via FSMs",
+  "personal_email": "",
+  "website": "https://github.com/SNHuan",
+  "recruitable": "Yes - early PhD, active in env generation",
+  "notes": "Started PhD Sept 2025 at HKUST(GZ), concurrently interning at DeepWisdom. Core focus on automated environment generation for agents (AutoEnv framework, AutoWebWorld). Lead author on AutoEnv paper submitted to ICLR 2026. Also developed EasyAgent framework. Strong match for environment generation role. Note: h-index of 30 appears incorrect for early-career researcher."
+ },
+ "michael d. dennis::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD candidate (2019-present, UC Berkeley) -> Google DeepMind researcher (2023-present)",
+  "current_employer": "Google DeepMind",
+  "key_work": "Unsupervised Environment Design (NeurIPS 20), Genie: Generative Interactive Environments (2024)",
+  "personal_email": "michael_dennis@cs.berkeley.edu",
+  "website": "https://www.michaeldennis.ai/",
+  "recruitable": "Unlikely - at DeepMind",
+  "notes": "Core researcher on environment generation (UED, Genie, Genie 2). Joined DeepMind 2023 while completing PhD. Strong match for env generation role but recently joined top-tier lab."
+ },
+ "han fang::Environment Generation": {
+  "identity_confirmed": false,
+  "career_stage": "",
+  "current_employer": "",
+  "key_work": "",
+  "personal_email": "",
+  "website": "",
+  "recruitable": "",
+  "notes": "Found multiple Han Fang researchers but none match the provided profile. The search results show: (1) Han Fang at China Telecom AI focusing on video-text retrieval and MLLMs, (2) Han Fang at Chinese Academy of Sciences studying ecology/geography, (3) Han Fang at Inner Mongolia studying ecological meteorology. None are affiliated with Research Center for Eco-Environmental Sciences or have published 'Autodata: An agentic data scientist to create high quality synthetic data'. The paper and institution combination could not be verified through web search."
+ },
+ "wenwen li::Environment Generation": {
+  "identity_confirmed": false,
+  "career_stage": "",
+  "current_employer": "",
+  "key_work": "",
+  "personal_email": "",
+  "website": "",
+  "recruitable": "",
+  "notes": "Multiple researchers named Wenwen Li found: (1) PhD student at University of Nottingham 2014-2018, (2) PhD candidate at City University of Hong Kong in Data Science, (3) Postdoc at Florida State University (PhD 2023, University of Oklahoma) in Applied Algebraic Topology, (4) Various NLP/LLM researchers on CSAuthors. None match the provided paper 'TaskCraft: Automated Generation of Agentic Tasks' or affiliation with Kunming University of Science and Technology. Cannot confirm identity without access to Google Scholar or finding the specific paper."
+ },
+ "david reichert::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior researcher (PhD ~2015) -> Google DeepMind (paused capabilities work)",
+  "current_employer": "Google DeepMind",
+  "key_work": "SIMA 2 (arXiv 25) - generalist embodied agent, Automated curricula setter-solver (ICLR 20)",
+  "personal_email": "",
+  "website": "https://david-p-reichert.bsky.social",
+  "recruitable": "Maybe - at DeepMind, but publicly stated concerns about AI capabilities work",
+  "notes": "Strong match for env generation (SIMA, curriculum generation, goal-conditioned RL). Profile states 'currently no longer working on advancing AI capabilities' due to concerns. Verified email: reichert@google.com. Active on Bluesky discussing AI safety/ethics."
+ },
+ "weichen sun::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Industry researcher (MS '19, Northeastern) -> Alibaba (21-23) -> OPPO Research",
+  "current_employer": "OPPO Research Institute",
+  "key_work": "TaskCraft (ICLR 26) - automated agentic task generation, Chain-of-Agents - multi-agent distillation",
+  "personal_email": "",
+  "website": "https://openreview.net/profile?id=~Weichen_Sun1",
+  "recruitable": "Maybe - at OPPO Research",
+  "notes": "Principal Researcher at OPPO since 2025. Focus on agent foundation models and task generation, not directly environment generation but adjacent (agentic tasks with tools). Multiple ICLR 26 submissions on agent systems. Previous Alibaba experience (21-23)."
+ },
+ "zhiwei li::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD student (2025-present), HKUST(GZ)",
+  "current_employer": "HKUST(GZ)",
+  "key_work": "From Trainee to Trainer (2026) - LLM-designed training envs for RL agents",
+  "personal_email": "",
+  "website": "https://digbangbang.github.io/",
+  "recruitable": "Yes - early PhD",
+  "notes": "Started PhD 2025 at HKUST(GZ) with Prof. Zhijiang Guo. MS from Fudan 2023-2025. Research on LLM reasoning, multimodal LLMs, RL agents. Paper directly relevant to environment generation for RL training."
+ },
+ "chenxi whitehouse::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD 23, City Univ London) -> Meta FAIR (Oct 24)",
+  "current_employer": "Meta FAIR",
+  "key_work": "Autodata (agentic synthetic data), J1 (RL for LLM-as-judge, ICLR 26)",
+  "personal_email": "chenxi.whitehouse@gmail.com",
+  "website": "https://chenxwh.github.io/",
+  "recruitable": "Maybe - at Meta FAIR, focus on post-training/RL not env generation",
+  "notes": "Research Scientist at Meta FAIR London since Oct 2024, working on LLM alignment, post-training, RL, and reward modeling. Prior: postdoc at Cambridge (factuality NLP), PhD intern at DeepMind. No direct environment generation work - expertise is in synthetic data, LLM judges, and reasoning systems. Visiting researcher at Cambridge alongside Meta role."
+ },
+ "weijia xu::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 22, UMD -> Microsoft Research (Senior Researcher, 2023-present)",
+  "current_employer": "Microsoft Research Redmond",
+  "key_work": "GENEVA (CoG 24) - LLM-driven branching game narratives; fLSA (EMNLP 25) - semantic structures w/ foundation models",
+  "personal_email": "",
+  "website": "https://weijia-xu.github.io/",
+  "recruitable": "Maybe - Senior Researcher at MSR",
+  "notes": "Focus on LLM-driven narrative generation and interactive AI agents. Work on player-driven emergence and game narrative systems aligns with environment generation through procedural content. Senior role at MSR since Feb 2023 suggests established position but academic background may make open to right opportunity."
+ },
+ "kong, fanqi::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "2nd year PhD, Peking University",
+  "current_employer": "Peking University (Institute for Artificial Intelligence)",
+  "key_work": "AutoEnv (2025) - automated env generation framework, AdaSociety (2026) - adaptive multi-agent environments",
+  "personal_email": "kfq20@stu.pku.edu.cn",
+  "website": "https://kfq20.github.io/",
+  "recruitable": "Yes - early PhD, strong env generation focus",
+  "notes": "Core expertise in automated environment generation (AutoEnv framework, $4.12/env cost) and multi-agent systems. Recent ICML 2026 acceptances (3 papers). Active in social intelligence and agent evaluation. President of Graduate Student Union, suggesting leadership skills."
+ },
+ "tianhao wu::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Graduating PhD (5th yr), UC Berkeley",
+  "current_employer": "UC Berkeley EECS (advisors: Jiantao Jiao, Kannan Ramchandran)",
+  "key_work": "Hive - agent swarms that evolve collectively; Meta-Rewarding - self-improving LLM alignment",
+  "personal_email": "",
+  "website": "https://thwu1.github.io/tianhaowu/",
+  "recruitable": "Yes - graduating soon, building agent systems",
+  "notes": "Core focus on agent collectives and self-improving systems (Hive platform). Recent Meta internship (May-Dec 2024). Strong RL+LLM alignment background (Starling-7B, TPO). Not directly environment generation but agent swarms could be relevant for multi-agent env scenarios. Dissertation filed Dec 2025 on LLM post-training."
+ },
+ "zhijiang guo::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Assistant Professor (PhD '20, SUTD)",
+  "current_employer": "HKUST (Guangzhou) - DSA Thrust",
+  "key_work": "EnvFactory (2026) - automated executable tool environments synthesis for RL agents",
+  "personal_email": "zhijiangguo@hkust-gz.edu.cn",
+  "website": "https://cartus.github.io/",
+  "recruitable": "Unlikely - faculty position",
+  "notes": "Runs LARK Lab at HKUST(GZ), actively recruiting PhD students. Recent work on EnvFactory directly addresses environment generation for tool-use agents via automated synthesis. Former Huawei Noah's Ark researcher, Cambridge postdoc with Vlachos."
+ },
+ "jakob foerster::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 19, Oxford -> Associate Professor (2021)",
+  "current_employer": "University of Oxford (50%) & Meta FAIR (50%)",
+  "key_work": "Replay-Guided Adversarial Environment Design, Evolving Curricula with Regret-Based Environment Design",
+  "personal_email": "reachingjakob@gmail.com",
+  "website": "https://www.jakobfoerster.com/",
+  "recruitable": "Unlikely - explicitly states not looking, happy at Oxford/FAIR",
+  "notes": "Senior researcher (h-index 30, 7861 citations). Homepage explicitly says 'not the right time for next gig' and asks recruiters not to send generic emails. Also founding director of BOLD lab. Strong match for environment generation (adversarial env design, curriculum learning). Consider sponsoring BOLD instead."
+ },
+ "chao chen::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD student (2nd yr), Peking University",
+  "current_employer": "Peking University (Prof. He Wang)",
+  "key_work": "LLM-as-Environment-Engineer for RL (arXiv 26), Focus-Then-Reuse for transfer RL",
+  "personal_email": "",
+  "website": "https://shenbiachao.github.io/",
+  "recruitable": "Yes - early PhD, RL/env design focus",
+  "notes": "Previously MS at Nanjing U (LAMDA Group, RL). Current research on humanoid robot control + RL environment design. Paper directly matches env generation hiring need (automated RL environment configuration). Also affiliated with MIRA Lab at PKU."
+ },
+ "chengzu li::Environment Generation": {
+  "identity_confirmed": false,
+  "career_stage": "",
+  "current_employer": "",
+  "key_work": "",
+  "personal_email": "",
+  "website": "",
+  "recruitable": "",
+  "notes": "Cannot confirm identity - the paper 'From Trainee to Trainer: LLM-Designed Training Environment for RL with Multi-Agent Reasoning' does not appear in any search results for Chengzu Li. The researcher found works on multimodal spatial reasoning and vision-language models (TopViewRS, MVoT, 11Plus-Bench), not RL environment generation. This appears to be a different person or incorrect paper attribution."
+ },
+ "zhang, jiayi::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD student (2024-2028), HKUST(GZ)",
+  "current_employer": "HKUST(GZ) + MetaGPT (research lead)",
+  "key_work": "AutoEnv (arXiv 25) - automated heterogeneous env generation, AutoWebWorld (arXiv 26) - infinite web env synthesis",
+  "personal_email": "",
+  "website": "https://didiforgithub.github.io/",
+  "recruitable": "Maybe - leads research at MetaGPT",
+  "notes": "Strong match: leads env generation work (AutoEnv, AutoWebWorld). Currently PhD student at HKUST(GZ) while leading MetaGPT research team. Actively hiring interns, so may be open to opportunities but has dual commitments. Focus on foundation agents, cross-environment evaluation, scalable environments."
+ },
+ "yang, cheng::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Undergrad (graduating 2027), Hangzhou Dianzi University + ITMO",
+  "current_employer": "Research Intern at Tencent Hunyuan (since May 2026)",
+  "key_work": "AutoWebWorld (ICML 26) - infinite verifiable web envs via FSMs; AutoEnv - cross-environment agent learning",
+  "personal_email": "",
+  "website": "https://imyangc7.github.io/",
+  "recruitable": "Yes - seeking PhD 2027 Fall, explicitly open to research internships",
+  "notes": "Strong fit for environment generation: AutoWebWorld synthesizes infinite web environments, AutoEnv focuses on automated environment creation for agent evaluation. Currently undergrad but publishing at top venues (ICML). Actively seeking opportunities per homepage."
+ },
+ "wu, yifan::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD 24, UPenn) -> Meta",
+  "current_employer": "Meta (GenAI/Superintelligence Labs)",
+  "key_work": "AutoEnv (ICLR 26 sub) - automated env generation, SandMLE - synthetic multi-agent envs",
+  "personal_email": "yifannn.wu@gmail.com",
+  "website": "https://yifannnwu.com/",
+  "recruitable": "Unlikely - at Meta",
+  "notes": "Working on Llama 3/4 post-training and coding agents at Meta. Strong match for env generation (AutoEnv-36 dataset, SandMLE framework). Recent PhD grad (2024), likely locked in for 1-2 years."
+ },
+ "becky powell::Environment Generation": {
+  "identity_confirmed": false,
+  "career_stage": "",
+  "current_employer": "",
+  "key_work": "",
+  "personal_email": "",
+  "website": "",
+  "recruitable": "",
+  "notes": "Multiple individuals named Becky Powell found. The paper 'Network Environment Design for Autonomous Cyberdefense' appears on arXiv.gg but no full paper details or institutional affiliation confirmation available. One Becky Powell is a software engineering team lead at LichtBlick SE (energy company, non-ML). Another is Director of Product Management at Genesys (customer experience platform, non-ML). The City and Islington College reference from 2013 appears to be an education/teaching context, not ML research. Cannot confirm this is an ML researcher with the stated paper."
+ },
+ "yinhong liu::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Final-year PhD, Cambridge",
+  "current_employer": "University of Cambridge (Language Technology Lab)",
+  "key_work": "EnvFactory - executable env synthesis for tool-use agents (under review), LLM-designed training envs for RL",
+  "personal_email": "",
+  "website": "http://yinhongliu.com/",
+  "recruitable": "Yes - graduating soon",
+  "notes": "Supervised by Nigel Collier. Recent MSR Cambridge intern (Jun-Sep 2024). Strong publication record: ICML 25 Spotlight, multiple ACL/EMNLP/NAACL papers. Research directly aligned with environment generation for RL agents. Email: yinhong.liu@cam.ac.uk (institutional)"
+ },
+ "david held::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 2016, Stanford -> Associate Professor",
+  "current_employer": "Carnegie Mellon University",
+  "key_work": "Reverse Curriculum Generation (CoRL 17), Automatic Goal Generation for RL (ICML 18)",
+  "personal_email": "",
+  "website": "http://davheld.github.io",
+  "recruitable": "Unlikely - tenured faculty",
+  "notes": "Associate Professor at CMU Robotics Institute (2023-present), also Amazon Scholar. Strong match on environment generation for RL (curriculum/goal generation). Established academic with lab, unlikely to leave tenure track."
+ },
+ "kenneth o. stanley::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior (PhD '04, UT Austin) -> SVP at Lila Sciences",
+  "current_employer": "Lila Sciences",
+  "key_work": "POET (paired open-ended env generation), Go-Explore, NEAT/HyperNEAT",
+  "personal_email": "kennethostanley@gmail.com",
+  "website": "https://www.kenstanley.net/",
+  "recruitable": "Unlikely - SVP at Lila",
+  "notes": "Pioneer in open-ended learning & evolutionary computation. Left OpenAI (2020-2022) for Lila Sciences as SVP of Open-Endedness (2023-present). POET directly relevant to env generation. Senior executive role suggests low mobility unless exceptional opportunity."
+ },
+ "wangchunshu zhou::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD dropout (ETH Zürich) -> Startup CTO -> OPPO Director",
+  "current_employer": "OPPO Personal AI Lab",
+  "key_work": "TaskCraft (2025) - automated agentic task generation with multi-tool trajectories",
+  "personal_email": "zhouwangchunshu@oppo.com",
+  "website": "https://michaelzhouwang.github.io/",
+  "recruitable": "Unlikely - at OPPO",
+  "notes": "Director of OPPO Personal AI Lab (as of Oct 2024 after OPPO acquired his startup AIWaves). Actively hiring for his own lab. TaskCraft focuses on task generation rather than environment generation - weak fit for role. H-index 38 per Scholar."
+ },
+ "david ha::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD (Tokyo Univ of Science) -> Google Brain -> Co-Founder & CEO",
+  "current_employer": "Sakana AI",
+  "key_work": "The AI Scientist (Nature 26), World Models, Evolutionary Model Merging",
+  "personal_email": "",
+  "website": "https://otoro.net",
+  "recruitable": "Unlikely - Co-Founder/CEO at Sakana AI",
+  "notes": "Senior researcher (h-index 14+), co-founded Sakana AI in Tokyo focusing on evolutionary/nature-inspired AI. Just launched RSI Lab (2026-07) for recursive self-improvement. Recent work on open-ended exploration, VLMs for creativity. Strong env generation relevance via World Models + evolutionary methods, but unlikely to leave own company."
+ },
+ "t. serre::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior Professor (PhD 2006, MIT) - Brown University",
+  "current_employer": "Brown University",
+  "key_work": "Better AI ≠ better biology models (TiCS 25), 3D-PC visual perspective benchmark (ICLR 25)",
+  "personal_email": "",
+  "website": "https://thomas-serre.com/",
+  "recruitable": "Unlikely - tenured full professor",
+  "notes": "Thomas J. Watson Sr. Professor of Science, Faculty Director of CCV, multiple endowed positions. Papers match but last known institution is stale (never at Allen Institute per web records). Focus is computational neuroscience/vision, not environment generation for RL. High-profile academic unlikely to leave for industry role."
+ },
+ "honglak lee::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior (PhD 2010, Stanford) -> Executive VP/Chief Scientist",
+  "current_employer": "LG AI Research (Chief Scientist, Exec VP) + U. Michigan (Full Professor)",
+  "key_work": "Deep RL for robotics, unsupervised representation learning - foundational work predates environment generation focus",
+  "personal_email": "",
+  "website": "https://web.eecs.umich.edu/~honglak/",
+  "recruitable": "Unlikely - Executive leadership at LG AI Research",
+  "notes": "Confirmed via 'Adversarial Environment Generation for Learning to Navigate the Web' authorship. Currently holds dual executive role (LG AI Research Chief Scientist/EVP since 2020) and tenured professor at Michigan. Senior leader unlikely to relocate for IC role. Research spans deep learning/RL broadly but not specifically focused on environment generation as primary area."
+ },
+ "thomas kunz::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior Researcher, Fraunhofer SIT (2010s+)",
+  "current_employer": "Fraunhofer Institute for Secure Information Technology (SIT)",
+  "key_work": "CyberBattleSim multiagent RL (2022), Blue Agent Training Framework for autonomous cyber ops (2024)",
+  "personal_email": "",
+  "website": "https://datatracker.ietf.org/person/thomas.kunz@sit.fraunhofer.de",
+  "recruitable": "Maybe - established researcher at Fraunhofer",
+  "notes": "h-index 82 suggests senior researcher. Focus is autonomous cyber operations/RL agents, not environment generation. Work on CyberBattleSim involves simulation environments but for cybersecurity domain, not general env generation. Fraunhofer researchers sometimes open to industry but typically well-compensated in German research system."
+ },
+ "meredith ringel morris::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior (PhD 2006, Stanford) -> Google DeepMind Director",
+  "current_employer": "Google DeepMind",
+  "key_work": "Generative Agents (UIST 23) - LLM agents simulating believable human behavior in interactive environments",
+  "personal_email": "",
+  "website": "https://cs.stanford.edu/~merrie/",
+  "recruitable": "Unlikely - Director at DeepMind",
+  "notes": "Director of Post-AGI Interaction Research at DeepMind (since Jun 2023). ACM Fellow, SIGCHI Academy member. Senior leader focused on human-AI interaction and AGI safety. Her Generative Agents work is highly relevant to environment generation (simulated town with 25 agents), but at director level in major AI lab."
+ },
+ "risto miikkulainen::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior (PhD 1990, UCLA) -> Professor UT Austin + VP AI Research Cognizant",
+  "current_employer": "University of Texas at Austin & Cognizant AI Lab",
+  "key_work": "NEAT - Evolving Neural Networks through Augmenting Topologies (Evolutionary Computation 02)",
+  "personal_email": "risto@cs.utexas.edu",
+  "website": "https://www.cs.utexas.edu/~risto/",
+  "recruitable": "Unlikely - tenured professor + VP role",
+  "notes": "Pioneer in neuroevolution (NEAT algorithm). Current research includes neuroevolution for complex architectures. VP of AI Research at Cognizant since Mar 2024 (promoted from Associate VP). AAAI Fellow 2023, IEEE Fellow 2016. While his neuroevolution work relates to evolving architectures, not directly focused on environment generation. Highly unlikely to leave dual senior positions."
+ },
+ "adrian taylor::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior researcher (PhD 2017, U Ottawa) -> Defence R&D Canada",
+  "current_employer": "Defence Research and Development Canada (DRDC)",
+  "key_work": "CyGIL network AI gym (arXiv 23) - emulator+simulator for autonomous cyber agents, RL env for network defense (CCECE 24)",
+  "personal_email": "",
+  "website": "https://orcid.org/0000-0002-3785-6270",
+  "recruitable": "Unlikely - government defense scientist",
+  "notes": "Defence scientist at DRDC since 2009 (15+ years). Specializes in autonomous cyber defense, network security RL environments. PhD thesis on automotive intrusion detection. CyGIL work directly relevant to environment generation (emulated+simulated training environments). Government position with security clearance likely makes recruitment very difficult."
+ },
+ "alex graves::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "Senior researcher (PhD 2008, TUM/IDSIA) -> DeepMind (2013-2023) -> NNAISENSE (2023-2025) -> InstaDeep (2025-present)",
+  "current_employer": "InstaDeep",
+  "key_work": "Neural Turing Machines (2014), Bayesian Flow Networks (2023) - generative models for sequences",
+  "personal_email": "graves@cs.toronto.edu",
+  "website": "https://www.cs.toronto.edu/~graves/",
+  "recruitable": "Unlikely - at InstaDeep",
+  "notes": "Highly cited pioneer (171k+ citations) in RNNs/LSTM, CTC, and memory-augmented networks. Recently joined InstaDeep (2025) leading generative model research including BFNs. Not focused on environment generation specifically - work centers on sequence modeling, generative models, and protein sequences. Senior/established researcher unlikely to move soon after recent transition."
+ },
+ "jeff clune::Environment Generation": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 2010, Michigan State -> Professor",
+  "current_employer": "University of British Columbia (Professor); Vector Institute (CIFAR AI Chair); Recursive (Co-founder)",
+  "key_work": "Genie: Generative Interactive Environments (ICML 24), Quality Diversity/MAP-Elites for search spaces",
+  "personal_email": "",
+  "website": "https://jeffclune.com",
+  "recruitable": "Unlikely - Co-founded Recursive (2026), tenured professor, on leave Jan-Dec 2026",
+  "notes": "Senior researcher with Presidential Early Career Award, papers in Nature/Science. Currently on leave from UBC (Jan-Dec 2026), likely focused on Recursive startup. Genie work directly relevant to environment generation. Previously OpenAI, Uber AI Labs, DeepMind advisor."
+ },
+ "zhihui xie::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "2nd yr PhD, HKU",
+  "current_employer": "Meta Superintelligence Labs (Research Intern, summer 2025)",
+  "key_work": "POLARIS (post-training RL for reasoning), CTRL/OPSD (self-improving reasoning)",
+  "personal_email": "zhxieml@gmail.com",
+  "website": "https://zhxie.site",
+  "recruitable": "Maybe - Meta intern",
+  "notes": "Strong post-training focus: POLARIS recipe scaled 4B models to beat Claude Opus 4 on AIME25. Also Dream diffusion LLMs, VL alignment work. Advised by Lingpeng Kong & Qi Liu at HKU. Currently interning at Meta (Jun 2025-present). Previous internships: Reka AI, ByteDance."
+ },
+ "simran kaur::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD Candidate (final yr), Princeton",
+  "current_employer": "Princeton University",
+  "key_work": "Instruct-SkillMix (ICLR 25), Self-Distillation Zero, RL-induced skill composition",
+  "personal_email": "skaur@princeton.edu",
+  "website": "https://www.kaursim.com/",
+  "recruitable": "Yes - graduating soon",
+  "notes": "Strong post-training focus: skill-mix instruction tuning, RL skill composition, on-policy self-distillation. Advised by Sanjeev Arora. Recent work on thinking models and self-improvement directly relevant to post-training role."
+ },
+ "niklas muennighoff::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD student (2024-2029), Stanford -> Currently AI Research @ Cursor",
+  "current_employer": "Cursor",
+  "key_work": "s1: test-time scaling (EMNLP 25, ICLR 25 Best Paper); KTO alignment (ICML 24); MTEB benchmark",
+  "personal_email": "n.muennighoff@gmail.com",
+  "website": "https://muennighoff.com/",
+  "recruitable": "Unlikely - at Cursor",
+  "notes": "Building Composer (frontier AI coding model) at Cursor since Jan 2026. Knight-Hennessy Scholar. Strong post-training background: KTO alignment, s1 reasoning/test-time compute, MTEB evals. Previously AI2. 20+ h-index, multiple best papers."
+ },
+ "liam fowl::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD '22, UMD) -> Google DeepMind -> Princeton postdoc",
+  "current_employer": "Princeton University (Associate Research Scholar, AI Lab)",
+  "key_work": "Rethinking On-Policy Self-Distillation for Thinking Models (ICML 26), LLM tool use & reasoning at DeepMind",
+  "personal_email": "",
+  "website": "https://lhfowl.github.io/",
+  "recruitable": "Maybe - recently joined Princeton from DeepMind",
+  "notes": "PhD '22 from UMD (Goldstein/Czaja). Was Research Scientist at Google then DeepMind (LLM tool use, Gemini). Just started Princeton postdoc in 2025 focusing on LLM reasoning & mathematical reasoning. Strong post-training fit: self-distillation, reasoning, adaptive computation. May be settling into academic role but came from industry recently."
+ },
+ "ganqu cui::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD 2024, Tsinghua) -> Shanghai AI Lab",
+  "current_employer": "Shanghai AI Laboratory",
+  "key_work": "PRIME/Eurus-2 (implicit process rewards), Entropy collapse in RL for LLMs",
+  "personal_email": "",
+  "website": "https://cgq15.github.io/",
+  "recruitable": "Maybe - at Shanghai AI Lab",
+  "notes": "Core focus on LLM alignment & RL. Led PRIME (process RL without labels), Eurus-2-7B beat GPT-4o on math. Recent work on entropy dynamics in RLHF. Won WAIC Rising Star 2025, NSFC Fund. Strong post-training profile but joined major Chinese lab July 2024."
+ },
+ "rafael rafailov::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD 25, Stanford) -> Thinking Machines",
+  "current_employer": "Thinking Machines Lab",
+  "key_work": "Direct Preference Optimization (NeurIPS 23), Generative Reward Models (arXiv 24)",
+  "personal_email": "rafailov@cs.stanford.edu",
+  "website": "https://rmrafailov.github.io/",
+  "recruitable": "Maybe - just joined startup",
+  "notes": "Core DPO author (2384 citations). Recently completed PhD at Stanford (2025), now at Thinking Machines working on post-training (Tinker release). Previously Google DeepMind student researcher. Strong fit for post-training role but just started new position."
+ },
+ "lovish madaan::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD 26, UCL) -> Recursive founding team",
+  "current_employer": "Recursive",
+  "key_work": "The Art of Scaling RL Compute for LLMs (arXiv 25, 400k GPU-hrs study)",
+  "personal_email": "",
+  "website": "https://lovishmadaan.github.io/",
+  "recruitable": "Unlikely - at Recursive",
+  "notes": "Founding member at Recursive (Mar 2026-present). PhD was joint Meta-UCL program working on RL, LLMs (Llama), and scaling. Prior Google Research. Strong RL+post-training fit but just joined early-stage startup as founding team member."
+ },
+ "ben mann::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "Industry veteran (BS CS Columbia '11) -> OpenAI '19-'20 -> Co-founder",
+  "current_employer": "Anthropic",
+  "key_work": "GPT-3 data eng & evals (OpenAI), RLHF assistant training (Anthropic '22)",
+  "personal_email": "",
+  "website": "https://benjmann.net/",
+  "recruitable": "Unlikely - Co-founder at Anthropic",
+  "notes": "Co-founded Anthropic in 2021, currently leading product engineering. Core contributor to Constitutional AI and RLHF work - directly relevant to post-training but extremely unlikely to move from co-founder role at major frontier lab."
+ },
+ "zihan wang::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD student (2nd yr), Northwestern University",
+  "current_employer": "Northwestern University (PhD researcher with Manling Li); Summer 2026 intern at NVIDIA",
+  "key_work": "RAGEN (ICML 26 oral, top 0.7%) - multi-turn RL for reasoning agents; RAGEN-2 - reasoning collapse in agentic RL",
+  "personal_email": "zihanw@u.northwestern.edu",
+  "website": "https://zihanwang314.github.io/",
+  "recruitable": "Maybe - currently at NVIDIA for summer",
+  "notes": "Strong fit for post-training: pioneered agentic RL methods (RAGEN series), ex-DeepSeek intern (worked on DeepSeek-V2), expertise in RLHF/reasoning. Currently doing summer research at NVIDIA (Jun 2026-present). PhD timeline: 2024-2029. Has industry experience (Microsoft, DeepSeek, Yutori). Active researcher with multiple 2025-26 pubs on agent training."
+ },
+ "richard yuanzhe pang::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD 24, NYU) -> Meta FAIR",
+  "current_employer": "Meta",
+  "key_work": "Prompt Curriculum Learning (ICLR 26), Reward Gaming in Conditional Text Generation (ACL 23)",
+  "personal_email": "",
+  "website": "https://yzpang.github.io/",
+  "recruitable": "Unlikely - at Meta FAIR",
+  "notes": "Research Scientist at Meta FAIR since Aug 2025, working full-time on Muse Spark LLM (reasoning, post-training, RL). Led Llama 3.3 post-training (2024). Strong post-training background: RL from feedback, reward modeling, instruction following, reasoning. PhD with He He/Kyunghyun Cho/Jason Weston at NYU (2024). 8-9 months intensive work on Muse Spark as of Apr 2026."
+ },
+ "peng wang::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD 15, USTC) -> Lecturer (Feb 26), Surrey",
+  "current_employer": "University of Surrey",
+  "key_work": "Dexterous Manipulation Review (Front Neurorobot 22), Digital Twin for Human-Robot Collab Manufacturing",
+  "personal_email": "",
+  "website": "https://peng8wang.github.io/",
+  "recruitable": "Maybe - just started faculty position",
+  "notes": "Started as Lecturer in Robotics at Surrey Feb 2026 (5 months ago). Royal Society Fellow. Focus on robot learning, digital twinning, generative AI for robotics. Previously MMU (2021-25), Sheffield postdoc. Strong robotics/embodied AI background but limited post-training work. Actively recruiting PhD students, may be open to industry collaboration but timing challenging given new faculty role."
+ },
+ "francis song::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 12, Yale Physics -> OpenAI (2022-present)",
+  "current_employer": "OpenAI",
+  "key_work": "Red teaming LMs with LMs (EMNLP 22), Math word problems w/ process feedback (preprint 22)",
+  "personal_email": "",
+  "website": "https://scholar.google.com/citations?user=oVF9D6EAAAAJ",
+  "recruitable": "Unlikely - at OpenAI",
+  "notes": "Staff Research Scientist level. Core post-training work (RLHF, red teaming, process supervision). LinkedIn shows OpenAI since Jul 2022, previously DeepMind 2017-2022. Strong fit for post-training role but difficult to recruit from OpenAI."
+ },
+ "nat mcaleese::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "Industry researcher (MEng 18, Cambridge) -> DeepMind -> OpenAI -> Anthropic",
+  "current_employer": "Anthropic",
+  "key_work": "RLHF alignment papers: verified quotes, diverse preferences, dialogue agents",
+  "personal_email": "nat@nmca.dev",
+  "website": "http://nmca.dev/",
+  "recruitable": "Unlikely - at Anthropic",
+  "notes": "Core RLHF/alignment researcher. Joined Anthropic May 2025 after 2yrs at OpenAI (May 23-May 25) and 4yrs at DeepMind. Direct competitor, recent move suggests commitment."
+ },
+ "flood sung::Post Training": {
+  "identity_confirmed": false,
+  "career_stage": "",
+  "current_employer": "",
+  "key_work": "",
+  "personal_email": "",
+  "website": "",
+  "recruitable": "",
+  "notes": "Unable to locate researcher profile or verify identity. The paper 'Kimi-Dev: Agentless Training as Skill Prior for SWE-Agents' was not found in search results. No matching profiles found on Google Scholar, personal websites, or academic pages for 'Flood Sung' at Queen Mary University of London. The provided web search results contain unrelated content (obituaries, Kaggle notebooks, vocabulary files, and forum posts) that do not help verify this researcher's identity or current status."
+ },
+ "joar skalse::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD '24, Oxford) -> Deducto Limited (CEO/Founder)",
+  "current_employer": "Deducto Limited",
+  "key_work": "Defining and Characterizing Reward Hacking (NeurIPS 22), Misspecification in IRL (AAAI 23)",
+  "personal_email": "",
+  "website": "https://www.alignmentforum.org/users/logical_lunatic",
+  "recruitable": "Maybe - running own startup",
+  "notes": "PhD completed Oct 2024. Founded AI safety startup Deducto Limited (May 2025-present). Strong reward learning/IRL background relevant to post-training. Was at FHI before shutdown. Active in AI safety community. May be open given early-stage startup."
+ },
+ "miljan martic::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD 15 (UCL) -> DeepMind (2017-2021) -> Founder -> Independent",
+  "current_employer": "Independent researcher (AI + web3)",
+  "key_work": "Deep RL from human preferences (NeurIPS 17), Scalable agent alignment via reward modeling",
+  "personal_email": "",
+  "website": "https://medium.com/@MiljanMartic",
+  "recruitable": "Maybe - founder/independent",
+  "notes": "Co-founded Kosen Labs (2021-2023), now independent AI+web3 researcher. Strong RLHF background from DeepMind alignment work. Was Research Engineering Team Lead at DeepMind. May be open given startup ended, but web3 focus suggests different direction."
+ },
+ "maja trębacz::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "Industry researcher (PhD Cambridge) -> OpenAI",
+  "current_employer": "OpenAI",
+  "key_work": "Teaching LMs to support answers with verified quotes (2022), LLM Critics Help Catch LLM Bugs (2024)",
+  "personal_email": "",
+  "website": "https://majatre.github.io/",
+  "recruitable": "Unlikely - at OpenAI",
+  "notes": "Member of Technical Staff at OpenAI working on scalable oversight, control, and alignment. Focus on supervising capable/agentic systems. Strong post-training fit (RLHF, alignment, human judgements). Co-authored Gemini papers, o1 system card."
+ },
+ "xinchi qiu::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD 2024, Cambridge) -> Isomorphic Labs",
+  "current_employer": "Isomorphic Labs",
+  "key_work": "Red Queen Gödel Machine (2026) - co-evolving agents+evaluators; LLM rubric generation for judges/reward models",
+  "personal_email": "",
+  "website": "https://linkedin.com/in/xinchi-qiu-686a7394",
+  "recruitable": "Unlikely - at Isomorphic Labs",
+  "notes": "Strong post-training fit: LLM judge rubrics, reward modeling, federated learning. Ex-Meta research scientist (2022-2024). Core Flower framework contributor. Recent work directly on LLM evaluation and RLHF-adjacent topics. Isomorphic Labs (Alphabet/DeepMind sister) likely offers competitive retention."
+ },
+ "hongyi jin::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD Y1, UCLA",
+  "current_employer": "UCLA (PhD student under Baharan Mirzasoleiman)",
+  "key_work": "Data curation for reasoning models (NeurIPS 25), Step distillation for video diffusion (Tencent internship)",
+  "personal_email": "",
+  "website": "https://hjenryin.github.io/homepage/",
+  "recruitable": "Yes - early PhD, post-training focus",
+  "notes": "First-year PhD (started Sep 2025) at UCLA CS. Tencent was summer 2025 internship (Jul-Aug), not current employer. Focus on efficient ML for reasoning LLMs and synthetic data curation - strong fit for post-training. Also worked on multicalibration (ICML 26) and video diffusion distillation. Undergrad from Tsinghua Yao Class."
+ },
+ "dayuan fu::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "MS student (graduating 2026), BUPT",
+  "current_employer": "BUPT (visiting GAIR)",
+  "key_work": "daVinci-Agency (ICLR 26), AgentRefine - refinement tuning for agent generalization (ICLR 25)",
+  "personal_email": "fdy@bupt.edu.cn",
+  "website": "https://fu-dayuan.github.io/",
+  "recruitable": "Yes - MS student graduating 2026",
+  "notes": "Strong fit for post-training: works on agent refinement tuning, data synthesis for coding agents, and long-horizon agency. Currently visiting GAIR (2025.2-now), previously at Tsinghua C3I (2022-2024). Research focuses on LLM agents automation and using agents to discover novel insights. Has industry experience at Meituan NLP Center. Publications at ICLR, ICML, EMNLP."
+ },
+ "david brandfonbrener::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD '23, NYU -> Anthropic MTS",
+  "current_employer": "Anthropic",
+  "key_work": "The Art of Scaling RL Compute for LLMs, Q-probe (lightweight reward maximization for LMs)",
+  "personal_email": "",
+  "website": "https://davidbrandfonbrener.github.io/",
+  "recruitable": "Unlikely - at Anthropic",
+  "notes": "Member of Technical Staff at Anthropic doing RL for LLMs. Previously Research Scientist at Meta FAIR (Llama team) and Research Fellow at Harvard Kempner Institute. Strong fit for post-training (RL+LLMs expertise), but currently at direct competitor."
+ },
+ "zhepeng cen::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "Graduating PhD (final yr), CMU",
+  "current_employer": "Carnegie Mellon University (Safe AI Lab, advised by Ding Zhao)",
+  "key_work": "Webscale-RL (ICLR 26) - 1.2M RL examples for LLM training; Safe RL on safety-gymnasium (ICML 24)",
+  "personal_email": "",
+  "website": "https://czp16.github.io/",
+  "recruitable": "Yes - actively on job market",
+  "notes": "Explicitly states 'on the job market this year looking for full-time research position in industry'. Recent internships at Salesforce (Summer 2025) and AWS (Summer 2024). Strong fit for post-training: Webscale-RL directly addresses RL data scaling for LLMs, plus work on LLM mid-training data augmentation (NeurIPS 25) and bridging training-inference gap. 27 works, 132 citations."
+ },
+ "haiyan zhao::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD student (3rd yr), NJIT",
+  "current_employer": "NJIT (Research Intern at Cloudflare, May 2026-Present)",
+  "key_work": "LLM explainability survey (arXiv 2501.01346), LVLM alignment survey (EMNLP Findings 25)",
+  "personal_email": "",
+  "website": "https://hy-zhao23.github.io/",
+  "recruitable": "Yes - actively seeking research internships",
+  "notes": "Focus: LLM interpretability, activation explanations, model alignment. Currently interning at Cloudflare (May 2026+). Strong match for post-training given work on alignment, explainability, and stated interest in LLM alignment. Explicitly seeking opportunities per website."
+ },
+ "sitao cheng::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD Year 1, University of Waterloo",
+  "current_employer": "University of Waterloo (advised by Victor Zhong)",
+  "key_work": "From Atomic to Composite (RL compositional generalization), Differentiable Evolutionary RL",
+  "personal_email": "",
+  "website": "https://sitaocheng.github.io/",
+  "recruitable": "Maybe - very early PhD",
+  "notes": "Started PhD Fall 2025 at Waterloo. Focus on RL for compositional generalization, automatic reward modeling, and language agents. Previously MS from Nanjing University + research scholar at UCSB NLP. Strong post-training alignment: RL synthesis of reasoning skills, reward modeling. TD Layer 6 scholarship recipient. Only 4 months into PhD."
+ },
+ "shoubin yu::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "Graduating PhD (4th yr, expected Dec 2026), UNC Chapel Hill",
+  "current_employer": "Google DeepMind (Student Researcher, May-Aug 2026)",
+  "key_work": "CREMA - multimodal modular fusion (EMNLP 24), SciVideoBench - scientific video reasoning (ICCV 25 best paper)",
+  "personal_email": "shoubin@cs.unc.edu",
+  "website": "https://yui010206.github.io/",
+  "recruitable": "Maybe - currently at DeepMind",
+  "notes": "Strong post-training fit: multimodal reasoning, video understanding, PEFT methods. Has done 2 DeepMind internships (2025, 2026) plus Adobe Research. Research spans video-language models, efficient training/scaling, and reasoning. Expected graduation Dec 2026 per OpenReview."
+ },
+ "meihua dang::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD student (2nd year), Stanford",
+  "current_employer": "Stanford University",
+  "key_work": "Diffusion-DPO (CVPR 24) - aligning diffusion models via direct preference optimization",
+  "personal_email": "",
+  "website": "https://cs.stanford.edu/~mhdang/",
+  "recruitable": "Yes - early PhD, strong RLHF/alignment fit",
+  "notes": "Advised by Stefano Ermon. Recent internship at Luma AI (Jun-Sep 2024). Core expertise in preference learning and alignment for generative models (diffusion + language). CVPR 24 best paper on DPO for diffusion, CVPR 25 on personalized preference tuning. Strong match for post-training role given direct work on human preference optimization and RLHF alternatives."
+ },
+ "idan shenfeld::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD candidate (4th year), MIT",
+  "current_employer": "MIT (Improbable AI Lab) + Google DeepMind (student researcher, summer 24-Jan 25)",
+  "key_work": "Self-Distillation Enables Continual Learning (arXiv 25), RL via Self-Distillation",
+  "personal_email": "idanshen@mit.edu",
+  "website": "https://www.idanshenfeld.com/",
+  "recruitable": "Maybe - recently at DeepMind",
+  "notes": "Strong post-training fit: worked on post-training for LLMs at DeepMind summer 24. Recent work on SDFT for continual learning from demonstrations. Funded by Qualcomm Fellowship + MIT-Google grant. Note: Last known institution 'Moscow Institute of Thermal Technology' appears incorrect - he's at MIT."
+ },
+ "zhen li::Post Training": {
+  "identity_confirmed": false,
+  "career_stage": "",
+  "current_employer": "",
+  "key_work": "",
+  "personal_email": "",
+  "website": "",
+  "recruitable": "",
+  "notes": "Cannot confirm identity. Found multiple Zhen Li researchers: (1) Visual analytics/ML researcher at Tianjin University (PhD '25 Tsinghua, works on explainable AI/visualization), (2) Computer vision PhD candidate at Nankai University (image/video restoration), (3) Master's student at Beijing Institute of Technology (vision-language), (4) Blockchain engineer. None match the provided papers (Z-Reward, autonomous navigation, IoT firmware) or affiliation (China Electronics Technology Group Corporation). The known papers suggest robotics/medical AI and systems security domains, which don't align with any of the found profiles."
+ },
+ "weizhi zhang::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD candidate (final year), UIC",
+  "current_employer": "Meta (Research Scientist Intern)",
+  "key_work": "WebAgent-R1 (EMNLP 25) - multi-turn RL for web agents; LLMInit - personalization via user history",
+  "personal_email": "wzhan42@uic.edu",
+  "website": "https://davidzwz.github.io/",
+  "recruitable": "Yes - seeking final PhD internship (Summer 2026) & FT roles after",
+  "notes": "Strong fit for Post Training: works on LLM personalization, user modeling, RLHF for agents. Currently interning at Meta (Jun 2026-present). Prev: Google, Roblox, Amazon. Actively job searching per LinkedIn (posted Jan 2025). Interests align: personalization, recommendation, LLM agents, reinforcement learning. 4 EMNLP 2025 papers. Prefers NYC-based roles."
+ },
+ "yuda song::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "PhD candidate (4th yr), CMU",
+  "current_employer": "Carnegie Mellon University",
+  "key_work": "Mind the Gap: LLM Self-Improvement (ICML 26), Expanding RL via Text Feedback",
+  "personal_email": "",
+  "website": "https://yudasong.github.io/",
+  "recruitable": "Yes",
+  "notes": "Two Sigma PhD Fellow, advised by Aarti Singh & Drew Bagnell. Recent ICML 26 work directly on LLM self-improvement/post-training. Interned at FAIR Paris (2025), Amazon NYC, MSR NYC. Strong theory + foundation model decision-making background."
+ },
+ "youbang sun::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "Recent grad (PhD 25, Northeastern) -> Tsinghua University",
+  "current_employer": "Tsinghua University",
+  "key_work": "Survey of RL for Large Reasoning Models (25), Unified View of LLM Post-Training (25)",
+  "personal_email": "ybsun@mail.tsinghua.edu.cn",
+  "website": "https://sundave1998.github.io/",
+  "recruitable": "Maybe - just started postdoc",
+  "notes": "Assistant Researcher at Tsinghua's Center for Collaborative & Conversational Intelligence since 2025. Strong post-training focus with recent survey work on RL for reasoning and unified post-training views. Fresh PhD graduate, may be open but just transitioned to new role."
+ },
+ "hanyang wang::Post Training": {
+  "identity_confirmed": true,
+  "career_stage": "MS student (2024-present), University of Chicago",
+  "current_employer": "University of Chicago (Physical Sciences Division)",
+  "key_work": "SkillRL (ICLR 26 workshop) - skill discovery for LLM agents, Text2Grad - RL from natural language feedback",
+  "personal_email": "",
+  "website": "https://openreview.net/profile?id=~Hanyang_Wang5",
+  "recruitable": "Yes - MS student, strong post-training focus",
+  "notes": "Confirmed via SkillRL paper match. MS at UChicago (joined July 2024), previously undergrad at Nottingham (2020-2024). Research directly aligned: LLM post-training, agentic RL, RLHF. Active publications in agent learning and policy optimization. Note: Different person from Tsinghua's Hanyang Wang (3D vision)."
  }
 }
