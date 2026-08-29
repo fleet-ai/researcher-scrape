@@ -16,9 +16,9 @@ filters:
     - mid_industry
   drop_stages:
     - early_phd
-    - senior       # 2026-08-29: dropped outright for PT (was: kept as Stretch)
-    - professor
-    - founder
+    - professor    # 2026-08-29: dropped outright for PT (was: kept as Stretch)
+    - founder      # seniors (10+ yr ICs) stay, flagged Stretch as before
+
   allowed_countries:
     - US
     - CA

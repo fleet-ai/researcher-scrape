@@ -2,7 +2,7 @@
 
 Discovery pipeline for ML researchers, organized around six hiring positions: **World Models, Agentic Benchmarks, STEM Benchmarks, Benchmarks (model cards), Environment Generation, Post-Training.**
 
-The Benchmarks role (added 2026-08-29) is seeded from the benchmark papers cited in the eval tables of ten 2026 frontier model cards; the Post-Training role runs a narrower stage filter in its dedicated crawl (`config_pt.yaml`): graduating PhDs and industry only, professors/seniors/founders dropped.
+The Benchmarks role (added 2026-08-29) is seeded from the benchmark papers cited in the eval tables of ten 2026 frontier model cards; the Post-Training role runs a narrower stage filter in its dedicated crawl (`config_pt.yaml`): graduating PhDs and industry only, professors/founders dropped (senior ICs stay, flagged Stretch).
 
 Three scripts live here:
 
