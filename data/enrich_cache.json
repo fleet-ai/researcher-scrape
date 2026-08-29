@@ -9432,5 +9432,1646 @@
     "homepage": "",
     "s2_author_id": "147687624",
     "source": "semanticscholar"
+  },
+  "see-kiong ng": {
+    "h_index": 32,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 3.409090909090909,
+    "institution": "Data Storage Institute",
+    "source": "openalex"
+  },
+  "ziwei liu": {
+    "h_index": 84,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 18.29741379310345,
+    "institution": "Nanyang Technological University",
+    "source": "openalex"
+  },
+  "jiaya jia": {
+    "h_index": 109,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 13.844827586206897,
+    "institution": "",
+    "source": "openalex"
+  },
+  "amir bar": {
+    "h_index": 28,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 5.24,
+    "institution": "Hebrew University of Jerusalem",
+    "source": "openalex"
+  },
+  "mido assran": {
+    "h_index": 1,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 1.0,
+    "institution": "",
+    "source": "openalex"
+  },
+  "mike rabbat": {
+    "h_index": 6,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 0.0,
+    "institution": "",
+    "source": "openalex"
+  },
+  "adrien bardes": {
+    "h_index": 7,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 3.4,
+    "institution": "New York University",
+    "source": "openalex"
+  },
+  "rujing dang": {
+    "h_index": 1,
+    "cited_by_count": 2,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2425367237",
+    "source": "openalex"
+  },
+  "kaiqi huang": {
+    "h_index": 54,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 3.8125,
+    "institution": "Shandong Institute of Automation",
+    "source": "openalex"
+  },
+  "zixin jiang": {
+    "h_index": 19,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 11.741935483870968,
+    "institution": "PLA Rocket Force University of Engineering",
+    "source": "openalex"
+  },
+  "arc prize foundation": {
+    "h_index": 1,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 1.0,
+    "institution": "",
+    "source": "openalex"
+  },
+  "mckinney, scott": {
+    "h_index": 1,
+    "cited_by_count": 4,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2380301536",
+    "source": "semanticscholar"
+  },
+  "alex tachard passos": {
+    "h_index": 2,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 67.33333333333333,
+    "institution": "",
+    "source": "openalex"
+  },
+  "aluri, raja": {},
+  "jacobson, noah": {},
+  "kenstler, brad": {
+    "h_index": 6,
+    "cited_by_count": 253,
+    "works_count": 7,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2381371793",
+    "source": "semanticscholar"
+  },
+  "brendan foody": {
+    "h_index": 2,
+    "cited_by_count": 16,
+    "works_count": 7,
+    "institution": "Mercer (Czechia)",
+    "homepage": "",
+    "s2_author_id": "2382999270",
+    "source": "openalex"
+  },
+  "david brumley": {
+    "h_index": 41,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 0.0,
+    "institution": "Carnegie Mellon University",
+    "source": "openalex"
+  },
+  "zhun wang": {
+    "h_index": 18,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 4.15,
+    "institution": "Novo Nordisk (Denmark)",
+    "source": "openalex"
+  },
+  "hongwei li": {
+    "h_index": 54,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 4.858333333333333,
+    "institution": "University of Electronic Science and Technology of China",
+    "source": "openalex"
+  },
+  "srijiith sesha narayana": {
+    "h_index": 1,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 3.0,
+    "institution": "",
+    "source": "openalex"
+  },
+  "wenbo guo": {
+    "h_index": 24,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 13.166666666666666,
+    "institution": "Huaqiao University",
+    "source": "openalex"
+  },
+  "jingxuan he": {
+    "h_index": 10,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 2.269230769230769,
+    "institution": "Berkeley College",
+    "source": "openalex"
+  },
+  "thorsten holz": {
+    "h_index": 63,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 5.103448275862069,
+    "institution": "Max Planck Institute for Security and Privacy",
+    "source": "openalex"
+  },
+  "ben rank": {
+    "h_index": 3,
+    "cited_by_count": 362,
+    "works_count": 5,
+    "institution": "Max Planck Institute for Intelligent Systems",
+    "homepage": "",
+    "s2_author_id": "2342276705",
+    "source": "openalex"
+  },
+  "ameya prabhu": {
+    "h_index": 10,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 1.8181818181818181,
+    "institution": "University of Tübingen",
+    "source": "openalex"
+  },
+  "matthias bethge": {
+    "h_index": 65,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 3.663157894736842,
+    "institution": "TH Bingen University of Applied Sciences",
+    "source": "openalex"
+  },
+  "maksym andriushchenko": {
+    "h_index": 15,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 8.071428571428571,
+    "institution": "",
+    "source": "openalex"
+  },
+  "kate olszewska": {
+    "h_index": 3,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 61.4,
+    "institution": "",
+    "source": "openalex"
+  },
+  "noah shinn": {
+    "h_index": 1,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 0.0,
+    "institution": "",
+    "source": "openalex"
+  },
+  "rui hou": {
+    "h_index": 27,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 5.019230769230769,
+    "institution": "Beijing University of Posts and Telecommunications",
+    "source": "openalex"
+  },
+  "gabriel synnaeve": {
+    "h_index": 34,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 4.222222222222222,
+    "institution": "Meta (United States)",
+    "source": "openalex"
+  },
+  "diyi yang": {
+    "h_index": 49,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 6.464285714285714,
+    "institution": "Stanford Medicine",
+    "source": "openalex"
+  },
+  "sasha goldshtein": {
+    "h_index": 3,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 0.5,
+    "institution": "",
+    "source": "openalex"
+  },
+  "cheng peng": {
+    "h_index": 86,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 9.641379310344828,
+    "institution": "Pennsylvania State University",
+    "source": "openalex"
+  },
+  "chollet, francois": {
+    "h_index": 13,
+    "cited_by_count": 23364,
+    "works_count": 23,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "1565641737",
+    "source": "semanticscholar"
+  },
+  "mike knoop": {
+    "h_index": 2,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 1.75,
+    "institution": "",
+    "source": "openalex"
+  },
+  "gregory kamradt": {
+    "h_index": 2,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 1.75,
+    "institution": "",
+    "source": "openalex"
+  },
+  "bryan landers": {
+    "h_index": 2,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 1.75,
+    "institution": "",
+    "source": "openalex"
+  },
+  "simon s. du": {
+    "h_index": 31,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 0.38181818181818183,
+    "institution": "University of Washington",
+    "source": "openalex"
+  },
+  "chi jin": {
+    "h_index": 33,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 0.5294117647058824,
+    "institution": "Princeton University",
+    "source": "openalex"
+  },
+  "lifan yuan": {
+    "h_index": 5,
+    "cited_by_count": 0,
+    "works_count": 0,
+    "2yr_mean_citedness": 7.4,
+    "institution": "Guangdong University of Technology",
+    "source": "openalex"
+  },
+  "tong, hao": {
+    "h_index": 2,
+    "cited_by_count": 10,
+    "works_count": 5,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2224872163",
+    "source": "semanticscholar"
+  },
+  "chia, nicolas": {
+    "h_index": 1,
+    "cited_by_count": 9,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2382991964",
+    "source": "semanticscholar"
+  },
+  "ege erdil": {
+    "h_index": 9,
+    "cited_by_count": 377,
+    "works_count": 11,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2196169829",
+    "source": "semanticscholar"
+  },
+  "wildon, mark": {
+    "h_index": 15,
+    "cited_by_count": 907,
+    "works_count": 91,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2609200",
+    "source": "semanticscholar"
+  },
+  "huajun chen": {
+    "h_index": 2,
+    "cited_by_count": 58,
+    "works_count": 12,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2021266152",
+    "source": "semanticscholar"
+  },
+  "tatsunori hashimoto": {
+    "h_index": 10,
+    "cited_by_count": 296,
+    "works_count": 41,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2244808142",
+    "source": "semanticscholar"
+  },
+  "dilek hakkani-tür": {
+    "h_index": 61,
+    "cited_by_count": 14030,
+    "works_count": 357,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "1395813836",
+    "source": "semanticscholar"
+  },
+  "xiao, chaojun": {
+    "h_index": 14,
+    "cited_by_count": 718,
+    "works_count": 26,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2099594128",
+    "source": "semanticscholar"
+  },
+  "cui, ganqu": {
+    "h_index": 34,
+    "cited_by_count": 13687,
+    "works_count": 84,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "52297757",
+    "source": "semanticscholar"
+  },
+  "ding, ning": {
+    "h_index": 1,
+    "cited_by_count": 19,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "120662731",
+    "source": "semanticscholar"
+  },
+  "gao huang": {
+    "h_index": 3,
+    "cited_by_count": 22,
+    "works_count": 4,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "1736759389",
+    "source": "semanticscholar"
+  },
+  "bo han": {
+    "h_index": 0,
+    "cited_by_count": 0,
+    "works_count": 7,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2367668995",
+    "source": "semanticscholar"
+  },
+  "etash guha": {
+    "h_index": 10,
+    "cited_by_count": 896,
+    "works_count": 19,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2179104354",
+    "source": "semanticscholar"
+  },
+  "tianhe lin": {
+    "h_index": 2,
+    "cited_by_count": 42,
+    "works_count": 3,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2143608986",
+    "source": "semanticscholar"
+  },
+  "yuting ning": {
+    "h_index": 1,
+    "cited_by_count": 2,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2382357459",
+    "source": "semanticscholar"
+  },
+  "vint lee": {
+    "h_index": 2,
+    "cited_by_count": 18,
+    "works_count": 4,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2264323600",
+    "source": "semanticscholar"
+  },
+  "xinpeng wei": {
+    "h_index": 7,
+    "cited_by_count": 192,
+    "works_count": 30,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2196662",
+    "source": "semanticscholar"
+  },
+  "xiangjun wang": {
+    "h_index": 8,
+    "cited_by_count": 202,
+    "works_count": 46,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "1524728888",
+    "source": "semanticscholar"
+  },
+  "haifeng chen": {
+    "h_index": 2,
+    "cited_by_count": 18,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2322507872",
+    "source": "semanticscholar"
+  },
+  "cihang xie": {
+    "h_index": 5,
+    "cited_by_count": 112,
+    "works_count": 7,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2064759724",
+    "source": "semanticscholar"
+  },
+  "huaxiu yao": {
+    "h_index": 7,
+    "cited_by_count": 107,
+    "works_count": 12,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2315297442",
+    "source": "semanticscholar"
+  },
+  "teney, damien": {
+    "h_index": 5,
+    "cited_by_count": 126,
+    "works_count": 16,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2253463627",
+    "source": "semanticscholar"
+  },
+  "moor, michael": {
+    "h_index": 4,
+    "cited_by_count": 59,
+    "works_count": 8,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2316021691",
+    "source": "semanticscholar"
+  },
+  "brbic, maria": {
+    "h_index": 2,
+    "cited_by_count": 12,
+    "works_count": 5,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2367740610",
+    "source": "semanticscholar"
+  },
+  "yuanjie lyu": {
+    "h_index": 0,
+    "cited_by_count": 0,
+    "works_count": 1,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "1381058147",
+    "source": "semanticscholar"
+  },
+  "chengyu wang": {
+    "h_index": 14,
+    "cited_by_count": 556,
+    "works_count": 48,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2272610917",
+    "source": "semanticscholar"
+  },
+  "junbing yan": {
+    "h_index": 1,
+    "cited_by_count": 1,
+    "works_count": 4,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "93465680",
+    "source": "semanticscholar"
+  },
+  "yucheng shi": {
+    "h_index": 3,
+    "cited_by_count": 56,
+    "works_count": 16,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2332442067",
+    "source": "semanticscholar"
+  },
+  "chengsong huang": {
+    "h_index": 2,
+    "cited_by_count": 39,
+    "works_count": 6,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2328857822",
+    "source": "semanticscholar"
+  },
+  "zifeng wang": {
+    "h_index": 5,
+    "cited_by_count": 207,
+    "works_count": 17,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "66923200",
+    "source": "semanticscholar"
+  },
+  "rujun han": {
+    "h_index": 0,
+    "cited_by_count": 0,
+    "works_count": 3,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "104480365",
+    "source": "semanticscholar"
+  },
+  "jun yan": {
+    "h_index": 14,
+    "cited_by_count": 1555,
+    "works_count": 23,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2112593024",
+    "source": "semanticscholar"
+  },
+  "yanfei chen": {
+    "h_index": 5,
+    "cited_by_count": 129,
+    "works_count": 38,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2027301016",
+    "source": "semanticscholar"
+  },
+  "bhavana dalvi mishra": {
+    "h_index": 25,
+    "cited_by_count": 4151,
+    "works_count": 73,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "40135250",
+    "source": "semanticscholar"
+  },
+  "chen-yu lee": {
+    "h_index": 5,
+    "cited_by_count": 136,
+    "works_count": 7,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2110635183",
+    "source": "semanticscholar"
+  },
+  "yijiang li": {
+    "h_index": 2,
+    "cited_by_count": 19,
+    "works_count": 9,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2347414664",
+    "source": "semanticscholar"
+  },
+  "nuno vasconcelos": {
+    "h_index": 2,
+    "cited_by_count": 50,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2067057172",
+    "source": "semanticscholar"
+  },
+  "b. wang": {
+    "h_index": 1,
+    "cited_by_count": 2,
+    "works_count": 5,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2107684397",
+    "source": "semanticscholar"
+  },
+  "b. l. wang": {
+    "h_index": 45,
+    "cited_by_count": 8090,
+    "works_count": 513,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2107682758",
+    "source": "semanticscholar"
+  },
+  "b. zhang": {
+    "h_index": 16,
+    "cited_by_count": 1609,
+    "works_count": 77,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2107382779",
+    "source": "semanticscholar"
+  },
+  "z. zhang": {
+    "h_index": 6,
+    "cited_by_count": 291,
+    "works_count": 23,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "12345126",
+    "source": "semanticscholar"
+  },
+  "z. feng": {
+    "h_index": 4,
+    "cited_by_count": 70,
+    "works_count": 7,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2107322540",
+    "source": "semanticscholar"
+  },
+  "z. liang": {
+    "h_index": 4,
+    "cited_by_count": 129,
+    "works_count": 24,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2121218830",
+    "source": "semanticscholar"
+  },
+  "mind lab": {
+    "h_index": 1,
+    "cited_by_count": 3,
+    "works_count": 5,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2256997129",
+    "source": "semanticscholar"
+  },
+  "vin bo": {
+    "h_index": 0,
+    "cited_by_count": 0,
+    "works_count": 1,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2456467637",
+    "source": "semanticscholar"
+  },
+  "asher cai": {
+    "h_index": 0,
+    "cited_by_count": 0,
+    "works_count": 1,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2456705658",
+    "source": "semanticscholar"
+  },
+  "mindverse team": {
+    "h_index": 1,
+    "cited_by_count": 17,
+    "works_count": 1,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2308276079",
+    "source": "semanticscholar"
+  },
+  "zhenfei yin": {
+    "h_index": 1,
+    "cited_by_count": 176,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2375156038",
+    "source": "semanticscholar"
+  },
+  "yiran chen": {
+    "h_index": 2,
+    "cited_by_count": 26,
+    "works_count": 4,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2108952208",
+    "source": "semanticscholar"
+  },
+  "yee whye teh": {},
+  "shengsheng qian": {
+    "h_index": 3,
+    "cited_by_count": 35,
+    "works_count": 14,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2266279203",
+    "source": "semanticscholar"
+  },
+  "dingwen zhang": {},
+  "qibin hou": {
+    "h_index": 2,
+    "cited_by_count": 96,
+    "works_count": 4,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2274316613",
+    "source": "semanticscholar"
+  },
+  "zhengxi lu": {
+    "h_index": 5,
+    "cited_by_count": 202,
+    "works_count": 9,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2115884392",
+    "source": "semanticscholar"
+  },
+  "zhiyuan yao": {
+    "h_index": 2,
+    "cited_by_count": 26,
+    "works_count": 5,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2279605525",
+    "source": "semanticscholar"
+  },
+  "jinyang wu": {
+    "h_index": 7,
+    "cited_by_count": 238,
+    "works_count": 11,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2261576698",
+    "source": "semanticscholar"
+  },
+  "jie wu": {
+    "h_index": 42,
+    "cited_by_count": 6303,
+    "works_count": 101,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "143853475",
+    "source": "semanticscholar"
+  },
+  "yuanyuan shi": {
+    "h_index": 8,
+    "cited_by_count": 254,
+    "works_count": 11,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "34340825",
+    "source": "semanticscholar"
+  },
+  "ziang xiao": {
+    "h_index": 1,
+    "cited_by_count": 5,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2287647090",
+    "source": "semanticscholar"
+  },
+  "shangke lv": {},
+  "ying liu": {
+    "h_index": 1,
+    "cited_by_count": 2,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2285635970",
+    "source": "semanticscholar"
+  },
+  "jun xiao": {
+    "h_index": 3,
+    "cited_by_count": 689,
+    "works_count": 5,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2111223196",
+    "source": "semanticscholar"
+  },
+  "hua yang": {
+    "h_index": 2,
+    "cited_by_count": 92,
+    "works_count": 6,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "7542597",
+    "source": "semanticscholar"
+  },
+  "qianglong chen": {
+    "h_index": 3,
+    "cited_by_count": 22,
+    "works_count": 9,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2294545071",
+    "source": "semanticscholar"
+  },
+  "yushi bai": {
+    "h_index": 1,
+    "cited_by_count": 30,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2191442086",
+    "source": "semanticscholar"
+  },
+  "xingshan zeng": {
+    "h_index": 19,
+    "cited_by_count": 1719,
+    "works_count": 40,
+    "institution": "Huawei Noah's Ark Lab",
+    "homepage": "",
+    "s2_author_id": "46180553",
+    "source": "semanticscholar"
+  },
+  "zishan xu": {},
+  "boju zhang": {
+    "h_index": 1,
+    "cited_by_count": 2,
+    "works_count": 6,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2208121386",
+    "source": "semanticscholar"
+  },
+  "yuzhou wu": {
+    "h_index": 3,
+    "cited_by_count": 14,
+    "works_count": 6,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "89971314",
+    "source": "semanticscholar"
+  },
+  "lingzhi wang": {
+    "h_index": 2,
+    "cited_by_count": 27,
+    "works_count": 3,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "15068960",
+    "source": "semanticscholar"
+  },
+  "xin jiang": {
+    "h_index": 12,
+    "cited_by_count": 401,
+    "works_count": 22,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2110312227",
+    "source": "semanticscholar"
+  },
+  "weinan zhang": {
+    "h_index": 4,
+    "cited_by_count": 102,
+    "works_count": 6,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2145506413",
+    "source": "semanticscholar"
+  },
+  "qun liu": {
+    "h_index": 17,
+    "cited_by_count": 863,
+    "works_count": 178,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "50771845",
+    "source": "semanticscholar"
+  },
+  "weiwen liu": {
+    "h_index": 2,
+    "cited_by_count": 26,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2327299011",
+    "source": "semanticscholar"
+  },
+  "yan xu": {
+    "h_index": 2,
+    "cited_by_count": 23,
+    "works_count": 10,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2320711958",
+    "source": "semanticscholar"
+  },
+  "yiwen guo": {
+    "h_index": 4,
+    "cited_by_count": 118,
+    "works_count": 8,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2197072217",
+    "source": "semanticscholar"
+  },
+  "huatong song": {
+    "h_index": 7,
+    "cited_by_count": 666,
+    "works_count": 16,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2334893634",
+    "source": "semanticscholar"
+  },
+  "jian yang": {
+    "h_index": 6,
+    "cited_by_count": 205,
+    "works_count": 25,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2282647489",
+    "source": "semanticscholar"
+  },
+  "bryan dai": {
+    "h_index": 4,
+    "cited_by_count": 250,
+    "works_count": 15,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2346322341",
+    "source": "semanticscholar"
+  },
+  "ming liu": {
+    "h_index": 1,
+    "cited_by_count": 149,
+    "works_count": 6,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2369275236",
+    "source": "semanticscholar"
+  },
+  "xinming wang": {
+    "h_index": 4,
+    "cited_by_count": 46,
+    "works_count": 34,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2025902261",
+    "source": "semanticscholar"
+  },
+  "guoren wang": {
+    "h_index": 3,
+    "cited_by_count": 41,
+    "works_count": 55,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "21516991",
+    "source": "semanticscholar"
+  },
+  "changsheng li": {
+    "h_index": 9,
+    "cited_by_count": 376,
+    "works_count": 170,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "73214277",
+    "source": "semanticscholar"
+  },
+  "chengran yang": {
+    "h_index": 6,
+    "cited_by_count": 207,
+    "works_count": 14,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2152817448",
+    "source": "semanticscholar"
+  },
+  "peng ye": {
+    "h_index": 5,
+    "cited_by_count": 56,
+    "works_count": 18,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2335761897",
+    "source": "semanticscholar"
+  },
+  "min zhang": {
+    "h_index": 1,
+    "cited_by_count": 5,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "9385707",
+    "source": "semanticscholar"
+  },
+  "shuicheng yan": {
+    "h_index": 11,
+    "cited_by_count": 749,
+    "works_count": 16,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2289843775",
+    "source": "semanticscholar"
+  },
+  "juntao li": {
+    "h_index": 0,
+    "cited_by_count": 0,
+    "works_count": 4,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "1664896613",
+    "source": "semanticscholar"
+  },
+  "wenliang chen": {
+    "h_index": 1,
+    "cited_by_count": 4,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2390299605",
+    "source": "semanticscholar"
+  },
+  "lifeng shang": {
+    "h_index": 2,
+    "cited_by_count": 77,
+    "works_count": 3,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2241558606",
+    "source": "semanticscholar"
+  },
+  "kam-fai wong": {
+    "h_index": 7,
+    "cited_by_count": 150,
+    "works_count": 14,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "47732558",
+    "source": "semanticscholar"
+  },
+  "qiang zhang": {
+    "h_index": 8,
+    "cited_by_count": 210,
+    "works_count": 21,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2145895076",
+    "source": "semanticscholar"
+  },
+  "can ren": {
+    "h_index": 27,
+    "cited_by_count": 2346,
+    "works_count": 113,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "6019653",
+    "source": "semanticscholar"
+  },
+  "pasquale minervini": {
+    "h_index": 1,
+    "cited_by_count": 3,
+    "works_count": 5,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2340471379",
+    "source": "semanticscholar"
+  },
+  "zheng lian": {
+    "h_index": 47,
+    "cited_by_count": 8095,
+    "works_count": 308,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "3054185",
+    "source": "semanticscholar"
+  },
+  "zhengqi wen": {
+    "h_index": 3,
+    "cited_by_count": 45,
+    "works_count": 19,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "145254494",
+    "source": "semanticscholar"
+  },
+  "jianhua tao": {
+    "h_index": 2,
+    "cited_by_count": 54,
+    "works_count": 8,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2257199199",
+    "source": "semanticscholar"
+  },
+  "sham m. kakade": {
+    "h_index": 97,
+    "cited_by_count": 37302,
+    "works_count": 314,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "144695232",
+    "source": "semanticscholar"
+  },
+  "yuxiang wei": {
+    "h_index": 4,
+    "cited_by_count": 327,
+    "works_count": 11,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2269712529",
+    "source": "semanticscholar"
+  },
+  "lingming zhang": {
+    "h_index": 1,
+    "cited_by_count": 1,
+    "works_count": 3,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "70401461",
+    "source": "semanticscholar"
+  },
+  "mihir parmar": {
+    "h_index": 15,
+    "cited_by_count": 1041,
+    "works_count": 41,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "4047599",
+    "source": "semanticscholar"
+  },
+  "chitta baral": {
+    "h_index": 44,
+    "cited_by_count": 8972,
+    "works_count": 307,
+    "institution": "Arizona State University",
+    "homepage": "https://www.public.asu.edu/~cbaral/",
+    "s2_author_id": "1760291",
+    "source": "semanticscholar"
+  },
+  "xiujin liu": {
+    "h_index": 0,
+    "cited_by_count": 0,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2453823255",
+    "source": "semanticscholar"
+  },
+  "wen, yuhang": {
+    "h_index": 1,
+    "cited_by_count": 1,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "1686952255",
+    "source": "semanticscholar"
+  },
+  "cheng, pengyu": {
+    "h_index": 3,
+    "cited_by_count": 43,
+    "works_count": 21,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "66036283",
+    "source": "semanticscholar"
+  },
+  "wang, chutian": {
+    "h_index": 8,
+    "cited_by_count": 194,
+    "works_count": 27,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2108712124",
+    "source": "semanticscholar"
+  },
+  "jiang, xiaoxi": {
+    "h_index": 1,
+    "cited_by_count": 3,
+    "works_count": 11,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "83986010",
+    "source": "semanticscholar"
+  },
+  "chen, jason": {
+    "h_index": 5,
+    "cited_by_count": 351,
+    "works_count": 7,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2108204727",
+    "source": "semanticscholar"
+  },
+  "yanghua xiao": {
+    "h_index": 9,
+    "cited_by_count": 3952,
+    "works_count": 19,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2307314606",
+    "source": "semanticscholar"
+  },
+  "yin, shenqin": {
+    "h_index": 2,
+    "cited_by_count": 6,
+    "works_count": 7,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2067737964",
+    "source": "semanticscholar"
+  },
+  "zhang, xinhang": {
+    "h_index": 3,
+    "cited_by_count": 35,
+    "works_count": 4,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2108029301",
+    "source": "semanticscholar"
+  },
+  "chen, zeping": {
+    "h_index": 1,
+    "cited_by_count": 1,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2379305641",
+    "source": "semanticscholar"
+  },
+  "volker tresp": {
+    "h_index": 59,
+    "cited_by_count": 15836,
+    "works_count": 274,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "1700754",
+    "source": "semanticscholar"
+  },
+  "yunpu ma": {
+    "h_index": 4,
+    "cited_by_count": 186,
+    "works_count": 19,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2375151391",
+    "source": "semanticscholar"
+  },
+  "roman yampolskiy": {},
+  "gyouk chu": {
+    "h_index": 2,
+    "cited_by_count": 9,
+    "works_count": 7,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2372477641",
+    "source": "semanticscholar"
+  },
+  "eunho yang": {
+    "h_index": 0,
+    "cited_by_count": 0,
+    "works_count": 4,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "146676208",
+    "source": "semanticscholar"
+  },
+  "jonathan tremblay": {
+    "h_index": 6,
+    "cited_by_count": 151,
+    "works_count": 11,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2055042254",
+    "source": "semanticscholar"
+  },
+  "hugo hadfield": {
+    "h_index": 7,
+    "cited_by_count": 167,
+    "works_count": 20,
+    "institution": "NVIDIA, University of Cambridge",
+    "homepage": "hh409.user.srcf.net",
+    "s2_author_id": "146891227",
+    "source": "semanticscholar"
+  },
+  "franklin, matija": {
+    "h_index": 3,
+    "cited_by_count": 63,
+    "works_count": 5,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "27903570",
+    "source": "semanticscholar"
+  },
+  "geemi wellawatte": {
+    "h_index": 11,
+    "cited_by_count": 524,
+    "works_count": 16,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "1805407482",
+    "source": "semanticscholar"
+  },
+  "andrew white": {
+    "h_index": 10,
+    "cited_by_count": 633,
+    "works_count": 38,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "153337331",
+    "source": "semanticscholar"
+  },
+  "sergey rodionov": {
+    "h_index": 7,
+    "cited_by_count": 173,
+    "works_count": 13,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2066106226",
+    "source": "semanticscholar"
+  },
+  "dahua lin": {
+    "h_index": 6,
+    "cited_by_count": 607,
+    "works_count": 8,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2116442295",
+    "source": "semanticscholar"
+  },
+  "alex rubinsteyn": {
+    "h_index": 15,
+    "cited_by_count": 1745,
+    "works_count": 75,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "1717086",
+    "source": "semanticscholar"
+  },
+  "heng li": {
+    "h_index": 0,
+    "cited_by_count": 0,
+    "works_count": 5,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2153615565",
+    "source": "semanticscholar"
+  },
+  "chuanjin peng": {
+    "h_index": 1,
+    "cited_by_count": 44,
+    "works_count": 1,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2396660655",
+    "source": "semanticscholar"
+  },
+  "sanjeepan sivapiran": {
+    "h_index": 1,
+    "cited_by_count": 5,
+    "works_count": 3,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2179020637",
+    "source": "semanticscholar"
+  },
+  "ruixiong zhang": {
+    "h_index": 1,
+    "cited_by_count": 24,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2397863872",
+    "source": "semanticscholar"
+  },
+  "ritu prajapati": {
+    "h_index": 1,
+    "cited_by_count": 7,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2037969233",
+    "source": "semanticscholar"
+  },
+  "john g. samuelsson": {
+    "h_index": 1,
+    "cited_by_count": 4,
+    "works_count": 5,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2283390182",
+    "source": "semanticscholar"
+  },
+  "birol emir": {
+    "h_index": 3,
+    "cited_by_count": 17,
+    "works_count": 8,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2275211938",
+    "source": "semanticscholar"
+  },
+  "shibasish dasgupta": {
+    "h_index": 1,
+    "cited_by_count": 8,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2261927340",
+    "source": "semanticscholar"
+  },
+  "gaurav jain": {
+    "h_index": 5,
+    "cited_by_count": 64,
+    "works_count": 14,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "47864573",
+    "source": "semanticscholar"
+  },
+  "sheraz khan": {
+    "h_index": 2,
+    "cited_by_count": 7,
+    "works_count": 3,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2238911058",
+    "source": "semanticscholar"
+  },
+  "rita orji": {
+    "h_index": 7,
+    "cited_by_count": 162,
+    "works_count": 90,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2307134758",
+    "source": "semanticscholar"
+  },
+  "shicong feng": {
+    "h_index": 2,
+    "cited_by_count": 5,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2366586516",
+    "source": "semanticscholar"
+  },
+  "yavar naddaf": {
+    "h_index": 1,
+    "cited_by_count": 25,
+    "works_count": 1,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "47329127",
+    "source": "semanticscholar"
+  },
+  "emily alsentzer": {},
+  "m. haider": {
+    "h_index": 4,
+    "cited_by_count": 36,
+    "works_count": 7,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "114322515",
+    "source": "semanticscholar"
+  },
+  "ian reynolds": {
+    "h_index": 9,
+    "cited_by_count": 320,
+    "works_count": 12,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "48963755",
+    "source": "semanticscholar"
+  },
+  "austin woo": {
+    "h_index": 1,
+    "cited_by_count": 5,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2349384462",
+    "source": "semanticscholar"
+  },
+  "tony chen": {
+    "h_index": 2,
+    "cited_by_count": 23,
+    "works_count": 4,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2110557804",
+    "source": "semanticscholar"
+  },
+  "trevor howarth": {
+    "h_index": 3,
+    "cited_by_count": 72,
+    "works_count": 3,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "1626145599",
+    "source": "semanticscholar"
+  },
+  "canary wharf, london, united kingdom. email: tidor@madsimpleads.com": {},
+  "takuya akiba": {},
+  "makoto shing": {
+    "h_index": 4,
+    "cited_by_count": 305,
+    "works_count": 10,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2205654861",
+    "source": "semanticscholar"
+  },
+  "jason wei": {
+    "h_index": 3,
+    "cited_by_count": 232,
+    "works_count": 3,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2219963358",
+    "source": "semanticscholar"
+  },
+  "jean raven": {
+    "h_index": 20,
+    "cited_by_count": 17600,
+    "works_count": 55,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "34845426",
+    "source": "semanticscholar"
+  },
+  "paul coehn": {
+    "h_index": 1,
+    "cited_by_count": 104,
+    "works_count": 1,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "117678518",
+    "source": "semanticscholar"
+  },
+  "a. x. chang": {
+    "h_index": 1,
+    "cited_by_count": 13,
+    "works_count": 2,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2318378527",
+    "source": "semanticscholar"
+  },
+  "m. savva": {
+    "h_index": 3,
+    "cited_by_count": 1043,
+    "works_count": 4,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "119578339",
+    "source": "semanticscholar"
+  },
+  "mogtaba alim": {
+    "h_index": 2,
+    "cited_by_count": 15,
+    "works_count": 4,
+    "institution": "",
+    "homepage": "",
+    "s2_author_id": "2362811707",
+    "source": "semanticscholar"
   }
 }
