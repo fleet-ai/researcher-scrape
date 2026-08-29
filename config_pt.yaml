@@ -6,6 +6,9 @@ categories:
 filters:
   max_h_index: 40          # h >= this -> recruitable: Stretch (kept, flagged)
   min_papers: 1
+  # 2026-08-29: narrowed to last-year PhD students + industry only.
+  # recent_grad stays because the stage taxonomy can't split "first industry
+  # role" from "postdoc"; verify_shortlist catches the postdocs.
   career_stages:
     - graduating_phd
     - recent_grad
@@ -13,6 +16,9 @@ filters:
     - mid_industry
   drop_stages:
     - early_phd
+    - senior       # 2026-08-29: dropped outright for PT (was: kept as Stretch)
+    - professor
+    - founder
   allowed_countries:
     - US
     - CA

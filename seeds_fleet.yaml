@@ -55,6 +55,58 @@ seeds:
     - "2407.13168"  # SciCode
     - "2407.10362"  # LAB-Bench (biology)
 
+    # ── Benchmarks (model cards) (43) — added 2026-08-29 ──────────
+    # New "Benchmarks" role. Source: eval tables of ten 2026 frontier model
+    # cards (GPT-5.6, Claude Opus 5, Kimi K3, DeepSeek-V4-Pro, Gemini 3.1
+    # Pro, Grok 4.6, GLM-5.3, Qwen3.8-Max, Llama 4, Mistral Medium 3.5).
+    # Sorted by number of citing labs. Every ID verified on arxiv (title
+    # match) and OpenAlex. Six more model-card benchmarks already sit in
+    # the Agentic/STEM sections above: Terminal-Bench, Agents' Last Exam,
+    # Tool Decathlon, GPQA, LiveCodeBench, SciCode.
+    - "2607.07946"  # DeepSWE (7 labs)
+    - "2510.04374"  # GDPval (6 labs)
+    - "2504.12516"  # BrowseComp (6 labs)
+    - "2501.14249"  # Humanity's Last Exam (5 labs)
+    - "2509.16941"  # SWE-bench Pro (5 labs)
+    - "2310.06770"  # SWE-bench (4 labs)
+    - "2604.18934"  # AutomationBench (4 labs)
+    - "2404.07972"  # OSWorld (4 labs)
+    - "2602.00933"  # MCP-Atlas (4 labs)
+    - "2601.14242"  # APEX-Agents (Mercor) (4 labs)
+    - "2409.02813"  # MMMU-Pro (4 labs)
+    - "2605.14153"  # ExploitBench (3 labs)
+    - "2605.11086"  # ExploitGym (3 labs)
+    - "2603.08640"  # PostTrainBench (3 labs)
+    - "2409.12640"  # Michelangelo (MRCR long-context) (3 labs)
+    - "2506.07982"  # tau^2-bench (3 labs)
+    - "2406.12045"  # tau-bench (3 labs)
+    - "2009.03300"  # MMLU (3 labs)
+    - "2505.08775"  # HealthBench (2 labs)
+    - "2605.03546"  # ProgramBench (2 labs)
+    - "2606.07682"  # SWE-Marathon (2 labs)
+    - "2512.12730"  # NL2Repo-Bench (2 labs)
+    - "2506.02548"  # CyberGym (2 labs)
+    - "2601.20975"  # DeepSearchQA (2 labs)
+    - "2603.08655"  # OfficeQA Pro (2 labs)
+    - "2605.10865"  # BenchCAD (2 labs)
+    - "2505.11831"  # ARC-AGI-2 (2 labs)
+    - "2507.02833"  # IFBench (AllenAI) (2 labs) — NOTE: arxiv DOI not indexed on OpenAlex 2026-08-29 (NeurIPS proceedings DOI); expect a resolve warning
+    - "2402.14804"  # MathVision / MATH-V (2 labs)
+    - "2406.01574"  # MMLU-Pro (2 labs)
+    - "2103.03874"  # MATH (2 labs)
+    - "2210.03057"  # MGSM (2 labs)
+    - "2506.11928"  # LiveCodeBench Pro (1 lab) — NOTE: same OpenAlex resolve caveat as IFBench
+    - "2509.24002"  # MCPMark (1 lab)
+    - "2605.26329"  # JobBench (1 lab)
+    - "2605.08678"  # MLS-Bench (1 lab)
+    - "2511.07685"  # ResearchRubrics (1 lab)
+    - "2509.26574"  # CritPt (frontier physics) (1 lab)
+    - "2406.14991"  # SpreadsheetBench (1 lab)
+    - "2504.01848"  # PaperBench (1 lab)
+    - "2411.04872"  # FrontierMath (Epoch AI) (1 lab)
+    - "2410.03859"  # SWE-bench Multimodal (1 lab)
+    - "1911.01547"  # On the Measure of Intelligence (ARC-AGI-1) (1 lab)
+
     # ── Environment Generation (20) ────────────────────────────
     - "2604.28181"  # Synthetic Computers at Scale
     - "2606.25996"  # Autodata: agentic data scientist
@@ -193,6 +245,85 @@ seeds:
     - "2512.16848"  # LaMer (meta-RL at test time)
     - "2511.16652"  # EGGROLL (evolution strategies at hyperscale)
     - "2604.21590"  # AgenticQwen-30B-A3B
+
+    # ── PT: 2026-08 HF monthly sweep (40) — synced from seeds_pt.yaml 2026-08-29 ──
+    - "2608.05466"  # Recursive Synthesis for Long-Horizon Terminal Tasks
+    - "2608.19880"  # EnvHarness: Awakening Static Worlds for Agent Learning
+    - "2608.06296"  # On-Policy Self-Distillation without Any Supervision
+    - "2608.23283"  # Apodex 1.1: Scaling Agentic Intelligence for Complex Work
+    - "2608.09819"  # Macaron-V1: Open Continual Learning via Self-Improvement + MoLoRA
+    - "2608.14144"  # Self-Supervised Visual On-Policy Distillation
+    - "2608.01735"  # DAPD: Dual-Anchored Policy Distillation
+    - "2608.16072"  # Saturation-Aware Advantage Reweighting (multi-reward GRPO)
+    - "2608.18580"  # FACET: Executable-State-Preserving Terminal Task Synthesis
+    - "2607.23802"  # From RLVR to RLSVR: Self-Verifiable Rewards for Open-Ended Tasks
+    - "2608.17310"  # Agentic ESOpt: ES Fine-Tuning for Long-Horizon Agents
+    - "2608.20492"  # Annotations as Rollouts: Efficient RL for Video MLLMs
+    - "2608.05987"  # AgentOPSD: Recursive Self-Distillation for Agentic RL
+    - "2608.17253"  # Co-RL: Unsupervised Reasoning from Diverse Cohort Multi-Agent RL
+    - "2608.19197"  # SPADE: Self-Play in Adaptive Synthetic Executable Environments
+    - "2608.17528"  # Agent Lightning v1.0
+    - "2608.05102"  # ABSeeker: Answer-Backtracked Credit Assignment for Search Agents
+    - "2608.27448"  # TTPO: Test-Time Policy Optimization
+    - "2608.03573"  # SFT Conflicts, RL Coexists (multi-task learning analysis)
+    - "2608.27260"  # What Makes Good Agentic Data? (ACE lens on data generation)
+    - "2607.26246"  # Weak-to-Strong On-Policy Distillation
+    - "2608.06197"  # EnvACE: World Rehearsal for Agentic RL
+    - "2608.01678"  # Progressive Agent Skill Generation via RL
+    - "2608.03571"  # Designing Effective Environment Distributions for Agent Learning
+    - "2608.16798"  # ClawGym II: Black-Box RL on Agent Harness
+    - "2608.01837"  # PCSD: Persistent Consistency for Self-Distillation in Agentic RL
+    - "2608.23181"  # CyberFactory: Security Instances from the Wild as Training Data
+    - "2608.14277"  # SimpleOPD: Tokenizer-Agnostic On-Policy Distillation
+    - "2607.29209"  # SAF-OPD: Stable Advantage Fusion for On-Policy Distillation
+    - "2608.02287"  # SKT: Skill-Use Training via Verified Synthetic Data Generation
+    - "2608.04419"  # SPOT: Sparse Probing + Outcome Calibration for OPD
+    - "2607.18082"  # CriPO: Rubric-based RL via Self-Distillation
+    - "2608.13040"  # Latent On-Policy Self-Distillation
+    - "2608.24987"  # D^3-MOPD: Dynamic Domain Scheduling for Multi-Teacher OPD
+    - "2608.17393"  # LEGO-RL: Harness-Native RL for Coding Agents
+    - "2608.23318"  # Agent-G^2: Gaussian Guidance for Agentic RL
+    - "2608.03632"  # When Teachers Mislead: Spurious-Signal-Aware OPD
+    - "2608.06352"  # CalibForge: Adversarial Solver Calibration for Learnable Tasks
+    - "2608.24696"  # On-policy Distillation with Verifiable Reward
+    - "2608.20634"  # AgentMercury: Synthesizing Verifiable Business Environments
+
+    # ── PT: self-improvement sweep (35) — synced from seeds_pt.yaml 2026-08-29 ──
+    - "2607.28568"  # Frontis-MA1: AI4AI Model towards Recursive Self-Improvement in MLE
+    - "2605.27276"  # SIA: Self Improving AI with Harness & Weight Updates
+    - "2605.14392"  # Learning to Build the Environment: Self-Evolving RL via Env Synthesis
+    - "2607.21461"  # AREX: Recursively Self-Improving Agent for Deep Research
+    - "2605.31433"  # SCOPE: Self-Play via Co-Evolving Policies for Open-Ended Tasks
+    - "2605.09959"  # G-Zero: Self-Play for Open-Ended Generation from Zero Data
+    - "2606.03108"  # EvoTrainer: Co-Evolving LLM Policies and Training Harnesses
+    - "2607.22529"  # Skill Self-Play: Co-Evolving Skills
+    - "2605.11609"  # Anti-Self-Distillation for Reasoning RL via PMI
+    - "2605.15155"  # Self-Distilled Agentic Reinforcement Learning
+    - "2607.14777"  # SEED: Self-Evolving On-Policy Distillation for Agentic RL
+    - "2606.03979"  # Language Models Need Sleep: Self-Modify + Consolidate Memories
+    - "2606.10917"  # Role-Agent: Bootstrapping LLM Agents via Dual-Role Evolution
+    - "2607.07820"  # DeepSearch-World: Self-Distillation for Deep Search Agents
+    - "2606.04703"  # Rethinking Continual Experience Internalization
+    - "2605.28814"  # Self-Improving LMs with Bidirectional Evolutionary Search
+    - "2607.15524"  # Recursive Harness Self-Improvement
+    - "2605.06130"  # Skill1: Unified Evolution of Skill-Augmented Agents via RL
+    - "2606.26790"  # OPID: On-Policy Skill Distillation for Agentic RL
+    - "2605.06614"  # SkillOS: Learning Skill Curation for Self-Evolving Agents
+    - "2606.19047"  # RODS: Reward-Driven Online Data Synthesis for Tool-Use Agents
+    - "2512.18552"  # Superintelligent Software Agents through Self-Play SWE-RL
+    - "2605.08472"  # Mid-Training with Self-Generated Data Improves RL
+    - "2606.13929"  # Self-Evolving Visual Questioner
+    - "2605.24426"  # SEAL: Co-Evolution of Agents and Learning Environments
+    - "2510.18821"  # Search Self-play: Agent Capability without Supervision
+    - "2509.07414"  # Language Self-Play For Data-Free Training
+    - "2605.07465"  # SEIF: Self-Evolving RL for Instruction Following
+    - "2510.10232"  # SGM: Statistical Godel Machine for Risk-Controlled Self-Modification
+    - "2601.13761"  # DARC: Decoupled Asymmetric Reasoning Curriculum for LLM Evolution
+    - "2608.07645"  # Mendel Godel Machine: RSI Coding Agents via Comparative Evolution
+    - "2608.13951"  # HELIX: Model-Harness Co-evolution for Recursive Self-Improvement
+    - "2608.08311"  # Ouroboros: Self-Developing Coding Agent with Reviewed Core Evolution
+    - "2608.26582"  # J-Zero: Challenger-Solver-Judge Co-Evolution from Zero Data
+    - "2608.21871"  # Pursuit-Evasion Self-Play for Zero-Data LLM Reasoning
   researchers:
     - name: "Alex Zook"
       institution: "NVIDIA"
@@ -208,3 +339,27 @@ seeds:
       institution: "METR"
     - name: "Sam Earle"
       institution: "New York University"
+    # ── Benchmarks role: creators of model-card benchmarks with no arxiv
+    #    paper (added 2026-08-29) ──
+    - name: "Evan Chu"
+      institution: "Proximal"          # FrontierSWE (blog/GitHub only); cited by moonshot, zhipu
+    - name: "Rajan Agarwal"
+      institution: "Proximal"          # FrontierSWE co-lead
+    - name: "Edwin Chen"
+      institution: "Surge AI"          # GDP.pdf, Chartography; cited by openai, anthropic
+    - name: "Scott Wu"
+      institution: "Cognition"         # FrontierCode (blog only); cited by anthropic, xai
+    - name: "Michael Truell"
+      institution: "Anysphere"         # CursorBench (product eval); cited by anthropic, xai
+    - name: "Micah Hill-Smith"
+      institution: "Artificial Analysis"  # AA Intelligence Index family; cited by 5 labs
+    - name: "George Cameron"
+      institution: "Artificial Analysis"  # AA co-founder, same benchmark family
+    - name: "Francois Chollet"
+      institution: "ARC Prize Foundation" # ARC-AGI-3 (no paper yet)
+    - name: "Mike Knoop"
+      institution: "ARC Prize Foundation" # ARC-AGI-3 co-founder
+    - name: "Langston Nashold"
+      institution: "Vals AI"           # legal/finance agent benchmarks (founder attribution unverified)
+    - name: "Rayan Krishnan"
+      institution: "Vals AI"           # same family (founder attribution unverified)

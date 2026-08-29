@@ -2,7 +2,7 @@
 
 Two-layer output from one pipeline: a **wide candidate pool** (`researchers.xlsx`, hundreds per position) and a **web-verified recruiter shortlist** (`shortlist.xlsx`, top 40 per position in the proven 7-column format).
 
-Five positions: **World Models, Agentic Benchmarks, STEM Benchmarks, Environment Generation, Post-Training.** Seeds are hand-curated (92 papers + 7 researchers as of 2026-07-08), every arxiv ID verified against OpenAlex before committing.
+Six positions: **World Models, Agentic Benchmarks, STEM Benchmarks, Benchmarks (model cards, added 2026-08-29), Environment Generation, Post-Training.** Seeds are hand-curated (280 papers + 18 researchers as of 2026-08-29), every arxiv ID verified against OpenAlex before committing (two exceptions flagged inline in seeds_fleet.yaml: IFBench and LiveCodeBench Pro are on arxiv but OpenAlex indexes only their NeurIPS-proceedings DOIs, so they log a resolve warning).
 
 ## Flow
 

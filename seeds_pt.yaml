@@ -6,6 +6,8 @@
 # and fleet-research reading notes (papers/, threads/task-rl,
 # threads/multi-path-verification, archive/selfplay paper survey).
 # Every ID verified on OpenAlex. Approved by Deniz 2026-07-20.
+# 2026-08-29: +40 papers from the HF 2026-08 monthly sweep (post-training
+# + synthetic data generation), synced into seeds_fleet.yaml same day.
 seeds:
   papers:
     # ── From seeds_fleet.yaml Post-Training (23) ──────────────
@@ -123,6 +125,94 @@ seeds:
     - "2512.16848"  # LaMer (meta-RL at test time)
     - "2511.16652"  # EGGROLL (evolution strategies at hyperscale)
     - "2604.21590"  # AgenticQwen-30B-A3B
+
+    # ── 2026-08 HF monthly sweep (40) — added 2026-08-29 ──────────
+    # Source: huggingface.co/papers/month/2026-08 (615 papers scanned),
+    # filtered to post-training + synthetic data generation, ranked by
+    # fit + upvotes. Every ID verified on arxiv (title match) AND OpenAlex.
+    - "2608.05466"  # Recursive Synthesis for Long-Horizon Terminal Tasks
+    - "2608.19880"  # EnvHarness: Awakening Static Worlds for Agent Learning
+    - "2608.06296"  # On-Policy Self-Distillation without Any Supervision
+    - "2608.23283"  # Apodex 1.1: Scaling Agentic Intelligence for Complex Work
+    - "2608.09819"  # Macaron-V1: Open Continual Learning via Self-Improvement + MoLoRA
+    - "2608.14144"  # Self-Supervised Visual On-Policy Distillation
+    - "2608.01735"  # DAPD: Dual-Anchored Policy Distillation
+    - "2608.16072"  # Saturation-Aware Advantage Reweighting (multi-reward GRPO)
+    - "2608.18580"  # FACET: Executable-State-Preserving Terminal Task Synthesis
+    - "2607.23802"  # From RLVR to RLSVR: Self-Verifiable Rewards for Open-Ended Tasks
+    - "2608.17310"  # Agentic ESOpt: ES Fine-Tuning for Long-Horizon Agents
+    - "2608.20492"  # Annotations as Rollouts: Efficient RL for Video MLLMs
+    - "2608.05987"  # AgentOPSD: Recursive Self-Distillation for Agentic RL
+    - "2608.17253"  # Co-RL: Unsupervised Reasoning from Diverse Cohort Multi-Agent RL
+    - "2608.19197"  # SPADE: Self-Play in Adaptive Synthetic Executable Environments
+    - "2608.17528"  # Agent Lightning v1.0
+    - "2608.05102"  # ABSeeker: Answer-Backtracked Credit Assignment for Search Agents
+    - "2608.27448"  # TTPO: Test-Time Policy Optimization
+    - "2608.03573"  # SFT Conflicts, RL Coexists (multi-task learning analysis)
+    - "2608.27260"  # What Makes Good Agentic Data? (ACE lens on data generation)
+    - "2607.26246"  # Weak-to-Strong On-Policy Distillation
+    - "2608.06197"  # EnvACE: World Rehearsal for Agentic RL
+    - "2608.01678"  # Progressive Agent Skill Generation via RL
+    - "2608.03571"  # Designing Effective Environment Distributions for Agent Learning
+    - "2608.16798"  # ClawGym II: Black-Box RL on Agent Harness
+    - "2608.01837"  # PCSD: Persistent Consistency for Self-Distillation in Agentic RL
+    - "2608.23181"  # CyberFactory: Security Instances from the Wild as Training Data
+    - "2608.14277"  # SimpleOPD: Tokenizer-Agnostic On-Policy Distillation
+    - "2607.29209"  # SAF-OPD: Stable Advantage Fusion for On-Policy Distillation
+    - "2608.02287"  # SKT: Skill-Use Training via Verified Synthetic Data Generation
+    - "2608.04419"  # SPOT: Sparse Probing + Outcome Calibration for OPD
+    - "2607.18082"  # CriPO: Rubric-based RL via Self-Distillation
+    - "2608.13040"  # Latent On-Policy Self-Distillation
+    - "2608.24987"  # D^3-MOPD: Dynamic Domain Scheduling for Multi-Teacher OPD
+    - "2608.17393"  # LEGO-RL: Harness-Native RL for Coding Agents
+    - "2608.23318"  # Agent-G^2: Gaussian Guidance for Agentic RL
+    - "2608.03632"  # When Teachers Mislead: Spurious-Signal-Aware OPD
+    - "2608.06352"  # CalibForge: Adversarial Solver Calibration for Learnable Tasks
+    - "2608.24696"  # On-policy Distillation with Verifiable Reward
+    - "2608.20634"  # AgentMercury: Synthesizing Verifiable Business Environments
+
+    # ── Self-improvement sweep (35) — added 2026-08-29 ────────────
+    # Dedicated sweep: recursive self-improvement, Godel-machine lineage,
+    # self-evolving agents, self-rewarding loops, zero-data self-play,
+    # experience-to-weights continual learning. Sources: HF daily papers
+    # 2026-05..07 (2,965 scanned) + arxiv search + citation chains.
+    # Every ID verified on arxiv (title match) AND OpenAlex.
+    - "2607.28568"  # Frontis-MA1: AI4AI Model towards Recursive Self-Improvement in MLE
+    - "2605.27276"  # SIA: Self Improving AI with Harness & Weight Updates
+    - "2605.14392"  # Learning to Build the Environment: Self-Evolving RL via Env Synthesis
+    - "2607.21461"  # AREX: Recursively Self-Improving Agent for Deep Research
+    - "2605.31433"  # SCOPE: Self-Play via Co-Evolving Policies for Open-Ended Tasks
+    - "2605.09959"  # G-Zero: Self-Play for Open-Ended Generation from Zero Data
+    - "2606.03108"  # EvoTrainer: Co-Evolving LLM Policies and Training Harnesses
+    - "2607.22529"  # Skill Self-Play: Co-Evolving Skills
+    - "2605.11609"  # Anti-Self-Distillation for Reasoning RL via PMI
+    - "2605.15155"  # Self-Distilled Agentic Reinforcement Learning
+    - "2607.14777"  # SEED: Self-Evolving On-Policy Distillation for Agentic RL
+    - "2606.03979"  # Language Models Need Sleep: Self-Modify + Consolidate Memories
+    - "2606.10917"  # Role-Agent: Bootstrapping LLM Agents via Dual-Role Evolution
+    - "2607.07820"  # DeepSearch-World: Self-Distillation for Deep Search Agents
+    - "2606.04703"  # Rethinking Continual Experience Internalization
+    - "2605.28814"  # Self-Improving LMs with Bidirectional Evolutionary Search
+    - "2607.15524"  # Recursive Harness Self-Improvement
+    - "2605.06130"  # Skill1: Unified Evolution of Skill-Augmented Agents via RL
+    - "2606.26790"  # OPID: On-Policy Skill Distillation for Agentic RL
+    - "2605.06614"  # SkillOS: Learning Skill Curation for Self-Evolving Agents
+    - "2606.19047"  # RODS: Reward-Driven Online Data Synthesis for Tool-Use Agents
+    - "2512.18552"  # Superintelligent Software Agents through Self-Play SWE-RL
+    - "2605.08472"  # Mid-Training with Self-Generated Data Improves RL
+    - "2606.13929"  # Self-Evolving Visual Questioner
+    - "2605.24426"  # SEAL: Co-Evolution of Agents and Learning Environments
+    - "2510.18821"  # Search Self-play: Agent Capability without Supervision
+    - "2509.07414"  # Language Self-Play For Data-Free Training
+    - "2605.07465"  # SEIF: Self-Evolving RL for Instruction Following
+    - "2510.10232"  # SGM: Statistical Godel Machine for Risk-Controlled Self-Modification
+    - "2601.13761"  # DARC: Decoupled Asymmetric Reasoning Curriculum for LLM Evolution
+    # August finds surfaced by this sweep (missed by the 2026-08 filter):
+    - "2608.07645"  # Mendel Godel Machine: RSI Coding Agents via Comparative Evolution
+    - "2608.13951"  # HELIX: Model-Harness Co-evolution for Recursive Self-Improvement
+    - "2608.08311"  # Ouroboros: Self-Developing Coding Agent with Reviewed Core Evolution
+    - "2608.26582"  # J-Zero: Challenger-Solver-Judge Co-Evolution from Zero Data
+    - "2608.21871"  # Pursuit-Evasion Self-Play for Zero-Data LLM Reasoning
 
   researchers:
     - name: "Nicklas Hansen"

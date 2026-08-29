@@ -5,6 +5,14 @@ categories:
     keywords: []
   - name: "STEM Benchmarks"
     keywords: []
+  # 2026-08-29: new role. Seeds = benchmark papers cited in the eval tables
+  # of 2026 frontier model cards (OpenAI, Anthropic, Kimi, GLM, DeepSeek,
+  # Qwen, Gemini, ...). See the "Benchmarks (model cards)" section in
+  # seeds_fleet.yaml.
+  - name: "Benchmarks"
+    keywords:
+      - "authored an evaluation benchmark that frontier labs report in model cards"
+      - "benchmark construction and evaluation methodology for LLMs and agents"
   - name: "Environment Generation"
     keywords: []
   - name: "Post-Training"
