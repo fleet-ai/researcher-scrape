@@ -339,27 +339,7 @@ seeds:
       institution: "METR"
     - name: "Sam Earle"
       institution: "New York University"
-    # ── Benchmarks role: creators of model-card benchmarks with no arxiv
-    #    paper (added 2026-08-29) ──
-    - name: "Evan Chu"
-      institution: "Proximal"          # FrontierSWE (blog/GitHub only); cited by moonshot, zhipu
-    - name: "Rajan Agarwal"
-      institution: "Proximal"          # FrontierSWE co-lead
-    - name: "Edwin Chen"
-      institution: "Surge AI"          # GDP.pdf, Chartography; cited by openai, anthropic
-    - name: "Scott Wu"
-      institution: "Cognition"         # FrontierCode (blog only); cited by anthropic, xai
-    - name: "Michael Truell"
-      institution: "Anysphere"         # CursorBench (product eval); cited by anthropic, xai
-    - name: "Micah Hill-Smith"
-      institution: "Artificial Analysis"  # AA Intelligence Index family; cited by 5 labs
-    - name: "George Cameron"
-      institution: "Artificial Analysis"  # AA co-founder, same benchmark family
-    - name: "Francois Chollet"
-      institution: "ARC Prize Foundation" # ARC-AGI-3 (no paper yet)
-    - name: "Mike Knoop"
-      institution: "ARC Prize Foundation" # ARC-AGI-3 co-founder
-    - name: "Langston Nashold"
-      institution: "Vals AI"           # legal/finance agent benchmarks (founder attribution unverified)
-    - name: "Rayan Krishnan"
-      institution: "Vals AI"           # same family (founder attribution unverified)
+    # Benchmarks with no arxiv paper (FrontierSWE, FrontierCode, CursorBench,
+    # AA indices, ARC-AGI-3, Vals AI suites) are NOT seeded via their
+    # creators: known names are founders/CEOs, not recruiting targets, and
+    # useful graph entry requires papers.
