@@ -428,10 +428,13 @@ def classify_categories(researchers: dict, categories: list, api_key: str, cache
 
     to_classify = []
     for key, r in researchers.items():
-        if key in cached_fit:
+        # A cache hit is only valid if it covers every CURRENT category;
+        # otherwise researchers cached before a category was added could
+        # never join it (hit with the "Benchmarks" role, 2026-08-29).
+        if key in cached_fit and all(n in cached_fit[key] for n in cat_names):
             r.category_scores = cached_fit[key]
             r.categories = [name for name, score in cached_fit[key].items() if score >= 0.5]
-        elif not r.categories:
+        else:
             to_classify.append((key, r))
 
     if not to_classify:
@@ -695,7 +698,9 @@ def write_output(researchers: dict, categories: list, output_dir: Path) -> tuple
     per_cat_rows = {}
     for cat in categories:
         cat_name = cat["name"]
-        cat_rows = [r for r in all_rows if cat_name in r["categories"]]
+        # Exact membership: substring matching put every "Agentic/STEM
+        # Benchmarks" member into the "Benchmarks" tab.
+        cat_rows = [r for r in all_rows if cat_name in r["categories"].split("; ")]
         per_cat_rows[cat_name] = cat_rows
         safe_name = re.sub(r"[^a-z0-9_]", "_", cat_name.lower())
         _write_csv(output_dir / f"{safe_name}.csv", cat_rows)
