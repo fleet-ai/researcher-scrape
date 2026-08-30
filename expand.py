@@ -744,12 +744,21 @@ def enrich(researchers: dict, skip_emails: bool = False):
 # ── Phase 7: Output ───────────────────────────────────────────────────────────
 
 OUTPUT_FIELDS = [
-    "name", "career_stage", "institution", "country", "categories", "key_papers",
-    "email", "email_source", "homepage", "h_index", "cited_by_count",
+    "rank", "name", "career_stage", "fit", "institution", "country", "categories",
+    "key_papers", "email", "email_source", "homepage", "h_index", "cited_by_count",
     "paper_count", "source_type", "depth", "found_via", "recruitable",
 ]
 
 _RECRUIT_ORDER = {"Yes": 0, "Stretch": 1, "Unlikely": 2}
+
+# How hireable each career band is. Multiplied with the 0-1 category-fit
+# score to rank tabs: a graduating PhD with fit 0.7 outranks a
+# mid-industry person with fit 0.9 (0.70 vs 0.54).
+_STAGE_HIRE_WEIGHT = {
+    "graduating_phd": 1.0, "recent_grad": 0.95, "junior_industry": 0.9,
+    "mid_industry": 0.6, "unknown": 0.4, "": 0.4,
+    "senior": 0.3, "professor": 0.25, "founder": 0.2, "early_phd": 0.1,
+}
 
 
 def write_output(researchers: dict, categories: list, output_dir: Path) -> tuple[Path, dict, list[dict]]:
@@ -759,9 +768,7 @@ def write_output(researchers: dict, categories: list, output_dir: Path) -> tuple
     output_dir.mkdir(parents=True, exist_ok=True)
 
     all_rows = []
-    # Recruitable Yes first, then Stretch, then Unlikely; h-index desc within
-    for key, r in sorted(researchers.items(),
-                         key=lambda x: (_RECRUIT_ORDER.get(x[1].recruitable, 0), -x[1].h_index)):
+    for key, r in researchers.items():
         row = {
             "name": r.name,
             "career_stage": r.career_stage,
@@ -779,19 +786,41 @@ def write_output(researchers: dict, categories: list, output_dir: Path) -> tuple
             "depth": r.depth,
             "found_via": r.found_via,
             "recruitable": r.recruitable,
+            # internal, stripped before writing
+            "_scores": r.category_scores or {},
+            "_stage_w": _STAGE_HIRE_WEIGHT.get(r.career_stage, 0.4),
+            "_n_key": len(r.key_papers),
         }
         all_rows.append(row)
 
-    # CSVs
-    _write_csv(output_dir / "combined.csv", all_rows)
-    log.info(f"  combined.csv: {len(all_rows)} researchers")
+    def _ranked(rows: list[dict], fit_of) -> list[dict]:
+        """Sort by recruitable tier, then fit x hire-band weight, then
+        in-graph paper count; stamp 1-based rank and the fit score."""
+        keyed = sorted(rows, key=lambda r: (
+            _RECRUIT_ORDER.get(r["recruitable"], 0),
+            -(fit_of(r) * r["_stage_w"]),
+            -r["_n_key"],
+        ))
+        out = []
+        for n, r in enumerate(keyed, start=1):
+            c = {k: v for k, v in r.items() if not k.startswith("_")}
+            c["rank"] = n
+            c["fit"] = round(fit_of(r), 1)
+            out.append(c)
+        return out
+
+    # Combined ranks by each person's best category fit
+    all_rows_out = _ranked(all_rows, lambda r: max(r["_scores"].values(), default=0.0))
+    _write_csv(output_dir / "combined.csv", all_rows_out)
+    log.info(f"  combined.csv: {len(all_rows_out)} researchers")
 
     per_cat_rows = {}
     for cat in categories:
         cat_name = cat["name"]
         # Exact membership: substring matching put every "Agentic/STEM
         # Benchmarks" member into the "Benchmarks" tab.
-        cat_rows = [r for r in all_rows if cat_name in r["categories"].split("; ")]
+        member_rows = [r for r in all_rows if cat_name in r["categories"].split("; ")]
+        cat_rows = _ranked(member_rows, lambda r: r["_scores"].get(cat_name, 0.0))
         per_cat_rows[cat_name] = cat_rows
         safe_name = re.sub(r"[^a-z0-9_]", "_", cat_name.lower())
         _write_csv(output_dir / f"{safe_name}.csv", cat_rows)
@@ -799,10 +828,10 @@ def write_output(researchers: dict, categories: list, output_dir: Path) -> tuple
 
     # XLSX: one tab per position, plus a Combined tab only when >1 position
     xlsx_path = output_dir / "researchers.xlsx"
-    _write_xlsx(xlsx_path, per_cat_rows, all_rows)
+    _write_xlsx(xlsx_path, per_cat_rows, all_rows_out)
     extra = " + Combined" if len(per_cat_rows) > 1 else ""
     log.info(f"  {xlsx_path.name}: {len(per_cat_rows)} position tab(s){extra}")
-    return xlsx_path, per_cat_rows, all_rows
+    return xlsx_path, per_cat_rows, all_rows_out
 
 
 def _write_csv(path: Path, rows: list[dict]):
