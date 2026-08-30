@@ -405,6 +405,97 @@ def classify_career_stages(researchers: dict, api_key: str, cache: dict):
     cache["career_stages_v2"] = cached_stages
 
 
+# ── Phase 3b: web-search stage resolution for unknowns ───────────────────────
+
+# ":online" enables OpenRouter's web-search augmentation (same mechanism as
+# verify_shortlist.py). Only filter SURVIVORS with stage unknown go through
+# this — an unknown stage otherwise defaults to recruitable "Yes", which is
+# how tenured faculty with stale OpenAlex profiles (e.g. Dawn Song) end up
+# at the top of the sheet.
+STAGE_WEB_MODEL = os.environ.get("STAGE_WEB_MODEL", "anthropic/claude-sonnet-4.5:online")
+
+STAGE_WEB_PROMPT = """Determine the career stage of this ML researcher by searching the web (Google Scholar, personal site, LinkedIn, university/lab pages).
+
+Name: {name}
+Last known institution (may be stale): {institution}
+h-index: {h_index}
+Known papers: {papers}
+
+Confirm identity by matching the papers above. Pick EXACTLY ONE stage:
+- graduating_phd: PhD student in 4th+ year, likely graduating 2025-2026
+- recent_grad: Graduated PhD 2024-2025, now in first industry role or postdoc
+- junior_industry: 2-6 years post-PhD at a company (not a professor)
+- mid_industry: 6-10 years experience, IC/senior IC role at a company
+- senior: 10+ years, staff/principal level
+- professor: Faculty at a university (any rank, incl. emeritus)
+- early_phd: 1st-3rd year PhD student
+- founder: CEO/CTO/co-founder of a company
+- unknown: genuinely cannot determine or cannot confirm identity
+
+Respond with ONLY a JSON object: {{"stage": "<one label>", "evidence": "<one short clause>"}}"""
+
+_VALID_STAGES = {"graduating_phd", "recent_grad", "junior_industry", "mid_industry",
+                 "senior", "professor", "early_phd", "founder", "unknown"}
+
+
+def _stage_web_one(r, api_key: str) -> str:
+    prompt = STAGE_WEB_PROMPT.format(
+        name=r.name, institution=r.institution or "unknown",
+        h_index=r.h_index, papers=" | ".join(r.key_papers[:6])[:350])
+    for attempt in range(3):
+        try:
+            resp = requests.post(
+                OPENROUTER_API,
+                headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
+                json={"model": STAGE_WEB_MODEL,
+                      "messages": [{"role": "user", "content": prompt}],
+                      "temperature": 0, "max_tokens": 600},
+                timeout=120)
+            resp.raise_for_status()
+            content = resp.json()["choices"][0]["message"]["content"]
+            stage = _parse_llm_json(content).get("stage", "unknown")
+            return stage if stage in _VALID_STAGES else "unknown"
+        except Exception as e:
+            if attempt == 2:
+                log.warning(f"  Stage web lookup failed for {r.name}: {e}")
+            time.sleep(2 * (attempt + 1))
+    return "unknown"
+
+
+def resolve_unknown_stages_web(researchers: dict, api_key: str, cache: dict):
+    """Web-resolve career stage for researchers still 'unknown' after the
+    profile-based classifier. Run on filter survivors only (cost control).
+    Modifies researchers in-place; caches per name in 'career_stages_web'."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    web_cache = cache.get("career_stages_web", {})
+    todo = {}
+    for key, r in researchers.items():
+        if r.career_stage not in ("", "unknown"):
+            continue
+        if key in web_cache:
+            r.career_stage = web_cache[key]
+        else:
+            todo[key] = r
+    if not todo:
+        return
+    log.info(f"  Web stage resolution: {len(todo)} unknowns ({len(web_cache)} cached)")
+
+    done = 0
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        futures = {pool.submit(_stage_web_one, r, api_key): key for key, r in todo.items()}
+        for fut, key in futures.items():
+            stage = fut.result()
+            researchers[key].career_stage = stage
+            web_cache[key] = stage
+            done += 1
+            if done % 25 == 0:
+                log.info(f"  Web stage resolution: {done}/{len(todo)}")
+    cache["career_stages_web"] = web_cache
+    resolved = sum(1 for k in todo if web_cache.get(k) not in ("", "unknown"))
+    log.info(f"  Web stage resolution done: {resolved}/{len(todo)} resolved")
+
+
 # ── Phase 4: LLM category fit classification ─────────────────────────────────
 
 CATEGORY_FIT_PROMPT = """Rate how well each researcher fits each category based on their recent paper titles.
@@ -906,6 +997,15 @@ def main():
     # instead of dropping seniors — see apply_filters)
     log.info("=== Phase 6: Filtering ===")
     researchers = apply_filters(researchers, config, exclude_names)
+
+    # Phase 6a: unknown-stage survivors get a web-search stage lookup, then
+    # the filter re-runs so resolved professors/founders are re-flagged (or
+    # dropped, per config) instead of defaulting to recruitable "Yes".
+    if not args.skip_classify and openrouter_key:
+        log.info("=== Phase 6a: Web Stage Resolution (unknowns) ===")
+        resolve_unknown_stages_web(researchers, openrouter_key, expand_cache)
+        _save_json(cache_path, expand_cache)
+        researchers = apply_filters(researchers, config, exclude_names)
 
     # Phase 6b: Fallback enrichment + emails, survivors only
     if args.skip_enrichment:
