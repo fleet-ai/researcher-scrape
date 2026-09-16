@@ -64,13 +64,11 @@ filters:
     - CH
     - "NO"
     - IS
+  # 2026-09-16: only OpenAI/Anthropic excluded. Meta, DeepMind, DeepSeek,
+  # Moonshot, Alibaba, ByteDance are fair targets (geography still applies).
   exclude_institutions:
     - OpenAI
     - Anthropic
-    - DeepSeek
-    - Moonshot        # Kimi
-    - Alibaba         # Qwen / Tongyi
-    - ByteDance       # Seed / Doubao
   exclude_names: []
 
 expansion:

@@ -1,0 +1,21 @@
+2026-07-20 05:58:14,989 INFO [Post Training] filling 40 Yes/Maybe slots from 296 candidates (verify cap 160)
+2026-07-20 05:58:14,990 INFO   [3] Niklas Muennighoff: Unlikely - at Cursor, excluded
+2026-07-20 05:58:14,990 INFO   [8] Lovish Madaan: Unlikely - at Recursive, excluded
+2026-07-20 05:58:14,990 INFO   [9] Ben Mann: Unlikely - Co-founder at Anthropic, excluded
+2026-07-20 05:58:14,990 INFO   [Post Training] 10 examined, 7/40 slots filled
+2026-07-20 05:58:14,990 INFO   [11] Richard Yuanzhe Pang: Unlikely - at Meta FAIR, excluded
+2026-07-20 05:58:14,990 INFO   [13] Francis Song: Unlikely - at OpenAI, excluded
+2026-07-20 05:58:14,990 INFO   [14] Nat McAleese: Unlikely - at Anthropic, excluded
+2026-07-20 05:58:14,990 INFO   [16] Flood Sung: identity not confirmed, skipping
+2026-07-20 05:58:14,990 INFO   [19] Maja Trębacz: Unlikely - at OpenAI, excluded
+2026-07-20 05:58:14,990 INFO   [20] Xinchi Qiu: Unlikely - at Isomorphic Labs, excluded
+2026-07-20 05:58:14,990 INFO   [22] G. Liu: Unlikely - at Meta MSL, excluded
+2026-07-20 05:58:14,990 INFO   [26] David Brandfonbrener: Unlikely - at Anthropic, excluded
+2026-07-20 05:58:14,990 INFO   [Post Training] 30 examined, 19/40 slots filled
+2026-07-20 05:58:14,990 INFO   [35] Zhen Li: identity not confirmed, skipping
+2026-07-20 05:58:14,990 INFO   [Post Training] 40 examined, 28/40 slots filled
+2026-07-20 06:00:09,367 INFO   [Post Training] 50 examined, 38/40 slots filled
+2026-07-20 06:00:39,244 INFO [Post Training] examined 53: 40 listed, 10 unlikely (excluded), 2 unconfirmed (skipped)
+2026-07-20 06:00:39,247 INFO [Post Training] shortlist written: data/pt_depth2/shortlist_post_training.csv (40 rows)
+2026-07-20 06:00:39,364 INFO Shortlist workbook: data/pt_depth2/shortlist.xlsx
+2026-07-20 06:00:39,364 INFO Done.

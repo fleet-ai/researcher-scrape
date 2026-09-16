@@ -1,0 +1,10 @@
+2026-07-20 05:32:48,565 INFO [Post Training] verifying top 40 of 296 candidates
+2026-07-20 05:34:36,418 INFO   [Post Training] 10/40 verified, 10 confirmed
+2026-07-20 05:35:40,645 INFO   [16] Flood Sung: identity not confirmed, skipping
+2026-07-20 05:36:35,953 INFO   [Post Training] 20/40 verified, 19 confirmed
+2026-07-20 05:37:43,602 INFO   [Post Training] 30/40 verified, 29 confirmed
+2026-07-20 05:38:43,981 INFO   [35] Zhen Li: identity not confirmed, skipping
+2026-07-20 05:39:42,264 INFO   [Post Training] 40/40 verified, 38 confirmed
+2026-07-20 05:39:42,268 INFO [Post Training] shortlist written: data/pt_depth2/shortlist_post_training.csv (38 rows)
+2026-07-20 05:39:42,406 INFO Shortlist workbook: data/pt_depth2/shortlist.xlsx
+2026-07-20 05:39:42,406 INFO Done.

@@ -1,0 +1,27 @@
+2026-08-29 10:48:35,217 INFO Dedup against 0 existing names
+2026-08-29 10:48:35,223 INFO === Resumed: 4741 researchers, 1090 seen papers ===
+2026-08-29 10:48:35,223 INFO === Phase 3: Profile Enrichment (by author ID) ===
+2026-08-29 10:48:35,236 INFO   ID-based enrichment: 4503 researchers with OpenAlex IDs (6641 cached, 0 to fetch)
+2026-08-29 10:48:35,244 WARNING   ID/name mismatch, skipping ID-enrich: 'Alex Zook' vs 'Jonathan Tremblay'
+2026-08-29 10:48:35,248 INFO   ID-based enrichment done: 4502/4503
+2026-08-29 10:48:35,271 INFO === Phase 4: Career Stage Classification ===
+2026-08-29 10:48:35,288 INFO === Phase 5: Category Classification ===
+2026-08-29 10:48:35,306 INFO === Phase 6: Filtering ===
+2026-08-29 10:48:35,309 INFO   Filtered: 4741 -> 825 (removed: {'papers': 0, 'stage': 832, 'institution': 6, 'country': 845, 'name': 0, 'category': 2233, 'dedup': 0}, flagged: {'stretch': 307, 'unlikely': 10})
+2026-08-29 10:48:35,310 INFO === Phase 6b: Fallback Enrichment + Emails ===
+2026-08-29 10:48:35,313 INFO   Name-based fallback enriched: 161
+2026-08-29 10:48:35,315 INFO Loaded email cache with 2218 entries
+2026-08-29 10:48:35,316 INFO Loaded institution domain cache with 2169 entries
+2026-08-29 10:48:35,316 INFO No S2_API_KEY — using 1 req/sec rate limit. Set S2_API_KEY for 10x speed.
+2026-08-29 10:48:35,318 INFO Done: 600/825 emails (177 verified, 423 inferred, 600 cached)
+2026-08-29 10:48:35,319 INFO   Emails found: 600/825
+2026-08-29 10:48:35,319 INFO === Phase 7: Output ===
+2026-08-29 10:48:35,324 INFO   combined.csv: 825 researchers
+2026-08-29 10:48:35,324 INFO   world_models.csv: 163 researchers
+2026-08-29 10:48:35,326 INFO   agentic_benchmarks.csv: 302 researchers
+2026-08-29 10:48:35,327 INFO   stem_benchmarks.csv: 262 researchers
+2026-08-29 10:48:35,328 INFO   benchmarks.csv: 491 researchers
+2026-08-29 10:48:35,329 INFO   environment_generation.csv: 172 researchers
+2026-08-29 10:48:35,330 INFO   post_training.csv: 187 researchers
+2026-08-29 10:48:35,582 INFO   researchers.xlsx: 6 position tab(s) + Combined
+2026-08-29 10:48:35,597 INFO Done.

@@ -1,0 +1,127 @@
+2026-09-16 14:46:48,253 INFO [Stem Benchmarks] filling 160 Yes/Maybe slots from 240 candidates (verify cap 240)
+2026-09-16 14:46:48,253 INFO   [1] Cheng Peng: Unlikely - new faculty, excluded
+2026-09-16 14:47:09,530 INFO   [9] Yuanhao Qu: Unlikely - founder, excluded
+2026-09-16 14:47:09,530 INFO   [Stem Benchmarks] 10 examined, 8/160 slots filled
+2026-09-16 14:47:09,530 INFO   [Stem Benchmarks] 20 examined, 18/160 slots filled
+2026-09-16 14:47:09,530 INFO   [27] Aakaash Varma: Unlikely - clinical faculty, excluded
+2026-09-16 14:47:09,530 INFO   [Stem Benchmarks] 30 examined, 27/160 slots filled
+2026-09-16 14:47:09,530 INFO   [Stem Benchmarks] 40 examined, 37/160 slots filled
+2026-09-16 14:47:09,530 INFO   [41] Wenhao Yu: Unlikely - at OpenAI, excluded
+2026-09-16 14:47:09,530 INFO   [44] Yufeng Li: identity not confirmed, skipping
+2026-09-16 14:47:09,530 INFO   [50] Edwin Pan: Unlikely - at OpenAI, excluded
+2026-09-16 14:47:09,530 INFO   [52] Oscar Kronenberger: Unlikely - clinical psych PhD, excluded
+2026-09-16 14:47:09,530 INFO   [53] Matthew Hutnyan: Unlikely - clinical psychology postdoc, excluded
+2026-09-16 14:47:11,515 INFO   [Stem Benchmarks] 60 examined, 52/160 slots filled
+2026-09-16 14:47:11,515 INFO   [64] Gao, Luyu: Unlikely - at OpenAI, excluded
+2026-09-16 14:47:11,515 INFO   [66] Sean N. Neifert: identity not confirmed, skipping
+2026-09-16 14:47:11,515 INFO   [67] Emily Alsentzer: Unlikely - new faculty, excluded
+2026-09-16 14:47:11,515 INFO   [68] Yuhuai Wu: Unlikely - xAI Co-Founder, excluded
+2026-09-16 14:47:11,515 INFO   [69] K. Lieret: Unlikely - at Meta, excluded
+2026-09-16 14:47:11,515 INFO   [70] Harm de Vries: Unlikely - running own startup, excluded
+2026-09-16 14:47:11,515 INFO   [72] Eric Sun: Unlikely - new faculty, excluded
+2026-09-16 14:47:11,515 INFO   [74] Daniel Fried: Unlikely - tenured track faculty, excluded
+2026-09-16 14:47:14,634 INFO   [78] Joseph D. Janizek: Unlikely - in medical residency, excluded
+2026-09-16 14:47:14,635 INFO   [80] Aaron J. Wilk: Unlikely - clinical residency, excluded
+2026-09-16 14:47:14,635 INFO   [83] Roberta Răileanu: Unlikely - Senior Staff at DeepMind, leading Open-Endedness team, excluded
+2026-09-16 14:47:14,635 INFO   [84] Alex Rubinsteyn: identity not confirmed, skipping
+2026-09-16 14:47:14,635 INFO   [86] Samuel G. Rodriques: Unlikely - CEO of two orgs, excluded
+2026-09-16 14:47:14,635 INFO   [88] Xiang Deng: Unlikely - Co-Founder/CTO at own startup, excluded
+2026-09-16 14:47:14,635 INFO   [89] Tamay Besiroglu: Unlikely - CEO of funded startup, excluded
+2026-09-16 14:47:16,668 INFO   [Stem Benchmarks] 90 examined, 67/160 slots filled
+2026-09-16 14:47:16,668 INFO   [93] Haozhe Zhang: Unlikely - accepted tenure-track position at NTU Singapore starting Nov 2026, excluded
+2026-09-16 14:47:16,669 INFO   [96] Alexandre Laterre: Unlikely - Co-Founder, excluded
+2026-09-16 14:47:16,760 INFO   [Stem Benchmarks] 100 examined, 75/160 slots filled
+2026-09-16 14:47:36,403 INFO   [103] Daniel Alexander Alber: Unlikely - medical resident, excluded
+2026-09-16 14:47:36,403 INFO   [104] David Saxton: Unlikely - at Anthropic, excluded
+2026-09-16 14:47:36,657 INFO   [107] Siyu Zhu: identity not confirmed, skipping
+2026-09-16 14:47:38,307 INFO   [Stem Benchmarks] 110 examined, 82/160 slots filled
+2026-09-16 14:47:38,307 INFO   [111] Burak Göktürk: Unlikely - senior Google leader, excluded
+2026-09-16 14:47:38,307 INFO   [113] Kevin Maik Jablonka: Unlikely - tenure-track PI, excluded
+2026-09-16 14:47:43,662 INFO   [118] Jiantao Jiao: Unlikely - tenured faculty + NVIDIA leadership, excluded
+2026-09-16 14:47:43,662 INFO   [Stem Benchmarks] 120 examined, 89/160 slots filled
+2026-09-16 14:48:00,260 INFO   [125] ARC Prize Foundation: identity not confirmed, skipping
+2026-09-16 14:48:00,260 INFO   [126] Karim Beguir: Unlikely - Founder/CEO, excluded
+2026-09-16 14:48:00,260 INFO   [127] Canary Wharf, London, United Kingdom. Email: tidor@madsimpleads.com: identity not confirmed, skipping
+2026-09-16 14:48:00,260 INFO   [128] Pushmeet Kohli: Unlikely - VP at DeepMind, leads Science unit, Time 100 AI, recent Nature publications, excluded
+2026-09-16 14:48:00,260 INFO   [129] Peter E. Clark: Unlikely - at AI2, excluded
+2026-09-16 14:48:00,260 INFO   [130] Chris Dyer: Unlikely - at DeepMind, excluded
+2026-09-16 14:48:11,815 INFO   [131] Charlotte M. Deane: Unlikely - EPSRC Executive Chair, excluded
+2026-09-16 14:48:20,855 INFO   [132] Lawrence C. Paulson: Unlikely - emeritus + AWS, excluded
+2026-09-16 14:49:01,705 INFO   [134] Dan Hendrycks: Unlikely - nonprofit director, excluded
+2026-09-16 14:49:01,706 INFO   [135] Tomas Pfister: identity not confirmed, skipping
+2026-09-16 14:49:43,738 INFO   [137] Patrick C. Kyllonen: Unlikely - senior established researcher, excluded
+2026-09-16 14:49:51,707 INFO   [138] Edward Grefenstette: Unlikely - at DeepMind, excluded
+2026-09-16 14:50:03,798 INFO   [Stem Benchmarks] 140 examined, 97/160 slots filled
+2026-09-16 14:50:03,798 INFO   [141] Gene Myers: identity not confirmed, skipping
+2026-09-16 14:50:03,798 INFO   [142] Christian Szegedy: Unlikely - running own startup, excluded
+2026-09-16 14:50:13,706 INFO   [144] Thang Luong: identity not confirmed, skipping
+2026-09-16 14:50:41,457 INFO   [149] M. Haider: Unlikely - clinical leadership role, excluded
+2026-09-16 14:50:49,974 INFO   [150] Quoc V Le: Unlikely - founder, excluded
+2026-09-16 14:50:58,364 INFO   [151] Lars Buesing: Unlikely - at Google DeepMind, excluded
+2026-09-16 14:51:45,403 INFO   [154] Aluri, Raja: Unlikely - founder, excluded
+2026-09-16 14:51:56,470 INFO   [155] Ion Stoica: Unlikely - tenured faculty + active founder, excluded
+2026-09-16 14:52:07,397 INFO   [156] Pierre Baldi: Unlikely - tenured Distinguished Professor, founding director of 2 institutes, excluded
+2026-09-16 14:52:14,827 INFO   [157] Uğur Şahin: identity not confirmed, skipping
+2026-09-16 14:53:03,893 INFO   [160] Martín Crespi: Unlikely - senior academic director, excluded
+2026-09-16 14:53:16,124 INFO   [161] Song‐Chun Zhu: Unlikely - Director/Chair Professor, excluded
+2026-09-16 14:53:24,524 INFO   [162] C. Munro Cullum: Unlikely - tenured professor, excluded
+2026-09-16 14:53:32,637 INFO   [163] S. Narayanan: Unlikely - tenure-track faculty, excluded
+2026-09-16 14:53:43,427 INFO   [164] Graham Neubig: Unlikely - co-founded OpenHands (Jun 2024), tenured faculty, excluded
+2026-09-16 14:53:55,225 INFO   [165] Koushik Sen: Unlikely - tenured faculty, excluded
+2026-09-16 14:54:08,045 INFO   [166] William Yang Wang: Unlikely - tenured faculty + startup founder, excluded
+2026-09-16 14:54:16,364 INFO   [167] Jamie Callan: Unlikely - tenured faculty, excluded
+2026-09-16 14:54:25,652 INFO   [168] Heather J. Kulik: Unlikely - Tenured faculty, excluded
+2026-09-16 14:54:40,053 INFO   [169] Tao Yu: Unlikely - tenured track faculty, excluded
+2026-09-16 14:54:49,575 INFO   [170] Jennifer L. M. Rupp: Unlikely - tenured full professor, excluded
+2026-09-16 14:54:57,989 INFO   [171] David McAllester: Unlikely - founder, excluded
+2026-09-16 14:55:13,528 INFO   [172] Jacqueline M. Cole: Unlikely - tenured full professor, excluded
+2026-09-16 14:55:21,114 INFO   [173] Diyi Yang: Unlikely - tenured-track faculty, excluded
+2026-09-16 14:55:32,303 INFO   [174] Elsa Olivetti: Unlikely - tenured faculty, excluded
+2026-09-16 14:55:40,231 INFO   [175] John R. Kitchin: Unlikely - tenured faculty, excluded
+2026-09-16 14:55:48,204 INFO   [176] Phil Blunsom: Unlikely - CTO at Cohere, excluded
+2026-09-16 14:55:55,837 INFO   [177] Armando Solar-Lezama: Unlikely - tenured MIT professor, CSAIL Associate Director/COO, excluded
+2026-09-16 14:56:06,049 INFO   [178] Sergio Garbarino: identity not confirmed, skipping
+2026-09-16 14:56:16,627 INFO   [179] Le Cong: Unlikely - tenured track faculty, excluded
+2026-09-16 14:56:30,258 INFO   [Stem Benchmarks] 180 examined, 107/160 slots filled
+2026-09-16 14:56:40,651 INFO   [181] Andrew Dickson White: Unlikely - Founder, excluded
+2026-09-16 14:56:49,203 INFO   [182] Felix Hill: Unlikely - at DeepMind, excluded
+2026-09-16 14:56:57,221 INFO   [183] Jacob Steinhardt: Unlikely - founder/CEO, excluded
+2026-09-16 14:57:10,142 INFO   [184] Dani Yogatama: Unlikely - Founder/CEO at Reka, excluded
+2026-09-16 14:57:19,312 INFO   [185] Veit Hagenmeyer: Unlikely - tenured director, excluded
+2026-09-16 14:57:49,219 INFO   [188] Chi Jin: Unlikely - at OpenAI, excluded
+2026-09-16 14:58:00,010 INFO   [189] Laura H. Lacritz: Unlikely - tenured faculty, excluded
+2026-09-16 14:58:09,749 INFO   [190] Karthik Narasimhan: Unlikely - tenured faculty + just returned from industry, excluded
+2026-09-16 14:58:31,943 INFO   [192] Ying Wu: Unlikely - tenured faculty, excluded
+2026-09-16 14:58:42,490 INFO   [193] Junfeng Yang: identity not confirmed, skipping
+2026-09-16 14:58:49,106 INFO   [194] Robert Hoyt: identity not confirmed, skipping
+2026-09-16 14:59:13,143 INFO   [196] Varinia Bernales: Unlikely - just started faculty position, excluded
+2026-09-16 14:59:24,007 INFO   [197] Huan Sun: Unlikely - tenured faculty, excluded
+2026-09-16 14:59:36,010 INFO   [198] Yindalon Aphinyanaphongs: Unlikely - senior leadership role, excluded
+2026-09-16 14:59:47,626 INFO   [199] Ming Yin: Unlikely - accepted faculty position, excluded
+2026-09-16 14:59:57,175 INFO   [Stem Benchmarks] 200 examined, 112/160 slots filled
+2026-09-16 15:00:22,118 INFO   [202] C. Fan: identity not confirmed, skipping
+2026-09-16 15:01:07,158 INFO   [206] Max Simchowitz: identity not confirmed, skipping
+2026-09-16 15:01:54,325 INFO   [Stem Benchmarks] 210 examined, 120/160 slots filled
+2026-09-16 15:02:27,444 INFO   [212] Dacre Knight: Unlikely - just started UVA role, excluded
+2026-09-16 15:03:27,389 INFO   [216] Michelle M. Li: Unlikely - just started faculty position, excluded
+2026-09-16 15:03:35,494 INFO   [217] Ming Yang: identity not confirmed, skipping
+2026-09-16 15:03:46,774 INFO   [218] Ali Hage: Unlikely - cardiac surgeon, excluded
+2026-09-16 15:04:09,711 INFO   [220] Philip Torr: identity not confirmed, skipping
+2026-09-16 15:04:26,978 INFO   [222] Camille Fonouni‐Farde: identity not confirmed, skipping
+2026-09-16 15:05:09,089 INFO   [226] Maria Bajwa: Unlikely - healthcare education focus, excluded
+2026-09-16 15:05:28,635 INFO   [228] Ji-Rong Wen: identity not confirmed, skipping
+2026-09-16 15:05:37,822 INFO   [229] Wayne Xin Zhao: Unlikely - tenured professor, excluded
+2026-09-16 15:05:49,815 INFO   [230] J. Loscalzo: identity not confirmed, skipping
+2026-09-16 15:05:58,606 INFO   [231] Ben Y. Reis: Unlikely - tenured faculty, excluded
+2026-09-16 15:06:08,067 INFO   [232] Isaac S. Kohane: Unlikely - tenured chair, excluded
+2026-09-16 15:06:31,828 INFO   [234] Adam Rodman: identity not confirmed, skipping
+2026-09-16 15:06:43,402 INFO   [235] Tianxi Cai: Unlikely - tenured full professor, excluded
+2026-09-16 15:06:52,844 INFO   [236] Marinka Zitnik: identity not confirmed, skipping
+2026-09-16 15:07:01,352 INFO   [237] W E I-Xing Huang: identity not confirmed, skipping
+2026-09-16 15:07:09,850 INFO   [238] Ruihua Song: Unlikely - tenured faculty, excluded
+2026-09-16 15:07:16,905 INFO   [239] Heng Li: identity not confirmed, skipping
+2026-09-16 15:07:29,227 INFO   [Stem Benchmarks] 240 examined, 132/160 slots filled
+2026-09-16 15:07:29,227 INFO [Stem Benchmarks] examined 240: 132 listed, 84 unlikely (excluded), 24 unconfirmed (skipped)
+2026-09-16 15:07:29,235 INFO [Stem Benchmarks] shortlist written: data/expand_output/shortlist_stem_benchmarks.csv (132 rows)
+2026-09-16 15:07:29,449 INFO Shortlist workbook: data/expand_output/shortlist.xlsx
+2026-09-16 15:07:29,449 INFO Done.

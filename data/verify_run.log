@@ -1,0 +1,44 @@
+2026-07-08 10:59:20,886 INFO [Agentic Benchmarks] verifying top 40 of 302 candidates
+2026-07-08 11:02:40,927 WARNING Request failed for Yixin Wang (attempt 1): HTTPSConnectionPool(host='openrouter.ai', port=443): Read timed out. (read timeout=180)
+2026-07-08 11:03:13,578 INFO   [5] Yucheng Guo: identity not confirmed, skipping
+2026-07-08 11:04:03,357 INFO   [Agentic Benchmarks] 10/40 verified, 9 confirmed
+2026-07-08 11:05:45,750 INFO   [Agentic Benchmarks] 20/40 verified, 19 confirmed
+2026-07-08 11:06:39,966 INFO   [26] Yuquan Chen: identity not confirmed, skipping
+2026-07-08 11:07:18,689 INFO   [Agentic Benchmarks] 30/40 verified, 28 confirmed
+2026-07-08 11:08:48,182 INFO   [Agentic Benchmarks] 40/40 verified, 38 confirmed
+2026-07-08 11:08:48,185 INFO [Agentic Benchmarks] shortlist written: data/expand_output/shortlist_agentic_benchmarks.csv (38 rows)
+2026-07-08 11:08:48,187 INFO [Environment Generation] verifying top 40 of 172 candidates
+2026-07-08 11:10:23,724 INFO   [Environment Generation] 10/40 verified, 10 confirmed
+2026-07-08 11:11:28,520 INFO   [17] Michael Kölle: identity not confirmed, skipping
+2026-07-08 11:11:44,479 INFO   [19] Zhi Li: identity not confirmed, skipping
+2026-07-08 11:11:53,038 INFO   [Environment Generation] 20/40 verified, 18 confirmed
+2026-07-08 11:13:33,272 INFO   [Environment Generation] 30/40 verified, 28 confirmed
+2026-07-08 11:15:05,884 INFO   [Environment Generation] 40/40 verified, 38 confirmed
+2026-07-08 11:15:05,886 INFO [Environment Generation] shortlist written: data/expand_output/shortlist_environment_generation.csv (38 rows)
+2026-07-08 11:15:05,888 INFO [Post Training] verifying top 40 of 187 candidates
+2026-07-08 11:15:15,390 INFO   [1] Yan Wang: identity not confirmed, skipping
+2026-07-08 11:15:23,505 INFO   [2] Jia Li: identity not confirmed, skipping
+2026-07-08 11:16:55,034 INFO   [Post Training] 10/40 verified, 8 confirmed
+2026-07-08 11:18:33,759 INFO   [Post Training] 20/40 verified, 18 confirmed
+2026-07-08 11:20:24,278 INFO   [Post Training] 30/40 verified, 28 confirmed
+2026-07-08 11:21:58,147 INFO   [Post Training] 40/40 verified, 38 confirmed
+2026-07-08 11:21:58,151 INFO [Post Training] shortlist written: data/expand_output/shortlist_post_training.csv (38 rows)
+2026-07-08 11:21:58,155 INFO [Stem Benchmarks] verifying top 40 of 262 candidates
+2026-07-08 11:23:34,529 INFO   [Stem Benchmarks] 10/40 verified, 10 confirmed
+2026-07-08 11:25:23,741 INFO   [19] Julien Dirani: identity not confirmed, skipping
+2026-07-08 11:25:36,742 INFO   [Stem Benchmarks] 20/40 verified, 19 confirmed
+2026-07-08 11:26:14,255 INFO   [24] Meysam Ghaffari: identity not confirmed, skipping
+2026-07-08 11:27:10,981 INFO   [Stem Benchmarks] 30/40 verified, 28 confirmed
+2026-07-08 11:29:11,028 INFO   [Stem Benchmarks] 40/40 verified, 38 confirmed
+2026-07-08 11:29:11,030 INFO [Stem Benchmarks] shortlist written: data/expand_output/shortlist_stem_benchmarks.csv (38 rows)
+2026-07-08 11:29:11,033 INFO [World Models] verifying top 40 of 163 candidates
+2026-07-08 11:30:42,134 INFO   [World Models] 10/40 verified, 10 confirmed
+2026-07-08 11:31:59,735 INFO   [19] Zhi Li: identity not confirmed, skipping
+2026-07-08 11:32:08,329 INFO   [World Models] 20/40 verified, 19 confirmed
+2026-07-08 11:33:56,550 INFO   [World Models] 30/40 verified, 29 confirmed
+2026-07-08 11:34:36,593 INFO   [34] Junyang Lin: identity not confirmed, skipping
+2026-07-08 11:35:20,704 INFO   [37] Fei Huang: identity not confirmed, skipping
+2026-07-08 11:35:46,885 INFO   [World Models] 40/40 verified, 37 confirmed
+2026-07-08 11:35:46,889 INFO [World Models] shortlist written: data/expand_output/shortlist_world_models.csv (37 rows)
+2026-07-08 11:35:47,067 INFO Shortlist workbook: data/expand_output/shortlist.xlsx
+2026-07-08 11:35:47,067 INFO Done.

@@ -1,0 +1,94 @@
+2026-07-13 10:43:08,606 INFO Dedup against 0 existing names
+2026-07-13 10:43:08,606 INFO === Phase 1: Resolve Seeds ===
+2026-07-13 10:43:09,748 INFO   Seed paper: Synthetic Computers at Scale for Long-Horizon Productivity Simulation
+2026-07-13 10:43:13,634 INFO   Seed paper: Autodata: An agentic data scientist to create high quality synthetic data
+2026-07-13 10:43:17,513 INFO   Seed paper: From Trainee to Trainer: LLM-Designed Training Environment for RL with Multi-Age
+2026-07-13 10:44:17,519 WARNING OA request failed (attempt 1): HTTPSConnectionPool(host='api.openalex.org', port=443): Max retries exceeded with url: /works/doi:10.48550/arXiv.2604.13018?select=id%2Ctitle%2Cdisplay_name%2Cpublication_year%2Ccited_by_count%2Cauthorships%2Cprimary_location%2Creferenced_works&mailto=scraper%40fleet.ai (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.openalex.org', port=443) at 0x1060d11d0>, 'Connection to api.openalex.org timed out. (connect timeout=30)'))
+2026-07-13 10:44:26,449 INFO   Seed paper: Toward Autonomous Long-Horizon Engineering for ML Research
+2026-07-13 10:44:28,326 INFO   Seed paper: Agentopia: Long-Term Life Simulation and Learning in Agent Societies
+2026-07-13 10:45:10,391 INFO   Seed paper: Autogenesis: A Self-Evolving Agent Protocol
+2026-07-13 10:45:15,093 INFO   Seed paper: Digital Red Queen: Adversarial Program Evolution in Core War with LLMs
+2026-07-13 10:45:15,989 INFO   Seed paper: OpenClaw-Skill: Collective Skill Tree Search for Agentic Large Language Models
+2026-07-13 10:45:16,948 INFO   Seed paper: SkillNet: Create, Evaluate, and Connect AI Skills
+2026-07-13 10:45:52,932 INFO   Seed paper: Co-Evolving LLM Decision and Skill Bank Agents for Long-Horizon Tasks
+2026-07-13 10:45:54,794 INFO   Seed paper: Discovering Multiagent Learning Algorithms with Large Language Models
+2026-07-13 10:45:55,687 INFO   Seed paper: Human-like autonomy emerges from self-play and a pinch of human data
+2026-07-13 10:45:56,612 INFO   Seed paper: Emergent Complexity and Zero-shot Transfer via Unsupervised Environment Design
+2026-07-13 10:45:58,517 INFO   Seed paper: MLGym: A New Framework and Benchmark for Advancing AI Research Agents
+2026-07-13 10:46:00,388 INFO   Seed paper: TaskCraft: Automated Generation of Agentic Tasks
+2026-07-13 10:46:07,294 INFO   Seed paper: R-Zero: Self-Evolving Reasoning LLM from Zero Data
+2026-07-13 10:46:08,222 INFO   Seed paper: Scaling Agent Learning via Experience Synthesis
+2026-07-13 10:46:09,191 INFO   Seed paper: AutoForge: Automated Environment Synthesis for Agentic Reinforcement Learning
+2026-07-13 10:46:10,347 INFO   Seed paper: AutoEnv: Automated Environments for Measuring Cross-Environment Agent Learning
+2026-07-13 10:46:11,717 INFO   Seed paper: Gym-Anything: Turn any Software into an Agent Environment
+2026-07-13 10:46:12,611 INFO   Seed paper: Anchored Self-Play for Code Repair
+2026-07-13 10:46:13,531 INFO   Seed paper: PlanBench-XL: Evaluating Long-Horizon Planning of LLM Tool-Use Agents in Large-S
+2026-07-13 10:46:16,549 INFO   Seed researcher: Sam Earle (New York University), 10 papers queued
+2026-07-13 10:46:16,549 INFO   Seeds resolved: 32 papers queued, 1 seed researchers
+2026-07-13 10:46:16,549 INFO === Phase 2: Graph Expansion (depth=2) ===
+2026-07-13 10:46:16,549 INFO   Level 0: fetching 32 papers (1 batch calls)
+2026-07-13 10:47:01,918 INFO   Level 1: fetching 50 papers (1 batch calls)
+2026-07-13 10:47:55,364 INFO   Level 2: fetching 2038 papers (41 batch calls)
+2026-07-13 10:48:42,483 INFO   Processed 500 papers, 1552 researchers
+2026-07-13 10:48:42,488 INFO   Processed 1000 papers, 3251 researchers
+2026-07-13 10:48:42,492 INFO   Processed 1500 papers, 4396 researchers
+2026-07-13 10:48:42,496 INFO   Processed 2000 papers, 6001 researchers
+2026-07-13 10:48:42,497 INFO   BFS done: 2120 papers processed, 6390 researchers found
+2026-07-13 10:48:42,499 INFO === Phase 2b: Topic Search ===
+2026-07-13 10:48:42,499 INFO   Total researchers after expansion: 6390
+2026-07-13 10:48:42,526 INFO   Expansion state saved (6390 researchers, depth=2)
+2026-07-13 10:48:42,527 INFO   Deep-frontier gate (depth>=2 needs 2+ in-graph papers): 6390 -> 1028
+2026-07-13 10:48:42,527 INFO === Phase 3: Profile Enrichment (by author ID) ===
+2026-07-13 10:48:42,539 INFO   ID-based enrichment: 985 researchers with OpenAlex IDs (5074 cached, 255 to fetch)
+2026-07-13 10:48:43,600 INFO   Fetched 50/255 profiles...
+2026-07-13 10:48:50,163 INFO   ID-based enrichment done: 984/985
+2026-07-13 10:48:50,170 INFO === Phase 4: Career Stage Classification ===
+2026-07-13 10:48:50,170 INFO   Classifying 261 researchers (768 cached)
+2026-07-13 10:48:55,098 INFO   Career stage batch 1/14
+2026-07-13 10:49:01,000 INFO   Career stage batch 2/14
+2026-07-13 10:49:07,856 INFO   Career stage batch 3/14
+2026-07-13 10:49:12,574 INFO   Career stage batch 4/14
+2026-07-13 10:49:18,640 INFO   Career stage batch 5/14
+2026-07-13 10:49:24,388 INFO   Career stage batch 6/14
+2026-07-13 10:49:30,247 INFO   Career stage batch 7/14
+2026-07-13 10:49:35,383 INFO   Career stage batch 8/14
+2026-07-13 10:49:40,531 INFO   Career stage batch 9/14
+2026-07-13 10:49:45,411 INFO   Career stage batch 10/14
+2026-07-13 10:49:50,123 INFO   Career stage batch 11/14
+2026-07-13 10:49:55,112 INFO   Career stage batch 12/14
+2026-07-13 10:50:00,176 INFO   Career stage batch 13/14
+2026-07-13 10:50:05,737 INFO   Career stage batch 14/14
+2026-07-13 10:50:06,255 INFO === Phase 5: Category Classification ===
+2026-07-13 10:50:06,255 INFO   Classifying 261 researchers into 1 categories (768 cached)
+2026-07-13 10:50:10,562 INFO   Category fit batch 1/18
+2026-07-13 10:50:15,741 INFO   Category fit batch 2/18
+2026-07-13 10:50:24,989 INFO   Category fit batch 3/18
+2026-07-13 10:50:31,260 INFO   Category fit batch 4/18
+2026-07-13 10:50:39,892 INFO   Category fit batch 5/18
+2026-07-13 10:50:45,736 INFO   Category fit batch 6/18
+2026-07-13 10:50:56,770 INFO   Category fit batch 7/18
+2026-07-13 10:51:02,712 INFO   Category fit batch 8/18
+2026-07-13 10:51:10,960 INFO   Category fit batch 9/18
+2026-07-13 10:51:15,728 INFO   Category fit batch 10/18
+2026-07-13 10:51:26,530 INFO   Category fit batch 11/18
+2026-07-13 10:51:32,889 INFO   Category fit batch 12/18
+2026-07-13 10:51:37,911 INFO   Category fit batch 13/18
+2026-07-13 10:51:44,059 INFO   Category fit batch 14/18
+2026-07-13 10:53:04,160 INFO   Category fit batch 15/18
+2026-07-13 10:53:09,030 INFO   Category fit batch 16/18
+2026-07-13 10:53:14,250 INFO   Category fit batch 17/18
+2026-07-13 10:53:18,410 INFO   Category fit batch 18/18
+2026-07-13 10:53:18,922 INFO === Phase 6: Filtering ===
+2026-07-13 10:53:18,924 INFO   Filtered: 1028 -> 201 (removed: {'papers': 0, 'stage': 150, 'institution': 9, 'country': 181, 'name': 0, 'category': 487, 'dedup': 0}, flagged: {'stretch': 95, 'unlikely': 1})
+2026-07-13 10:53:18,924 INFO === Phase 6b: Fallback Enrichment + Emails ===
+2026-07-13 10:53:20,337 INFO   Name-based fallback enriched: 25
+2026-07-13 10:53:20,341 INFO Loaded email cache with 2011 entries
+2026-07-13 10:53:20,343 INFO Loaded institution domain cache with 2145 entries
+2026-07-13 10:53:20,343 INFO No S2_API_KEY — using 1 req/sec rate limit. Set S2_API_KEY for 10x speed.
+2026-07-13 10:57:19,419 INFO Done: 173/201 emails (41 verified, 132 inferred, 153 cached)
+2026-07-13 10:57:19,419 INFO   Emails found: 173/201
+2026-07-13 10:57:19,419 INFO === Phase 7: Output ===
+2026-07-13 10:57:19,421 INFO   combined.csv: 201 researchers
+2026-07-13 10:57:19,422 INFO   environment_generation.csv: 201 researchers
+2026-07-13 10:57:19,553 INFO   researchers.xlsx: 1 position tabs + Combined
+2026-07-13 10:57:19,556 INFO Done.

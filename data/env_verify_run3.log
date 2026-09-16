@@ -1,0 +1,34 @@
+2026-07-20 06:01:48,599 INFO [Environment Generation] filling 40 Yes/Maybe slots from 205 candidates (verify cap 160)
+2026-07-20 06:01:48,599 INFO   [1] Georgios N. Yannakakis: Unlikely - tenured professor, IEEE Fellow, EiC, 2 startups, excluded
+2026-07-20 06:01:48,599 INFO   [2] Fuli Feng: Unlikely - tenured professor, excluded
+2026-07-20 06:01:48,599 INFO   [3] Yixin Nie: identity not confirmed, skipping
+2026-07-20 06:01:48,600 INFO   [9] Swarnadeep Saha: Unlikely - at Meta FAIR, excluded
+2026-07-20 06:01:48,600 INFO   [Environment Generation] 10 examined, 6/40 slots filled
+2026-07-20 06:01:48,600 INFO   [11] Anuj Mahajan: Unlikely - at Meta, excluded
+2026-07-20 06:01:48,600 INFO   [15] Joon Sung Park: Unlikely - CEO/Co-founder at own startup, excluded
+2026-07-20 06:01:48,600 INFO   [Environment Generation] 20 examined, 14/40 slots filled
+2026-07-20 06:01:48,600 INFO   [27] Zhuokai Zhao: Unlikely - at Meta AI, excluded
+2026-07-20 06:01:48,600 INFO   [Environment Generation] 30 examined, 23/40 slots filled
+2026-07-20 06:01:48,600 INFO   [37] Lei Chen: identity not confirmed, skipping
+2026-07-20 06:01:48,600 INFO   [39] Ambroise Odonnat: identity not confirmed, skipping
+2026-07-20 06:01:48,600 INFO   [Environment Generation] 40 examined, 31/40 slots filled
+2026-07-20 06:01:48,600 INFO   [41] Jack Parker-Holder: Unlikely - Research Director at DeepMind, excluded
+2026-07-20 06:01:48,600 INFO   [42] Thomy Phan: Unlikely - just started tenure-track position, excluded
+2026-07-20 06:01:48,600 INFO   [43] Carlos Florensa: Unlikely - at OpenAI, excluded
+2026-07-20 06:01:48,600 INFO   [44] Robert Kirk: Unlikely - at UK AISI, excluded
+2026-07-20 06:01:48,600 INFO   [45] Benjamin Eysenbach: identity not confirmed, skipping
+2026-07-20 06:01:48,600 INFO   [46] Eugene Vinitsky: Unlikely - new faculty, excluded
+2026-07-20 06:01:48,600 INFO   [47] Andrew K. Lampinen: Unlikely - at Anthropic, excluded
+2026-07-20 06:01:48,600 INFO   [49] Sainbayar Sukhbaatar: Unlikely - at Meta FAIR, excluded
+2026-07-20 06:01:48,600 INFO   [50] Lara J. Martin: Unlikely - tenured faculty, excluded
+2026-07-20 06:01:48,600 INFO   [51] Yunzhe Tao: identity not confirmed, skipping
+2026-07-20 06:01:48,600 INFO   [52] Roberta Răileanu: Unlikely - Senior Staff at DeepMind, leads Open-Endedness team, excluded
+2026-07-20 06:01:48,600 INFO   [54] C. Daniel Freeman: Unlikely - at Anthropic, excluded
+2026-07-20 06:01:48,600 INFO   [55] Drew Linsley: Unlikely - tenured track faculty, excluded
+2026-07-20 06:01:48,600 INFO   [57] Ilia Kulikov: Unlikely - at Meta FAIR, excluded
+2026-07-20 06:01:48,600 INFO   [Environment Generation] 60 examined, 37/40 slots filled
+2026-07-20 06:01:48,600 INFO   [62] Anton Raichuk: Unlikely - at Google, excluded
+2026-07-20 06:01:48,600 INFO [Environment Generation] examined 65: 40 listed, 19 unlikely (excluded), 5 unconfirmed (skipped)
+2026-07-20 06:01:48,600 INFO [Environment Generation] shortlist written: data/env_depth2/shortlist_environment_generation.csv (40 rows)
+2026-07-20 06:01:48,695 INFO Shortlist workbook: data/env_depth2/shortlist.xlsx
+2026-07-20 06:01:48,695 INFO Done.

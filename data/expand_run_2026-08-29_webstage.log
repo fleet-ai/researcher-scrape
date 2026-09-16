@@ -1,0 +1,42 @@
+2026-08-29 18:16:19,584 INFO Dedup against 0 existing names
+2026-08-29 18:16:19,590 INFO === Resumed: 6628 researchers, 1523 seen papers ===
+2026-08-29 18:16:19,590 INFO === Phase 3: Profile Enrichment (by author ID) ===
+2026-08-29 18:16:19,604 INFO   ID-based enrichment: 6392 researchers with OpenAlex IDs (9252 cached, 0 to fetch)
+2026-08-29 18:16:19,619 INFO   ID-based enrichment done: 6366/6392
+2026-08-29 18:16:19,646 INFO === Phase 4: Career Stage Classification ===
+2026-08-29 18:16:19,668 INFO === Phase 5: Category Classification ===
+2026-08-29 18:16:19,672 INFO   Classifying 17 researchers into 6 categories (7931 cached)
+2026-08-29 18:16:21,546 INFO   Category fit batch 1/2
+2026-08-29 18:16:25,440 INFO   Category fit batch 2/2
+2026-08-29 18:16:25,974 INFO === Phase 6: Filtering ===
+2026-08-29 18:16:25,979 INFO   Filtered: 6628 -> 1222 (removed: {'papers': 0, 'stage': 1697, 'institution': 17, 'country': 1425, 'name': 0, 'category': 2267, 'dedup': 0}, flagged: {'stretch': 404, 'unlikely': 9})
+2026-08-29 18:16:25,979 INFO === Phase 6a: Web Stage Resolution (unknowns) ===
+2026-08-29 18:16:25,982 INFO   Web stage resolution: 225 unknowns (0 cached)
+2026-08-29 18:16:41,080 INFO   Web stage resolution: 25/225
+2026-08-29 18:16:54,183 INFO   Web stage resolution: 50/225
+2026-08-29 18:17:07,430 INFO   Web stage resolution: 75/225
+2026-08-29 18:17:20,727 INFO   Web stage resolution: 100/225
+2026-08-29 18:17:32,637 INFO   Web stage resolution: 125/225
+2026-08-29 18:17:44,437 INFO   Web stage resolution: 150/225
+2026-08-29 18:17:58,131 INFO   Web stage resolution: 175/225
+2026-08-29 18:18:10,157 INFO   Web stage resolution: 200/225
+2026-08-29 18:18:21,861 INFO   Web stage resolution: 225/225
+2026-08-29 18:18:21,861 INFO   Web stage resolution done: 208/225 resolved
+2026-08-29 18:18:21,890 INFO   Filtered: 1222 -> 1183 (removed: {'papers': 0, 'stage': 39, 'institution': 0, 'country': 0, 'name': 0, 'category': 0, 'dedup': 0}, flagged: {'stretch': 501, 'unlikely': 9})
+2026-08-29 18:18:21,890 INFO === Phase 6b: Fallback Enrichment + Emails ===
+2026-08-29 18:18:21,895 INFO   Name-based fallback enriched: 300
+2026-08-29 18:18:21,897 INFO Loaded email cache with 2748 entries
+2026-08-29 18:18:21,897 INFO Loaded institution domain cache with 2275 entries
+2026-08-29 18:18:21,897 INFO No S2_API_KEY — using 1 req/sec rate limit. Set S2_API_KEY for 10x speed.
+2026-08-29 18:18:21,900 INFO Done: 916/1183 emails (218 verified, 698 inferred, 916 cached)
+2026-08-29 18:18:21,901 INFO   Emails found: 916/1183
+2026-08-29 18:18:21,901 INFO === Phase 7: Output ===
+2026-08-29 18:18:21,906 INFO   combined.csv: 1183 researchers
+2026-08-29 18:18:21,906 INFO   world_models.csv: 135 researchers
+2026-08-29 18:18:21,908 INFO   agentic_benchmarks.csv: 310 researchers
+2026-08-29 18:18:21,909 INFO   stem_benchmarks.csv: 240 researchers
+2026-08-29 18:18:21,910 INFO   benchmarks.csv: 509 researchers
+2026-08-29 18:18:21,911 INFO   environment_generation.csv: 192 researchers
+2026-08-29 18:18:21,912 INFO   post_training.csv: 386 researchers
+2026-08-29 18:18:22,189 INFO   researchers.xlsx: 6 position tab(s) + Combined
+2026-08-29 18:18:22,212 INFO Done.

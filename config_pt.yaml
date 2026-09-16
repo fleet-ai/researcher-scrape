@@ -53,13 +53,10 @@ filters:
     - CH
     - "NO"
     - IS
+  # 2026-09-16: only OpenAI/Anthropic excluded (see config_fleet.yaml).
   exclude_institutions:
     - OpenAI
     - Anthropic
-    - DeepSeek
-    - Moonshot
-    - Alibaba
-    - ByteDance
   exclude_names: []
 
 expansion:

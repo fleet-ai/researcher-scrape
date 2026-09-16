@@ -592,7 +592,9 @@ def apply_filters(researchers: dict, config: dict, exclude_names: set) -> dict:
                "name": 0, "category": 0, "dedup": 0}
     flagged = {"stretch": 0, "unlikely": 0}
 
-    hard_recruit = {"openai", "anthropic", "google deepmind", "deepmind"}
+    # 2026-09-16 policy: only OpenAI and Anthropic are long shots; Meta,
+    # DeepMind, and everyone else are fair targets.
+    hard_recruit = {"openai", "anthropic"}
 
     for key, r in researchers.items():
         if key in exclude_names or r.name.lower() in user_exclude_names:

@@ -1,0 +1,1080 @@
+2026-08-29 10:50:22,974 INFO Dedup against 0 existing names
+2026-08-29 10:50:22,974 INFO === Phase 1: Resolve Seeds ===
+2026-08-29 10:50:23,318 INFO   Seed paper: Can LLM Agents Infer World Models? Evidence from Agentic Automata Learning
+2026-08-29 10:50:23,736 INFO   Seed paper: Latent Spatial Memory for Video World Models
+2026-08-29 10:50:24,189 INFO   Seed paper: Advancing Open-source World Models
+2026-08-29 10:50:24,770 INFO   Seed paper: Agentic World Modeling: Foundations, Capabilities, Laws, and Beyond
+2026-08-29 10:50:25,217 INFO   Seed paper: Training LLM Agents for Spontaneous, Reward-Free Self-Evolution via World Knowle
+2026-08-29 10:50:25,691 INFO   Seed paper: Learn from your own latents and not from tokens: A sample-complexity theory
+2026-08-29 10:50:26,212 INFO   Seed paper: EchoJEPA: A Latent Predictive Foundation Model for Echocardiography
+2026-08-29 10:50:26,771 INFO   Seed paper: Learning Latent Action World Models In The Wild
+2026-08-29 10:50:27,223 INFO   Seed paper: Genie: Generative Interactive Environments
+2026-08-29 10:50:27,714 INFO   Seed paper: Diffusion for World Modeling: Visual Details Matter in Atari
+2026-08-29 10:50:28,226 INFO   Seed paper: Understanding World or Predicting Future? A Comprehensive Survey of World Models
+2026-08-29 10:50:29,254 WARNING   Could not resolve arxiv:2510.16907
+2026-08-29 10:50:29,738 INFO   Seed paper: Training Agents Inside of Scalable World Models
+2026-08-29 10:50:30,227 INFO   Seed paper: V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning
+2026-08-29 10:50:30,769 INFO   Seed paper: Gamma-World: Generative Multi-Agent World Modeling Beyond Two Players
+2026-08-29 10:50:31,259 INFO   Seed paper: Qwen-AgentWorld: Language World Models for General Agents
+2026-08-29 10:50:31,738 INFO   Seed paper: Omni-WorldBench: Towards a Comprehensive Interaction-Centric Evaluation for Worl
+2026-08-29 10:50:32,258 INFO   Seed paper: WebWorld: A Large-Scale World Model for Web Agent Training
+2026-08-29 10:50:32,921 INFO   Seed paper: Agents' Last Exam
+2026-08-29 10:50:33,336 INFO   Seed paper: AlphaEval: Evaluating Agents in Production
+2026-08-29 10:50:33,792 INFO   Seed paper: Multi-User Large Language Model Agents
+2026-08-29 10:50:34,280 INFO   Seed paper: The Art of Building Verifiers for Computer Use Agents
+2026-08-29 10:50:34,868 INFO   Seed paper: Terminal-Bench: Benchmarking Agents on Hard, Realistic Tasks in Command Line Int
+2026-08-29 10:50:35,522 INFO   Seed paper: SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios
+2026-08-29 10:50:35,777 INFO   Seed paper: Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments
+2026-08-29 10:50:36,531 INFO   Seed paper: SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks
+2026-08-29 10:50:36,874 INFO   Seed paper: LongCLI-Bench: A Preliminary Benchmark and Study for Long-horizon Agentic Progra
+2026-08-29 10:50:37,292 INFO   Seed paper: MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic T
+2026-08-29 10:50:37,815 INFO   Seed paper: Your Agents Are Aging Too: Agent Lifespan Engineering for Deployed Systems
+2026-08-29 10:50:38,384 INFO   Seed paper: Scientific reasoning does not reliably translate into scientific forecasting in 
+2026-08-29 10:50:38,841 INFO   Seed paper: AutoLab: Can Frontier Models Solve Long-Horizon Auto Research and Engineering Ta
+2026-08-29 10:50:39,329 INFO   Seed paper: Reliability without Validity: A Systematic, Large-Scale Evaluation of LLM-as-a-J
+2026-08-29 10:50:39,811 INFO   Seed paper: ARC-AGI-3: A New Challenge for Frontier Agentic Intelligence
+2026-08-29 10:50:40,320 INFO   Seed paper: Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agen
+2026-08-29 10:50:40,829 INFO   Seed paper: Towards Automating Scientific Review with Google's Paper Assistant Tool
+2026-08-29 10:50:41,579 INFO   Seed paper: MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via 
+2026-08-29 10:50:41,859 INFO   Seed paper: The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Lon
+2026-08-29 10:50:42,873 WARNING   Could not resolve arxiv:2412.14161
+2026-08-29 10:50:43,401 INFO   Seed paper: NatureBench: Can Coding Agents Match the Published SOTA of Nature-Family Papers?
+2026-08-29 10:50:43,885 INFO   Seed paper: Numina-Lean-Agent: An Open and General Agentic Reasoning System for Formal Mathe
+2026-08-29 10:50:44,378 INFO   Seed paper: LEAP: Supercharging LLMs for Formal Mathematics with Agentic Frameworks
+2026-08-29 10:50:44,877 INFO   Seed paper: AI co-mathematician: Accelerating mathematicians with agentic AI
+2026-08-29 10:50:45,378 INFO   Seed paper: MMMU: A Massive Multi-discipline Multimodal Understanding and Reasoning Benchmar
+2026-08-29 10:50:54,773 WARNING OA 504 on works/doi:10.48550/arXiv.2311.12022: {"error":"Gateway timeout","message":"Your query took too long and was stopped before completing. This usually means a very broad search (e.g. many OR/AND/NOT terms). Please narrow the query and try a
+2026-08-29 10:50:55,046 WARNING   Could not resolve arxiv:2311.12022
+2026-08-29 10:50:55,501 INFO   Seed paper: OlympiadBench: A Challenging Benchmark for Promoting AGI with Olympiad-Level Bil
+2026-08-29 10:50:56,014 INFO   Seed paper: LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Mode
+2026-08-29 10:50:56,524 INFO   Seed paper: BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Compl
+2026-08-29 10:50:57,026 INFO   Seed paper: SciCode: A Research Coding Benchmark Curated by Scientists
+2026-08-29 10:50:57,564 INFO   Seed paper: LAB-Bench: Measuring Capabilities of Language Models for Biology Research
+2026-08-29 10:50:58,104 INFO   Seed paper: DeepSWE: Measuring Frontier Coding Agents on Original, Long-Horizon Engineering 
+2026-08-29 10:50:58,555 INFO   Seed paper: GDPval: Evaluating AI Model Performance on Real-World Economically Valuable Task
+2026-08-29 10:50:59,023 INFO   Seed paper: BrowseComp: A Simple Yet Challenging Benchmark for Browsing Agents
+2026-08-29 10:50:59,977 INFO   Seed paper: Humanity's Last Exam
+2026-08-29 10:51:00,213 INFO   Seed paper: SWE-Bench Pro: Can AI Agents Solve Long-Horizon Software Engineering Tasks?
+2026-08-29 10:51:00,752 INFO   Seed paper: Persistent memory for AI coding agents: a pre-registered SWE-bench Verified benc
+2026-08-29 10:51:01,255 INFO   Seed paper: AutomationBench
+2026-08-29 10:51:01,728 INFO   Seed paper: OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer En
+2026-08-29 10:51:02,240 INFO   Seed paper: MCP-Atlas: A Large-Scale Benchmark for Tool-Use Competency with Real MCP Servers
+2026-08-29 10:51:02,733 INFO   Seed paper: APEX-Agents
+2026-08-29 10:51:03,292 INFO   Seed paper: MMMU-Pro: A More Robust Multi-discipline Multimodal Understanding Benchmark
+2026-08-29 10:51:03,761 INFO   Seed paper: ExploitBench: A Capability Ladder Benchmark for LLM Cybersecurity Agents
+2026-08-29 10:51:04,273 INFO   Seed paper: ExploitGym: Can AI Agents Turn Security Vulnerabilities into Real Attacks?
+2026-08-29 10:51:04,779 INFO   Seed paper: PostTrainBench: Can LLM Agents Automate LLM Post-Training?
+2026-08-29 10:51:05,348 INFO   Seed paper: Michelangelo: Long Context Evaluations Beyond Haystacks via Latent Structure Que
+2026-08-29 10:51:05,776 INFO   Seed paper: $τ^2$-Bench: Evaluating Conversational Agents in a Dual-Control Environment
+2026-08-29 10:51:06,262 INFO   Seed paper: $τ$-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains
+2026-08-29 10:51:06,779 INFO   Seed paper: Measuring Massive Multitask Language Understanding
+2026-08-29 10:51:07,286 INFO   Seed paper: HealthBench: Evaluating Large Language Models Towards Improved Human Health
+2026-08-29 10:51:07,767 INFO   Seed paper: ProgramBench: Can Language Models Rebuild Programs From Scratch?
+2026-08-29 10:51:08,283 INFO   Seed paper: SWE-Marathon: Can Agents Autonomously Complete Ultra-Long-Horizon Software Work?
+2026-08-29 10:51:08,867 INFO   Seed paper: NL2Repo-Bench: Towards Long-Horizon Repository Generation Evaluation of Coding A
+2026-08-29 10:51:09,301 INFO   Seed paper: CyberGym: Evaluating AI Agents' Real-World Cybersecurity Capabilities at Scale
+2026-08-29 10:51:09,786 INFO   Seed paper: DeepSearchQA: Bridging the Comprehensiveness Gap for Deep Research Agents
+2026-08-29 10:51:10,395 INFO   Seed paper: OfficeQA Pro: An Enterprise Benchmark for End-to-End Grounded Reasoning
+2026-08-29 10:51:10,776 INFO   Seed paper: BenchCAD: A Comprehensive, Industry-Standard Benchmark for Programmatic CAD
+2026-08-29 10:51:11,295 INFO   Seed paper: ARC-AGI-2: A New Challenge for Frontier AI Reasoning Systems
+2026-08-29 10:51:12,362 WARNING   Could not resolve arxiv:2507.02833
+2026-08-29 10:51:12,839 INFO   Seed paper: Measuring Multimodal Mathematical Reasoning with MATH-Vision Dataset
+2026-08-29 10:51:13,288 INFO   Seed paper: MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchm
+2026-08-29 10:51:13,824 INFO   Seed paper: Measuring Mathematical Problem Solving With the MATH Dataset
+2026-08-29 10:51:14,320 INFO   Seed paper: Language Models are Multilingual Chain-of-Thought Reasoners
+2026-08-29 10:51:15,337 WARNING   Could not resolve arxiv:2506.11928
+2026-08-29 10:51:15,816 INFO   Seed paper: MCPMark: A Benchmark for Stress-Testing Realistic and Comprehensive MCP Use
+2026-08-29 10:51:16,315 INFO   Seed paper: JobBench: Aligning Agent Work With Human Will
+2026-08-29 10:51:16,834 INFO   Seed paper: MLS-Bench: A Holistic and Rigorous Assessment of AI Systems on Building Better A
+2026-08-29 10:51:17,348 INFO   Seed paper: ResearchRubrics: A Benchmark of Prompts and Rubrics For Evaluating Deep Research
+2026-08-29 10:51:17,906 INFO   Seed paper: Probing the Critical Point (CritPt) of AI Reasoning: a Frontier Physics Research
+2026-08-29 10:51:18,344 INFO   Seed paper: SpreadsheetBench: Towards Challenging Real World Spreadsheet Manipulation
+2026-08-29 10:51:18,849 INFO   Seed paper: PaperBench: Evaluating AI's Ability to Replicate AI Research
+2026-08-29 10:51:19,382 INFO   Seed paper: FrontierMath: A Benchmark for Evaluating Advanced Mathematical Reasoning in AI
+2026-08-29 10:51:19,827 INFO   Seed paper: SWE-bench Multimodal: Do AI Systems Generalize to Visual Software Domains?
+2026-08-29 10:51:20,379 INFO   Seed paper: On the Measure of Intelligence
+2026-08-29 10:51:20,895 INFO   Seed paper: Synthetic Computers at Scale for Long-Horizon Productivity Simulation
+2026-08-29 10:51:21,354 INFO   Seed paper: Autodata: An agentic data scientist to create high quality synthetic data
+2026-08-29 10:51:21,851 INFO   Seed paper: From Trainee to Trainer: LLM-Designed Training Environment for RL with Multi-Age
+2026-08-29 10:51:22,376 INFO   Seed paper: Toward Autonomous Long-Horizon Engineering for ML Research
+2026-08-29 10:51:22,925 INFO   Seed paper: Agentopia: Long-Term Life Simulation and Learning in Agent Societies
+2026-08-29 10:51:23,372 INFO   Seed paper: Autogenesis: A Self-Evolving Agent Protocol
+2026-08-29 10:51:23,898 INFO   Seed paper: Digital Red Queen: Adversarial Program Evolution in Core War with LLMs
+2026-08-29 10:51:24,399 INFO   Seed paper: OpenClaw-Skill: Collective Skill Tree Search for Agentic Large Language Models
+2026-08-29 10:51:24,948 INFO   Seed paper: SkillNet: Create, Evaluate, and Connect AI Skills
+2026-08-29 10:51:25,406 INFO   Seed paper: Co-Evolving LLM Decision and Skill Bank Agents for Long-Horizon Tasks
+2026-08-29 10:51:25,901 INFO   Seed paper: Discovering Multiagent Learning Algorithms with Large Language Models
+2026-08-29 10:51:26,386 INFO   Seed paper: Human-like autonomy emerges from self-play and a pinch of human data
+2026-08-29 10:51:26,913 INFO   Seed paper: Emergent Complexity and Zero-shot Transfer via Unsupervised Environment Design
+2026-08-29 10:51:27,379 INFO   Seed paper: MLGym: A New Framework and Benchmark for Advancing AI Research Agents
+2026-08-29 10:51:27,899 INFO   Seed paper: TaskCraft: Automated Generation of Agentic Tasks
+2026-08-29 10:51:28,409 INFO   Seed paper: R-Zero: Self-Evolving Reasoning LLM from Zero Data
+2026-08-29 10:51:28,891 INFO   Seed paper: Scaling Agent Learning via Experience Synthesis
+2026-08-29 10:51:29,397 INFO   Seed paper: AutoForge: Automated Environment Synthesis for Agentic Reinforcement Learning
+2026-08-29 10:51:29,946 INFO   Seed paper: AutoEnv: Automated Environments for Measuring Cross-Environment Agent Learning
+2026-08-29 10:51:30,422 INFO   Seed paper: Gym-Anything: Turn any Software into an Agent Environment
+2026-08-29 10:51:31,001 INFO   Seed paper: Anchored Self-Play for Code Repair
+2026-08-29 10:51:31,461 INFO   Seed paper: PlanBench-XL: Evaluating Long-Horizon Planning of LLM Tool-Use Agents in Large-S
+2026-08-29 10:51:31,938 INFO   Seed paper: Learning to Orchestrate Agents in Natural Language with the Conductor
+2026-08-29 10:51:32,471 INFO   Seed paper: Nemotron-Cascade: Scaling Cascaded Reinforcement Learning for General-Purpose Re
+2026-08-29 10:51:32,937 INFO   Seed paper: GDPO: Group reward-Decoupled Normalization Policy Optimization for Multi-reward 
+2026-08-29 10:51:33,438 INFO   Seed paper: Training AI Co-Scientists Using Rubric Rewards
+2026-08-29 10:51:33,965 INFO   Seed paper: Reinforcement Learning via Self-Distillation
+2026-08-29 10:51:34,456 INFO   Seed paper: PivotRL: High Accuracy Agentic Post-Training at Low Compute Cost
+2026-08-29 10:51:34,964 INFO   Seed paper: Back on Track: Aligning Rewards and States for Reasoning in Diffusion Large Lang
+2026-08-29 10:51:35,455 INFO   Seed paper: Z-Reward: Beyond Scalar Rewards by Internalizing Reasoning into Score Distributi
+2026-08-29 10:51:35,965 INFO   Seed paper: Scaling Coding Agents via Atomic Skills
+2026-08-29 10:51:36,471 INFO   Seed paper: KARL: Knowledge Agents via Reinforcement Learning
+2026-08-29 10:51:36,961 INFO   Seed paper: The Verification Horizon: No Silver Bullet for Coding Agent Rewards
+2026-08-29 10:51:37,466 INFO   Seed paper: Scaling Laws for Agent Harnesses via Effective Feedback Compute
+2026-08-29 10:51:37,981 INFO   Seed paper: A Primer in Post-Training Reasoning Data: What We Know About How It Works
+2026-08-29 10:51:38,454 INFO   Seed paper: Reinforcement Learning with Metacognitive Feedback Elicits Faithful Uncertainty 
+2026-08-29 10:51:39,015 INFO   Seed paper: Agentic Systems as Boosting Weak Reasoning Models
+2026-08-29 10:51:39,480 INFO   Seed paper: On Training Large Language Models for Long-Horizon Tasks: An Empirical Study of 
+2026-08-29 10:51:40,011 INFO   Seed paper: The Red Queen Gödel Machine: Co-Evolving Agents and Their Evaluators
+2026-08-29 10:51:40,512 INFO   Seed paper: Reasoning Quality Emerges Early: Data Curation for Reasoning Models
+2026-08-29 10:51:40,984 INFO   Seed paper: On the Geometry of On-Policy Distillation
+2026-08-29 10:51:41,482 INFO   Seed paper: Compiling Agentic Workflows into LLM Weights: Near-Frontier Quality at Two Order
+2026-08-29 10:51:42,071 INFO   Seed paper: InftyThink+: Effective and Efficient Infinite-Horizon Reasoning via Reinforcemen
+2026-08-29 10:51:42,508 INFO   Seed paper: Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond
+2026-08-29 10:51:43,005 INFO   Seed paper: VeRO: A Harness for Agents to Optimize Agents
+2026-08-29 10:51:43,527 INFO   Seed paper: Self-Distilled Reasoner: On-Policy Self-Distillation for Large Language Models
+2026-08-29 10:51:44,011 INFO   Seed paper: Rethinking On-Policy Self-Distillation for Thinking Models
+2026-08-29 10:51:44,568 INFO   Seed paper: Purified OPSD: On-Policy Self-Distillation Without Losing How to Think
+2026-08-29 10:51:45,053 INFO   Seed paper: Unifying Group-Relative and Self-Distillation Policy Optimization via Sample Rou
+2026-08-29 10:51:45,548 INFO   Seed paper: JustRL: Scaling a 1.5B LLM with a Simple RL Recipe
+2026-08-29 10:51:46,020 INFO   Seed paper: The Flexibility Trap: Rethinking the Value of Arbitrary Order in Diffusion Langu
+2026-08-29 10:51:46,668 INFO   Seed paper: Demystifying Reinforcement Learning in Agentic Reasoning
+2026-08-29 10:51:47,155 INFO   Seed paper: Process Reinforcement through Implicit Rewards
+2026-08-29 10:51:47,576 INFO   Seed paper: Save the Good Prefix: Precise Error Penalization via Process-Supervised RL to En
+2026-08-29 10:51:48,037 INFO   Seed paper: RewardFlow: Topology-Aware Reward Propagation on State Graphs for Agentic RL wit
+2026-08-29 10:51:48,561 INFO   Seed paper: VerIF: Verification Engineering for Reinforcement Learning in Instruction Follow
+2026-08-29 10:51:49,085 INFO   Seed paper: Beyond Binary: Turning Partial Success into Dense Verifiable Rewards for Reinfor
+2026-08-29 10:51:49,579 INFO   Seed paper: Learning to Self-Verify Makes Language Models Better Reasoners
+2026-08-29 10:51:50,051 INFO   Seed paper: Defining and Characterizing Reward Hacking
+2026-08-29 10:51:50,582 INFO   Seed paper: SimpleTIR: End-to-End Reinforcement Learning for Multi-Turn Tool-Integrated Reas
+2026-08-29 10:51:51,086 INFO   Seed paper: Agent Lightning: Train ANY AI Agents with Reinforcement Learning
+2026-08-29 10:51:51,629 INFO   Seed paper: WebAgent-R1: Training Web Agents via End-to-End Multi-Turn Reinforcement Learnin
+2026-08-29 10:51:52,096 INFO   Seed paper: RAGEN: Understanding Self-Evolution in LLM Agents via Multi-Turn Reinforcement L
+2026-08-29 10:51:52,658 INFO   Seed paper: AgentRL: Scaling Agentic Reinforcement Learning with a Multi-Turn, Multi-Task Fr
+2026-08-29 10:51:53,092 INFO   Seed paper: daVinci-Agency: Unlocking Long-Horizon Agency Data-Efficiently
+2026-08-29 10:51:53,626 INFO   Seed paper: Expanding the Capabilities of Reinforcement Learning via Text Feedback
+2026-08-29 10:51:54,097 INFO   Seed paper: RLAnything: Forge Environment, Policy, and Reward Model in Completely Dynamic RL
+2026-08-29 10:51:54,616 INFO   Seed paper: SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi
+2026-08-29 10:51:55,130 INFO   Seed paper: Vision-Zero: Scalable VLM Self-Improvement via Strategic Gamified Self-Play
+2026-08-29 10:51:55,663 INFO   Seed paper: Multi-agent KTO: Reinforcing Strategic Interactions of Large Language Model in L
+2026-08-29 10:51:56,110 INFO   Seed paper: Game-RL: Synthesizing Multimodal Verifiable Game Data to Boost VLMs' General Rea
+2026-08-29 10:51:56,804 INFO   Seed paper: OpenThoughts-Agent: Data Recipes for Agentic Models
+2026-08-29 10:51:57,305 INFO   Seed paper: QUEST: Training Frontier Deep Research Agents with Fully Synthetic Tasks
+2026-08-29 10:51:57,647 INFO   Seed paper: CuES: A Curiosity-driven and Environment-grounded Synthesis Framework for Agenti
+2026-08-29 10:51:58,150 INFO   Seed paper: Prompt Curriculum Learning for Efficient LLM Post-Training
+2026-08-29 10:51:58,641 INFO   Seed paper: From Reasoning Traces to Reusable Modules: Understanding Compositional Generaliz
+2026-08-29 10:51:59,163 INFO   Seed paper: From $f(x)$ and $g(x)$ to $f(g(x))$: LLMs Learn New Skills in RL by Composing Ol
+2026-08-29 10:51:59,644 INFO   Seed paper: Atomic Skills are the Prerequisite: When Reinforcement Learning Synthesizes Comp
+2026-08-29 10:52:00,137 INFO   Seed paper: Does RL Expand the Capability Boundary of LLM Agents? A PASS@(k,T) Analysis
+2026-08-29 10:52:00,708 INFO   Seed paper: The Art of Scaling Reinforcement Learning Compute for LLMs
+2026-08-29 10:52:01,164 INFO   Seed paper: On the Interplay of Pre-Training, Mid-Training, and RL on Reasoning Language Mod
+2026-08-29 10:52:01,652 INFO   Seed paper: The Markovian Thinker: Architecture-Agnostic Linear Scaling of Reasoning
+2026-08-29 10:52:02,197 INFO   Seed paper: h1: Bootstrapping LLMs to Reason over Longer Horizons via Reinforcement Learning
+2026-08-29 10:52:02,679 INFO   Seed paper: Emergent Hierarchical Reasoning in LLMs through Reinforcement Learning
+2026-08-29 10:52:03,339 INFO   Seed paper: Seer: Online Context Learning for Fast Synchronous LLM Reinforcement Learning
+2026-08-29 10:52:03,728 INFO   Seed paper: Defeating the Training-Inference Mismatch via FP16
+2026-08-29 10:52:04,216 INFO   Seed paper: GFlowRL: Scaling Distribution-Matching RL to Large Language Models
+2026-08-29 10:52:04,729 INFO   Seed paper: A Survey of Reinforcement Learning for Large Reasoning Models
+2026-08-29 10:52:05,167 INFO   Seed paper: LLM-as-a-Verifier: A General-Purpose Verification Framework
+2026-08-29 10:52:05,694 INFO   Seed paper: Hybrid Reinforcement: When Reward Is Sparse, It's Better to Be Dense
+2026-08-29 10:52:06,194 INFO   Seed paper: RLAC: Reinforcement Learning with Adversarial Critic for Free-Form Generation Ta
+2026-08-29 10:52:06,681 INFO   Seed paper: Right in the Right Way: LM Training with Verifiable Rewards and Human Demonstrat
+2026-08-29 10:52:07,193 INFO   Seed paper: Incentivizing Agentic Reasoning in LLM Judges via Tool-Integrated Reinforcement 
+2026-08-29 10:52:07,723 INFO   Seed paper: ACE-RL: Adaptive Constraint-Enhanced Reward for Long-form Generation Reinforceme
+2026-08-29 10:52:08,189 INFO   Seed paper: Balancing Faithfulness and Performance in Reasoning via Multi-Listener Soft Exec
+2026-08-29 10:52:17,608 WARNING OA 504 on works/doi:10.48550/arXiv.2509.13351: {"error":"Gateway timeout","message":"Your query took too long and was stopped before completing. This usually means a very broad search (e.g. many OR/AND/NOT terms). Please narrow the query and try a
+2026-08-29 10:52:17,881 WARNING   Could not resolve arxiv:2509.13351
+2026-08-29 10:52:18,359 INFO   Seed paper: Webscale-RL: Automated Data Pipeline for Scaling RL Data to Pretraining Levels
+2026-08-29 10:52:18,858 INFO   Seed paper: Learning to Reason: Training LLMs with GPT-OSS or DeepSeek R1 Reasoning Traces
+2026-08-29 10:52:19,378 INFO   Seed paper: In Their Own Words: Reasoning Traces Tailored for Small Models Make Them Better 
+2026-08-29 10:52:19,871 INFO   Seed paper: Self-Improving Pretraining: using post-trained models to pretrain better models
+2026-08-29 10:52:20,415 INFO   Seed paper: PromptCoT 2.0: Scaling Prompt Synthesis for Large Language Model Reasoning
+2026-08-29 10:52:20,889 INFO   Seed paper: Continual Learning via Sparse Memory Finetuning
+2026-08-29 10:52:21,393 INFO   Seed paper: AgentGym-RL: Training LLM Agents for Long-Horizon Decision Making through Multi-
+2026-08-29 10:52:21,914 INFO   Seed paper: SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning
+2026-08-29 10:52:22,407 INFO   Seed paper: DeepSearch: Overcome the Bottleneck of Reinforcement Learning with Verifiable Re
+2026-08-29 10:52:22,892 INFO   Seed paper: Language Models that Think, Chat Better
+2026-08-29 10:52:23,400 INFO   Seed paper: K2-Think: A Parameter-Efficient Reasoning System
+2026-08-29 10:52:23,875 INFO   Seed paper: Kimi-Dev: Agentless Training as Skill Prior for SWE-Agents
+2026-08-29 10:52:24,465 INFO   Seed paper: SFR-DeepResearch: Towards Effective Reinforcement Learning for Autonomously Reas
+2026-08-29 10:52:24,905 INFO   Seed paper: ParaThinker: Native Parallel Thinking as a New Paradigm to Scale LLM Test-time C
+2026-08-29 10:52:25,415 INFO   Seed paper: Meta-RL Induces Exploration in Language Agents
+2026-08-29 10:52:25,937 INFO   Seed paper: Evolution Strategies at the Hyperscale
+2026-08-29 10:52:26,505 INFO   Seed paper: AgenticQwen: Training Small Agentic Language Models with Dual Data Flywheels for
+2026-08-29 10:52:26,925 INFO   Seed paper: Recursive Synthesis for Long-Horizon Terminal Tasks
+2026-08-29 10:52:27,440 INFO   Seed paper: EnvHarness: Awakening Static Worlds for Agent Learning
+2026-08-29 10:52:27,911 INFO   Seed paper: On-Policy Self-Distillation without Any Supervision
+2026-08-29 10:52:28,508 INFO   Seed paper: Apodex 1.1: Scaling Agentic Intelligence for Complex Work
+2026-08-29 10:52:28,983 INFO   Seed paper: Macaron-V1: Towards Open Continual Learning with Self-Improvement and Mixture-of
+2026-08-29 10:52:29,417 INFO   Seed paper: Self-Supervised Visual On-Policy Distillation
+2026-08-29 10:52:29,954 INFO   Seed paper: DAPD: Dual-Anchored Policy Distillation
+2026-08-29 10:52:30,458 INFO   Seed paper: Learn What's Left, Not What's Mastered: Saturation Aware Advantage Reweighting f
+2026-08-29 10:52:30,923 INFO   Seed paper: FACET: Preserving Source Intent and Executable State in Terminal Task Synthesis
+2026-08-29 10:52:31,523 INFO   Seed paper: From RLVR to RLSVR: Task Transformation Induces Self-Verifiable Rewards for Open
+2026-08-29 10:52:32,137 INFO   Seed paper: Agentic ESOpt: Fine-Tuning Long-Horizon LLM Agents with Minimal GPU Requirements
+2026-08-29 10:52:32,481 INFO   Seed paper: Annotations as Rollouts: Efficient and Scalable Reinforcement Learning for Video
+2026-08-29 10:52:32,964 INFO   Seed paper: AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning
+2026-08-29 10:52:33,454 INFO   Seed paper: Co-RL: Unsupervised Reasoning Emerges from Diverse Cohort in Multi-agent RL
+2026-08-29 10:52:33,973 INFO   Seed paper: SPADE: Self-Play in Adaptive Synthetic Executable Environments
+2026-08-29 10:52:34,552 INFO   Seed paper: Agent Lightning v1.0: Towards Harnessed Agentic RL
+2026-08-29 10:52:34,973 INFO   Seed paper: ABSeeker: Training Long-Horizon Search Agents via Answer-Backtracked Credit Assi
+2026-08-29 10:52:35,489 INFO   Seed paper: TTPO: Test-Time Policy Optimization
+2026-08-29 10:52:35,963 INFO   Seed paper: SFT Conflicts, RL Coexists: A Theoretical and Empirical Analysis of Multi-Task L
+2026-08-29 10:52:36,517 INFO   Seed paper: What Makes Good Agentic Data? An ACE Lens on Data Generation for LLM Agents
+2026-08-29 10:52:36,987 INFO   Seed paper: Weak-to-Strong On-Policy Distillation
+2026-08-29 10:52:37,504 INFO   Seed paper: EnvACE: Internalizing Environment Dynamics via World Rehearsal for Agentic Reinf
+2026-08-29 10:52:38,018 INFO   Seed paper: Progressive Agent Skill Generation via Reinforcement Learning
+2026-08-29 10:52:38,525 INFO   Seed paper: Beyond Simply Environment Scaling: Designing Effective Environment Distributions
+2026-08-29 10:52:38,983 INFO   Seed paper: ClawGym II: Exploring Black-Box RL on Agent Harness
+2026-08-29 10:52:39,501 INFO   Seed paper: PCSD: Persistent Consistency for Self-Distillation in Agentic Reinforcement Lear
+2026-08-29 10:52:40,010 INFO   Seed paper: CyberFactory: Scaling Cyber Security Capabilities with Instances from the Wild
+2026-08-29 10:52:40,508 INFO   Seed paper: SimpleOPD: Simple Tokenizer-Agnostic On-Policy Distillation for Long-Context Rea
+2026-08-29 10:52:41,033 INFO   Seed paper: SAF-OPD: Stable Advantage Fusion for On-Policy Distillation
+2026-08-29 10:52:41,519 INFO   Seed paper: SKT: Skill-Use Training at Scale via Verified Synthetic Data Generation
+2026-08-29 10:52:42,085 INFO   Seed paper: SPOT: Sparse Probing and Outcome Calibration for On-Policy Distillation
+2026-08-29 10:52:42,581 INFO   Seed paper: CriPO: Enhancing Rubric-based RL via Self-Distillation
+2026-08-29 10:52:43,036 INFO   Seed paper: Latent On-Policy Self-Distillation
+2026-08-29 10:52:43,518 INFO   Seed paper: D$^3$-MOPD: Adaptive Dynamic Domain ScheDuling for Efficient Multi-Teacher Disti
+2026-08-29 10:52:44,119 INFO   Seed paper: LEGO-RL: Harness-Native Reinforcement Learning for Coding Agents
+2026-08-29 10:52:44,680 INFO   Seed paper: Agent-G$^2$: Gaussian Guidance for Agentic Reinforcement Learning
+2026-08-29 10:52:45,099 INFO   Seed paper: When Teachers Mislead: Spurious-Signal-Aware On-Policy Distillation
+2026-08-29 10:52:45,562 INFO   Seed paper: CalibForge: Adversarial Solver Calibration for Scaling Learnable Terminal Tasks
+2026-08-29 10:52:46,052 INFO   Seed paper: On-policy Distillation with Verifiable Reward
+2026-08-29 10:52:46,572 INFO   Seed paper: AgentMercury: Your Agent Can Synthesize Verifiable Environments for Business Sce
+2026-08-29 10:52:55,970 WARNING OA 504 on works/doi:10.48550/arXiv.2607.28568: {"error":"Gateway timeout","message":"Your query took too long and was stopped before completing. This usually means a very broad search (e.g. many OR/AND/NOT terms). Please narrow the query and try a
+2026-08-29 10:52:56,322 INFO   Seed paper: Frontis-MA1: Training an AI4AI Model towards Recursive Self-Improvement in Machi
+2026-08-29 10:52:56,702 INFO   Seed paper: SIA: Self Improving AI with Harness & Weight Updates
+2026-08-29 10:52:57,220 INFO   Seed paper: Learning to Build the Environment: Self-Evolving Reasoning RL via Verifiable Env
+2026-08-29 10:52:57,755 INFO   Seed paper: AREX: Towards a Recursively Self-Improving Agent for Deep Research
+2026-08-29 10:52:58,220 INFO   Seed paper: SCOPE: Self-Play via Co-Evolving Policies for Open-Ended Tasks
+2026-08-29 10:52:58,748 INFO   Seed paper: G-Zero: Self-Play for Open-Ended Generation from Zero Data
+2026-08-29 10:52:59,200 INFO   Seed paper: EvoTrainer: Co-Evolving LLM Policies and Training Harnesses for Autonomous Agent
+2026-08-29 10:52:59,735 INFO   Seed paper: Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills
+2026-08-29 10:53:00,222 INFO   Seed paper: Anti-Self-Distillation for Reasoning RL via Pointwise Mutual Information
+2026-08-29 10:53:00,759 INFO   Seed paper: Self-Distilled Agentic Reinforcement Learning
+2026-08-29 10:53:01,246 INFO   Seed paper: SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning
+2026-08-29 10:53:01,754 INFO   Seed paper: Language Models Need Sleep: Learning to Self-Modify and Consolidate Memories
+2026-08-29 10:53:02,285 INFO   Seed paper: Role-Agent: Bootstrapping LLM Agents via Dual-Role Evolution
+2026-08-29 10:53:02,836 INFO   Seed paper: DeepSearch-World: Self-Distillation for Deep Search Agents in a Verifiable Envir
+2026-08-29 10:53:03,558 INFO   Seed paper: Rethinking Continual Experience Internalization for Self-Evolving LLM Agents
+2026-08-29 10:53:03,780 INFO   Seed paper: Self-Improving Language Models with Bidirectional Evolutionary Search
+2026-08-29 10:53:04,328 INFO   Seed paper: Recursive Harness Self-Improvement
+2026-08-29 10:53:04,790 INFO   Seed paper: Skill1: Unified Evolution of Skill-Augmented Agents via Reinforcement Learning
+2026-08-29 10:53:05,694 INFO   Seed paper: OPID: On-Policy Skill Distillation for Agentic Reinforcement Learning
+2026-08-29 10:53:05,899 INFO   Seed paper: SkillOS: Learning Skill Curation for Self-Evolving Agents
+2026-08-29 10:53:06,451 INFO   Seed paper: RODS: Reward-Driven Online Data Synthesis for Multi-Turn Tool-Use Agents
+2026-08-29 10:53:06,940 INFO   Seed paper: Toward Training Superintelligent Software Agents through Self-Play SWE-RL
+2026-08-29 10:53:07,498 INFO   Seed paper: Mid-Training with Self-Generated Data Improves Reinforcement Learning in Languag
+2026-08-29 10:53:07,964 INFO   Seed paper: Self-Evolving Visual Questioner
+2026-08-29 10:53:08,428 INFO   Seed paper: SEAL: Synergistic Co-Evolution of Agents and Learning Environments
+2026-08-29 10:53:08,943 INFO   Seed paper: Search Self-play: Pushing the Frontier of Agent Capability without Supervision
+2026-08-29 10:53:09,448 INFO   Seed paper: Language Self-Play For Data-Free Training
+2026-08-29 10:53:09,962 INFO   Seed paper: SEIF: Self-Evolving Reinforcement Learning for Instruction Following
+2026-08-29 10:53:10,459 INFO   Seed paper: SGM: A Statistical Godel Machine for Risk-Controlled Recursive Self-Modification
+2026-08-29 10:53:10,951 INFO   Seed paper: DARC: Decoupled Asymmetric Reasoning Curriculum for LLM Evolution
+2026-08-29 10:53:11,445 INFO   Seed paper: Mendel Gödel Machine: Recursive Self-Improving Coding Agents via Comparative Evo
+2026-08-29 10:53:11,953 INFO   Seed paper: HELIX: Model-Harness Co-evolution for Recursive Self-Improvement
+2026-08-29 10:53:12,482 INFO   Seed paper: Ouroboros: A Self-Developing Frontier Coding Agent with Reviewed Core Evolution
+2026-08-29 10:53:12,967 INFO   Seed paper: J-Zero: Unified Challenger--Solver--Judge Co-Evolution from Zero Data
+2026-08-29 10:53:13,488 INFO   Seed paper: The Chase Is the Curriculum, the Capture Anchors the Credit: Pursuit-Evasion Sel
+2026-08-29 10:53:14,650 INFO   Seed researcher: Alex Zook (NVIDIA), 10 papers queued
+2026-08-29 10:53:15,695 INFO   Seed researcher: Bertie Vidgen (Mercor), 10 papers queued
+2026-08-29 10:53:16,792 INFO   Seed researcher: Ludovico Mitchener (Edison Scientific), 10 papers queued
+2026-08-29 10:53:17,740 INFO   Seed researcher: Nicklas Hansen (UC San Diego), 10 papers queued
+2026-08-29 10:53:18,705 INFO   Seed researcher: Tianbao Xie (University of Hong Kong), 10 papers queued
+2026-08-29 10:53:19,857 INFO   Seed researcher: David Rein (METR), 10 papers queued
+2026-08-29 10:53:20,824 INFO   Seed researcher: Sam Earle (New York University), 10 papers queued
+2026-08-29 10:53:20,824 INFO   Seeds resolved: 344 papers queued, 7 seed researchers
+2026-08-29 10:53:20,824 INFO === Phase 2: Graph Expansion (depth=1) ===
+2026-08-29 10:53:20,824 INFO   Level 0: fetching 344 papers (7 batch calls)
+2026-08-29 10:53:47,791 WARNING OA 504 on works: {"error":"Gateway timeout","message":"Your query took too long and was stopped before completing. This usually means a very broad search (e.g. many OR/AND/NOT terms). Please narrow the query and try a
+2026-08-29 10:54:32,563 WARNING OA 504 on works: {"error":"Gateway timeout","message":"Your query took too long and was stopped before completing. This usually means a very broad search (e.g. many OR/AND/NOT terms). Please narrow the query and try a
+2026-08-29 10:56:38,861 INFO   Level 1: fetching 1179 papers (24 batch calls)
+2026-08-29 10:56:55,709 INFO   Processed 500 papers, 2748 researchers
+2026-08-29 10:56:55,715 INFO   Processed 1000 papers, 4464 researchers
+2026-08-29 10:56:55,721 INFO   Processed 1500 papers, 6530 researchers
+2026-08-29 10:56:55,722 INFO   BFS done: 1523 papers processed, 6628 researchers found
+2026-08-29 10:56:55,723 INFO === Phase 2b: Topic Search ===
+2026-08-29 10:56:55,936 WARNING OA 400 on works: {"error":"Pagination error.","message":"per-page parameter must be between 1 and 200."}
+
+2026-08-29 10:56:55,937 INFO   Topic 'authored an evaluation benchmark that frontier labs report in model cards': 0 new researchers
+2026-08-29 10:56:56,484 WARNING OA 400 on works: {"error":"Pagination error.","message":"per-page parameter must be between 1 and 200."}
+
+2026-08-29 10:56:56,487 INFO   Topic 'benchmark construction and evaluation methodology for LLMs and agents': 0 new researchers
+2026-08-29 10:56:56,487 INFO   Total researchers after expansion: 6628
+2026-08-29 10:56:56,528 INFO   Expansion state saved (6628 researchers, depth=1)
+2026-08-29 10:56:56,528 INFO === Phase 3: Profile Enrichment (by author ID) ===
+2026-08-29 10:56:56,543 INFO   ID-based enrichment: 6392 researchers with OpenAlex IDs (6641 cached, 2611 to fetch)
+2026-08-29 10:56:57,178 INFO   Fetched 50/2611 profiles...
+2026-08-29 10:57:02,433 INFO   Fetched 550/2611 profiles...
+2026-08-29 10:57:08,187 INFO   Fetched 1050/2611 profiles...
+2026-08-29 10:57:14,187 INFO   Fetched 1550/2611 profiles...
+2026-08-29 10:57:20,462 INFO   Fetched 2050/2611 profiles...
+2026-08-29 10:57:26,669 INFO   Fetched 2550/2611 profiles...
+2026-08-29 10:57:27,795 INFO   ID-based enrichment done: 6366/6392
+2026-08-29 10:57:27,830 INFO === Phase 4: Career Stage Classification ===
+2026-08-29 10:57:27,830 INFO   Classifying 3190 researchers (4741 cached)
+2026-08-29 10:57:31,953 INFO   Career stage batch 1/160
+2026-08-29 10:57:36,407 INFO   Career stage batch 2/160
+2026-08-29 10:57:41,317 INFO   Career stage batch 3/160
+2026-08-29 10:57:46,426 INFO   Career stage batch 4/160
+2026-08-29 10:57:51,485 INFO   Career stage batch 5/160
+2026-08-29 10:57:56,340 INFO   Career stage batch 6/160
+2026-08-29 10:58:01,495 INFO   Career stage batch 7/160
+2026-08-29 10:58:06,389 INFO   Career stage batch 8/160
+2026-08-29 10:58:11,030 INFO   Career stage batch 9/160
+2026-08-29 10:58:15,562 INFO   Career stage batch 10/160
+2026-08-29 10:58:20,266 INFO   Career stage batch 11/160
+2026-08-29 10:58:24,949 INFO   Career stage batch 12/160
+2026-08-29 10:58:29,670 INFO   Career stage batch 13/160
+2026-08-29 10:58:35,157 INFO   Career stage batch 14/160
+2026-08-29 10:58:39,707 INFO   Career stage batch 15/160
+2026-08-29 10:58:45,399 INFO   Career stage batch 16/160
+2026-08-29 10:58:50,166 INFO   Career stage batch 17/160
+2026-08-29 10:58:54,988 INFO   Career stage batch 18/160
+2026-08-29 10:58:59,650 INFO   Career stage batch 19/160
+2026-08-29 10:59:04,803 INFO   Career stage batch 20/160
+2026-08-29 10:59:09,322 INFO   Career stage batch 21/160
+2026-08-29 10:59:14,109 INFO   Career stage batch 22/160
+2026-08-29 10:59:18,858 INFO   Career stage batch 23/160
+2026-08-29 10:59:23,990 INFO   Career stage batch 24/160
+2026-08-29 10:59:31,149 INFO   Career stage batch 25/160
+2026-08-29 10:59:36,017 INFO   Career stage batch 26/160
+2026-08-29 10:59:40,958 INFO   Career stage batch 27/160
+2026-08-29 10:59:46,192 INFO   Career stage batch 28/160
+2026-08-29 10:59:51,121 INFO   Career stage batch 29/160
+2026-08-29 10:59:55,658 INFO   Career stage batch 30/160
+2026-08-29 11:00:00,388 INFO   Career stage batch 31/160
+2026-08-29 11:00:05,755 INFO   Career stage batch 32/160
+2026-08-29 11:00:10,311 INFO   Career stage batch 33/160
+2026-08-29 11:00:14,991 INFO   Career stage batch 34/160
+2026-08-29 11:00:19,825 INFO   Career stage batch 35/160
+2026-08-29 11:00:24,859 INFO   Career stage batch 36/160
+2026-08-29 11:00:29,515 INFO   Career stage batch 37/160
+2026-08-29 11:00:34,482 INFO   Career stage batch 38/160
+2026-08-29 11:00:39,454 INFO   Career stage batch 39/160
+2026-08-29 11:00:44,453 INFO   Career stage batch 40/160
+2026-08-29 11:00:49,303 INFO   Career stage batch 41/160
+2026-08-29 11:00:54,082 INFO   Career stage batch 42/160
+2026-08-29 11:00:58,633 INFO   Career stage batch 43/160
+2026-08-29 11:01:03,893 INFO   Career stage batch 44/160
+2026-08-29 11:01:08,537 INFO   Career stage batch 45/160
+2026-08-29 11:01:13,555 INFO   Career stage batch 46/160
+2026-08-29 11:01:18,385 INFO   Career stage batch 47/160
+2026-08-29 11:01:23,071 INFO   Career stage batch 48/160
+2026-08-29 11:01:27,774 INFO   Career stage batch 49/160
+2026-08-29 11:01:32,401 INFO   Career stage batch 50/160
+2026-08-29 11:01:37,201 INFO   Career stage batch 51/160
+2026-08-29 11:01:42,711 INFO   Career stage batch 52/160
+2026-08-29 11:01:47,186 INFO   Career stage batch 53/160
+2026-08-29 11:01:51,744 INFO   Career stage batch 54/160
+2026-08-29 11:01:56,737 INFO   Career stage batch 55/160
+2026-08-29 11:02:01,496 INFO   Career stage batch 56/160
+2026-08-29 11:02:05,643 INFO   Career stage batch 57/160
+2026-08-29 11:02:10,059 INFO   Career stage batch 58/160
+2026-08-29 11:02:15,143 INFO   Career stage batch 59/160
+2026-08-29 11:02:19,811 INFO   Career stage batch 60/160
+2026-08-29 11:02:24,880 INFO   Career stage batch 61/160
+2026-08-29 11:02:30,231 INFO   Career stage batch 62/160
+2026-08-29 11:02:34,920 INFO   Career stage batch 63/160
+2026-08-29 11:02:39,363 INFO   Career stage batch 64/160
+2026-08-29 11:02:44,062 INFO   Career stage batch 65/160
+2026-08-29 11:02:49,225 INFO   Career stage batch 66/160
+2026-08-29 11:02:54,032 INFO   Career stage batch 67/160
+2026-08-29 11:02:58,359 INFO   Career stage batch 68/160
+2026-08-29 11:03:03,055 INFO   Career stage batch 69/160
+2026-08-29 11:03:07,249 INFO   Career stage batch 70/160
+2026-08-29 11:03:11,473 INFO   Career stage batch 71/160
+2026-08-29 11:03:15,847 INFO   Career stage batch 72/160
+2026-08-29 11:03:20,921 INFO   Career stage batch 73/160
+2026-08-29 11:03:25,459 INFO   Career stage batch 74/160
+2026-08-29 11:03:29,889 INFO   Career stage batch 75/160
+2026-08-29 11:03:36,121 INFO   Career stage batch 76/160
+2026-08-29 11:03:41,040 INFO   Career stage batch 77/160
+2026-08-29 11:03:45,817 INFO   Career stage batch 78/160
+2026-08-29 11:03:50,037 INFO   Career stage batch 79/160
+2026-08-29 11:03:56,937 INFO   Career stage batch 80/160
+2026-08-29 11:04:01,076 INFO   Career stage batch 81/160
+2026-08-29 11:04:05,726 INFO   Career stage batch 82/160
+2026-08-29 11:04:10,061 INFO   Career stage batch 83/160
+2026-08-29 11:04:14,900 INFO   Career stage batch 84/160
+2026-08-29 11:04:19,790 INFO   Career stage batch 85/160
+2026-08-29 11:04:24,465 INFO   Career stage batch 86/160
+2026-08-29 11:04:29,386 INFO   Career stage batch 87/160
+2026-08-29 11:04:34,177 INFO   Career stage batch 88/160
+2026-08-29 11:04:38,846 INFO   Career stage batch 89/160
+2026-08-29 11:04:43,662 INFO   Career stage batch 90/160
+2026-08-29 11:04:48,479 INFO   Career stage batch 91/160
+2026-08-29 11:04:53,070 INFO   Career stage batch 92/160
+2026-08-29 11:04:57,432 INFO   Career stage batch 93/160
+2026-08-29 11:05:01,708 INFO   Career stage batch 94/160
+2026-08-29 11:05:06,308 INFO   Career stage batch 95/160
+2026-08-29 11:05:11,042 INFO   Career stage batch 96/160
+2026-08-29 11:05:15,477 INFO   Career stage batch 97/160
+2026-08-29 11:05:20,493 INFO   Career stage batch 98/160
+2026-08-29 11:05:26,736 INFO   Career stage batch 99/160
+2026-08-29 11:05:31,385 INFO   Career stage batch 100/160
+2026-08-29 11:05:36,108 INFO   Career stage batch 101/160
+2026-08-29 11:05:40,812 INFO   Career stage batch 102/160
+2026-08-29 11:05:45,408 INFO   Career stage batch 103/160
+2026-08-29 11:05:51,150 INFO   Career stage batch 104/160
+2026-08-29 11:05:55,388 INFO   Career stage batch 105/160
+2026-08-29 11:05:59,743 INFO   Career stage batch 106/160
+2026-08-29 11:06:04,494 INFO   Career stage batch 107/160
+2026-08-29 11:06:08,990 INFO   Career stage batch 108/160
+2026-08-29 11:06:13,763 INFO   Career stage batch 109/160
+2026-08-29 11:06:18,031 INFO   Career stage batch 110/160
+2026-08-29 11:06:22,545 INFO   Career stage batch 111/160
+2026-08-29 11:06:27,117 INFO   Career stage batch 112/160
+2026-08-29 11:06:31,663 INFO   Career stage batch 113/160
+2026-08-29 11:06:36,213 INFO   Career stage batch 114/160
+2026-08-29 11:06:41,090 INFO   Career stage batch 115/160
+2026-08-29 11:06:47,471 INFO   Career stage batch 116/160
+2026-08-29 11:06:53,024 INFO   Career stage batch 117/160
+2026-08-29 11:06:57,504 INFO   Career stage batch 118/160
+2026-08-29 11:07:01,749 INFO   Career stage batch 119/160
+2026-08-29 11:07:06,116 INFO   Career stage batch 120/160
+2026-08-29 11:07:10,848 INFO   Career stage batch 121/160
+2026-08-29 11:07:15,537 INFO   Career stage batch 122/160
+2026-08-29 11:07:20,047 INFO   Career stage batch 123/160
+2026-08-29 11:07:24,590 INFO   Career stage batch 124/160
+2026-08-29 11:07:29,872 INFO   Career stage batch 125/160
+2026-08-29 11:07:34,632 INFO   Career stage batch 126/160
+2026-08-29 11:07:39,124 INFO   Career stage batch 127/160
+2026-08-29 11:07:43,533 INFO   Career stage batch 128/160
+2026-08-29 11:07:48,297 INFO   Career stage batch 129/160
+2026-08-29 11:07:52,601 INFO   Career stage batch 130/160
+2026-08-29 11:07:57,783 INFO   Career stage batch 131/160
+2026-08-29 11:08:02,449 INFO   Career stage batch 132/160
+2026-08-29 11:08:07,108 INFO   Career stage batch 133/160
+2026-08-29 11:08:12,472 INFO   Career stage batch 134/160
+2026-08-29 11:08:16,893 INFO   Career stage batch 135/160
+2026-08-29 11:08:21,355 INFO   Career stage batch 136/160
+2026-08-29 11:08:25,843 INFO   Career stage batch 137/160
+2026-08-29 11:08:30,354 INFO   Career stage batch 138/160
+2026-08-29 11:08:34,882 INFO   Career stage batch 139/160
+2026-08-29 11:08:39,451 INFO   Career stage batch 140/160
+2026-08-29 11:08:44,006 INFO   Career stage batch 141/160
+2026-08-29 11:08:48,386 INFO   Career stage batch 142/160
+2026-08-29 11:08:53,015 INFO   Career stage batch 143/160
+2026-08-29 11:08:57,368 INFO   Career stage batch 144/160
+2026-08-29 11:09:01,732 INFO   Career stage batch 145/160
+2026-08-29 11:09:05,999 INFO   Career stage batch 146/160
+2026-08-29 11:09:10,336 INFO   Career stage batch 147/160
+2026-08-29 11:09:14,300 INFO   Career stage batch 148/160
+2026-08-29 11:09:18,723 INFO   Career stage batch 149/160
+2026-08-29 11:09:23,737 INFO   Career stage batch 150/160
+2026-08-29 11:09:28,579 INFO   Career stage batch 151/160
+2026-08-29 11:09:33,147 INFO   Career stage batch 152/160
+2026-08-29 11:09:37,709 INFO   Career stage batch 153/160
+2026-08-29 11:09:42,760 INFO   Career stage batch 154/160
+2026-08-29 11:09:46,927 INFO   Career stage batch 155/160
+2026-08-29 11:09:51,505 INFO   Career stage batch 156/160
+2026-08-29 11:09:55,968 INFO   Career stage batch 157/160
+2026-08-29 11:10:00,348 INFO   Career stage batch 158/160
+2026-08-29 11:10:04,962 INFO   Career stage batch 159/160
+2026-08-29 11:10:08,900 INFO   Career stage batch 160/160
+2026-08-29 11:10:09,434 INFO === Phase 5: Category Classification ===
+2026-08-29 11:10:09,436 INFO   Classifying 6628 researchers into 6 categories (4741 cached)
+2026-08-29 11:10:19,163 INFO   Category fit batch 1/442
+2026-08-29 11:10:29,625 INFO   Category fit batch 2/442
+2026-08-29 11:10:40,141 INFO   Category fit batch 3/442
+2026-08-29 11:10:50,253 INFO   Category fit batch 4/442
+2026-08-29 11:11:00,046 INFO   Category fit batch 5/442
+2026-08-29 11:11:09,894 INFO   Category fit batch 6/442
+2026-08-29 11:11:19,582 INFO   Category fit batch 7/442
+2026-08-29 11:11:30,021 INFO   Category fit batch 8/442
+2026-08-29 11:11:40,110 INFO   Category fit batch 9/442
+2026-08-29 11:11:50,289 INFO   Category fit batch 10/442
+2026-08-29 11:12:00,381 INFO   Category fit batch 11/442
+2026-08-29 11:12:11,383 INFO   Category fit batch 12/442
+2026-08-29 11:12:21,761 INFO   Category fit batch 13/442
+2026-08-29 11:12:31,923 INFO   Category fit batch 14/442
+2026-08-29 11:12:42,551 INFO   Category fit batch 15/442
+2026-08-29 11:12:52,608 INFO   Category fit batch 16/442
+2026-08-29 11:12:55,022 INFO   Category fit batch 17/442
+2026-08-29 11:13:05,275 INFO   Category fit batch 18/442
+2026-08-29 11:13:15,047 INFO   Category fit batch 19/442
+2026-08-29 11:13:25,208 INFO   Category fit batch 20/442
+2026-08-29 11:13:35,774 INFO   Category fit batch 21/442
+2026-08-29 11:13:46,131 INFO   Category fit batch 22/442
+2026-08-29 11:13:56,159 INFO   Category fit batch 23/442
+2026-08-29 11:14:07,030 INFO   Category fit batch 24/442
+2026-08-29 11:14:17,286 INFO   Category fit batch 25/442
+2026-08-29 11:14:27,333 INFO   Category fit batch 26/442
+2026-08-29 11:14:37,150 INFO   Category fit batch 27/442
+2026-08-29 11:14:47,821 INFO   Category fit batch 28/442
+2026-08-29 11:14:58,060 INFO   Category fit batch 29/442
+2026-08-29 11:15:08,753 INFO   Category fit batch 30/442
+2026-08-29 11:15:18,827 INFO   Category fit batch 31/442
+2026-08-29 11:15:28,778 INFO   Category fit batch 32/442
+2026-08-29 11:15:39,007 INFO   Category fit batch 33/442
+2026-08-29 11:15:48,871 INFO   Category fit batch 34/442
+2026-08-29 11:15:58,863 INFO   Category fit batch 35/442
+2026-08-29 11:16:09,374 INFO   Category fit batch 36/442
+2026-08-29 11:16:19,311 INFO   Category fit batch 37/442
+2026-08-29 11:16:29,057 INFO   Category fit batch 38/442
+2026-08-29 11:16:39,766 INFO   Category fit batch 39/442
+2026-08-29 11:16:49,926 INFO   Category fit batch 40/442
+2026-08-29 11:17:00,039 INFO   Category fit batch 41/442
+2026-08-29 11:17:10,182 INFO   Category fit batch 42/442
+2026-08-29 11:17:20,657 INFO   Category fit batch 43/442
+2026-08-29 11:17:32,022 INFO   Category fit batch 44/442
+2026-08-29 11:17:47,510 INFO   Category fit batch 45/442
+2026-08-29 11:17:57,887 INFO   Category fit batch 46/442
+2026-08-29 11:18:08,136 INFO   Category fit batch 47/442
+2026-08-29 11:18:18,380 INFO   Category fit batch 48/442
+2026-08-29 11:18:28,467 INFO   Category fit batch 49/442
+2026-08-29 11:18:38,956 INFO   Category fit batch 50/442
+2026-08-29 11:18:48,973 INFO   Category fit batch 51/442
+2026-08-29 11:18:59,278 INFO   Category fit batch 52/442
+2026-08-29 11:19:10,092 INFO   Category fit batch 53/442
+2026-08-29 11:19:19,835 INFO   Category fit batch 54/442
+2026-08-29 11:19:29,800 INFO   Category fit batch 55/442
+2026-08-29 11:19:39,294 INFO   Category fit batch 56/442
+2026-08-29 11:19:48,986 INFO   Category fit batch 57/442
+2026-08-29 11:19:59,867 INFO   Category fit batch 58/442
+2026-08-29 11:20:10,072 INFO   Category fit batch 59/442
+2026-08-29 11:20:19,797 INFO   Category fit batch 60/442
+2026-08-29 11:20:29,563 INFO   Category fit batch 61/442
+2026-08-29 11:20:39,283 INFO   Category fit batch 62/442
+2026-08-29 11:20:49,193 INFO   Category fit batch 63/442
+2026-08-29 11:20:59,206 INFO   Category fit batch 64/442
+2026-08-29 11:21:09,167 INFO   Category fit batch 65/442
+2026-08-29 11:21:18,552 INFO   Category fit batch 66/442
+2026-08-29 11:21:28,947 INFO   Category fit batch 67/442
+2026-08-29 11:21:38,864 INFO   Category fit batch 68/442
+2026-08-29 11:21:48,432 INFO   Category fit batch 69/442
+2026-08-29 11:21:58,773 INFO   Category fit batch 70/442
+2026-08-29 11:22:08,560 INFO   Category fit batch 71/442
+2026-08-29 11:22:18,565 INFO   Category fit batch 72/442
+2026-08-29 11:22:28,271 INFO   Category fit batch 73/442
+2026-08-29 11:22:40,145 INFO   Category fit batch 74/442
+2026-08-29 11:22:49,713 INFO   Category fit batch 75/442
+2026-08-29 11:23:00,946 INFO   Category fit batch 76/442
+2026-08-29 11:23:11,036 INFO   Category fit batch 77/442
+2026-08-29 11:23:20,563 INFO   Category fit batch 78/442
+2026-08-29 11:23:30,101 INFO   Category fit batch 79/442
+2026-08-29 11:23:39,972 INFO   Category fit batch 80/442
+2026-08-29 11:23:50,305 INFO   Category fit batch 81/442
+2026-08-29 11:23:59,811 INFO   Category fit batch 82/442
+2026-08-29 11:24:10,136 INFO   Category fit batch 83/442
+2026-08-29 11:24:19,765 INFO   Category fit batch 84/442
+2026-08-29 11:24:30,497 INFO   Category fit batch 85/442
+2026-08-29 11:24:40,100 INFO   Category fit batch 86/442
+2026-08-29 11:24:49,822 INFO   Category fit batch 87/442
+2026-08-29 11:24:59,566 INFO   Category fit batch 88/442
+2026-08-29 11:25:09,115 INFO   Category fit batch 89/442
+2026-08-29 11:25:19,491 INFO   Category fit batch 90/442
+2026-08-29 11:25:29,454 INFO   Category fit batch 91/442
+2026-08-29 11:25:39,129 INFO   Category fit batch 92/442
+2026-08-29 11:25:48,811 INFO   Category fit batch 93/442
+2026-08-29 11:25:58,633 INFO   Category fit batch 94/442
+2026-08-29 11:26:08,275 INFO   Category fit batch 95/442
+2026-08-29 11:26:18,228 INFO   Category fit batch 96/442
+2026-08-29 11:26:28,272 INFO   Category fit batch 97/442
+2026-08-29 11:26:38,262 INFO   Category fit batch 98/442
+2026-08-29 11:26:48,029 INFO   Category fit batch 99/442
+2026-08-29 11:26:58,478 INFO   Category fit batch 100/442
+2026-08-29 11:27:07,912 INFO   Category fit batch 101/442
+2026-08-29 11:27:17,279 INFO   Category fit batch 102/442
+2026-08-29 11:27:26,896 INFO   Category fit batch 103/442
+2026-08-29 11:27:36,481 INFO   Category fit batch 104/442
+2026-08-29 11:27:46,168 INFO   Category fit batch 105/442
+2026-08-29 11:27:55,886 INFO   Category fit batch 106/442
+2026-08-29 11:28:06,071 INFO   Category fit batch 107/442
+2026-08-29 11:28:15,798 INFO   Category fit batch 108/442
+2026-08-29 11:28:25,409 INFO   Category fit batch 109/442
+2026-08-29 11:28:34,928 INFO   Category fit batch 110/442
+2026-08-29 11:28:44,405 INFO   Category fit batch 111/442
+2026-08-29 11:28:54,428 INFO   Category fit batch 112/442
+2026-08-29 11:29:03,639 INFO   Category fit batch 113/442
+2026-08-29 11:29:13,069 INFO   Category fit batch 114/442
+2026-08-29 11:29:22,861 INFO   Category fit batch 115/442
+2026-08-29 11:29:32,282 INFO   Category fit batch 116/442
+2026-08-29 11:29:41,600 INFO   Category fit batch 117/442
+2026-08-29 11:29:50,988 INFO   Category fit batch 118/442
+2026-08-29 11:30:00,648 INFO   Category fit batch 119/442
+2026-08-29 11:30:11,114 INFO   Category fit batch 120/442
+2026-08-29 11:30:21,086 INFO   Category fit batch 121/442
+2026-08-29 11:30:31,633 INFO   Category fit batch 122/442
+2026-08-29 11:30:41,362 INFO   Category fit batch 123/442
+2026-08-29 11:30:51,027 INFO   Category fit batch 124/442
+2026-08-29 11:31:00,336 INFO   Category fit batch 125/442
+2026-08-29 11:31:10,075 INFO   Category fit batch 126/442
+2026-08-29 11:31:20,421 INFO   Category fit batch 127/442
+2026-08-29 11:31:30,161 INFO   Category fit batch 128/442
+2026-08-29 11:31:39,966 INFO   Category fit batch 129/442
+2026-08-29 11:31:49,577 INFO   Category fit batch 130/442
+2026-08-29 11:32:00,194 INFO   Category fit batch 131/442
+2026-08-29 11:32:09,857 INFO   Category fit batch 132/442
+2026-08-29 11:32:20,038 INFO   Category fit batch 133/442
+2026-08-29 11:32:29,786 INFO   Category fit batch 134/442
+2026-08-29 11:32:39,126 INFO   Category fit batch 135/442
+2026-08-29 11:32:48,663 INFO   Category fit batch 136/442
+2026-08-29 11:32:58,610 INFO   Category fit batch 137/442
+2026-08-29 11:33:08,411 INFO   Category fit batch 138/442
+2026-08-29 11:33:18,095 INFO   Category fit batch 139/442
+2026-08-29 11:33:27,501 INFO   Category fit batch 140/442
+2026-08-29 11:33:37,091 INFO   Category fit batch 141/442
+2026-08-29 11:33:47,252 INFO   Category fit batch 142/442
+2026-08-29 11:33:56,377 INFO   Category fit batch 143/442
+2026-08-29 11:34:06,258 INFO   Category fit batch 144/442
+2026-08-29 11:34:15,721 INFO   Category fit batch 145/442
+2026-08-29 11:34:25,814 INFO   Category fit batch 146/442
+2026-08-29 11:34:35,517 INFO   Category fit batch 147/442
+2026-08-29 11:34:45,059 INFO   Category fit batch 148/442
+2026-08-29 11:34:54,787 INFO   Category fit batch 149/442
+2026-08-29 11:35:04,298 INFO   Category fit batch 150/442
+2026-08-29 11:35:25,748 INFO   Category fit batch 151/442
+2026-08-29 11:35:35,205 INFO   Category fit batch 152/442
+2026-08-29 11:35:44,872 INFO   Category fit batch 153/442
+2026-08-29 11:35:54,607 INFO   Category fit batch 154/442
+2026-08-29 11:36:04,398 INFO   Category fit batch 155/442
+2026-08-29 11:36:13,969 INFO   Category fit batch 156/442
+2026-08-29 11:36:23,890 INFO   Category fit batch 157/442
+2026-08-29 11:36:34,426 INFO   Category fit batch 158/442
+2026-08-29 11:36:44,115 INFO   Category fit batch 159/442
+2026-08-29 11:36:54,015 INFO   Category fit batch 160/442
+2026-08-29 11:37:03,736 INFO   Category fit batch 161/442
+2026-08-29 11:37:13,071 INFO   Category fit batch 162/442
+2026-08-29 11:37:22,744 INFO   Category fit batch 163/442
+2026-08-29 11:37:32,630 INFO   Category fit batch 164/442
+2026-08-29 11:37:42,344 INFO   Category fit batch 165/442
+2026-08-29 11:37:51,887 INFO   Category fit batch 166/442
+2026-08-29 11:38:01,298 INFO   Category fit batch 167/442
+2026-08-29 11:38:10,938 INFO   Category fit batch 168/442
+2026-08-29 11:38:20,156 INFO   Category fit batch 169/442
+2026-08-29 11:38:29,777 INFO   Category fit batch 170/442
+2026-08-29 11:38:39,827 INFO   Category fit batch 171/442
+2026-08-29 11:38:49,649 INFO   Category fit batch 172/442
+2026-08-29 11:38:59,159 INFO   Category fit batch 173/442
+2026-08-29 11:39:09,880 INFO   Category fit batch 174/442
+2026-08-29 11:39:20,099 INFO   Category fit batch 175/442
+2026-08-29 11:39:29,989 INFO   Category fit batch 176/442
+2026-08-29 11:39:39,945 INFO   Category fit batch 177/442
+2026-08-29 11:39:49,708 INFO   Category fit batch 178/442
+2026-08-29 11:39:59,087 INFO   Category fit batch 179/442
+2026-08-29 11:40:08,768 INFO   Category fit batch 180/442
+2026-08-29 11:40:18,413 INFO   Category fit batch 181/442
+2026-08-29 11:40:28,057 INFO   Category fit batch 182/442
+2026-08-29 11:40:38,037 INFO   Category fit batch 183/442
+2026-08-29 11:40:47,697 INFO   Category fit batch 184/442
+2026-08-29 11:40:57,430 INFO   Category fit batch 185/442
+2026-08-29 11:41:07,125 INFO   Category fit batch 186/442
+2026-08-29 11:41:17,393 INFO   Category fit batch 187/442
+2026-08-29 11:41:27,283 INFO   Category fit batch 188/442
+2026-08-29 11:41:36,933 INFO   Category fit batch 189/442
+2026-08-29 11:41:46,530 INFO   Category fit batch 190/442
+2026-08-29 11:41:56,341 INFO   Category fit batch 191/442
+2026-08-29 11:42:06,415 INFO   Category fit batch 192/442
+2026-08-29 11:42:16,178 INFO   Category fit batch 193/442
+2026-08-29 11:42:25,883 INFO   Category fit batch 194/442
+2026-08-29 11:42:36,086 INFO   Category fit batch 195/442
+2026-08-29 11:42:45,740 INFO   Category fit batch 196/442
+2026-08-29 11:42:55,289 INFO   Category fit batch 197/442
+2026-08-29 11:43:04,843 INFO   Category fit batch 198/442
+2026-08-29 11:43:14,705 INFO   Category fit batch 199/442
+2026-08-29 11:43:24,267 INFO   Category fit batch 200/442
+2026-08-29 11:43:34,241 INFO   Category fit batch 201/442
+2026-08-29 11:43:43,646 INFO   Category fit batch 202/442
+2026-08-29 11:43:53,086 INFO   Category fit batch 203/442
+2026-08-29 11:44:02,732 INFO   Category fit batch 204/442
+2026-08-29 11:44:12,438 INFO   Category fit batch 205/442
+2026-08-29 11:44:22,215 INFO   Category fit batch 206/442
+2026-08-29 11:44:31,957 INFO   Category fit batch 207/442
+2026-08-29 11:44:41,498 INFO   Category fit batch 208/442
+2026-08-29 11:44:51,735 INFO   Category fit batch 209/442
+2026-08-29 11:45:01,842 INFO   Category fit batch 210/442
+2026-08-29 11:45:11,467 INFO   Category fit batch 211/442
+2026-08-29 11:45:21,106 INFO   Category fit batch 212/442
+2026-08-29 11:45:30,531 INFO   Category fit batch 213/442
+2026-08-29 11:45:40,091 INFO   Category fit batch 214/442
+2026-08-29 11:45:50,208 INFO   Category fit batch 215/442
+2026-08-29 11:46:00,024 INFO   Category fit batch 216/442
+2026-08-29 11:46:09,505 INFO   Category fit batch 217/442
+2026-08-29 11:46:19,137 INFO   Category fit batch 218/442
+2026-08-29 11:46:29,958 INFO   Category fit batch 219/442
+2026-08-29 11:46:39,462 INFO   Category fit batch 220/442
+2026-08-29 11:46:49,110 INFO   Category fit batch 221/442
+2026-08-29 11:46:59,741 INFO   Category fit batch 222/442
+2026-08-29 11:47:09,385 INFO   Category fit batch 223/442
+2026-08-29 11:47:19,128 INFO   Category fit batch 224/442
+2026-08-29 11:47:28,849 INFO   Category fit batch 225/442
+2026-08-29 11:47:39,169 INFO   Category fit batch 226/442
+2026-08-29 11:47:49,042 INFO   Category fit batch 227/442
+2026-08-29 11:47:58,878 INFO   Category fit batch 228/442
+2026-08-29 11:48:08,440 INFO   Category fit batch 229/442
+2026-08-29 11:48:17,520 INFO   Category fit batch 230/442
+2026-08-29 11:48:27,438 INFO   Category fit batch 231/442
+2026-08-29 11:48:37,504 INFO   Category fit batch 232/442
+2026-08-29 11:48:47,281 INFO   Category fit batch 233/442
+2026-08-29 11:48:57,192 INFO   Category fit batch 234/442
+2026-08-29 11:49:07,215 INFO   Category fit batch 235/442
+2026-08-29 11:49:16,532 INFO   Category fit batch 236/442
+2026-08-29 11:49:26,036 INFO   Category fit batch 237/442
+2026-08-29 11:49:36,022 INFO   Category fit batch 238/442
+2026-08-29 11:49:45,411 INFO   Category fit batch 239/442
+2026-08-29 11:49:54,938 INFO   Category fit batch 240/442
+2026-08-29 11:50:04,285 INFO   Category fit batch 241/442
+2026-08-29 11:50:14,182 INFO   Category fit batch 242/442
+2026-08-29 11:50:23,605 INFO   Category fit batch 243/442
+2026-08-29 11:50:33,194 INFO   Category fit batch 244/442
+2026-08-29 11:50:42,671 INFO   Category fit batch 245/442
+2026-08-29 11:50:52,374 INFO   Category fit batch 246/442
+2026-08-29 11:51:01,608 INFO   Category fit batch 247/442
+2026-08-29 11:51:10,926 INFO   Category fit batch 248/442
+2026-08-29 11:51:20,487 INFO   Category fit batch 249/442
+2026-08-29 11:51:29,998 INFO   Category fit batch 250/442
+2026-08-29 11:51:39,740 INFO   Category fit batch 251/442
+2026-08-29 11:51:49,281 INFO   Category fit batch 252/442
+2026-08-29 11:51:59,220 INFO   Category fit batch 253/442
+2026-08-29 11:52:08,800 INFO   Category fit batch 254/442
+2026-08-29 11:52:18,460 INFO   Category fit batch 255/442
+2026-08-29 11:52:28,183 INFO   Category fit batch 256/442
+2026-08-29 11:52:37,688 INFO   Category fit batch 257/442
+2026-08-29 11:52:47,643 INFO   Category fit batch 258/442
+2026-08-29 11:52:57,458 INFO   Category fit batch 259/442
+2026-08-29 11:53:07,412 INFO   Category fit batch 260/442
+2026-08-29 11:53:16,874 INFO   Category fit batch 261/442
+2026-08-29 11:53:26,489 INFO   Category fit batch 262/442
+2026-08-29 11:53:36,675 INFO   Category fit batch 263/442
+2026-08-29 11:53:46,138 INFO   Category fit batch 264/442
+2026-08-29 11:53:55,568 INFO   Category fit batch 265/442
+2026-08-29 11:54:05,167 INFO   Category fit batch 266/442
+2026-08-29 11:54:14,873 INFO   Category fit batch 267/442
+2026-08-29 11:54:24,170 INFO   Category fit batch 268/442
+2026-08-29 11:54:33,930 INFO   Category fit batch 269/442
+2026-08-29 11:54:43,668 INFO   Category fit batch 270/442
+2026-08-29 11:54:53,221 INFO   Category fit batch 271/442
+2026-08-29 11:55:02,816 INFO   Category fit batch 272/442
+2026-08-29 11:55:12,221 INFO   Category fit batch 273/442
+2026-08-29 11:55:21,745 INFO   Category fit batch 274/442
+2026-08-29 11:55:31,141 INFO   Category fit batch 275/442
+2026-08-29 11:55:40,738 INFO   Category fit batch 276/442
+2026-08-29 11:55:50,152 INFO   Category fit batch 277/442
+2026-08-29 11:55:59,441 INFO   Category fit batch 278/442
+2026-08-29 11:56:08,866 INFO   Category fit batch 279/442
+2026-08-29 11:56:18,390 INFO   Category fit batch 280/442
+2026-08-29 11:56:28,000 INFO   Category fit batch 281/442
+2026-08-29 11:56:37,365 INFO   Category fit batch 282/442
+2026-08-29 11:56:46,900 INFO   Category fit batch 283/442
+2026-08-29 11:56:56,326 INFO   Category fit batch 284/442
+2026-08-29 11:57:05,643 INFO   Category fit batch 285/442
+2026-08-29 11:57:15,442 INFO   Category fit batch 286/442
+2026-08-29 11:57:25,085 INFO   Category fit batch 287/442
+2026-08-29 11:57:34,571 INFO   Category fit batch 288/442
+2026-08-29 11:57:44,228 INFO   Category fit batch 289/442
+2026-08-29 11:57:53,648 INFO   Category fit batch 290/442
+2026-08-29 11:58:03,430 INFO   Category fit batch 291/442
+2026-08-29 11:58:13,100 INFO   Category fit batch 292/442
+2026-08-29 11:58:22,757 INFO   Category fit batch 293/442
+2026-08-29 11:58:31,855 INFO   Category fit batch 294/442
+2026-08-29 11:58:41,860 INFO   Category fit batch 295/442
+2026-08-29 11:58:51,652 INFO   Category fit batch 296/442
+2026-08-29 11:59:01,213 INFO   Category fit batch 297/442
+2026-08-29 11:59:10,531 INFO   Category fit batch 298/442
+2026-08-29 11:59:20,113 INFO   Category fit batch 299/442
+2026-08-29 11:59:29,236 INFO   Category fit batch 300/442
+2026-08-29 11:59:38,681 INFO   Category fit batch 301/442
+2026-08-29 11:59:48,049 INFO   Category fit batch 302/442
+2026-08-29 11:59:57,377 INFO   Category fit batch 303/442
+2026-08-29 12:00:06,860 INFO   Category fit batch 304/442
+2026-08-29 12:00:16,447 INFO   Category fit batch 305/442
+2026-08-29 12:00:25,704 INFO   Category fit batch 306/442
+2026-08-29 12:00:34,963 INFO   Category fit batch 307/442
+2026-08-29 12:00:44,408 INFO   Category fit batch 308/442
+2026-08-29 12:00:53,843 INFO   Category fit batch 309/442
+2026-08-29 12:01:03,199 INFO   Category fit batch 310/442
+2026-08-29 12:01:12,790 INFO   Category fit batch 311/442
+2026-08-29 12:01:22,067 INFO   Category fit batch 312/442
+2026-08-29 12:01:31,434 INFO   Category fit batch 313/442
+2026-08-29 12:01:40,810 INFO   Category fit batch 314/442
+2026-08-29 12:01:50,300 INFO   Category fit batch 315/442
+2026-08-29 12:01:59,658 INFO   Category fit batch 316/442
+2026-08-29 12:02:09,011 INFO   Category fit batch 317/442
+2026-08-29 12:02:18,226 INFO   Category fit batch 318/442
+2026-08-29 12:02:27,773 INFO   Category fit batch 319/442
+2026-08-29 12:02:37,107 INFO   Category fit batch 320/442
+2026-08-29 12:02:46,656 INFO   Category fit batch 321/442
+2026-08-29 12:02:55,983 INFO   Category fit batch 322/442
+2026-08-29 12:03:05,410 INFO   Category fit batch 323/442
+2026-08-29 12:03:14,748 INFO   Category fit batch 324/442
+2026-08-29 12:03:24,045 INFO   Category fit batch 325/442
+2026-08-29 12:03:33,371 INFO   Category fit batch 326/442
+2026-08-29 12:03:43,251 INFO   Category fit batch 327/442
+2026-08-29 12:03:53,327 INFO   Category fit batch 328/442
+2026-08-29 12:04:02,981 INFO   Category fit batch 329/442
+2026-08-29 12:04:13,443 INFO   Category fit batch 330/442
+2026-08-29 12:04:24,097 INFO   Category fit batch 331/442
+2026-08-29 12:04:33,470 INFO   Category fit batch 332/442
+2026-08-29 12:04:42,845 INFO   Category fit batch 333/442
+2026-08-29 12:04:52,371 INFO   Category fit batch 334/442
+2026-08-29 12:05:02,570 INFO   Category fit batch 335/442
+2026-08-29 12:05:12,141 INFO   Category fit batch 336/442
+2026-08-29 12:05:21,600 INFO   Category fit batch 337/442
+2026-08-29 12:05:31,062 INFO   Category fit batch 338/442
+2026-08-29 12:05:40,526 INFO   Category fit batch 339/442
+2026-08-29 12:05:50,194 INFO   Category fit batch 340/442
+2026-08-29 12:05:59,373 INFO   Category fit batch 341/442
+2026-08-29 12:06:08,699 INFO   Category fit batch 342/442
+2026-08-29 12:06:17,943 INFO   Category fit batch 343/442
+2026-08-29 12:06:27,208 INFO   Category fit batch 344/442
+2026-08-29 12:06:36,489 INFO   Category fit batch 345/442
+2026-08-29 12:06:45,912 INFO   Category fit batch 346/442
+2026-08-29 12:06:57,855 INFO   Category fit batch 347/442
+2026-08-29 12:07:07,260 INFO   Category fit batch 348/442
+2026-08-29 12:07:16,684 INFO   Category fit batch 349/442
+2026-08-29 12:07:26,238 INFO   Category fit batch 350/442
+2026-08-29 12:07:35,529 INFO   Category fit batch 351/442
+2026-08-29 12:07:44,847 INFO   Category fit batch 352/442
+2026-08-29 12:07:53,945 INFO   Category fit batch 353/442
+2026-08-29 12:08:03,573 INFO   Category fit batch 354/442
+2026-08-29 12:08:13,125 INFO   Category fit batch 355/442
+2026-08-29 12:08:22,081 INFO   Category fit batch 356/442
+2026-08-29 12:08:31,340 INFO   Category fit batch 357/442
+2026-08-29 12:08:40,838 INFO   Category fit batch 358/442
+2026-08-29 12:08:50,218 INFO   Category fit batch 359/442
+2026-08-29 12:08:59,944 INFO   Category fit batch 360/442
+2026-08-29 12:09:09,310 INFO   Category fit batch 361/442
+2026-08-29 12:09:18,969 INFO   Category fit batch 362/442
+2026-08-29 12:09:28,358 INFO   Category fit batch 363/442
+2026-08-29 12:09:37,915 INFO   Category fit batch 364/442
+2026-08-29 12:09:47,531 INFO   Category fit batch 365/442
+2026-08-29 12:09:56,910 INFO   Category fit batch 366/442
+2026-08-29 12:10:06,585 INFO   Category fit batch 367/442
+2026-08-29 12:10:17,836 INFO   Category fit batch 368/442
+2026-08-29 12:10:27,580 INFO   Category fit batch 369/442
+2026-08-29 12:10:37,298 INFO   Category fit batch 370/442
+2026-08-29 12:10:46,585 INFO   Category fit batch 371/442
+2026-08-29 12:10:56,183 INFO   Category fit batch 372/442
+2026-08-29 12:11:05,791 INFO   Category fit batch 373/442
+2026-08-29 12:11:15,345 INFO   Category fit batch 374/442
+2026-08-29 12:11:24,562 INFO   Category fit batch 375/442
+2026-08-29 12:11:34,111 INFO   Category fit batch 376/442
+2026-08-29 12:11:43,784 INFO   Category fit batch 377/442
+2026-08-29 12:11:53,467 INFO   Category fit batch 378/442
+2026-08-29 12:12:02,963 INFO   Category fit batch 379/442
+2026-08-29 12:12:12,385 INFO   Category fit batch 380/442
+2026-08-29 12:12:21,713 INFO   Category fit batch 381/442
+2026-08-29 12:12:31,218 INFO   Category fit batch 382/442
+2026-08-29 12:12:42,446 INFO   Category fit batch 383/442
+2026-08-29 12:12:52,086 INFO   Category fit batch 384/442
+2026-08-29 12:13:01,516 INFO   Category fit batch 385/442
+2026-08-29 12:13:11,533 INFO   Category fit batch 386/442
+2026-08-29 12:13:20,907 INFO   Category fit batch 387/442
+2026-08-29 12:13:30,705 INFO   Category fit batch 388/442
+2026-08-29 12:13:39,842 INFO   Category fit batch 389/442
+2026-08-29 12:13:49,412 INFO   Category fit batch 390/442
+2026-08-29 12:13:58,839 INFO   Category fit batch 391/442
+2026-08-29 12:14:08,298 INFO   Category fit batch 392/442
+2026-08-29 12:14:17,850 INFO   Category fit batch 393/442
+2026-08-29 12:14:27,786 INFO   Category fit batch 394/442
+2026-08-29 12:14:37,418 INFO   Category fit batch 395/442
+2026-08-29 12:14:46,789 INFO   Category fit batch 396/442
+2026-08-29 12:14:56,275 INFO   Category fit batch 397/442
+2026-08-29 12:15:05,903 INFO   Category fit batch 398/442
+2026-08-29 12:15:15,772 INFO   Category fit batch 399/442
+2026-08-29 12:15:25,467 INFO   Category fit batch 400/442
+2026-08-29 12:15:34,959 INFO   Category fit batch 401/442
+2026-08-29 12:15:44,260 INFO   Category fit batch 402/442
+2026-08-29 12:15:53,678 INFO   Category fit batch 403/442
+2026-08-29 12:16:03,078 INFO   Category fit batch 404/442
+2026-08-29 12:16:12,335 INFO   Category fit batch 405/442
+2026-08-29 12:16:22,020 INFO   Category fit batch 406/442
+2026-08-29 12:16:30,917 INFO   Category fit batch 407/442
+2026-08-29 12:16:40,202 INFO   Category fit batch 408/442
+2026-08-29 12:16:49,589 INFO   Category fit batch 409/442
+2026-08-29 12:16:58,919 INFO   Category fit batch 410/442
+2026-08-29 12:17:08,219 INFO   Category fit batch 411/442
+2026-08-29 12:17:17,828 INFO   Category fit batch 412/442
+2026-08-29 12:17:27,807 INFO   Category fit batch 413/442
+2026-08-29 12:17:37,143 INFO   Category fit batch 414/442
+2026-08-29 12:17:46,581 INFO   Category fit batch 415/442
+2026-08-29 12:17:55,825 INFO   Category fit batch 416/442
+2026-08-29 12:18:05,186 INFO   Category fit batch 417/442
+2026-08-29 12:18:14,463 INFO   Category fit batch 418/442
+2026-08-29 12:18:25,495 INFO   Category fit batch 419/442
+2026-08-29 12:18:34,515 INFO   Category fit batch 420/442
+2026-08-29 12:18:44,203 INFO   Category fit batch 421/442
+2026-08-29 12:18:53,745 INFO   Category fit batch 422/442
+2026-08-29 12:19:03,339 INFO   Category fit batch 423/442
+2026-08-29 12:19:12,430 INFO   Category fit batch 424/442
+2026-08-29 12:19:22,079 INFO   Category fit batch 425/442
+2026-08-29 12:19:31,613 INFO   Category fit batch 426/442
+2026-08-29 12:19:41,241 INFO   Category fit batch 427/442
+2026-08-29 12:19:50,422 INFO   Category fit batch 428/442
+2026-08-29 12:20:00,132 INFO   Category fit batch 429/442
+2026-08-29 12:20:09,653 INFO   Category fit batch 430/442
+2026-08-29 12:20:18,817 INFO   Category fit batch 431/442
+2026-08-29 12:20:28,363 INFO   Category fit batch 432/442
+2026-08-29 12:20:38,047 INFO   Category fit batch 433/442
+2026-08-29 12:20:47,359 INFO   Category fit batch 434/442
+2026-08-29 12:20:56,706 INFO   Category fit batch 435/442
+2026-08-29 12:21:06,288 INFO   Category fit batch 436/442
+2026-08-29 12:21:15,644 INFO   Category fit batch 437/442
+2026-08-29 12:21:25,075 INFO   Category fit batch 438/442
+2026-08-29 12:21:34,578 INFO   Category fit batch 439/442
+2026-08-29 12:21:44,348 INFO   Category fit batch 440/442
+2026-08-29 12:21:53,721 INFO   Category fit batch 441/442
+2026-08-29 12:22:02,271 INFO   Category fit batch 442/442
+2026-08-29 12:22:02,840 INFO === Phase 6: Filtering ===
+2026-08-29 12:22:02,847 INFO   Filtered: 6628 -> 1222 (removed: {'papers': 0, 'stage': 1697, 'institution': 17, 'country': 1425, 'name': 0, 'category': 2267, 'dedup': 0}, flagged: {'stretch': 404, 'unlikely': 9})
+2026-08-29 12:22:02,848 INFO === Phase 6b: Fallback Enrichment + Emails ===
+2026-08-29 12:22:07,607 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:22:23,265 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:22:28,451 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:22:38,652 WARNING S2 429 on author/search, sleeping 20s
+2026-08-29 12:22:58,832 WARNING S2 429 on author/search, sleeping 40s
+2026-08-29 12:23:39,179 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:24:04,444 WARNING OpenAlex 429 — cooldown enforced (900s)
+2026-08-29 12:24:07,818 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:24:16,554 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:24:21,700 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:24:38,858 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:25:01,502 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:25:10,187 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:25:18,830 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:25:30,971 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:25:36,158 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:25:46,346 WARNING S2 429 on author/search, sleeping 20s
+2026-08-29 12:26:20,530 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:26:43,178 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:26:48,348 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:27:12,547 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:27:24,748 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:27:29,902 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:27:43,556 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:27:48,669 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:27:58,809 WARNING S2 429 on author/search, sleeping 20s
+2026-08-29 12:28:32,979 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:28:41,928 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:28:50,585 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:28:55,747 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:29:05,901 WARNING S2 429 on author/search, sleeping 20s
+2026-08-29 12:29:33,045 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:29:45,234 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:29:50,388 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:30:00,533 WARNING S2 429 on author/search, sleeping 20s
+2026-08-29 12:30:24,167 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:30:29,367 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:30:43,025 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:30:48,184 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:30:58,341 WARNING S2 429 on author/search, sleeping 20s
+2026-08-29 12:31:21,984 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:31:30,603 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:31:46,284 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:31:58,458 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:32:03,707 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:32:13,911 WARNING S2 429 on author/search, sleeping 20s
+2026-08-29 12:32:34,076 WARNING S2 429 on author/search, sleeping 40s
+2026-08-29 12:33:14,212 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:33:19,346 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:33:32,996 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:33:38,166 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:33:48,303 WARNING S2 429 on author/search, sleeping 20s
+2026-08-29 12:34:08,445 WARNING S2 429 on author/search, sleeping 40s
+2026-08-29 12:35:06,088 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:35:14,731 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:35:26,912 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:35:35,587 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:35:40,718 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:35:57,915 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:36:03,079 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:36:20,235 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:36:28,927 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:36:34,106 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:36:44,269 WARNING S2 429 on author/search, sleeping 20s
+2026-08-29 12:37:04,396 WARNING S2 429 on author/search, sleeping 40s
+2026-08-29 12:37:48,464 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:37:57,132 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:38:05,785 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:39:04,632 WARNING OpenAlex 429 — cooldown enforced (900s)
+2026-08-29 12:39:04,764 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:39:13,393 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:39:18,544 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:39:32,183 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:39:40,872 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:39:46,033 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:39:56,168 WARNING S2 429 on author/search, sleeping 20s
+2026-08-29 12:40:19,818 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:40:24,965 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:40:38,630 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:40:47,297 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:40:52,458 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:41:09,620 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:41:14,773 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:41:24,948 WARNING S2 429 on author/search, sleeping 20s
+2026-08-29 12:41:55,618 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:42:00,741 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:42:21,395 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:42:26,575 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:42:40,214 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:42:45,411 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:43:13,078 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:43:21,735 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:43:26,879 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:43:37,063 WARNING S2 429 on author/search, sleeping 20s
+2026-08-29 12:44:07,716 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:44:12,857 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:44:23,036 WARNING S2 429 on author/search, sleeping 20s
+2026-08-29 12:44:46,741 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:44:55,385 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:45:00,515 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:46:10,234 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:46:15,427 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:46:25,558 WARNING S2 429 on author/search, sleeping 20s
+2026-08-29 12:46:45,747 WARNING S2 429 on author/search, sleeping 40s
+2026-08-29 12:47:32,914 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:48:02,569 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:48:14,707 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:48:19,834 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:48:33,535 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:48:38,684 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:48:52,359 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:48:57,554 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:49:11,208 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:49:26,870 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:49:32,052 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:49:49,194 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:50:01,337 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:50:06,469 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:50:20,154 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:50:28,821 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:50:33,954 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:50:44,143 WARNING S2 429 on author/search, sleeping 20s
+2026-08-29 12:51:04,281 WARNING S2 429 on author/search, sleeping 40s
+2026-08-29 12:51:47,934 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:51:53,071 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:52:06,737 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:52:15,371 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:52:31,031 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:52:36,198 WARNING S2 429 on author/search, sleeping 10s
+2026-08-29 12:52:46,354 WARNING S2 429 on author/search, sleeping 20s
+2026-08-29 12:53:06,527 WARNING S2 429 on author/search, sleeping 40s
+2026-08-29 12:54:04,832 WARNING OpenAlex 429 — cooldown enforced (900s)
+2026-08-29 12:54:11,964 WARNING S2 429 on author/search, sleeping 5s
+2026-08-29 12:54:31,208 INFO   Name-based fallback enriched: 335
+2026-08-29 12:54:31,217 INFO Loaded email cache with 2218 entries
+2026-08-29 12:54:31,219 INFO Loaded institution domain cache with 2169 entries
+2026-08-29 12:54:31,219 INFO No S2_API_KEY — using 1 req/sec rate limit. Set S2_API_KEY for 10x speed.
+2026-08-29 13:59:23,552 INFO   900/1222 | verified=192 inferred=437 (cached=383)
+2026-08-29 14:14:50,383 INFO   1000/1222 | verified=201 inferred=520 (cached=391)
+2026-08-29 14:31:53,940 INFO Done: 928/1222 emails (224 verified, 704 inferred, 498 cached)
+2026-08-29 14:31:53,943 INFO   Emails found: 928/1222
+2026-08-29 14:31:53,943 INFO === Phase 7: Output ===
+2026-08-29 14:31:53,956 INFO   combined.csv: 1222 researchers
+2026-08-29 14:31:53,958 INFO   world_models.csv: 138 researchers
+2026-08-29 14:31:53,960 INFO   agentic_benchmarks.csv: 320 researchers
+2026-08-29 14:31:53,961 INFO   stem_benchmarks.csv: 245 researchers
+2026-08-29 14:31:53,964 INFO   benchmarks.csv: 518 researchers
+2026-08-29 14:31:53,966 INFO   environment_generation.csv: 201 researchers
+2026-08-29 14:31:53,968 INFO   post_training.csv: 410 researchers
+2026-08-29 14:31:54,255 INFO   researchers.xlsx: 6 position tab(s) + Combined
+2026-08-29 14:31:54,279 INFO Done.

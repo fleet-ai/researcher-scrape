@@ -1,0 +1,91 @@
+2026-07-14 05:42:47,069 INFO Dedup against 0 existing names
+2026-07-14 05:42:47,069 INFO === Phase 1: Resolve Seeds ===
+2026-07-14 05:42:47,595 INFO   Seed paper: Synthetic Computers at Scale for Long-Horizon Productivity Simulation
+2026-07-14 05:42:47,999 INFO   Seed paper: Autodata: An agentic data scientist to create high quality synthetic data
+2026-07-14 05:42:48,519 INFO   Seed paper: From Trainee to Trainer: LLM-Designed Training Environment for RL with Multi-Age
+2026-07-14 05:42:48,976 INFO   Seed paper: Toward Autonomous Long-Horizon Engineering for ML Research
+2026-07-14 05:42:49,495 INFO   Seed paper: Agentopia: Long-Term Life Simulation and Learning in Agent Societies
+2026-07-14 05:42:50,023 INFO   Seed paper: Autogenesis: A Self-Evolving Agent Protocol
+2026-07-14 05:42:55,437 INFO   Seed paper: Digital Red Queen: Adversarial Program Evolution in Core War with LLMs
+2026-07-14 05:42:55,907 INFO   Seed paper: OpenClaw-Skill: Collective Skill Tree Search for Agentic Large Language Models
+2026-07-14 05:42:56,465 INFO   Seed paper: SkillNet: Create, Evaluate, and Connect AI Skills
+2026-07-14 05:42:56,836 INFO   Seed paper: Co-Evolving LLM Decision and Skill Bank Agents for Long-Horizon Tasks
+2026-07-14 05:42:57,392 INFO   Seed paper: Discovering Multiagent Learning Algorithms with Large Language Models
+2026-07-14 05:42:57,864 INFO   Seed paper: Human-like autonomy emerges from self-play and a pinch of human data
+2026-07-14 05:42:58,463 INFO   Seed paper: Emergent Complexity and Zero-shot Transfer via Unsupervised Environment Design
+2026-07-14 05:42:58,873 INFO   Seed paper: MLGym: A New Framework and Benchmark for Advancing AI Research Agents
+2026-07-14 05:42:59,375 INFO   Seed paper: TaskCraft: Automated Generation of Agentic Tasks
+2026-07-14 05:42:59,891 INFO   Seed paper: R-Zero: Self-Evolving Reasoning LLM from Zero Data
+2026-07-14 05:43:00,448 INFO   Seed paper: Scaling Agent Learning via Experience Synthesis
+2026-07-14 05:43:05,881 INFO   Seed paper: AutoForge: Automated Environment Synthesis for Agentic Reinforcement Learning
+2026-07-14 05:43:06,318 INFO   Seed paper: AutoEnv: Automated Environments for Measuring Cross-Environment Agent Learning
+2026-07-14 05:43:06,775 INFO   Seed paper: Gym-Anything: Turn any Software into an Agent Environment
+2026-07-14 05:43:07,304 INFO   Seed paper: Anchored Self-Play for Code Repair
+2026-07-14 05:43:07,787 INFO   Seed paper: PlanBench-XL: Evaluating Long-Horizon Planning of LLM Tool-Use Agents in Large-S
+2026-07-14 05:43:08,275 INFO   Seed paper: The Red Queen Gödel Machine: Co-Evolving Agents and Their Evaluators
+2026-07-14 05:43:09,715 INFO   Seed researcher: Sam Earle (New York University), 10 papers queued
+2026-07-14 05:43:09,715 INFO   Seeds resolved: 33 papers queued, 1 seed researchers
+2026-07-14 05:43:09,715 INFO === Phase 2: Graph Expansion (depth=2) ===
+2026-07-14 05:43:09,715 INFO   Level 0: fetching 33 papers (1 batch calls)
+2026-07-14 05:43:27,391 INFO   Level 1: fetching 50 papers (1 batch calls)
+2026-07-14 05:44:05,055 INFO   Level 2: fetching 2039 papers (41 batch calls)
+2026-07-14 05:44:45,462 INFO   Processed 500 papers, 1564 researchers
+2026-07-14 05:44:45,471 INFO   Processed 1000 papers, 3271 researchers
+2026-07-14 05:44:45,476 INFO   Processed 1500 papers, 4419 researchers
+2026-07-14 05:44:45,481 INFO   Processed 2000 papers, 6015 researchers
+2026-07-14 05:44:45,483 INFO   BFS done: 2122 papers processed, 6420 researchers found
+2026-07-14 05:44:45,485 INFO === Phase 2b: Topic Search ===
+2026-07-14 05:44:45,485 INFO   Total researchers after expansion: 6420
+2026-07-14 05:44:45,515 INFO   Expansion state saved (6420 researchers, depth=2)
+2026-07-14 05:44:45,516 INFO   Deep-frontier gate (depth>=2 needs 2+ in-graph papers): 6420 -> 1041
+2026-07-14 05:44:45,516 INFO === Phase 3: Profile Enrichment (by author ID) ===
+2026-07-14 05:44:45,526 INFO   ID-based enrichment: 999 researchers with OpenAlex IDs (5329 cached, 4 to fetch)
+2026-07-14 05:44:46,062 INFO   Fetched 4/4 profiles...
+2026-07-14 05:44:46,077 INFO   ID-based enrichment done: 997/999
+2026-07-14 05:44:46,087 INFO === Phase 4: Career Stage Classification ===
+2026-07-14 05:44:46,087 INFO   Classifying 14 researchers (1029 cached)
+2026-07-14 05:44:57,627 INFO   Career stage batch 1/1
+2026-07-14 05:44:58,154 INFO === Phase 5: Category Classification ===
+2026-07-14 05:44:58,155 INFO   Classifying 14 researchers into 1 categories (1029 cached)
+2026-07-14 05:45:02,443 INFO   Category fit batch 1/1
+2026-07-14 05:45:02,965 INFO === Phase 6: Filtering ===
+2026-07-14 05:45:02,968 INFO   Filtered: 1041 -> 205 (removed: {'papers': 0, 'stage': 155, 'institution': 9, 'country': 183, 'name': 0, 'category': 489, 'dedup': 0}, flagged: {'stretch': 96, 'unlikely': 1})
+2026-07-14 05:45:02,968 INFO === Phase 6b: Fallback Enrichment + Emails ===
+2026-07-14 05:45:02,975 INFO   Name-based fallback enriched: 26
+2026-07-14 05:45:02,978 INFO Loaded email cache with 2031 entries
+2026-07-14 05:45:02,979 INFO Loaded institution domain cache with 2153 entries
+2026-07-14 05:45:02,979 INFO No S2_API_KEY — using 1 req/sec rate limit. Set S2_API_KEY for 10x speed.
+2026-07-14 05:45:02,983 INFO Done: 175/205 emails (42 verified, 133 inferred, 175 cached)
+2026-07-14 05:45:02,983 INFO   Emails found: 175/205
+2026-07-14 05:45:02,984 INFO === Phase 7: Output ===
+2026-07-14 05:45:02,986 INFO   combined.csv: 205 researchers
+2026-07-14 05:45:02,988 INFO   environment_generation.csv: 205 researchers
+2026-07-14 05:45:03,141 INFO   researchers.xlsx: 1 position tab(s)
+2026-07-14 05:45:03,144 INFO Done.
+2026-07-14 05:45:03,453 INFO [Environment Generation] verifying top 120 of 205 candidates
+2026-07-14 05:45:03,454 INFO   [3] Yixin Nie: identity not confirmed, skipping
+2026-07-14 05:45:03,454 INFO   [Environment Generation] 10/120 verified, 9 confirmed
+2026-07-14 05:45:03,454 INFO   [Environment Generation] 20/120 verified, 19 confirmed
+2026-07-14 05:45:03,454 INFO   [Environment Generation] 30/120 verified, 29 confirmed
+2026-07-14 05:45:20,706 INFO   [37] Lei Chen: identity not confirmed, skipping
+2026-07-14 05:45:27,690 INFO   [39] Ambroise Odonnat: identity not confirmed, skipping
+2026-07-14 05:45:27,690 INFO   [Environment Generation] 40/120 verified, 37 confirmed
+2026-07-14 05:45:27,690 INFO   [45] Benjamin Eysenbach: identity not confirmed, skipping
+2026-07-14 05:45:27,691 INFO   [Environment Generation] 50/120 verified, 46 confirmed
+2026-07-14 05:45:27,691 INFO   [51] Yunzhe Tao: identity not confirmed, skipping
+2026-07-14 05:45:27,691 INFO   [Environment Generation] 60/120 verified, 55 confirmed
+2026-07-14 05:45:27,691 INFO   [Environment Generation] 70/120 verified, 65 confirmed
+2026-07-14 05:45:27,692 INFO   [Environment Generation] 80/120 verified, 75 confirmed
+2026-07-14 05:45:39,057 INFO   [83] Jason Weston: identity not confirmed, skipping
+2026-07-14 05:45:47,121 INFO   [84] Xian Li: identity not confirmed, skipping
+2026-07-14 05:45:55,792 INFO   [85] Nicholas D. Lane: identity not confirmed, skipping
+2026-07-14 05:47:21,259 INFO   [89] Han Fang: identity not confirmed, skipping
+2026-07-14 05:47:29,034 INFO   [90] Wenwen Li: identity not confirmed, skipping
+2026-07-14 05:49:57,543 INFO   [Environment Generation] 100/120 verified, 90 confirmed
+2026-07-14 05:50:26,392 INFO   [103] Chengzu Li: identity not confirmed, skipping
+2026-07-14 05:51:29,043 INFO   [107] Becky Powell: identity not confirmed, skipping
+2026-07-14 05:52:30,679 INFO   [Environment Generation] 110/120 verified, 98 confirmed
+2026-07-14 05:56:15,292 INFO   [Environment Generation] 120/120 verified, 108 confirmed
+2026-07-14 05:56:15,298 INFO [Environment Generation] shortlist written: data/env_depth2/shortlist_environment_generation.csv (108 rows)
+2026-07-14 05:56:15,432 INFO Shortlist workbook: data/env_depth2/shortlist.xlsx
+2026-07-14 05:56:15,432 INFO Done.

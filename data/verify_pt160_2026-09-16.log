@@ -1,0 +1,196 @@
+2026-09-16 12:48:09,351 INFO [Post Training] filling 160 Yes/Maybe slots from 386 candidates (verify cap 386)
+2026-09-16 12:48:09,351 INFO   [1] Hao Li: identity not confirmed, skipping
+2026-09-16 12:48:09,351 INFO   [2] Cheng Peng: identity not confirmed, skipping
+2026-09-16 12:48:09,351 INFO   [3] Yan Wang: identity not confirmed, skipping
+2026-09-16 12:48:09,351 INFO   [4] Jia Li: identity not confirmed, skipping
+2026-09-16 12:48:09,352 INFO   [7] Can Ren: identity not confirmed, skipping
+2026-09-16 12:48:09,352 INFO   [9] Qun Liu: Unlikely - at Huawei, excluded
+2026-09-16 12:48:09,352 INFO   [Post Training] 10 examined, 4/160 slots filled
+2026-09-16 12:48:09,352 INFO   [12] Mihir Parmar: Unlikely - at Google, excluded
+2026-09-16 12:48:09,352 INFO   [19] Richard Yuanzhe Pang: Unlikely - at Meta FAIR, excluded
+2026-09-16 12:48:09,352 INFO   [Post Training] 20 examined, 12/160 slots filled
+2026-09-16 12:48:09,352 INFO   [25] Shikhar Murty: Unlikely - at DeepMind, excluded
+2026-09-16 12:48:09,352 INFO   [28] Jakub Grudzien Kuba: Unlikely - at DeepMind, excluded
+2026-09-16 12:48:09,352 INFO   [Post Training] 30 examined, 20/160 slots filled
+2026-09-16 12:48:09,352 INFO   [32] Huaxiu Yao: Unlikely - tenure-track faculty, excluded
+2026-09-16 12:48:09,353 INFO   [33] Ali Behrouz: Unlikely - at Google, excluded
+2026-09-16 12:48:09,353 INFO   [36] Sha Yi: Unlikely - joining Physical Intelligence then NYU faculty, excluded
+2026-09-16 12:48:09,353 INFO   [39] David Brandfonbrener: Unlikely - at Anthropic, excluded
+2026-09-16 12:48:09,353 INFO   [Post Training] 40 examined, 26/160 slots filled
+2026-09-16 12:48:09,353 INFO   [41] G. Liu: Unlikely - at Meta MSL, excluded
+2026-09-16 12:48:09,353 INFO   [42] Farnoosh Hashemi: identity not confirmed, skipping
+2026-09-16 12:48:09,353 INFO   [Post Training] 50 examined, 34/160 slots filled
+2026-09-16 12:48:09,353 INFO   [51] Jinglue Xu: identity not confirmed, skipping
+2026-09-16 12:48:09,353 INFO   [52] Cihang Xie: identity not confirmed, skipping
+2026-09-16 12:48:09,353 INFO   [55] Guojian Zhan: identity not confirmed, skipping
+2026-09-16 12:48:09,353 INFO   [Post Training] 60 examined, 41/160 slots filled
+2026-09-16 12:48:09,353 INFO   [61] Yuxiang Wei: Unlikely - at Meta, excluded
+2026-09-16 12:48:09,353 INFO   [68] Zhibin Gou: Unlikely - at DeepSeek, excluded
+2026-09-16 12:48:09,353 INFO   [Post Training] 70 examined, 49/160 slots filled
+2026-09-16 12:48:09,353 INFO   [Post Training] 80 examined, 59/160 slots filled
+2026-09-16 12:48:09,353 INFO   [84] Haozheng Luo: identity not confirmed, skipping
+2026-09-16 12:48:09,353 INFO   [87] Zhuokai Zhao: Unlikely - at Meta, excluded
+2026-09-16 12:48:09,353 INFO   [Post Training] 90 examined, 67/160 slots filled
+2026-09-16 12:48:09,353 INFO   [95] Yiran Chen: identity not confirmed, skipping
+2026-09-16 12:48:09,353 INFO   [98] Yijiang Li: identity not confirmed, skipping
+2026-09-16 12:48:09,353 INFO   [99] Weiwen Liu: Unlikely - tenured faculty, excluded
+2026-09-16 12:48:09,353 INFO   [Post Training] 100 examined, 74/160 slots filled
+2026-09-16 12:48:09,353 INFO   [102] Wentao Zhang: identity not confirmed, skipping
+2026-09-16 12:48:09,353 INFO   [107] Lingming Zhang: Unlikely - tenured faculty, excluded
+2026-09-16 12:48:30,908 INFO   [Post Training] 110 examined, 82/160 slots filled
+2026-09-16 12:48:40,351 INFO   [111] Owen Oertell: Unlikely - just joined Databricks Aug 2025, excluded
+2026-09-16 12:50:02,604 INFO   [117] Andrew Zhao: identity not confirmed, skipping
+2026-09-16 12:50:32,390 INFO   [120] Jun Yan: Unlikely - at Google DeepMind, excluded
+2026-09-16 12:50:49,970 INFO   [123] Etash Guha: Unlikely - at Anthropic, excluded
+2026-09-16 12:51:28,502 INFO   [125] Wang, Chutian: identity not confirmed, skipping
+2026-09-16 12:51:47,873 INFO   [127] Z. Liang: Unlikely - at Apodex, excluded
+2026-09-16 12:52:01,082 INFO   [128] Qianglong Chen: identity not confirmed, skipping
+2026-09-16 12:52:17,654 INFO   [130] Guertler, Leon: Unlikely - at xAI, excluded
+2026-09-16 12:53:02,508 INFO   [134] B. L. Wang: Unlikely - at Apodex (building foundation LLMs & agents since May 2025), excluded
+2026-09-16 12:53:12,170 INFO   [135] Sewon Min: Unlikely - new faculty, excluded
+2026-09-16 12:53:43,829 INFO   [137] Aviral Kumar: Unlikely - CMU Assistant Professor, excluded
+2026-09-16 12:53:56,471 INFO   [138] Chuan Guo: Unlikely - at OpenAI, excluded
+2026-09-16 12:54:18,838 INFO   [140] Daniel Fried: Unlikely - tenured track faculty, excluded
+2026-09-16 12:55:00,350 INFO   [143] Tiankai Li: identity not confirmed, skipping
+2026-09-16 12:55:08,902 INFO   [144] Linjie Li: Unlikely - at Microsoft Office of CTO, excluded
+2026-09-16 12:55:19,216 INFO   [145] Shital Shah: identity not confirmed, skipping
+2026-09-16 12:55:27,408 INFO   [146] Barlas Oğuz: Unlikely - senior at Meta FAIR, excluded
+2026-09-16 12:56:13,989 INFO   [150] Edith R. Saunders: identity not confirmed, skipping
+2026-09-16 12:56:21,658 INFO   [151] Maksym Andriushchenko: Unlikely - just started PI position, excluded
+2026-09-16 12:56:29,582 INFO   [152] Zuxin Liu: Unlikely - at OpenAI, excluded
+2026-09-16 12:56:36,781 INFO   [153] Wenpeng Hu: identity not confirmed, skipping
+2026-09-16 12:56:54,016 INFO   [156] David R. So: Unlikely - at Microsoft AI, excluded
+2026-09-16 12:57:04,536 INFO   [157] Xujiang Zhao: Unlikely - at Meta, excluded
+2026-09-16 12:57:33,443 INFO   [Post Training] 160 examined, 109/160 slots filled
+2026-09-16 12:57:51,080 INFO   [162] Senthil Purushwalkam: Unlikely - at OpenAI, excluded
+2026-09-16 12:57:58,679 INFO   [163] Nikhil Naik: Unlikely - at Meta MSL, excluded
+2026-09-16 12:58:41,346 INFO   [167] Aram Markosyan: Unlikely - just joined NVIDIA (1 month ago from Axiom Math), excluded
+2026-09-16 12:58:53,004 INFO   [168] Guoyang Zeng: Unlikely - CTO/Cofounder at funded startup, excluded
+2026-09-16 12:58:53,004 INFO   [169] Flood Sung: identity not confirmed, skipping
+2026-09-16 12:59:01,127 INFO   [170] Karina Nguyen: Unlikely - running own company, excluded
+2026-09-16 12:59:24,979 INFO   [172] Xinpeng Wei: Unlikely - at Amazon AGI, excluded
+2026-09-16 12:59:52,328 INFO   [176] Jessy Lin: Unlikely - cofounder at own startup, excluded
+2026-09-16 13:00:19,063 INFO   [179] Bram Wallace: Unlikely - at OpenAI, excluded
+2026-09-16 13:00:27,339 INFO   [180] Yuxiao Dong: Unlikely - tenured faculty, excluded
+2026-09-16 13:01:03,051 INFO   [184] Zhen Li: identity not confirmed, skipping
+2026-09-16 13:02:22,684 INFO   [190] Selvam Palanimalai: Unlikely - building own startup, excluded
+2026-09-16 13:02:34,569 INFO   [191] Jason Wei: Unlikely - at Meta, excluded
+2026-09-16 13:03:05,318 INFO   [194] Yujin Tang: Unlikely - Chief Scientist at Sakana AI, excluded
+2026-09-16 13:03:23,883 INFO   [196] Hua Yang: identity not confirmed, skipping
+2026-09-16 13:03:36,005 INFO   [197] Lifeng Shang: Unlikely - at Huawei, excluded
+2026-09-16 13:03:43,647 INFO   [198] Venkat Srinivasan: Unlikely - at NVIDIA, excluded
+2026-09-16 13:04:03,855 INFO   [200] Ming Liu: identity not confirmed, skipping
+2026-09-16 13:04:11,092 INFO   [201] Yilun Du: Unlikely - new faculty, excluded
+2026-09-16 13:04:47,042 INFO   [204] B. Wang: Unlikely - at Apodex, excluded
+2026-09-16 13:05:47,236 INFO   [208] Neil Houlsby: Unlikely - at Anthropic, excluded
+2026-09-16 13:05:56,307 INFO   [209] Ilias Leontiadis: Unlikely - at Google, excluded
+2026-09-16 13:06:22,821 INFO   [Post Training] 210 examined, 137/160 slots filled
+2026-09-16 13:06:41,006 INFO   [212] Gargi Ghosh: Unlikely - Senior Staff at Meta FAIR, excluded
+2026-09-16 13:06:49,653 INFO   [213] Zejun Ma: Unlikely - Director at ByteDance/TikTok, excluded
+2026-09-16 13:07:09,344 INFO   [215] Jiantao Jiao: Unlikely - NVIDIA Director, excluded
+2026-09-16 13:07:19,637 INFO   [216] Sainbayar Sukhbaatar: Unlikely - senior at Meta FAIR, excluded
+2026-09-16 13:07:27,429 INFO   [217] Thibault Sellam: Unlikely - at DeepMind, excluded
+2026-09-16 13:07:36,466 INFO   [218] Jonas Gehring: Unlikely - at stealth startup, excluded
+2026-09-16 13:08:02,622 INFO   [Post Training] 220 examined, 141/160 slots filled
+2026-09-16 13:08:13,720 INFO   [221] Hyokun Yun: Unlikely - at Meta, excluded
+2026-09-16 13:09:13,423 INFO   [226] Sudakov, Oleg: Unlikely - Senior SA at NVIDIA, excluded
+2026-09-16 13:09:21,528 INFO   [227] Z. Liu: identity not confirmed, skipping
+2026-09-16 13:09:30,498 INFO   [228] Ming-Ming Cheng: Unlikely - tenured professor, excluded
+2026-09-16 13:09:42,588 INFO   [229] B. Zhang: identity not confirmed, skipping
+2026-09-16 13:09:51,374 INFO   [230] Erfu Xie: identity not confirmed, skipping
+2026-09-16 13:09:59,667 INFO   [231] Z. Zhang: identity not confirmed, skipping
+2026-09-16 13:10:48,739 INFO   [234] Ying Liu: Unlikely - just joined Scale AI as Sr. Director of Research, excluded
+2026-09-16 13:10:58,836 INFO   [235] Mindverse Team: identity not confirmed, skipping
+2026-09-16 13:11:29,471 INFO   [238] Yang Liu: Unlikely - at Microsoft AI, excluded
+2026-09-16 13:11:36,303 INFO   [239] Steven C. H. Hoi: identity not confirmed, skipping
+2026-09-16 13:11:44,876 INFO   [240] Xiong, Caiming: Unlikely - Co-founder at Recursive, excluded
+2026-09-16 13:11:54,806 INFO   [241] J. Andrew Bagnell: Unlikely - Chief Scientist/Co-Founder at Aurora, excluded
+2026-09-16 13:12:03,074 INFO   [242] David Ha: Unlikely - Founder/CEO at Sakana AI, excluded
+2026-09-16 13:12:12,191 INFO   [243] Mind Lab: Unlikely - founder/CRO at own startup, excluded
+2026-09-16 13:12:24,756 INFO   [244] Sam Rodriques: Unlikely - CEO of two orgs (Edison Scientific for-profit + FutureHouse nonprofit), excluded
+2026-09-16 13:12:34,158 INFO   [245] Jason Weston: Unlikely - Senior Director at Meta FAIR, excluded
+2026-09-16 13:12:42,330 INFO   [246] Jan Kautz: Unlikely - VP of Learning & Perception Research at NVIDIA, excluded
+2026-09-16 13:12:50,619 INFO   [247] Inderjit S. Dhillon: Unlikely - Google Fellow/VP, excluded
+2026-09-16 13:12:59,049 INFO   [248] Doug Burger: Unlikely - Technical Fellow & CVP at Microsoft Research, excluded
+2026-09-16 13:13:10,629 INFO   [249] Xiaodong Liu: Unlikely - senior at MSR, excluded
+2026-09-16 13:13:25,455 INFO   [Post Training] 250 examined, 150/160 slots filled
+2026-09-16 13:13:33,982 INFO   [251] Rémi Munos: Unlikely - senior at DeepMind, excluded
+2026-09-16 13:13:42,965 INFO   [252] Shafiq Joty: Unlikely - Senior Research Director at Salesforce, excluded
+2026-09-16 13:13:52,394 INFO   [253] Donald Metzler: Unlikely - Senior Staff at DeepMind, excluded
+2026-09-16 13:14:01,273 INFO   [254] Paul Smolensky: Unlikely - established senior researcher at MSR, excluded
+2026-09-16 13:14:08,710 INFO   [255] Bryan Catanzaro: Unlikely - VP at NVIDIA, excluded
+2026-09-16 13:14:16,961 INFO   [256] Slav Petrov: Unlikely - just joined Inceptive as Chief AI Scientist (March 2026), excluded
+2026-09-16 13:14:25,746 INFO   [257] George Lee: Unlikely - at Google, excluded
+2026-09-16 13:14:34,021 INFO   [258] Mostafa Dehghani: Unlikely - at Google DeepMind, excluded
+2026-09-16 13:15:16,497 INFO   [260] Ahmed Hassan Awadallah: Unlikely - Partner Research Manager at MSFT, excluded
+2026-09-16 13:15:24,629 INFO   [261] Pavlo Molchanov: Unlikely - Director at NVIDIA Research, excluded
+2026-09-16 13:15:32,692 INFO   [262] Li Erran Li: Unlikely - just started stealth, excluded
+2026-09-16 13:15:41,912 INFO   [263] Scott A. Hale: Unlikely - just appointed Director of Oxford Internet Institute, excluded
+2026-09-16 13:15:49,539 INFO   [264] Mohammad Shoeybi: Unlikely - Senior Director at NVIDIA, excluded
+2026-09-16 13:15:59,956 INFO   [265] Oleksii Kuchaiev: identity not confirmed, skipping
+2026-09-16 13:16:10,114 INFO   [266] Ankur P. Parikh: Unlikely - Staff at DeepMind, excluded
+2026-09-16 13:16:27,571 INFO   [268] Xin Jiang: Unlikely - at Huawei, excluded
+2026-09-16 13:16:35,017 INFO   [269] Shuicheng Yan: identity not confirmed, skipping
+2026-09-16 13:16:45,611 INFO   [270] Xiangjun Wang: Unlikely - at Amazon AGI SF Lab, excluded
+2026-09-16 13:16:54,304 INFO   [271] Chen-Yu Lee: Unlikely - at Google, excluded
+2026-09-16 13:17:06,041 INFO   [272] Savarese, Silvio: identity not confirmed, skipping
+2026-09-16 13:17:15,124 INFO   [273] Bendris, Meriem: Unlikely - NVIDIA manager, excluded
+2026-09-16 13:17:28,122 INFO   [274] Takuya Akiba: Unlikely - at Sakana AI, excluded
+2026-09-16 13:17:35,565 INFO   [275] Wang, Huan: Unlikely - Senior Director at Salesforce, excluded
+2026-09-16 13:17:43,543 INFO   [276] Idan Szpektor: Unlikely - Principal Research Scientist at Google, excluded
+2026-09-16 13:17:50,485 INFO   [277] Xingxing Zhang: identity not confirmed, skipping
+2026-09-16 13:17:59,871 INFO   [278] Pieter Abbeel: Unlikely - Amazon VP/Distinguished Scientist, excluded
+2026-09-16 13:18:08,259 INFO   [279] Sham M. Kakade: Unlikely - Co-Director of Kempner Institute, excluded
+2026-09-16 13:18:17,555 INFO   [280] Neubig, Graham: Unlikely - tenured CMU faculty + startup chief scientist, excluded
+2026-09-16 13:18:27,932 INFO   [281] Luke Zettlemoyer: Unlikely - Meta FAIR leadership, excluded
+2026-09-16 13:18:38,503 INFO   [282] Sanjeev Arora: Unlikely - tenured full professor, NAS member, Gödel Prize winner, excluded
+2026-09-16 13:18:47,896 INFO   [283] Aaron Courville: Unlikely - senior academic leader, excluded
+2026-09-16 13:19:00,103 INFO   [284] Yejin Choi: Unlikely - MacArthur Fellow, endowed chair at Stanford, senior director at NVIDIA, excluded
+2026-09-16 13:19:08,195 INFO   [285] Kilian Q. Weinberger: Unlikely - tenured professor, ACM/AAAI Fellow, Director of Graduate Studies, excluded
+2026-09-16 13:19:16,936 INFO   [286] Christian Witt: Unlikely - Oxford PI with £3.5M funding, excluded
+2026-09-16 13:19:26,991 INFO   [287] Frank Hutter: Unlikely - CEO of own startup, excluded
+2026-09-16 13:19:34,665 INFO   [288] Thorsten Joachims: Unlikely - Vice Provost at Cornell, excluded
+2026-09-16 13:19:44,634 INFO   [289] Matthias Bethge: Unlikely - senior professor & startup founder, excluded
+2026-09-16 13:19:55,612 INFO   [290] William Yang Wang: Unlikely - tenured faculty, excluded
+2026-09-16 13:20:04,123 INFO   [291] Volker Tresp: Unlikely - tenured professor, excluded
+2026-09-16 13:20:13,817 INFO   [292] Aidong Zhang: Unlikely - tenured full professor, excluded
+2026-09-16 13:20:24,738 INFO   [293] Xueyang Fu: identity not confirmed, skipping
+2026-09-16 13:20:49,209 INFO   [295] Chitta Baral: Unlikely - tenured professor, excluded
+2026-09-16 13:20:57,747 INFO   [296] Yu-Chiang Frank Wang: Unlikely - NVIDIA Research Director, excluded
+2026-09-16 13:21:09,842 INFO   [297] Stefan Bekiranov: identity not confirmed, skipping
+2026-09-16 13:21:51,842 INFO   [Post Training] 300 examined, 156/160 slots filled
+2026-09-16 13:22:00,492 INFO   [301] Martin Wirsing: identity not confirmed, skipping
+2026-09-16 13:22:09,298 INFO   [302] Yuandong Tian: Unlikely - Co-founder at own startup (Recursive, founded Dec 2025), excluded
+2026-09-16 13:22:33,777 INFO   [304] Boxin Wang: Unlikely - Senior Research Scientist at NVIDIA, excluded
+2026-09-16 13:22:57,557 INFO   [306] Deepak Pathak: Unlikely - CEO of Skild AI (robotics foundation model startup, founded May 2023), excluded
+2026-09-16 13:23:07,272 INFO   [307] Feifei Li: identity not confirmed, skipping
+2026-09-16 13:23:15,278 INFO   [308] Himabindu Lakkaraju: Unlikely - tenured track at Harvard + Google senior role, excluded
+2026-09-16 13:23:24,274 INFO   [309] Aarti Singh: Unlikely - tenured full professor & NSF AI Institute Director, excluded
+2026-09-16 13:23:34,402 INFO   [310] Ludwig Schmidt: Unlikely - at Anthropic, excluded
+2026-09-16 13:23:43,236 INFO   [311] Aditya Grover: Unlikely - Co-founder/CTO at Inception (well-funded $57M startup building diffusion LLMs), excluded
+2026-09-16 13:23:52,933 INFO   [312] Natasha Jaques: Unlikely - tenured track faculty + DeepMind senior, excluded
+2026-09-16 13:24:01,763 INFO   [313] Madhur Mangalam: Unlikely - tenured track faculty, excluded
+2026-09-16 13:24:19,921 INFO   [315] Ming Yin: Unlikely - committed to Georgia Tech faculty position starting 2026, excluded
+2026-09-16 13:24:28,125 INFO   [316] Jack W. Stokes: Unlikely - at MSR, excluded
+2026-09-16 13:24:36,238 INFO   [317] Qi Qi: Unlikely - at Meta MSL, excluded
+2026-09-16 13:24:44,279 INFO   [318] Jonathan Frankle: Unlikely - Chief AI Scientist at Databricks, co-founded MosaicML (acquired for $1.3B), excluded
+2026-09-16 13:24:52,336 INFO   [319] Baharan Mirzasoleiman: Unlikely - tenured faculty, excluded
+2026-09-16 13:25:04,106 INFO   [320] Stefano Ermon: Unlikely - Founded Inception (diffusion LLM startup, $57M funding, Jul 2024), excluded
+2026-09-16 13:25:10,231 INFO   [321] Adel Javanmard: identity not confirmed, skipping
+2026-09-16 13:25:24,000 INFO   [322] Jia Guo: identity not confirmed, skipping
+2026-09-16 13:25:32,062 INFO   [323] Sicong Huang: identity not confirmed, skipping
+2026-09-16 13:25:41,105 INFO   [324] Geoff Pleiss: Unlikely - tenured track faculty, excluded
+2026-09-16 13:25:49,363 INFO   [325] Thomas Gabor: Unlikely - tenured professor, excluded
+2026-09-16 13:26:01,006 INFO [Post Training] examined 327: 160 listed, 125 unlikely (excluded), 41 unconfirmed (skipped)
+2026-09-16 13:26:01,015 INFO [Post Training] shortlist written: data/expand_output/shortlist_post_training.csv (160 rows)
+Traceback (most recent call last):
+  File "/Users/deniz/repos/arxiv-profile-scrape/verify_shortlist.py", line 309, in <module>
+    main()
+    ~~~~^^
+  File "/Users/deniz/repos/arxiv-profile-scrape/verify_shortlist.py", line 304, in main
+    write_shortlist_xlsx(tabs, in_dir / "shortlist.xlsx")
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deniz/repos/arxiv-profile-scrape/verify_shortlist.py", line 265, in write_shortlist_xlsx
+    ws.column_dimensions[ws.cell(row=1, column=i).column_letter].width = widths[f]
+                                                                         ~~~~~~^^^
+KeyError: 'LinkedIn'

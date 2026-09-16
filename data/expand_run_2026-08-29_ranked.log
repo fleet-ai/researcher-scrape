@@ -1,0 +1,30 @@
+2026-08-29 20:32:32,236 INFO Dedup against 0 existing names
+2026-08-29 20:32:32,242 INFO === Resumed: 6628 researchers, 1523 seen papers ===
+2026-08-29 20:32:32,242 INFO === Phase 3: Profile Enrichment (by author ID) ===
+2026-08-29 20:32:32,257 INFO   ID-based enrichment: 6392 researchers with OpenAlex IDs (9252 cached, 0 to fetch)
+2026-08-29 20:32:32,272 INFO   ID-based enrichment done: 6366/6392
+2026-08-29 20:32:32,299 INFO === Phase 4: Career Stage Classification ===
+2026-08-29 20:32:32,320 INFO === Phase 5: Category Classification ===
+2026-08-29 20:32:32,324 INFO   Classifying 15 researchers into 6 categories (7931 cached)
+2026-08-29 20:32:34,731 INFO   Category fit batch 1/1
+2026-08-29 20:32:35,274 INFO === Phase 6: Filtering ===
+2026-08-29 20:32:35,280 INFO   Filtered: 6628 -> 1222 (removed: {'papers': 0, 'stage': 1697, 'institution': 17, 'country': 1425, 'name': 0, 'category': 2267, 'dedup': 0}, flagged: {'stretch': 404, 'unlikely': 9})
+2026-08-29 20:32:35,280 INFO === Phase 6a: Web Stage Resolution (unknowns) ===
+2026-08-29 20:32:35,308 INFO   Filtered: 1222 -> 1183 (removed: {'papers': 0, 'stage': 39, 'institution': 0, 'country': 0, 'name': 0, 'category': 0, 'dedup': 0}, flagged: {'stretch': 501, 'unlikely': 9})
+2026-08-29 20:32:35,308 INFO === Phase 6b: Fallback Enrichment + Emails ===
+2026-08-29 20:32:35,314 INFO   Name-based fallback enriched: 300
+2026-08-29 20:32:35,316 INFO Loaded email cache with 2748 entries
+2026-08-29 20:32:35,317 INFO Loaded institution domain cache with 2275 entries
+2026-08-29 20:32:35,317 INFO No S2_API_KEY — using 1 req/sec rate limit. Set S2_API_KEY for 10x speed.
+2026-08-29 20:32:35,320 INFO Done: 916/1183 emails (218 verified, 698 inferred, 916 cached)
+2026-08-29 20:32:35,321 INFO   Emails found: 916/1183
+2026-08-29 20:32:35,321 INFO === Phase 7: Output ===
+2026-08-29 20:32:35,327 INFO   combined.csv: 1183 researchers
+2026-08-29 20:32:35,327 INFO   world_models.csv: 135 researchers
+2026-08-29 20:32:35,329 INFO   agentic_benchmarks.csv: 310 researchers
+2026-08-29 20:32:35,330 INFO   stem_benchmarks.csv: 240 researchers
+2026-08-29 20:32:35,333 INFO   benchmarks.csv: 509 researchers
+2026-08-29 20:32:35,334 INFO   environment_generation.csv: 192 researchers
+2026-08-29 20:32:35,335 INFO   post_training.csv: 386 researchers
+2026-08-29 20:32:35,659 INFO   researchers.xlsx: 6 position tab(s) + Combined
+2026-08-29 20:32:35,681 INFO Done.

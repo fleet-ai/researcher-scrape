@@ -1,0 +1,53 @@
+2026-07-13 11:04:31,010 INFO [Environment Generation] verifying top 40 of 201 candidates
+2026-07-13 11:05:01,374 INFO   [3] Yixin Nie: identity not confirmed, skipping
+2026-07-13 11:12:11,680 INFO   [Environment Generation] 10/40 verified, 9 confirmed
+2026-07-13 11:12:11,749 INFO   [Environment Generation] 20/40 verified, 19 confirmed
+2026-07-13 11:12:11,770 INFO   [Environment Generation] 30/40 verified, 29 confirmed
+2026-07-13 11:12:11,795 INFO   [36] Lei Chen: identity not confirmed, skipping
+2026-07-13 11:12:11,801 INFO   [Environment Generation] 40/40 verified, 38 confirmed
+2026-07-13 11:12:11,803 INFO [Environment Generation] shortlist written: data/env_depth2/shortlist_environment_generation.csv (38 rows)
+2026-07-13 11:12:12,014 INFO Shortlist workbook: data/env_depth2/shortlist.xlsx
+2026-07-13 11:12:12,014 INFO Done.
+2026-07-13 11:12:12,668 INFO [Agentic Benchmarks] verifying top 40 of 302 candidates
+2026-07-13 11:12:12,689 INFO   [5] Yucheng Guo: identity not confirmed, skipping
+2026-07-13 11:12:12,727 INFO   [Agentic Benchmarks] 10/40 verified, 9 confirmed
+2026-07-13 11:12:12,797 INFO   [Agentic Benchmarks] 20/40 verified, 19 confirmed
+2026-07-13 11:12:12,809 INFO   [26] Yuquan Chen: identity not confirmed, skipping
+2026-07-13 11:12:12,817 INFO   [Agentic Benchmarks] 30/40 verified, 28 confirmed
+2026-07-13 11:12:12,839 INFO   [Agentic Benchmarks] 40/40 verified, 38 confirmed
+2026-07-13 11:12:12,840 INFO [Agentic Benchmarks] shortlist written: data/expand_output/shortlist_agentic_benchmarks.csv (38 rows)
+2026-07-13 11:12:12,840 INFO [Environment Generation] verifying top 40 of 172 candidates
+2026-07-13 11:12:12,851 INFO   [Environment Generation] 10/40 verified, 10 confirmed
+2026-07-13 11:12:12,860 INFO   [17] Michael Kölle: identity not confirmed, skipping
+2026-07-13 11:12:12,860 INFO   [19] Zhi Li: identity not confirmed, skipping
+2026-07-13 11:12:12,863 INFO   [Environment Generation] 20/40 verified, 18 confirmed
+2026-07-13 11:12:12,876 INFO   [Environment Generation] 30/40 verified, 28 confirmed
+2026-07-13 11:12:12,887 INFO   [Environment Generation] 40/40 verified, 38 confirmed
+2026-07-13 11:12:12,888 INFO [Environment Generation] shortlist written: data/expand_output/shortlist_environment_generation.csv (38 rows)
+2026-07-13 11:12:12,888 INFO [Post Training] verifying top 40 of 187 candidates
+2026-07-13 11:12:12,888 INFO   [1] Yan Wang: identity not confirmed, skipping
+2026-07-13 11:12:12,888 INFO   [2] Jia Li: identity not confirmed, skipping
+2026-07-13 11:12:12,905 INFO   [Post Training] 10/40 verified, 8 confirmed
+2026-07-13 11:12:12,927 INFO   [Post Training] 20/40 verified, 18 confirmed
+2026-07-13 11:12:12,945 INFO   [Post Training] 30/40 verified, 28 confirmed
+2026-07-13 11:12:12,997 INFO   [Post Training] 40/40 verified, 38 confirmed
+2026-07-13 11:12:12,997 INFO [Post Training] shortlist written: data/expand_output/shortlist_post_training.csv (38 rows)
+2026-07-13 11:12:12,998 INFO [Stem Benchmarks] verifying top 40 of 262 candidates
+2026-07-13 11:12:13,009 INFO   [Stem Benchmarks] 10/40 verified, 10 confirmed
+2026-07-13 11:12:13,022 INFO   [19] Julien Dirani: identity not confirmed, skipping
+2026-07-13 11:12:13,022 INFO   [Stem Benchmarks] 20/40 verified, 19 confirmed
+2026-07-13 11:12:13,027 INFO   [24] Meysam Ghaffari: identity not confirmed, skipping
+2026-07-13 11:12:13,039 INFO   [Stem Benchmarks] 30/40 verified, 28 confirmed
+2026-07-13 11:12:13,059 INFO   [Stem Benchmarks] 40/40 verified, 38 confirmed
+2026-07-13 11:12:13,060 INFO [Stem Benchmarks] shortlist written: data/expand_output/shortlist_stem_benchmarks.csv (38 rows)
+2026-07-13 11:12:13,061 INFO [World Models] verifying top 40 of 163 candidates
+2026-07-13 11:12:13,073 INFO   [World Models] 10/40 verified, 10 confirmed
+2026-07-13 11:12:13,082 INFO   [19] Zhi Li: identity not confirmed, skipping
+2026-07-13 11:12:13,082 INFO   [World Models] 20/40 verified, 19 confirmed
+2026-07-13 11:12:13,092 INFO   [World Models] 30/40 verified, 29 confirmed
+2026-07-13 11:12:13,099 INFO   [34] Junyang Lin: identity not confirmed, skipping
+2026-07-13 11:12:13,102 INFO   [37] Fei Huang: identity not confirmed, skipping
+2026-07-13 11:12:13,110 INFO   [World Models] 40/40 verified, 37 confirmed
+2026-07-13 11:12:13,111 INFO [World Models] shortlist written: data/expand_output/shortlist_world_models.csv (37 rows)
+2026-07-13 11:12:13,193 INFO Shortlist workbook: data/expand_output/shortlist.xlsx
+2026-07-13 11:12:13,193 INFO Done.

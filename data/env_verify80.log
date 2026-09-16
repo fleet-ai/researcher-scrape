@@ -1,0 +1,20 @@
+2026-07-13 13:06:45,609 INFO [Environment Generation] verifying top 80 of 201 candidates
+2026-07-13 13:06:45,610 INFO   [3] Yixin Nie: identity not confirmed, skipping
+2026-07-13 13:06:45,610 INFO   [Environment Generation] 10/80 verified, 9 confirmed
+2026-07-13 13:06:45,610 INFO   [Environment Generation] 20/80 verified, 19 confirmed
+2026-07-13 13:06:45,610 INFO   [Environment Generation] 30/80 verified, 29 confirmed
+2026-07-13 13:06:45,610 INFO   [36] Lei Chen: identity not confirmed, skipping
+2026-07-13 13:06:45,610 INFO   [Environment Generation] 40/80 verified, 38 confirmed
+2026-07-13 13:07:58,859 WARNING Request failed for Benjamin Eysenbach (attempt 1): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-07-13 13:08:19,080 WARNING Request failed for Benjamin Eysenbach (attempt 2): HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)')))
+2026-07-13 13:08:39,726 WARNING Request failed for Benjamin Eysenbach (attempt 3): HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)')))
+2026-07-13 13:08:45,730 INFO   [43] Benjamin Eysenbach: identity not confirmed, skipping
+2026-07-13 13:09:01,279 WARNING Request failed for Eugene Vinitsky (attempt 1): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-07-13 13:12:20,624 INFO   [49] Yunzhe Tao: identity not confirmed, skipping
+2026-07-13 13:13:52,626 INFO   [Environment Generation] 50/80 verified, 46 confirmed
+2026-07-13 13:17:00,915 INFO   [Environment Generation] 60/80 verified, 56 confirmed
+2026-07-13 13:21:28,204 INFO   [Environment Generation] 70/80 verified, 66 confirmed
+2026-07-13 13:26:00,413 INFO   [Environment Generation] 80/80 verified, 76 confirmed
+2026-07-13 13:26:00,418 INFO [Environment Generation] shortlist written: data/env_depth2/shortlist_environment_generation.csv (76 rows)
+2026-07-13 13:26:00,547 INFO Shortlist workbook: data/env_depth2/shortlist.xlsx
+2026-07-13 13:26:00,547 INFO Done.
