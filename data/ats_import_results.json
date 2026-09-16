@@ -165,15 +165,10 @@
   "name": "Nawaf Alampara",
   "job_slug": "research-scientist-benchmarks",
   "index": 18,
-  "ok": true,
-  "application_id": "24f70ddd-42b2-4c36-a94b-c53be8fc7914",
-  "result": {
-   "applicationId": "24f70ddd-42b2-4c36-a94b-c53be8fc7914",
-   "userId": "cbdda162-ca50-4861-8d73-ff2443ed387e",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Krithika Ramesh",
@@ -215,15 +210,10 @@
   "name": "Krithik Vishwanath",
   "job_slug": "research-scientist-benchmarks",
   "index": 23,
-  "ok": true,
-  "application_id": "4a7851f7-0270-4e8a-8e29-ce4e639087d9",
-  "result": {
-   "applicationId": "4a7851f7-0270-4e8a-8e29-ce4e639087d9",
-   "userId": "9192e09a-fe66-44ee-afd4-d136056a7e41",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Taeyoon Kwon",
@@ -265,15 +255,10 @@
   "name": "Ben Rank",
   "job_slug": "research-scientist-benchmarks",
   "index": 3,
-  "ok": true,
-  "application_id": "5b58fdb4-027c-4541-bf8f-96b1015086f0",
-  "result": {
-   "applicationId": "5b58fdb4-027c-4541-bf8f-96b1015086f0",
-   "userId": "3715ea64-6f20-43d1-8832-d30eddee801a",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Amitesh Badkul",
@@ -306,15 +291,10 @@
   "name": "Shubham Gandhi",
   "job_slug": "research-scientist-benchmarks",
   "index": 7,
-  "ok": true,
-  "application_id": "f803aa4e-2189-4c5f-a702-f9b304e5e5ea",
-  "result": {
-   "applicationId": "f803aa4e-2189-4c5f-a702-f9b304e5e5ea",
-   "userId": "5757ace1-f183-451d-8cf9-008d04554034",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Quinn Dougherty",
@@ -536,15 +516,10 @@
   "name": "Alex Iacob",
   "job_slug": "research-scientist-environment-scaling",
   "index": 7,
-  "ok": true,
-  "application_id": "b6be6474-0057-4490-a2da-af5d70828034",
-  "result": {
-   "applicationId": "b6be6474-0057-4490-a2da-af5d70828034",
-   "userId": "916d657a-d0cd-464f-94ce-424bfb63a9f8",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Yinhong Liu",
@@ -739,15 +714,10 @@
   "name": "Amirhossein Kazemnejad",
   "job_slug": "research-scientist-post-training",
   "index": 4,
-  "ok": true,
-  "application_id": "0dea630e-262d-4e38-8402-54612780487d",
-  "result": {
-   "applicationId": "0dea630e-262d-4e38-8402-54612780487d",
-   "userId": "6df3b1c5-1980-4b54-bcce-0f10cb0ea21c",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Jacob Dineen",
@@ -757,5 +727,859 @@
   "application_id": null,
   "result": null,
   "error": "Candidate already has an application for this role"
+ },
+ {
+  "name": "Jonas H\u00fcbotter",
+  "job_slug": "research-scientist-post-training",
+  "index": 6,
+  "ok": true,
+  "application_id": "386c0582-a739-438a-aa90-65b2e3a79e5e",
+  "result": {
+   "applicationId": "386c0582-a739-438a-aa90-65b2e3a79e5e",
+   "userId": "f1301b79-6a46-43ea-b9c8-1a442891420e",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Marco Bagatella",
+  "job_slug": "research-scientist-post-training",
+  "index": 7,
+  "ok": true,
+  "application_id": "1eb1ad52-9df2-4069-a1ad-cbe0abf40f09",
+  "result": {
+   "applicationId": "1eb1ad52-9df2-4069-a1ad-cbe0abf40f09",
+   "userId": "5ee45d44-eda2-40db-a24b-6da2c7f2a41c",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Hongyi Jin",
+  "job_slug": "research-scientist-post-training",
+  "index": 8,
+  "ok": true,
+  "application_id": "fe1d9b69-681e-4e94-8948-ac462c3d0efd",
+  "result": {
+   "applicationId": "fe1d9b69-681e-4e94-8948-ac462c3d0efd",
+   "userId": "490e2e49-9d2f-4d35-8db1-de0ff35df13d",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Zhihui Xie",
+  "job_slug": "research-scientist-post-training",
+  "index": 9,
+  "ok": true,
+  "application_id": "434c676e-f925-411f-88e4-9e9d4c5f80b7",
+  "result": {
+   "applicationId": "434c676e-f925-411f-88e4-9e9d4c5f80b7",
+   "userId": "b6592d45-6764-4ca0-96eb-964ad416754f",
+   "createdProfile": false,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Simon Dennis",
+  "job_slug": "research-scientist-post-training",
+  "index": 10,
+  "ok": true,
+  "application_id": "c76b3167-5c03-4b17-883a-90675dbcdf47",
+  "result": {
+   "applicationId": "c76b3167-5c03-4b17-883a-90675dbcdf47",
+   "userId": "cba9da89-ddb5-40e8-9840-230c2c9b00c6",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Yueqi Xie",
+  "job_slug": "research-scientist-post-training",
+  "index": 11,
+  "ok": true,
+  "application_id": "812c5db0-3fb2-40be-9b05-e871741577f0",
+  "result": {
+   "applicationId": "812c5db0-3fb2-40be-9b05-e871741577f0",
+   "userId": "57bea724-99cd-4528-a8c4-e621e67ee632",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Rafael Rafailov",
+  "job_slug": "research-scientist-post-training",
+  "index": 12,
+  "ok": true,
+  "application_id": "268fb76a-b4cb-4ced-87ba-7f0a1d6a0286",
+  "result": {
+   "applicationId": "268fb76a-b4cb-4ced-87ba-7f0a1d6a0286",
+   "userId": "8130c298-455b-435a-a475-954f327638fd",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Geemi Wellawatte",
+  "job_slug": "research-scientist-post-training",
+  "index": 13,
+  "ok": true,
+  "application_id": "faaf37c8-bd5b-479e-b444-af513c52b567",
+  "result": {
+   "applicationId": "faaf37c8-bd5b-479e-b444-af513c52b567",
+   "userId": "67321b36-5d24-4310-ba7f-0d50f49a4c96",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Vishakh Padmakumar",
+  "job_slug": "research-scientist-post-training",
+  "index": 14,
+  "ok": true,
+  "application_id": "7a4f6029-f7e6-4af1-99c7-58b4beb8016d",
+  "result": {
+   "applicationId": "7a4f6029-f7e6-4af1-99c7-58b4beb8016d",
+   "userId": "d919c1f0-a94f-4012-80c3-53643f191c2b",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Guangxiang Zhao",
+  "job_slug": "research-scientist-post-training",
+  "index": 15,
+  "ok": true,
+  "application_id": "d19b7fb1-0537-4224-bed6-fc8f36f472ac",
+  "result": {
+   "applicationId": "d19b7fb1-0537-4224-bed6-fc8f36f472ac",
+   "userId": "4ba9f6e4-4e79-4d34-8141-9398f2861649",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Tongzhou Mu",
+  "job_slug": "research-scientist-post-training",
+  "index": 16,
+  "ok": true,
+  "application_id": "92aa43fd-91a1-4fa4-a45c-c49eb59bc989",
+  "result": {
+   "applicationId": "92aa43fd-91a1-4fa4-a45c-c49eb59bc989",
+   "userId": "f1443464-7b11-426f-8ae8-ebd91aeafce9",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Siru Ouyang",
+  "job_slug": "research-scientist-post-training",
+  "index": 17,
+  "ok": true,
+  "application_id": "d2fbf7aa-c065-4d6a-93ee-e1dba9f9be97",
+  "result": {
+   "applicationId": "d2fbf7aa-c065-4d6a-93ee-e1dba9f9be97",
+   "userId": "ce783704-91c7-440f-9ddf-2b9873b8a1bd",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Benjamin Clavi\u00e9",
+  "job_slug": "research-scientist-post-training",
+  "index": 18,
+  "ok": true,
+  "application_id": "f95c9b93-5077-4b43-91fd-440680556dcd",
+  "result": {
+   "applicationId": "f95c9b93-5077-4b43-91fd-440680556dcd",
+   "userId": "71274699-3559-4ef3-8db0-4cd47e45a71c",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Michael Xu",
+  "job_slug": "research-scientist-post-training",
+  "index": 19,
+  "ok": true,
+  "application_id": "913364f4-3beb-429a-bea3-2e68d1f874bb",
+  "result": {
+   "applicationId": "913364f4-3beb-429a-bea3-2e68d1f874bb",
+   "userId": "8a0e1962-c17c-40f3-88b1-969bd458858d",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Sitao Cheng",
+  "job_slug": "research-scientist-post-training",
+  "index": 20,
+  "ok": true,
+  "application_id": "e3df6b8e-9c31-4c55-8922-ad639d6d6097",
+  "result": {
+   "applicationId": "e3df6b8e-9c31-4c55-8922-ad639d6d6097",
+   "userId": "48d724d9-989c-4f08-aa25-186a102add7d",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Idan Shenfeld",
+  "job_slug": "research-scientist-post-training",
+  "index": 21,
+  "ok": true,
+  "application_id": "6a26234e-1d59-45bd-b465-172e8f9eb21d",
+  "result": {
+   "applicationId": "6a26234e-1d59-45bd-b465-172e8f9eb21d",
+   "userId": "93f32225-d190-4b34-998a-d42ff72f96db",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Liu, Bo",
+  "job_slug": "research-scientist-post-training",
+  "index": 22,
+  "ok": true,
+  "application_id": "8a9afc3c-4f53-45fa-8ac4-af9800054a29",
+  "result": {
+   "applicationId": "8a9afc3c-4f53-45fa-8ac4-af9800054a29",
+   "userId": "3d012bd5-8ccf-477a-8fab-51dca8a2eafb",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Youbang Sun",
+  "job_slug": "research-scientist-post-training",
+  "index": 23,
+  "ok": true,
+  "application_id": "cbba6baa-d375-4c6a-9cdf-178d5702a31d",
+  "result": {
+   "applicationId": "cbba6baa-d375-4c6a-9cdf-178d5702a31d",
+   "userId": "37dad387-10c5-43df-a040-9dc9cda48564",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Benjamin Feuer",
+  "job_slug": "research-scientist-post-training",
+  "index": 24,
+  "ok": true,
+  "application_id": "2bb3c081-3ea0-474d-a0fe-f3e2fef1aa34",
+  "result": {
+   "applicationId": "2bb3c081-3ea0-474d-a0fe-f3e2fef1aa34",
+   "userId": "3155f2a5-233a-4732-ba92-a399882281fa",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Sumeet Motwani",
+  "job_slug": "research-scientist-post-training",
+  "index": 0,
+  "ok": true,
+  "application_id": "f6daf648-7da0-4c96-9e52-43a8cfa6ded2",
+  "result": {
+   "applicationId": "f6daf648-7da0-4c96-9e52-43a8cfa6ded2",
+   "userId": "a0741d14-6651-4015-b37f-79c4012f6543",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Xuan-Phi Nguyen",
+  "job_slug": "research-scientist-post-training",
+  "index": 1,
+  "ok": true,
+  "application_id": "f6a6b65d-8726-467d-a41f-048d9537e7fb",
+  "result": {
+   "applicationId": "f6a6b65d-8726-467d-a41f-048d9537e7fb",
+   "userId": "39dc4de1-c4ee-4cc6-b3ce-f322b7eb48ef",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Leitian Tao",
+  "job_slug": "research-scientist-post-training",
+  "index": 2,
+  "ok": true,
+  "application_id": "2c582513-11eb-479e-8600-f4d7128af5d8",
+  "result": {
+   "applicationId": "2c582513-11eb-479e-8600-f4d7128af5d8",
+   "userId": "896bfde1-c08e-44d9-9eca-662d7929ae95",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Yucheng Shi",
+  "job_slug": "research-scientist-post-training",
+  "index": 3,
+  "ok": true,
+  "application_id": "c6755e48-622a-4d7a-9bb5-10a1181203a3",
+  "result": {
+   "applicationId": "c6755e48-622a-4d7a-9bb5-10a1181203a3",
+   "userId": "f561193e-542d-44e0-9555-b8c5a14e8cb7",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Rongduo Han",
+  "job_slug": "research-scientist-post-training",
+  "index": 4,
+  "ok": true,
+  "application_id": "d7bc225a-f27b-4482-83a8-b8848a915403",
+  "result": {
+   "applicationId": "d7bc225a-f27b-4482-83a8-b8848a915403",
+   "userId": "c276bcf9-4f19-4b87-b326-18e68bad6de1",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Ye Rong",
+  "job_slug": "research-scientist-post-training",
+  "index": 5,
+  "ok": true,
+  "application_id": "d6d0cdcf-ba44-49f8-a339-b6974928f5ad",
+  "result": {
+   "applicationId": "d6d0cdcf-ba44-49f8-a339-b6974928f5ad",
+   "userId": "e3604ff4-6597-4d31-85d7-67b5f92090c6",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Devvrit Khatri",
+  "job_slug": "research-scientist-post-training",
+  "index": 6,
+  "ok": true,
+  "application_id": "1c7b57de-4940-443e-97f6-647114acd6cf",
+  "result": {
+   "applicationId": "1c7b57de-4940-443e-97f6-647114acd6cf",
+   "userId": "25bfcbe3-65e8-4713-9ed1-50832299cd33",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Yushi Bai",
+  "job_slug": "research-scientist-post-training",
+  "index": 7,
+  "ok": true,
+  "application_id": "ba6c9d62-8719-4901-9a52-225924bf0550",
+  "result": {
+   "applicationId": "ba6c9d62-8719-4901-9a52-225924bf0550",
+   "userId": "cbc9df8c-1b91-47dd-8458-71e6d5c2da12",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Huangyuan Su",
+  "job_slug": "research-scientist-post-training",
+  "index": 8,
+  "ok": true,
+  "application_id": "80175877-2b1b-41ed-a7c6-e84c3822e967",
+  "result": {
+   "applicationId": "80175877-2b1b-41ed-a7c6-e84c3822e967",
+   "userId": "11d4c9b9-593d-4f9e-a8a6-9d7fac78426f",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Sanjeepan Sivapiran",
+  "job_slug": "research-scientist-post-training",
+  "index": 9,
+  "ok": true,
+  "application_id": "a1e06589-cf6d-4561-9c29-f264f7925774",
+  "result": {
+   "applicationId": "a1e06589-cf6d-4561-9c29-f264f7925774",
+   "userId": "8fa1665d-9f58-43bf-b2ff-ee6fe3efd4ba",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Sikuan Yan",
+  "job_slug": "research-scientist-post-training",
+  "index": 10,
+  "ok": true,
+  "application_id": "1e0f0535-67ce-4192-a404-bc057434f059",
+  "result": {
+   "applicationId": "1e0f0535-67ce-4192-a404-bc057434f059",
+   "userId": "50357c55-3945-481b-9256-f88b6cb7e382",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Zhenfei Yin",
+  "job_slug": "research-scientist-post-training",
+  "index": 11,
+  "ok": true,
+  "application_id": "5df2184c-4d58-4dd8-9524-6c509501fb08",
+  "result": {
+   "applicationId": "5df2184c-4d58-4dd8-9524-6c509501fb08",
+   "userId": "43ca4b80-e3cc-41e2-ad9c-449e65b5bd6d",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Vint Lee",
+  "job_slug": "research-scientist-post-training",
+  "index": 12,
+  "ok": true,
+  "application_id": "ed6e2493-708b-47f0-b147-5c37b6577b39",
+  "result": {
+   "applicationId": "ed6e2493-708b-47f0-b147-5c37b6577b39",
+   "userId": "8f55833d-106f-44f0-b5af-b5f02ed54f99",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Yongliang Shen",
+  "job_slug": "research-scientist-post-training",
+  "index": 13,
+  "ok": true,
+  "application_id": "0dea4d96-113b-4159-ae6e-ffa413044c1f",
+  "result": {
+   "applicationId": "0dea4d96-113b-4159-ae6e-ffa413044c1f",
+   "userId": "51fc3854-3f75-45b0-b3e4-247a65827abf",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Hannah Rose Kirk",
+  "job_slug": "research-scientist-post-training",
+  "index": 14,
+  "ok": true,
+  "application_id": "fb887e83-85e3-4e33-a11a-7e3f843907b9",
+  "result": {
+   "applicationId": "fb887e83-85e3-4e33-a11a-7e3f843907b9",
+   "userId": "a0939e32-8418-41a1-809a-65cb63af5e0a",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Wenliang Dai",
+  "job_slug": "research-scientist-post-training",
+  "index": 15,
+  "ok": true,
+  "application_id": "7e068e1e-f0e3-4aa2-bc2d-1d354d3bdb9a",
+  "result": {
+   "applicationId": "7e068e1e-f0e3-4aa2-bc2d-1d354d3bdb9a",
+   "userId": "9f3db553-d772-46df-b5b1-8c0128fe7626",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Liam Fowl",
+  "job_slug": "research-scientist-post-training",
+  "index": 16,
+  "ok": true,
+  "application_id": "b64b9a66-b648-4fed-9bf1-2140740fbe4a",
+  "result": {
+   "applicationId": "b64b9a66-b648-4fed-9bf1-2140740fbe4a",
+   "userId": "1d5a4a7f-fe4b-4fe6-9a13-fd605c556d8a",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Avi Caciularu",
+  "job_slug": "research-scientist-post-training",
+  "index": 17,
+  "ok": true,
+  "application_id": "0cf4bdda-2543-431f-bca1-1278db9157be",
+  "result": {
+   "applicationId": "0cf4bdda-2543-431f-bca1-1278db9157be",
+   "userId": "6538e579-7809-45d2-926a-593cc91accf5",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Shubham Toshniwal",
+  "job_slug": "research-scientist-post-training",
+  "index": 18,
+  "ok": true,
+  "application_id": "10468eb2-01f0-4f41-89c8-a6797806a7bd",
+  "result": {
+   "applicationId": "10468eb2-01f0-4f41-89c8-a6797806a7bd",
+   "userId": "7427b4f7-b465-42ac-8f4e-144d8dced2da",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Riashat Islam",
+  "job_slug": "research-scientist-post-training",
+  "index": 19,
+  "ok": true,
+  "application_id": "3a53bba4-897f-43c1-8291-e4b7632a363c",
+  "result": {
+   "applicationId": "3a53bba4-897f-43c1-8291-e4b7632a363c",
+   "userId": "59e18249-57b4-49c1-a0ac-86b65ea1334b",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Shehzaad Dhuliawala",
+  "job_slug": "research-scientist-post-training",
+  "index": 20,
+  "ok": true,
+  "application_id": "bb2d13d8-527e-45f5-8b2a-a9d0a7777102",
+  "result": {
+   "applicationId": "bb2d13d8-527e-45f5-8b2a-a9d0a7777102",
+   "userId": "0b8e300f-2067-44f4-b704-6aa76b29e063",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Alexander Trott",
+  "job_slug": "research-scientist-post-training",
+  "index": 21,
+  "ok": true,
+  "application_id": "b1fa0db5-81c3-4f63-8be6-ff26b79cdab3",
+  "result": {
+   "applicationId": "b1fa0db5-81c3-4f63-8be6-ff26b79cdab3",
+   "userId": "bd61de2d-646c-4f75-aa06-ba8785563be2",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Damon Mosk-Aoyama",
+  "job_slug": "research-scientist-post-training",
+  "index": 22,
+  "ok": true,
+  "application_id": "d009dfb1-27eb-4b31-9921-199cbf2a04a3",
+  "result": {
+   "applicationId": "d009dfb1-27eb-4b31-9921-199cbf2a04a3",
+   "userId": "bc3b7277-e507-4d7b-8b2d-1d8e14c4be64",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Swaroop Mishra",
+  "job_slug": "research-scientist-post-training",
+  "index": 23,
+  "ok": true,
+  "application_id": "fe37778a-4ce8-4e8d-b98b-9a8df72028c5",
+  "result": {
+   "applicationId": "fe37778a-4ce8-4e8d-b98b-9a8df72028c5",
+   "userId": "d86419bd-d30c-4dc6-a9d9-b41eb85bfbcb",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Mayk Caldas Ramos",
+  "job_slug": "research-scientist-post-training",
+  "index": 24,
+  "ok": true,
+  "application_id": "dd2b8026-a3c6-4936-8cdd-c951c79e7e93",
+  "result": {
+   "applicationId": "dd2b8026-a3c6-4936-8cdd-c951c79e7e93",
+   "userId": "d21ec63b-0b18-48d9-a98f-b5b0c73a6a2d",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Zifeng Wang",
+  "job_slug": "research-scientist-post-training",
+  "index": 0,
+  "ok": true,
+  "application_id": "dd6e6a3b-b6ca-4100-82a8-e5f618cb93ba",
+  "result": {
+   "applicationId": "dd6e6a3b-b6ca-4100-82a8-e5f618cb93ba",
+   "userId": "ab099255-3b79-4957-9edf-29b7a6f230fb",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Yunpu Ma",
+  "job_slug": "research-scientist-post-training",
+  "index": 1,
+  "ok": true,
+  "application_id": "7583cf19-dbc8-43d3-93c3-b95f0ec6cef8",
+  "result": {
+   "applicationId": "7583cf19-dbc8-43d3-93c3-b95f0ec6cef8",
+   "userId": "f14feb4a-0e44-416a-9043-79f8f693be40",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Cheng, Pengyu",
+  "job_slug": "research-scientist-post-training",
+  "index": 2,
+  "ok": true,
+  "application_id": "11fe5b4a-c5dc-4bbb-842b-01520e8c5a2e",
+  "result": {
+   "applicationId": "11fe5b4a-c5dc-4bbb-842b-01520e8c5a2e",
+   "userId": "37524167-80bc-4eda-a5e6-5bf19689ab97",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Weijia Xu",
+  "job_slug": "research-scientist-post-training",
+  "index": 3,
+  "ok": true,
+  "application_id": "c87f775e-02ec-4db1-88ff-39acf49039fb",
+  "result": {
+   "applicationId": "c87f775e-02ec-4db1-88ff-39acf49039fb",
+   "userId": "e9e8e701-58ab-42ac-b869-9a466383a31b",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Shan, Yingdi",
+  "job_slug": "research-scientist-post-training",
+  "index": 4,
+  "ok": true,
+  "application_id": "82c47edb-32f5-4157-948f-673f1b4482c6",
+  "result": {
+   "applicationId": "82c47edb-32f5-4157-948f-673f1b4482c6",
+   "userId": "db721ec7-e0f5-437c-af48-a04352ee4fea",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Ilya Loshchilov",
+  "job_slug": "research-scientist-post-training",
+  "index": 5,
+  "ok": true,
+  "application_id": "16e25574-3b71-420d-9eee-bd4409ff9553",
+  "result": {
+   "applicationId": "16e25574-3b71-420d-9eee-bd4409ff9553",
+   "userId": "eb441ac1-a79e-4283-af40-1e37e85fcbf6",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Sida Wang",
+  "job_slug": "research-scientist-post-training",
+  "index": 6,
+  "ok": true,
+  "application_id": "bc260539-9b47-4036-be13-04b697b1e2b7",
+  "result": {
+   "applicationId": "bc260539-9b47-4036-be13-04b697b1e2b7",
+   "userId": "31636c43-efae-4f2e-b755-b3f96ab1e6c2",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Chenyi Zhuang",
+  "job_slug": "research-scientist-post-training",
+  "index": 7,
+  "ok": true,
+  "application_id": "5ba44d2c-f297-4b87-8854-21a758246d85",
+  "result": {
+   "applicationId": "5ba44d2c-f297-4b87-8854-21a758246d85",
+   "userId": "99a1ca4d-07c0-4116-b1a7-b90d20338bff",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Tianqing Fang",
+  "job_slug": "research-scientist-post-training",
+  "index": 8,
+  "ok": true,
+  "application_id": "0657e819-40e8-4769-a952-2c74a85c9310",
+  "result": {
+   "applicationId": "0657e819-40e8-4769-a952-2c74a85c9310",
+   "userId": "4bc4ae62-8838-4332-9ddf-f4c7517cea98",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Corby Rosset",
+  "job_slug": "research-scientist-post-training",
+  "index": 9,
+  "ok": true,
+  "application_id": "6b12fd66-a1a8-4520-a4e4-190a8057fbfd",
+  "result": {
+   "applicationId": "6b12fd66-a1a8-4520-a4e4-190a8057fbfd",
+   "userId": "48305df5-7d9c-47a1-aeb2-bd185f481329",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Yanfei Chen",
+  "job_slug": "research-scientist-post-training",
+  "index": 10,
+  "ok": true,
+  "application_id": "fa661700-8373-469a-98ad-d81e7d86f91f",
+  "result": {
+   "applicationId": "fa661700-8373-469a-98ad-d81e7d86f91f",
+   "userId": "67d54a39-8f9c-43fc-bb8a-ffc6e33f1f34",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Z. Feng",
+  "job_slug": "research-scientist-post-training",
+  "index": 11,
+  "ok": true,
+  "application_id": "956ad4f1-4643-4737-8ca9-6f63e37aba6f",
+  "result": {
+   "applicationId": "956ad4f1-4643-4737-8ca9-6f63e37aba6f",
+   "userId": "d0fb1415-f429-40cf-8215-6beeae9c6fa2",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Xian Li",
+  "job_slug": "research-scientist-post-training",
+  "index": 12,
+  "ok": true,
+  "application_id": "c682fd6b-8aa2-462c-a564-08cacab1fd57",
+  "result": {
+   "applicationId": "c682fd6b-8aa2-462c-a564-08cacab1fd57",
+   "userId": "5ca43ca2-fa53-4479-a8ca-fe785e48abe3",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Chengyu Wang",
+  "job_slug": "research-scientist-post-training",
+  "index": 13,
+  "ok": true,
+  "application_id": "cd46bb3f-2c5d-4be5-9199-b06dc0a6f633",
+  "result": {
+   "applicationId": "cd46bb3f-2c5d-4be5-9199-b06dc0a6f633",
+   "userId": "8d7e9b1c-add3-4d1a-b989-91416a3b71b2",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Zihan Liu",
+  "job_slug": "research-scientist-post-training",
+  "index": 14,
+  "ok": true,
+  "application_id": "b97f2aac-f793-493f-a1ce-fe058d4a7f0f",
+  "result": {
+   "applicationId": "b97f2aac-f793-493f-a1ce-fe058d4a7f0f",
+   "userId": "d5d4fd21-3a19-4616-a231-080d810eeb6f",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Lingjuan Lyu",
+  "job_slug": "research-scientist-post-training",
+  "index": 15,
+  "ok": true,
+  "application_id": "60dd791c-1cb6-408d-aea7-568db658203e",
+  "result": {
+   "applicationId": "60dd791c-1cb6-408d-aea7-568db658203e",
+   "userId": "6e7cc6ea-3c2a-4d8e-8c18-022b20551082",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Jonas Geiping",
+  "job_slug": "research-scientist-post-training",
+  "index": 16,
+  "ok": true,
+  "application_id": "9d69b86f-d1d7-4dc9-b865-864fb87ecab0",
+  "result": {
+   "applicationId": "9d69b86f-d1d7-4dc9-b865-864fb87ecab0",
+   "userId": "4ffac435-cd8b-4006-940a-4453b50463b2",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
  }
 ]

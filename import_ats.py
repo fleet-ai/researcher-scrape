@@ -159,16 +159,22 @@ def _email_web_one(c: "Candidate", api_key: str) -> str:
     return ""
 
 
-def load_candidates() -> list[Candidate]:
+def load_candidates(maybe_groups: set[str] | None = None) -> list[Candidate]:
     """Yes-verdict rows, one group per person (best rank wins).
 
-    Rows without a verified personal email get a homepage/GitHub/arXiv
-    email hunt (email_hunt.py, cached); still-empty rows are dropped."""
+    Groups in maybe_groups also take Maybe-verdict rows. Rows without a
+    verified personal email get a homepage/GitHub/arXiv email hunt
+    (email_hunt.py, cached); still-empty rows are dropped."""
+    maybe_groups = maybe_groups or set()
     best: dict[str, Candidate] = {}
     for group, (_slug, files) in GROUPS.items():
         for fname in files:
             for i, row in enumerate(csv.DictReader(open(OUT_DIR / fname)), start=1):
-                if not row["Recruitable?"].strip().startswith("Yes"):
+                verdict = row["Recruitable?"].strip()
+                if not (
+                    verdict.startswith("Yes")
+                    or (group in maybe_groups and verdict.startswith("Maybe"))
+                ):
                     continue
                 cand = Candidate(
                     name=row["Name"].strip(),
@@ -321,10 +327,19 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--batch-size", type=int, default=25)
+    parser.add_argument(
+        "--include-maybe",
+        default="",
+        help="comma-separated groups whose Maybe-verdict rows also import",
+    )
     args = parser.parse_args()
 
     or_key = os.environ["OPENROUTER_API_KEY"]
-    cands = load_candidates()
+    maybe_groups = {g.strip() for g in args.include_maybe.split(",") if g.strip()}
+    unknown = maybe_groups - set(GROUPS)
+    if unknown:
+        parser.error(f"unknown groups in --include-maybe: {sorted(unknown)}")
+    cands = load_candidates(maybe_groups)
     by_group: dict[str, int] = {}
     for c in cands:
         by_group[c.group] = by_group.get(c.group, 0) + 1

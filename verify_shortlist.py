@@ -260,9 +260,9 @@ def write_shortlist_xlsx(tabs: dict, out_path: Path):
             ws.append([r.get(f, "") for f in SHORTLIST_FIELDS])
         ws.freeze_panes = "A2"
         widths = {"#": 4, "Name": 22, "Career Stage": 40, "Key Work": 55,
-                  "Personal Email": 30, "Website": 28, "Recruitable?": 26}
+                  "Personal Email": 30, "Website": 28, "LinkedIn": 40, "Recruitable?": 26}
         for i, f in enumerate(SHORTLIST_FIELDS, start=1):
-            ws.column_dimensions[ws.cell(row=1, column=i).column_letter].width = widths[f]
+            ws.column_dimensions[ws.cell(row=1, column=i).column_letter].width = widths.get(f, 20)
     wb.save(out_path)
     log.info(f"Shortlist workbook: {out_path}")
 
