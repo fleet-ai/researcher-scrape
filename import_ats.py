@@ -31,6 +31,8 @@ from pathlib import Path
 import requests
 from pydantic import BaseModel, Field
 
+from email_hunt import _emails_from_text, _fetch, domain_kind, hunt_personal_email
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)
 
@@ -99,20 +101,78 @@ class BulkResponse(BaseModel):
     results: list[BulkResult] = Field(default_factory=list)
 
 
+EMAIL_HUNT_CACHE_PATH = DATA_DIR / "email_hunt_cache.json"
+EMAIL_WEB_CACHE_PATH = DATA_DIR / "email_web_cache.json"
+
+EMAIL_WEB_PROMPT = """Find a published email address for this ML researcher by searching the web
+(personal site, CV, Google Scholar, department directory, GitHub profile/README, paper PDFs).
+
+Name: {name}
+Homepage: {website}
+Key work: {work}
+
+Rules:
+- The address must be PUBLISHED somewhere you can cite. Never guess or construct one.
+- Prefer personal providers (gmail etc.), then academic. Never a corporate address.
+- Respond with ONLY a JSON object:
+{{"email": "<address or empty>", "source_url": "<page where it appears, or empty>"}}"""
+
+
+def _email_web_one(c: "Candidate", api_key: str) -> str:
+    """LLM web search proposes (email, source_url); accept only when fetching
+    source_url confirms the address (obfuscated forms count) and the domain
+    is not corporate."""
+    prompt = EMAIL_WEB_PROMPT.format(
+        name=c.name, website=c.website, work=c.key_work[:200]
+    )
+    for attempt in range(3):
+        try:
+            resp = requests.post(
+                OPENROUTER_API,
+                headers={"Authorization": f"Bearer {api_key}"},
+                json={
+                    "model": LINKEDIN_MODEL,
+                    "messages": [{"role": "user", "content": prompt}],
+                    "temperature": 0,
+                    "max_tokens": 400,
+                },
+                timeout=120,
+            )
+            resp.raise_for_status()
+            content = resp.json()["choices"][0]["message"]["content"]
+            m = re.search(r"\{.*\}", content, re.DOTALL)
+            data = json.loads(m.group(0)) if m else {}
+            email = (data.get("email") or "").strip().lower()
+            source_url = (data.get("source_url") or "").strip()
+            if not email or "@" not in email or not source_url:
+                return ""
+            if domain_kind(email) == "corporate":
+                return ""
+            page_text, _ = _fetch(source_url)
+            if email in {e.lower() for e in _emails_from_text(page_text)}:
+                return email
+            return ""
+        except Exception as exc:  # noqa: BLE001 — retry any transport/parse error
+            if attempt == 2:
+                log.warning(f"  Email web lookup failed for {c.name}: {exc}")
+            time.sleep(2 * (attempt + 1))
+    return ""
+
+
 def load_candidates() -> list[Candidate]:
-    """Yes-verdict rows, one group per person (best rank wins)."""
+    """Yes-verdict rows, one group per person (best rank wins).
+
+    Rows without a verified personal email get a homepage/GitHub/arXiv
+    email hunt (email_hunt.py, cached); still-empty rows are dropped."""
     best: dict[str, Candidate] = {}
     for group, (_slug, files) in GROUPS.items():
         for fname in files:
             for i, row in enumerate(csv.DictReader(open(OUT_DIR / fname)), start=1):
                 if not row["Recruitable?"].strip().startswith("Yes"):
                     continue
-                email = row["Personal Email"].strip()
-                if not email:
-                    continue
                 cand = Candidate(
                     name=row["Name"].strip(),
-                    email=email,
+                    email=row["Personal Email"].strip(),
                     website=row.get("Website", "").strip(),
                     career_stage=row.get("Career Stage", "").strip(),
                     key_work=row.get("Key Work", "").strip(),
@@ -120,9 +180,52 @@ def load_candidates() -> list[Candidate]:
                     rank=int(row.get("#") or i),
                 )
                 key = cand.name.lower()
-                if key not in best or cand.rank < best[key].rank:
+                if key not in best:
                     best[key] = cand
-    return sorted(best.values(), key=lambda c: (c.group, c.rank))
+                else:
+                    # keep the best-ranked row, never lose a known email
+                    keep, other = (
+                        (cand, best[key]) if cand.rank < best[key].rank else (best[key], cand)
+                    )
+                    keep.email = keep.email or other.email
+                    keep.website = keep.website or other.website
+                    best[key] = keep
+
+    or_key = os.environ["OPENROUTER_API_KEY"]
+    hunt_cache: dict[str, str] = (
+        json.loads(EMAIL_HUNT_CACHE_PATH.read_text())
+        if EMAIL_HUNT_CACHE_PATH.exists()
+        else {}
+    )
+    web_cache: dict[str, str] = (
+        json.loads(EMAIL_WEB_CACHE_PATH.read_text())
+        if EMAIL_WEB_CACHE_PATH.exists()
+        else {}
+    )
+    missing = [c for c in best.values() if not c.email]
+    log.info(f"Email hunt for {len(missing)} people without a verified email")
+    for c in missing:
+        c.email = hunt_personal_email(c.name, c.website, [c.key_work], hunt_cache)
+    EMAIL_HUNT_CACHE_PATH.write_text(json.dumps(hunt_cache, indent=1))
+    still_missing = [c for c in missing if not c.email and c.name.lower() not in web_cache]
+    for c in missing:
+        if not c.email:
+            c.email = web_cache.get(c.name.lower(), "")
+    log.info(f"  crawler recovered {sum(1 for c in missing if c.email)}; "
+             f"web-search stage for {len(still_missing)}")
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        futures = {pool.submit(_email_web_one, c, or_key): c for c in still_missing}
+        for fut, c in futures.items():
+            c.email = fut.result()
+            web_cache[c.name.lower()] = c.email
+            if c.email:
+                log.info(f"  found: {c.name} -> {c.email}")
+    EMAIL_WEB_CACHE_PATH.write_text(json.dumps(web_cache, indent=1))
+    log.info(f"Email hunt recovered {sum(1 for c in missing if c.email)}/{len(missing)}")
+
+    return sorted(
+        (c for c in best.values() if c.email), key=lambda c: (c.group, c.rank)
+    )
 
 
 LINKEDIN_PROMPT = """Find the LinkedIn profile URL of this ML researcher by searching the web.

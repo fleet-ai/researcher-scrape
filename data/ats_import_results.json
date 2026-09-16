@@ -162,9 +162,23 @@
   "error": "Candidate already has an application for this role"
  },
  {
-  "name": "Krithika Ramesh",
+  "name": "Nawaf Alampara",
   "job_slug": "research-scientist-benchmarks",
   "index": 18,
+  "ok": true,
+  "application_id": "24f70ddd-42b2-4c36-a94b-c53be8fc7914",
+  "result": {
+   "applicationId": "24f70ddd-42b2-4c36-a94b-c53be8fc7914",
+   "userId": "cbdda162-ca50-4861-8d73-ff2443ed387e",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
+  "name": "Krithika Ramesh",
+  "job_slug": "research-scientist-benchmarks",
+  "index": 19,
   "ok": false,
   "application_id": null,
   "result": null,
@@ -173,7 +187,7 @@
  {
   "name": "Jixuan Chen",
   "job_slug": "research-scientist-benchmarks",
-  "index": 19,
+  "index": 20,
   "ok": false,
   "application_id": null,
   "result": null,
@@ -182,7 +196,7 @@
  {
   "name": "Sagnik Mukherjee",
   "job_slug": "research-scientist-benchmarks",
-  "index": 20,
+  "index": 21,
   "ok": false,
   "application_id": null,
   "result": null,
@@ -191,16 +205,30 @@
  {
   "name": "Ronak Mehta",
   "job_slug": "research-scientist-benchmarks",
-  "index": 21,
+  "index": 22,
   "ok": false,
   "application_id": null,
   "result": null,
   "error": "Candidate already has an application for this role"
  },
  {
+  "name": "Krithik Vishwanath",
+  "job_slug": "research-scientist-benchmarks",
+  "index": 23,
+  "ok": true,
+  "application_id": "4a7851f7-0270-4e8a-8e29-ce4e639087d9",
+  "result": {
+   "applicationId": "4a7851f7-0270-4e8a-8e29-ce4e639087d9",
+   "userId": "9192e09a-fe66-44ee-afd4-d136056a7e41",
+   "createdProfile": true,
+   "reactivated": false
+  },
+  "error": null
+ },
+ {
   "name": "Taeyoon Kwon",
   "job_slug": "research-scientist-benchmarks",
-  "index": 22,
+  "index": 24,
   "ok": false,
   "application_id": null,
   "result": null,
@@ -209,7 +237,7 @@
  {
   "name": "Wenbin Guo",
   "job_slug": "research-scientist-benchmarks",
-  "index": 23,
+  "index": 0,
   "ok": false,
   "application_id": null,
   "result": null,
@@ -218,7 +246,7 @@
  {
   "name": "Emre Can Acikgoz",
   "job_slug": "research-scientist-benchmarks",
-  "index": 24,
+  "index": 1,
   "ok": false,
   "application_id": null,
   "result": null,
@@ -227,12 +255,21 @@
  {
   "name": "Bohan Lyu",
   "job_slug": "research-scientist-benchmarks",
-  "index": 0,
+  "index": 2,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
+ },
+ {
+  "name": "Ben Rank",
+  "job_slug": "research-scientist-benchmarks",
+  "index": 3,
   "ok": true,
-  "application_id": "70698fe5-6728-4302-bc98-935833715090",
+  "application_id": "5b58fdb4-027c-4541-bf8f-96b1015086f0",
   "result": {
-   "applicationId": "70698fe5-6728-4302-bc98-935833715090",
-   "userId": "ba6112bd-0497-4f94-a773-b1046c0e804b",
+   "applicationId": "5b58fdb4-027c-4541-bf8f-96b1015086f0",
+   "userId": "3715ea64-6f20-43d1-8832-d30eddee801a",
    "createdProfile": true,
    "reactivated": false
   },
@@ -241,40 +278,39 @@
  {
   "name": "Amitesh Badkul",
   "job_slug": "research-scientist-benchmarks",
-  "index": 1,
-  "ok": true,
-  "application_id": "1b8ce005-ca14-48d9-af87-3c6fc7070bc3",
-  "result": {
-   "applicationId": "1b8ce005-ca14-48d9-af87-3c6fc7070bc3",
-   "userId": "58e76ed0-f810-47a0-b81f-f228b3280704",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 4,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Zihao Zhou",
   "job_slug": "research-scientist-benchmarks",
-  "index": 2,
-  "ok": true,
-  "application_id": "e5a18dfb-901f-4b69-b2d8-40abaa1c3c40",
-  "result": {
-   "applicationId": "e5a18dfb-901f-4b69-b2d8-40abaa1c3c40",
-   "userId": "e231611a-007a-4505-b2be-3f08f7e53f66",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 5,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Yanjie Zhao",
   "job_slug": "research-scientist-benchmarks",
-  "index": 3,
+  "index": 6,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
+ },
+ {
+  "name": "Shubham Gandhi",
+  "job_slug": "research-scientist-benchmarks",
+  "index": 7,
   "ok": true,
-  "application_id": "266ae40f-9f7a-4678-803d-2dd0fcee9dd0",
+  "application_id": "f803aa4e-2189-4c5f-a702-f9b304e5e5ea",
   "result": {
-   "applicationId": "266ae40f-9f7a-4678-803d-2dd0fcee9dd0",
-   "userId": "dcf295a6-a6c5-442f-8c06-f9e42a9909bb",
+   "applicationId": "f803aa4e-2189-4c5f-a702-f9b304e5e5ea",
+   "userId": "5757ace1-f183-451d-8cf9-008d04554034",
    "createdProfile": true,
    "reactivated": false
   },
@@ -283,301 +319,196 @@
  {
   "name": "Quinn Dougherty",
   "job_slug": "research-scientist-benchmarks",
-  "index": 4,
-  "ok": true,
-  "application_id": "29760e2f-c8a2-49ed-8f3c-f03bd845b596",
-  "result": {
-   "applicationId": "29760e2f-c8a2-49ed-8f3c-f03bd845b596",
-   "userId": "c9af98ed-b970-4a44-bc0a-76d90ca37df0",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 8,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Litong Feng",
   "job_slug": "research-scientist-benchmarks",
-  "index": 5,
-  "ok": true,
-  "application_id": "6fd8f42a-9d35-4f2e-b2d3-5f84325aea80",
-  "result": {
-   "applicationId": "6fd8f42a-9d35-4f2e-b2d3-5f84325aea80",
-   "userId": "939264d6-9338-4e39-81a8-9345194c7fdf",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 9,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Alejandro Velasco",
   "job_slug": "research-scientist-benchmarks",
-  "index": 6,
-  "ok": true,
-  "application_id": "21f9eaae-1963-46f0-944e-eade8ecdb553",
-  "result": {
-   "applicationId": "21f9eaae-1963-46f0-944e-eade8ecdb553",
-   "userId": "6b0eff07-44de-4a43-b932-97bed745d890",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 10,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Denis Peskoff",
   "job_slug": "research-scientist-benchmarks",
-  "index": 7,
-  "ok": true,
-  "application_id": "199aff10-4df0-4636-8cfc-11cd0412156b",
-  "result": {
-   "applicationId": "199aff10-4df0-4636-8cfc-11cd0412156b",
-   "userId": "1598aa80-108f-40ca-8425-d4c110ed86b6",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 11,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Ofir Press",
   "job_slug": "research-scientist-benchmarks",
-  "index": 8,
-  "ok": true,
-  "application_id": "9ddaf89c-2605-4a31-b327-a0d0057854e8",
-  "result": {
-   "applicationId": "9ddaf89c-2605-4a31-b327-a0d0057854e8",
-   "userId": "cbb1236a-49a4-4f5c-9916-f31159ae9545",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 12,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Zahra Abbasiantaeb",
   "job_slug": "research-scientist-benchmarks",
-  "index": 9,
-  "ok": true,
-  "application_id": "ab8ff16e-36ab-4b1b-892e-9953dc20cf8f",
-  "result": {
-   "applicationId": "ab8ff16e-36ab-4b1b-892e-9953dc20cf8f",
-   "userId": "cabf9e52-b174-4ff3-a70f-c7811b376b46",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 13,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Renyuan Li",
   "job_slug": "research-scientist-benchmarks",
-  "index": 10,
-  "ok": true,
-  "application_id": "928afe92-4402-48ba-bf88-76f2bc1670a4",
-  "result": {
-   "applicationId": "928afe92-4402-48ba-bf88-76f2bc1670a4",
-   "userId": "c4b4c0f0-7410-4aae-bc93-766e48646eb7",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 14,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Shuhaib Mehri",
   "job_slug": "research-scientist-benchmarks",
-  "index": 11,
-  "ok": true,
-  "application_id": "aa2deff5-bcb7-4368-b747-087ce837d36d",
-  "result": {
-   "applicationId": "aa2deff5-bcb7-4368-b747-087ce837d36d",
-   "userId": "178a81cb-1bcd-4604-a4fa-411a90fbbea7",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 15,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Jingwei Ni",
   "job_slug": "research-scientist-benchmarks",
-  "index": 12,
-  "ok": true,
-  "application_id": "29858568-0772-4d79-a417-bcc440c9e747",
-  "result": {
-   "applicationId": "29858568-0772-4d79-a417-bcc440c9e747",
-   "userId": "aad96f6b-80e1-4789-8f08-c59167af810b",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 16,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Daniel Rodr\u00edguez-C\u00e1rdenas",
   "job_slug": "research-scientist-benchmarks",
-  "index": 13,
-  "ok": true,
-  "application_id": "6e5c92b5-148d-47b9-9465-90504a84097e",
-  "result": {
-   "applicationId": "6e5c92b5-148d-47b9-9465-90504a84097e",
-   "userId": "f3dbc3eb-e145-4941-84f3-9a914b25c685",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 17,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "A. O'Neill",
   "job_slug": "research-scientist-benchmarks",
-  "index": 14,
-  "ok": true,
-  "application_id": "84d672f0-9910-4fe2-9b31-2761609b3a39",
-  "result": {
-   "applicationId": "84d672f0-9910-4fe2-9b31-2761609b3a39",
-   "userId": "f2a6908c-e1e0-4523-a613-fa93b78e99d2",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 18,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Shauli Ravfogel",
   "job_slug": "research-scientist-benchmarks",
-  "index": 15,
-  "ok": true,
-  "application_id": "5c621c5a-0740-415e-8408-7d8921b20bde",
-  "result": {
-   "applicationId": "5c621c5a-0740-415e-8408-7d8921b20bde",
-   "userId": "238790bb-dae2-415f-bc03-60af548af3e8",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 19,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Abhiram Maddukuri",
   "job_slug": "research-scientist-benchmarks",
-  "index": 16,
-  "ok": true,
-  "application_id": "1381a032-6118-4c4a-9c30-3f8262a366ad",
-  "result": {
-   "applicationId": "1381a032-6118-4c4a-9c30-3f8262a366ad",
-   "userId": "654b5940-ac06-42f0-8e3a-b248004c8fa2",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 20,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Joshua Kelsall",
   "job_slug": "research-scientist-benchmarks",
-  "index": 17,
-  "ok": true,
-  "application_id": "11f93cd5-22ad-4e7d-9df3-b9fd5df598ec",
-  "result": {
-   "applicationId": "11f93cd5-22ad-4e7d-9df3-b9fd5df598ec",
-   "userId": "a8043d6a-7cf9-4fe2-9616-9123e04b72d8",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 21,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Shawqi Al-Maliki",
   "job_slug": "research-scientist-benchmarks",
-  "index": 18,
-  "ok": true,
-  "application_id": "4b7b0f73-7b64-43a0-b75f-51961029fbd5",
-  "result": {
-   "applicationId": "4b7b0f73-7b64-43a0-b75f-51961029fbd5",
-   "userId": "73a8e999-86f8-45b7-98ee-51af3760a098",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 22,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Huy Nghiem",
   "job_slug": "research-scientist-benchmarks",
-  "index": 19,
-  "ok": true,
-  "application_id": "a3d902ee-75d6-4500-9741-99cb2cbcfa6b",
-  "result": {
-   "applicationId": "a3d902ee-75d6-4500-9741-99cb2cbcfa6b",
-   "userId": "56bb4c04-cec5-4bff-b23d-3598db8fa52b",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 23,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Haau-Sing Li",
   "job_slug": "research-scientist-benchmarks",
-  "index": 20,
-  "ok": true,
-  "application_id": "9000cf40-e1eb-4faf-bb28-f286930c446a",
-  "result": {
-   "applicationId": "9000cf40-e1eb-4faf-bb28-f286930c446a",
-   "userId": "460bd8e4-b792-47d5-8a42-e02848f95381",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 24,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Janvijay Singh",
   "job_slug": "research-scientist-benchmarks",
-  "index": 21,
-  "ok": true,
-  "application_id": "38ccad97-d4da-40ef-b18d-a78b941b284e",
-  "result": {
-   "applicationId": "38ccad97-d4da-40ef-b18d-a78b941b284e",
-   "userId": "ec847919-b4fe-4607-84fc-3efe5263854f",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 0,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Sam Earle",
   "job_slug": "research-scientist-environment-scaling",
-  "index": 22,
-  "ok": true,
-  "application_id": "d5fce0be-5f6e-413f-9de6-54f288987fb2",
-  "result": {
-   "applicationId": "d5fce0be-5f6e-413f-9de6-54f288987fb2",
-   "userId": "790a33e6-1d0c-498b-b03a-3ea9f221f469",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 1,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Zehua Jiang",
   "job_slug": "research-scientist-environment-scaling",
-  "index": 23,
-  "ok": true,
-  "application_id": "e69e7550-4547-43d4-a5cc-deac9d4b1e86",
-  "result": {
-   "applicationId": "e69e7550-4547-43d4-a5cc-deac9d4b1e86",
-   "userId": "582bcccd-4113-45c7-b3cf-0b7736e66d3b",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 2,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Chengpeng Hu",
   "job_slug": "research-scientist-environment-scaling",
-  "index": 24,
-  "ok": true,
-  "application_id": "63c4ff75-d16e-4d40-bebf-83dfef273445",
-  "result": {
-   "applicationId": "63c4ff75-d16e-4d40-bebf-83dfef273445",
-   "userId": "f111d7ef-0cf0-4caa-a5f2-b4234c2494ae",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 3,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Fangfu Liu",
   "job_slug": "research-scientist-environment-scaling",
-  "index": 0,
+  "index": 4,
   "ok": false,
   "application_id": null,
   "result": null,
@@ -586,26 +517,30 @@
  {
   "name": "Yuekun Yao",
   "job_slug": "research-scientist-environment-scaling",
-  "index": 1,
-  "ok": true,
-  "application_id": "bca8df37-c34d-4715-a144-c8694225ddb1",
-  "result": {
-   "applicationId": "bca8df37-c34d-4715-a144-c8694225ddb1",
-   "userId": "a2f2a65a-7262-4ad5-8131-82252bdb9857",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 5,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Langlin Huang",
   "job_slug": "research-scientist-environment-scaling",
-  "index": 2,
+  "index": 6,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
+ },
+ {
+  "name": "Alex Iacob",
+  "job_slug": "research-scientist-environment-scaling",
+  "index": 7,
   "ok": true,
-  "application_id": "e34c1414-27e4-4ee5-a193-7594e052ca92",
+  "application_id": "b6be6474-0057-4490-a2da-af5d70828034",
   "result": {
-   "applicationId": "e34c1414-27e4-4ee5-a193-7594e052ca92",
-   "userId": "16fd51a2-7afb-4170-82da-b4f7a7b47629",
+   "applicationId": "b6be6474-0057-4490-a2da-af5d70828034",
+   "userId": "916d657a-d0cd-464f-94ce-424bfb63a9f8",
    "createdProfile": true,
    "reactivated": false
   },
@@ -614,292 +549,201 @@
  {
   "name": "Yinhong Liu",
   "job_slug": "research-scientist-environment-scaling",
-  "index": 3,
-  "ok": true,
-  "application_id": "f3f5833d-7bd6-4aa9-9ad6-17e746bc16e1",
-  "result": {
-   "applicationId": "f3f5833d-7bd6-4aa9-9ad6-17e746bc16e1",
-   "userId": "4d95431e-3f87-4ae4-958c-6126e8f28974",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 8,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Eli VanderBilt",
   "job_slug": "research-scientist-environment-scaling",
-  "index": 4,
-  "ok": true,
-  "application_id": "33a27ee6-ff10-405c-87e8-dc62acc6a38e",
-  "result": {
-   "applicationId": "33a27ee6-ff10-405c-87e8-dc62acc6a38e",
-   "userId": "deceac2b-9901-45a4-9e74-1df3cae639f1",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 9,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Xinpeng Wei",
   "job_slug": "research-scientist-environment-scaling",
-  "index": 5,
-  "ok": true,
-  "application_id": "4320a622-06e0-4a4b-a4a3-e12dfc8c9217",
-  "result": {
-   "applicationId": "4320a622-06e0-4a4b-a4a3-e12dfc8c9217",
-   "userId": "367d9794-4e85-4841-bfa1-1f31ecf20816",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 10,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Bill Dolan",
   "job_slug": "research-scientist-environment-scaling",
-  "index": 6,
-  "ok": true,
-  "application_id": "2747b91c-c73a-4905-9a48-9ef7a84ee994",
-  "result": {
-   "applicationId": "2747b91c-c73a-4905-9a48-9ef7a84ee994",
-   "userId": "febd3c06-6816-4fed-99d3-799d68679f4a",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 11,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Ahmed Khalifa",
   "job_slug": "research-scientist-environment-scaling",
-  "index": 7,
-  "ok": true,
-  "application_id": "36a9cedb-3766-423b-a714-ddffcc4122e6",
-  "result": {
-   "applicationId": "36a9cedb-3766-423b-a714-ddffcc4122e6",
-   "userId": "dcac8693-914d-46c3-8f3b-372e45120af9",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 12,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Niall J. Donnelly",
   "job_slug": "research-scientist-environment-scaling",
-  "index": 8,
-  "ok": true,
-  "application_id": "0334fb9d-59d2-4a26-a8bf-a371ffb60d61",
-  "result": {
-   "applicationId": "0334fb9d-59d2-4a26-a8bf-a371ffb60d61",
-   "userId": "b88fc710-e27f-4664-8446-c0d1fd6562b3",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 13,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Simran Kaur",
   "job_slug": "research-scientist-post-training",
-  "index": 9,
-  "ok": true,
-  "application_id": "16dabbd7-9dba-43ba-9475-a582bf702247",
-  "result": {
-   "applicationId": "16dabbd7-9dba-43ba-9475-a582bf702247",
-   "userId": "686b8d8c-8e77-4a7f-a9b1-35df9847d508",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 14,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Tianyu Shi",
   "job_slug": "research-scientist-post-training",
-  "index": 10,
-  "ok": true,
-  "application_id": "61ecc3c1-b9e5-4d18-be92-5cffff97fb89",
-  "result": {
-   "applicationId": "61ecc3c1-b9e5-4d18-be92-5cffff97fb89",
-   "userId": "5ec799c5-f35a-49fd-93b7-9e8fd2c79629",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 15,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Ruizhe Chen",
   "job_slug": "research-scientist-post-training",
-  "index": 11,
-  "ok": true,
-  "application_id": "628fb0a8-5ee6-4c97-841b-6108cd799473",
-  "result": {
-   "applicationId": "628fb0a8-5ee6-4c97-841b-6108cd799473",
-   "userId": "d868087c-c64b-44e9-91ae-5a3a0a6d208c",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 16,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Zhepeng Cen",
   "job_slug": "research-scientist-post-training",
-  "index": 12,
-  "ok": true,
-  "application_id": "48e54d42-3023-4d8d-bab1-10bb7c044c07",
-  "result": {
-   "applicationId": "48e54d42-3023-4d8d-bab1-10bb7c044c07",
-   "userId": "e7021d30-80d0-42e8-b838-8601ef2791d0",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 17,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Meihua Dang",
   "job_slug": "research-scientist-post-training",
-  "index": 13,
-  "ok": true,
-  "application_id": "ee4a03e3-518b-4865-9537-373aeedd0aa2",
-  "result": {
-   "applicationId": "ee4a03e3-518b-4865-9537-373aeedd0aa2",
-   "userId": "a8a751f3-13e7-4947-8341-3822a641a8f1",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 18,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Benjamin C. Warner",
   "job_slug": "research-scientist-post-training",
-  "index": 14,
-  "ok": true,
-  "application_id": "beac35e2-54c8-4a55-b8d4-844c01898ce3",
-  "result": {
-   "applicationId": "beac35e2-54c8-4a55-b8d4-844c01898ce3",
-   "userId": "b832af25-3915-404a-b04b-23d164a67d71",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 19,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Sikun Guo",
   "job_slug": "research-scientist-post-training",
-  "index": 15,
-  "ok": true,
-  "application_id": "e90e383a-1664-4675-a428-dd7674f04aa3",
-  "result": {
-   "applicationId": "e90e383a-1664-4675-a428-dd7674f04aa3",
-   "userId": "f018c090-d207-47d2-a5ca-7a487eede4a5",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 20,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Weizhi Zhang",
   "job_slug": "research-scientist-post-training",
-  "index": 16,
-  "ok": true,
-  "application_id": "e4ccef67-3ac6-4194-984c-eb6567c6ce3f",
-  "result": {
-   "applicationId": "e4ccef67-3ac6-4194-984c-eb6567c6ce3f",
-   "userId": "33d03265-0b3c-4ad8-8cf1-7b9af788b2d6",
-   "createdProfile": false,
-   "reactivated": false
-  },
-  "error": null
+  "index": 21,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Yuda Song",
   "job_slug": "research-scientist-post-training",
-  "index": 17,
-  "ok": true,
-  "application_id": "ec08cd61-6ebe-4ae8-b51d-4b305a0f2977",
-  "result": {
-   "applicationId": "ec08cd61-6ebe-4ae8-b51d-4b305a0f2977",
-   "userId": "ee68b246-7f0a-4fc3-84fa-03dc815d812b",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 22,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Wai-Chung Kwan",
   "job_slug": "research-scientist-post-training",
-  "index": 18,
-  "ok": true,
-  "application_id": "71c779d7-9813-4871-986f-c0071b3c0cf3",
-  "result": {
-   "applicationId": "71c779d7-9813-4871-986f-c0071b3c0cf3",
-   "userId": "9d4a5d57-876b-4fff-9e3b-b29a11aaa148",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 23,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Narutatsu Ri",
   "job_slug": "research-scientist-post-training",
-  "index": 19,
-  "ok": true,
-  "application_id": "3e866c3b-e0f8-4727-8b69-fa58e4199b8a",
-  "result": {
-   "applicationId": "3e866c3b-e0f8-4727-8b69-fa58e4199b8a",
-   "userId": "94fb1a24-36aa-418c-9ed8-1e191e71c7e3",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 24,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Divij Handa",
   "job_slug": "research-scientist-post-training",
-  "index": 20,
-  "ok": true,
-  "application_id": "9017d252-3a4f-47ad-89c6-8c00b946d790",
-  "result": {
-   "applicationId": "9017d252-3a4f-47ad-89c6-8c00b946d790",
-   "userId": "4c363341-ead4-4d1a-a157-2a48d6205439",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 0,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Richard Zhuang",
   "job_slug": "research-scientist-post-training",
-  "index": 21,
-  "ok": true,
-  "application_id": "0e804456-68de-45a6-be36-cd0a125923dc",
-  "result": {
-   "applicationId": "0e804456-68de-45a6-be36-cd0a125923dc",
-   "userId": "4a4f5628-6df2-466c-89fb-4a65e920f7f3",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 1,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Yuxuan Li",
   "job_slug": "research-scientist-post-training",
-  "index": 22,
-  "ok": true,
-  "application_id": "1ec53c4e-2e9e-4e16-994a-1dae36d58493",
-  "result": {
-   "applicationId": "1ec53c4e-2e9e-4e16-994a-1dae36d58493",
-   "userId": "899f429a-64b6-45fc-8dfe-55486c24875a",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 2,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  },
  {
   "name": "Amir Hassan Shariatmadari",
   "job_slug": "research-scientist-post-training",
-  "index": 23,
+  "index": 3,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
+ },
+ {
+  "name": "Amirhossein Kazemnejad",
+  "job_slug": "research-scientist-post-training",
+  "index": 4,
   "ok": true,
-  "application_id": "56f55863-0bb2-483f-aba4-610fccd1034e",
+  "application_id": "0dea630e-262d-4e38-8402-54612780487d",
   "result": {
-   "applicationId": "56f55863-0bb2-483f-aba4-610fccd1034e",
-   "userId": "61e92520-1e4f-4156-a326-2b55f6a027e3",
+   "applicationId": "0dea630e-262d-4e38-8402-54612780487d",
+   "userId": "6df3b1c5-1980-4b54-bcce-0f10cb0ea21c",
    "createdProfile": true,
    "reactivated": false
   },
@@ -908,15 +752,10 @@
  {
   "name": "Jacob Dineen",
   "job_slug": "research-scientist-post-training",
-  "index": 24,
-  "ok": true,
-  "application_id": "583695de-abe6-4344-8ad5-2f1ce6e51749",
-  "result": {
-   "applicationId": "583695de-abe6-4344-8ad5-2f1ce6e51749",
-   "userId": "b10a0d6c-5236-43f7-a002-24b17db9bc2d",
-   "createdProfile": true,
-   "reactivated": false
-  },
-  "error": null
+  "index": 5,
+  "ok": false,
+  "application_id": null,
+  "result": null,
+  "error": "Candidate already has an application for this role"
  }
 ]
