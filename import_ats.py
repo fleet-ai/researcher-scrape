@@ -178,6 +178,9 @@ def load_candidates() -> list[Candidate]:
                     key_work=row.get("Key Work", "").strip(),
                     group=group,
                     rank=int(row.get("#") or i),
+                    # captured by verify_shortlist since 2026-09-16; empty for
+                    # older cache entries -> resolve_linkedin fills the gap
+                    linkedin_url=row.get("LinkedIn", "").strip().rstrip("/"),
                 )
                 key = cand.name.lower()
                 if key not in best:
@@ -189,6 +192,7 @@ def load_candidates() -> list[Candidate]:
                     )
                     keep.email = keep.email or other.email
                     keep.website = keep.website or other.website
+                    keep.linkedin_url = keep.linkedin_url or other.linkedin_url
                     best[key] = keep
 
     or_key = os.environ["OPENROUTER_API_KEY"]
@@ -278,6 +282,10 @@ def resolve_linkedin(cands: list[Candidate], api_key: str) -> None:
     cache: dict[str, str] = (
         json.loads(LINKEDIN_CACHE_PATH.read_text()) if LINKEDIN_CACHE_PATH.exists() else {}
     )
+    # URLs the verify layer already captured win over lookups and cached misses
+    for c in cands:
+        if c.linkedin_url and LINKEDIN_RE.match(c.linkedin_url):
+            cache[c.name.lower()] = c.linkedin_url
     todo = [c for c in cands if c.name.lower() not in cache]
     log.info(f"LinkedIn lookups: {len(todo)} to fetch ({len(cands) - len(todo)} cached)")
     with ThreadPoolExecutor(max_workers=8) as pool:

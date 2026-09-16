@@ -56,6 +56,7 @@ class Verification(BaseModel):
     key_work: str = Field(default="", description='1-2 works with venue+year and a short gloss, e.g. "TD-MPC2 (ICLR 24); Holodeck (CVPR 24) - 3D env generation from language"')
     personal_email: str = Field(default="", description="Personal (gmail etc.) preferred over institutional; empty if not found")
     website: str = Field(default="", description="Personal site domain, no https:// prefix")
+    linkedin_url: str = Field(default="", description="Full LinkedIn profile URL (https://www.linkedin.com/in/<handle>); empty if not found")
     recruitable: str = Field(default="", description='"Yes", "Maybe" or "Unlikely" with an optional reason, e.g. "Unlikely - at OpenAI" or "Yes - just switched labs"')
     notes: str = Field(default="")
 
@@ -74,9 +75,10 @@ Rules:
 - career_stage must be specific: PhD year + school + current employer with an arrow for transitions, e.g. "Recent grad (PhD 24, UPenn) -> AI2" or "Graduating PhD (final yr), Stanford".
 - key_work: at most 2 works, one line, under 140 characters total, e.g. "TD-MPC2 (ICLR 24), Multitask World Models (ICLR 26)" or "Holodeck (CVPR 24) - 3D env generation from language".
 - personal_email: prefer a personal address found on their homepage/CV; never invent one.
+- linkedin_url: the full profile URL if you find one that clearly matches this person; never guess a handle.
 - recruitable: "Yes" for grad students / academics / startup folks; "Maybe" for big-lab (Meta FAIR, DeepMind, NVIDIA) juniors; "Unlikely - at X" for OpenAI/Anthropic; add a short reason when it helps ("Yes - just switched labs").
 - Respond with ONLY a JSON object matching this schema, no prose:
-{{"identity_confirmed": bool, "career_stage": str, "current_employer": str, "key_work": str, "personal_email": str, "website": str, "recruitable": str, "notes": str}}"""
+{{"identity_confirmed": bool, "career_stage": str, "current_employer": str, "key_work": str, "personal_email": str, "website": str, "linkedin_url": str, "recruitable": str, "notes": str}}"""
 
 
 def _normalize(s: str) -> str:
@@ -146,7 +148,7 @@ def rank_rows(rows: list[dict]) -> list[dict]:
     return sorted(rows, key=key)
 
 
-SHORTLIST_FIELDS = ["#", "Name", "Career Stage", "Key Work", "Personal Email", "Website", "Recruitable?"]
+SHORTLIST_FIELDS = ["#", "Name", "Career Stage", "Key Work", "Personal Email", "Website", "LinkedIn", "Recruitable?"]
 
 
 def process_tab(csv_path: Path, category: str, top_n: int, api_key: str,
@@ -216,6 +218,7 @@ def process_tab(csv_path: Path, category: str, top_n: int, api_key: str,
             "Key Work": v.get("key_work", ""),
             "Personal Email": email,
             "Website": v.get("website", ""),
+            "LinkedIn": v.get("linkedin_url", ""),  # empty for pre-2026-09-16 cache entries
             "Recruitable?": v.get("recruitable", ""),
         })
         if i % 10 == 0:
