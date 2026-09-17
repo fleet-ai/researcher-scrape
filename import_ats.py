@@ -66,6 +66,29 @@ GROUPS: dict[str, tuple[str, list[str]]] = {
 }
 
 
+# Early-PhD detection on the VERIFIED career-stage text. The wide-pool
+# classifier only sees h-index/paper titles and regularly labels 1st-3rd
+# year students graduating_phd; the verified string is the ground truth
+# ("PhD student (2nd year), Stanford", "PhD Y1, UCLA", "3rd yr").
+EARLY_PHD_RE = re.compile(
+    r"\b(1st|2nd|3rd|first|second|third)[ -](?:yr|year)\b"
+    r"|\bY[123]\b"
+    r"|\b(?:yr|year)[ -]?[123]\b"
+    r"|\bincoming phd\b"
+    r"|\bearly phd\b",
+    re.IGNORECASE,
+)
+
+
+def is_early_phd(career_stage: str) -> bool:
+    s = career_stage.lower()
+    if "phd" not in s and "y1" not in s and "y2" not in s and "y3" not in s:
+        return False
+    if "postdoc" in s or "->" in s:  # graduated; arrow means a transition
+        return False
+    return bool(EARLY_PHD_RE.search(career_stage))
+
+
 class Candidate(BaseModel):
     name: str
     email: str
@@ -175,6 +198,12 @@ def load_candidates(maybe_groups: set[str] | None = None) -> list[Candidate]:
                     verdict.startswith("Yes")
                     or (group in maybe_groups and verdict.startswith("Maybe"))
                 ):
+                    continue
+                if is_early_phd(row.get("Career Stage", "")):
+                    log.info(
+                        f"  early PhD, skipped: {row['Name'].strip()} "
+                        f"({row.get('Career Stage','')[:50]})"
+                    )
                     continue
                 cand = Candidate(
                     name=row["Name"].strip(),

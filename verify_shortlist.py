@@ -76,7 +76,7 @@ Rules:
 - key_work: at most 2 works, one line, under 140 characters total, e.g. "TD-MPC2 (ICLR 24), Multitask World Models (ICLR 26)" or "Holodeck (CVPR 24) - 3D env generation from language".
 - personal_email: prefer a personal address found on their homepage/CV; never invent one.
 - linkedin_url: the full profile URL if you find one that clearly matches this person; never guess a handle.
-- recruitable: "Yes" for grad students, academics, startup folks, and industry ICs at ANY company including Meta, DeepMind, Google, NVIDIA, Microsoft (poaching from big labs is expected); "Maybe" only when something concrete argues against a move (just started a new role, visa tie, deep vesting); "Unlikely - at X" ONLY for OpenAI and Anthropic, or for tenured faculty / founders running their own company. Add a short reason ("Yes - just switched labs").
+- recruitable: "Yes" for FINAL-YEAR PhD students, recent grads, academics, startup folks, and industry ICs at ANY company including Meta, DeepMind, Google, NVIDIA, Microsoft (poaching from big labs is expected); "Maybe" only when something concrete argues against a move (just started a new role, visa tie, deep vesting); "Unlikely - at X" ONLY for OpenAI and Anthropic, tenured faculty, founders running their own company, or "Unlikely - early PhD (Nth yr)" for 1st-3rd year PhD students (too early to hire). Add a short reason ("Yes - just switched labs").
 - Respond with ONLY a JSON object matching this schema, no prose:
 {{"identity_confirmed": bool, "career_stage": str, "current_employer": str, "key_work": str, "personal_email": str, "website": str, "linkedin_url": str, "recruitable": str, "notes": str}}"""
 
